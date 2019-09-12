@@ -1,0 +1,13 @@
+{
+  "actions": [
+    {
+      "name": "runPolicyAnalysisQuery",
+      "protocol": "REST",
+      "method": "GET",
+      "entitypath": "{base_path}/{version}/securetrack/api/policy_analysis/query/matching_rules{query}",
+      "schema": "schema.json",
+      "headers": {},
+      "responseObjects": []
+    }
+  ]
+}

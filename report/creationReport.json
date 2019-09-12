@@ -1,0 +1,1549 @@
+{
+  "errors": [],
+  "statistics": [
+    {
+      "owner": "errorJson",
+      "description": "Standard adapter errors available for use",
+      "value": 29
+    },
+    {
+      "owner": "packageJson",
+      "description": "Number of production dependencies",
+      "value": 6
+    },
+    {
+      "owner": "packageJson",
+      "description": "Number of development dependencies",
+      "value": 9
+    },
+    {
+      "owner": "packageJson",
+      "description": "Number of npm scripts",
+      "value": 9
+    },
+    {
+      "owner": "packageJson",
+      "description": "Runtime Library dependency",
+      "value": "^4.17.0"
+    },
+    {
+      "owner": "propertiesSchemaJson",
+      "description": "Adapter properties defined in the propertiesSchema file",
+      "value": 48
+    },
+    {
+      "owner": "adapterJS",
+      "description": "Lines of code generated in adapter.js",
+      "value": 14286
+    },
+    {
+      "owner": "adapterJS",
+      "description": "Number of Functions added to adapter.js",
+      "value": 180
+    },
+    {
+      "owner": "pronghornJson",
+      "description": "Number of Methods added to pronghorn.json",
+      "value": 180
+    },
+    {
+      "owner": "readmeMd",
+      "description": "Number of lines in the README.md",
+      "value": 450
+    },
+    {
+      "owner": "unitTestJS",
+      "description": "Number of lines of code in unit tests",
+      "value": 6127
+    },
+    {
+      "owner": "unitTestJS",
+      "description": "Number of unit tests",
+      "value": 400
+    },
+    {
+      "owner": "integrationTestJS",
+      "description": "Number of lines of code in integration tests",
+      "value": 4975
+    },
+    {
+      "owner": "integrationTestJS",
+      "description": "Number of integration tests",
+      "value": 185
+    },
+    {
+      "owner": "actionJson",
+      "description": "Number of actions for AdditionalPolicyFields entity",
+      "value": 3
+    },
+    {
+      "owner": "actionJson",
+      "description": "Number of actions for ApplicationIDs entity",
+      "value": 4
+    },
+    {
+      "owner": "actionJson",
+      "description": "Number of actions for ChangeAuthorization entity",
+      "value": 2
+    },
+    {
+      "owner": "actionJson",
+      "description": "Number of actions for ChangeWindows entity",
+      "value": 3
+    },
+    {
+      "owner": "actionJson",
+      "description": "Number of actions for DeviceInterfacesAndZones entity",
+      "value": 5
+    },
+    {
+      "owner": "actionJson",
+      "description": "Number of actions for Domains entity",
+      "value": 4
+    },
+    {
+      "owner": "actionJson",
+      "description": "Number of actions for GeneralProperties entity",
+      "value": 1
+    },
+    {
+      "owner": "actionJson",
+      "description": "Number of actions for IPsecVPN entity",
+      "value": 4
+    },
+    {
+      "owner": "actionJson",
+      "description": "Number of actions for InternetObjects entity",
+      "value": 5
+    },
+    {
+      "owner": "actionJson",
+      "description": "Number of actions for LDAP entity",
+      "value": 4
+    },
+    {
+      "owner": "actionJson",
+      "description": "Number of actions for MonitoredDevices entity",
+      "value": 11
+    },
+    {
+      "owner": "actionJson",
+      "description": "Number of actions for NATPolicies entity",
+      "value": 3
+    },
+    {
+      "owner": "actionJson",
+      "description": "Number of actions for NetworkObjects entity",
+      "value": 7
+    },
+    {
+      "owner": "actionJson",
+      "description": "Number of actions for NetworkTopology entity",
+      "value": 21
+    },
+    {
+      "owner": "actionJson",
+      "description": "Number of actions for NetworkZoneManagerPatterns entity",
+      "value": 3
+    },
+    {
+      "owner": "actionJson",
+      "description": "Number of actions for NetworkZoneManagerSubnets entity",
+      "value": 7
+    },
+    {
+      "owner": "actionJson",
+      "description": "Number of actions for NetworkZoneManagerZones entity",
+      "value": 16
+    },
+    {
+      "owner": "actionJson",
+      "description": "Number of actions for PoliciesAndSubPolicies entity",
+      "value": 6
+    },
+    {
+      "owner": "actionJson",
+      "description": "Number of actions for PolicyAnalysis entity",
+      "value": 1
+    },
+    {
+      "owner": "actionJson",
+      "description": "Number of actions for PolicyBrowserFormerlyRuleDocumentation entity",
+      "value": 6
+    },
+    {
+      "owner": "actionJson",
+      "description": "Number of actions for PolicyOptimization entity",
+      "value": 8
+    },
+    {
+      "owner": "actionJson",
+      "description": "Number of actions for Revisions entity",
+      "value": 3
+    },
+    {
+      "owner": "actionJson",
+      "description": "Number of actions for RuleUsage entity",
+      "value": 2
+    },
+    {
+      "owner": "actionJson",
+      "description": "Number of actions for SecurityRules entity",
+      "value": 7
+    },
+    {
+      "owner": "actionJson",
+      "description": "Number of actions for ServicesAndPorts entity",
+      "value": 7
+    },
+    {
+      "owner": "actionJson",
+      "description": "Number of actions for TimeObjects entity",
+      "value": 3
+    },
+    {
+      "owner": "actionJson",
+      "description": "Number of actions for TrafficPolicyMatcher entity",
+      "value": 1
+    },
+    {
+      "owner": "actionJson",
+      "description": "Number of actions for UnifiedSecurityPolicyAccessRequestViolations entity",
+      "value": 5
+    },
+    {
+      "owner": "actionJson",
+      "description": "Number of actions for UnifiedSecurityPolicyAlerts entity",
+      "value": 5
+    },
+    {
+      "owner": "actionJson",
+      "description": "Number of actions for UnifiedSecurityPolicyCloudTagPolicy entity",
+      "value": 8
+    },
+    {
+      "owner": "actionJson",
+      "description": "Number of actions for UnifiedSecurityPolicyExceptions entity",
+      "value": 8
+    },
+    {
+      "owner": "actionJson",
+      "description": "Number of actions for UnifiedSecurityPolicySecurityZoneMatrix entity",
+      "value": 5
+    },
+    {
+      "owner": "actionJson",
+      "description": "Number of actions for UnifiedSecurityPolicyViolations entity",
+      "value": 2
+    },
+    {
+      "owner": "actionJson",
+      "description": "Total number of actions",
+      "value": 180
+    },
+    {
+      "owner": "actionJson",
+      "description": "Total number of entities",
+      "value": 33
+    },
+    {
+      "owner": "schemaJson",
+      "description": "Number of schemas for AdditionalPolicyFields entity",
+      "value": 1
+    },
+    {
+      "owner": "schemaJson",
+      "description": "Number of schemas for ApplicationIDs entity",
+      "value": 1
+    },
+    {
+      "owner": "schemaJson",
+      "description": "Number of schemas for ChangeAuthorization entity",
+      "value": 1
+    },
+    {
+      "owner": "schemaJson",
+      "description": "Number of schemas for ChangeWindows entity",
+      "value": 1
+    },
+    {
+      "owner": "schemaJson",
+      "description": "Number of schemas for DeviceInterfacesAndZones entity",
+      "value": 1
+    },
+    {
+      "owner": "schemaJson",
+      "description": "Number of schemas for Domains entity",
+      "value": 1
+    },
+    {
+      "owner": "schemaJson",
+      "description": "Number of schemas for GeneralProperties entity",
+      "value": 1
+    },
+    {
+      "owner": "schemaJson",
+      "description": "Number of schemas for IPsecVPN entity",
+      "value": 1
+    },
+    {
+      "owner": "schemaJson",
+      "description": "Number of schemas for InternetObjects entity",
+      "value": 1
+    },
+    {
+      "owner": "schemaJson",
+      "description": "Number of schemas for LDAP entity",
+      "value": 1
+    },
+    {
+      "owner": "schemaJson",
+      "description": "Number of schemas for MonitoredDevices entity",
+      "value": 1
+    },
+    {
+      "owner": "schemaJson",
+      "description": "Number of schemas for NATPolicies entity",
+      "value": 1
+    },
+    {
+      "owner": "schemaJson",
+      "description": "Number of schemas for NetworkObjects entity",
+      "value": 1
+    },
+    {
+      "owner": "schemaJson",
+      "description": "Number of schemas for NetworkTopology entity",
+      "value": 1
+    },
+    {
+      "owner": "schemaJson",
+      "description": "Number of schemas for NetworkZoneManagerPatterns entity",
+      "value": 1
+    },
+    {
+      "owner": "schemaJson",
+      "description": "Number of schemas for NetworkZoneManagerSubnets entity",
+      "value": 1
+    },
+    {
+      "owner": "schemaJson",
+      "description": "Number of schemas for NetworkZoneManagerZones entity",
+      "value": 1
+    },
+    {
+      "owner": "schemaJson",
+      "description": "Number of schemas for PoliciesAndSubPolicies entity",
+      "value": 1
+    },
+    {
+      "owner": "schemaJson",
+      "description": "Number of schemas for PolicyAnalysis entity",
+      "value": 1
+    },
+    {
+      "owner": "schemaJson",
+      "description": "Number of schemas for PolicyBrowserFormerlyRuleDocumentation entity",
+      "value": 1
+    },
+    {
+      "owner": "schemaJson",
+      "description": "Number of schemas for PolicyOptimization entity",
+      "value": 1
+    },
+    {
+      "owner": "schemaJson",
+      "description": "Number of schemas for Revisions entity",
+      "value": 1
+    },
+    {
+      "owner": "schemaJson",
+      "description": "Number of schemas for RuleUsage entity",
+      "value": 1
+    },
+    {
+      "owner": "schemaJson",
+      "description": "Number of schemas for SecurityRules entity",
+      "value": 1
+    },
+    {
+      "owner": "schemaJson",
+      "description": "Number of schemas for ServicesAndPorts entity",
+      "value": 1
+    },
+    {
+      "owner": "schemaJson",
+      "description": "Number of schemas for TimeObjects entity",
+      "value": 1
+    },
+    {
+      "owner": "schemaJson",
+      "description": "Number of schemas for TrafficPolicyMatcher entity",
+      "value": 1
+    },
+    {
+      "owner": "schemaJson",
+      "description": "Number of schemas for UnifiedSecurityPolicyAccessRequestViolations entity",
+      "value": 1
+    },
+    {
+      "owner": "schemaJson",
+      "description": "Number of schemas for UnifiedSecurityPolicyAlerts entity",
+      "value": 1
+    },
+    {
+      "owner": "schemaJson",
+      "description": "Number of schemas for UnifiedSecurityPolicyCloudTagPolicy entity",
+      "value": 1
+    },
+    {
+      "owner": "schemaJson",
+      "description": "Number of schemas for UnifiedSecurityPolicyExceptions entity",
+      "value": 1
+    },
+    {
+      "owner": "schemaJson",
+      "description": "Number of schemas for UnifiedSecurityPolicySecurityZoneMatrix entity",
+      "value": 1
+    },
+    {
+      "owner": "schemaJson",
+      "description": "Number of schemas for UnifiedSecurityPolicyViolations entity",
+      "value": 1
+    },
+    {
+      "owner": "schemaJson",
+      "description": "Total number of schemas",
+      "value": 33
+    },
+    {
+      "owner": "mockdata",
+      "description": "Number of mock data files for AdditionalPolicyFields entity",
+      "value": 0
+    },
+    {
+      "owner": "mockdata",
+      "description": "Number of mock data files for ApplicationIDs entity",
+      "value": 0
+    },
+    {
+      "owner": "mockdata",
+      "description": "Number of mock data files for ChangeAuthorization entity",
+      "value": 0
+    },
+    {
+      "owner": "mockdata",
+      "description": "Number of mock data files for ChangeWindows entity",
+      "value": 0
+    },
+    {
+      "owner": "mockdata",
+      "description": "Number of mock data files for DeviceInterfacesAndZones entity",
+      "value": 0
+    },
+    {
+      "owner": "mockdata",
+      "description": "Number of mock data files for Domains entity",
+      "value": 0
+    },
+    {
+      "owner": "mockdata",
+      "description": "Number of mock data files for GeneralProperties entity",
+      "value": 0
+    },
+    {
+      "owner": "mockdata",
+      "description": "Number of mock data files for IPsecVPN entity",
+      "value": 0
+    },
+    {
+      "owner": "mockdata",
+      "description": "Number of mock data files for InternetObjects entity",
+      "value": 0
+    },
+    {
+      "owner": "mockdata",
+      "description": "Number of mock data files for LDAP entity",
+      "value": 0
+    },
+    {
+      "owner": "mockdata",
+      "description": "Number of mock data files for MonitoredDevices entity",
+      "value": 0
+    },
+    {
+      "owner": "mockdata",
+      "description": "Number of mock data files for NATPolicies entity",
+      "value": 0
+    },
+    {
+      "owner": "mockdata",
+      "description": "Number of mock data files for NetworkObjects entity",
+      "value": 0
+    },
+    {
+      "owner": "mockdata",
+      "description": "Number of mock data files for NetworkTopology entity",
+      "value": 0
+    },
+    {
+      "owner": "mockdata",
+      "description": "Number of mock data files for NetworkZoneManagerPatterns entity",
+      "value": 0
+    },
+    {
+      "owner": "mockdata",
+      "description": "Number of mock data files for NetworkZoneManagerSubnets entity",
+      "value": 0
+    },
+    {
+      "owner": "mockdata",
+      "description": "Number of mock data files for NetworkZoneManagerZones entity",
+      "value": 0
+    },
+    {
+      "owner": "mockdata",
+      "description": "Number of mock data files for PoliciesAndSubPolicies entity",
+      "value": 0
+    },
+    {
+      "owner": "mockdata",
+      "description": "Number of mock data files for PolicyAnalysis entity",
+      "value": 0
+    },
+    {
+      "owner": "mockdata",
+      "description": "Number of mock data files for PolicyBrowserFormerlyRuleDocumentation entity",
+      "value": 0
+    },
+    {
+      "owner": "mockdata",
+      "description": "Number of mock data files for PolicyOptimization entity",
+      "value": 0
+    },
+    {
+      "owner": "mockdata",
+      "description": "Number of mock data files for Revisions entity",
+      "value": 0
+    },
+    {
+      "owner": "mockdata",
+      "description": "Number of mock data files for RuleUsage entity",
+      "value": 0
+    },
+    {
+      "owner": "mockdata",
+      "description": "Number of mock data files for SecurityRules entity",
+      "value": 0
+    },
+    {
+      "owner": "mockdata",
+      "description": "Number of mock data files for ServicesAndPorts entity",
+      "value": 0
+    },
+    {
+      "owner": "mockdata",
+      "description": "Number of mock data files for TimeObjects entity",
+      "value": 0
+    },
+    {
+      "owner": "mockdata",
+      "description": "Number of mock data files for TrafficPolicyMatcher entity",
+      "value": 0
+    },
+    {
+      "owner": "mockdata",
+      "description": "Number of mock data files for UnifiedSecurityPolicyAccessRequestViolations entity",
+      "value": 0
+    },
+    {
+      "owner": "mockdata",
+      "description": "Number of mock data files for UnifiedSecurityPolicyAlerts entity",
+      "value": 0
+    },
+    {
+      "owner": "mockdata",
+      "description": "Number of mock data files for UnifiedSecurityPolicyCloudTagPolicy entity",
+      "value": 0
+    },
+    {
+      "owner": "mockdata",
+      "description": "Number of mock data files for UnifiedSecurityPolicyExceptions entity",
+      "value": 0
+    },
+    {
+      "owner": "mockdata",
+      "description": "Number of mock data files for UnifiedSecurityPolicySecurityZoneMatrix entity",
+      "value": 0
+    },
+    {
+      "owner": "mockdata",
+      "description": "Number of mock data files for UnifiedSecurityPolicyViolations entity",
+      "value": 0
+    },
+    {
+      "owner": "mockdata",
+      "description": "Total number of mock data files",
+      "value": 0
+    },
+    {
+      "owner": "actionJson",
+      "description": "Number of actions for .system entity",
+      "value": 2
+    },
+    {
+      "owner": "schemaJson",
+      "description": "Number of schemas for .system entity",
+      "value": 1
+    },
+    {
+      "owner": "mockdata",
+      "description": "Number of mock data files for .system entity",
+      "value": 2
+    },
+    {
+      "owner": "System",
+      "description": "System entity files",
+      "value": 4
+    },
+    {
+      "owner": "workflows",
+      "description": "Number of workflows",
+      "value": 0
+    },
+    {
+      "owner": "staticFile",
+      "description": "Number of lines of code in adapterBase.js",
+      "value": 484
+    },
+    {
+      "owner": "staticFile",
+      "description": "Number of static files added",
+      "value": 19
+    },
+    {
+      "owner": "Overall",
+      "description": "Total lines of Code",
+      "value": 25872
+    },
+    {
+      "owner": "Overall",
+      "description": "Total Tests",
+      "value": 585
+    },
+    {
+      "owner": "Overall",
+      "description": "Total Files",
+      "value": 97
+    }
+  ],
+  "apiParsingReport": {
+    "no_mockdata": [
+      {
+        "fnName": "getAdditionalParametersIdentitiesByRevision",
+        "method": "get",
+        "path": "/securetrack/api/revisions/{revision_id}/additional_parameters"
+      },
+      {
+        "fnName": "getSpecificAdditionalParameterIdentity",
+        "method": "get",
+        "path": "/securetrack/api/revisions/{revision_id}/additional_parameters/{ids}"
+      },
+      {
+        "fnName": "getAURLCategory",
+        "method": "get",
+        "path": "/securetrack/api/revisions/{revision_id}/url_categories/{ids}"
+      },
+      {
+        "fnName": "getApplicationIdentitiesByDevice",
+        "method": "get",
+        "path": "/securetrack/api/devices/{id}/applications"
+      },
+      {
+        "fnName": "getSpecificApplicationIdentity",
+        "method": "get",
+        "path": "/securetrack/api/devices/{id}/applications/{ids}"
+      },
+      {
+        "fnName": "getApplicationsIdentitiesByRevision",
+        "method": "get",
+        "path": "/securetrack/api/revisions/{id}/applications"
+      },
+      {
+        "fnName": "getRevisionsRevision_idApplicationsIds",
+        "method": "get",
+        "path": "/securetrack/api/revisions/{revision_id}/applications/{ids}"
+      },
+      {
+        "fnName": "determineIfChangesBetweenTwoRevisionsAreAuthorized",
+        "method": "get",
+        "path": "/securetrack/api/change_authorization/"
+      },
+      {
+        "fnName": "compareRevisionsOnTwoDifferentDevicesInTermsOfTraffic",
+        "method": "post",
+        "path": "/securetrack/api/change_authorization/policyTrafficComparison"
+      },
+      {
+        "fnName": "getNameAndStatusForAllChangeWindows",
+        "method": "get",
+        "path": "/securetrack/api/change_windows/"
+      },
+      {
+        "fnName": "getSchedulingAndDeviceDetailsForASpecificChangeWindow",
+        "method": "get",
+        "path": "/securetrack/api/change_windows/{uid}/tasks/{task_id}"
+      },
+      {
+        "fnName": "getAListOfCompletedPolicyChangesForASpecificChangeWindow",
+        "method": "get",
+        "path": "/securetrack/api/change_windows/{uid}/tasks"
+      },
+      {
+        "fnName": "getNetworkInterfacesByDevice",
+        "method": "get",
+        "path": "/securetrack/api/devices/{id}/interfaces"
+      },
+      {
+        "fnName": "getNetworkInterfacesByRevision",
+        "method": "get",
+        "path": "/securetrack/api/revisions/{id}/interfaces"
+      },
+      {
+        "fnName": "getDeviceZonesByRevision",
+        "method": "get",
+        "path": "/securetrack/api/revisions/{id}/zones"
+      },
+      {
+        "fnName": "getDeviceZonesByDevice",
+        "method": "get",
+        "path": "/securetrack/api/devices/{id}/zones"
+      },
+      {
+        "fnName": "getZonesAndNetworkInterfacesThatParticipateInSubPolicies",
+        "method": "get",
+        "path": "/securetrack/api/devices/{id}/bindable_objects"
+      },
+      {
+        "fnName": "getDomain",
+        "method": "get",
+        "path": "/securetrack/api/domains/{id}"
+      },
+      {
+        "fnName": "updateADomain",
+        "method": "put",
+        "path": "/securetrack/api/domains/{id}"
+      },
+      {
+        "fnName": "addADomain",
+        "method": "post",
+        "path": "/securetrack/api/domains/"
+      },
+      {
+        "fnName": "getAllDomains",
+        "method": "get",
+        "path": "/securetrack/api/domains/"
+      },
+      {
+        "fnName": "getGeneralProperties",
+        "method": "get",
+        "path": "/securetrack/api/properties/"
+      },
+      {
+        "fnName": "getCiscoCryptographicMapsByRevision",
+        "method": "get",
+        "path": "/securetrack/api/revisions/{id}/crypto_maps"
+      },
+      {
+        "fnName": "getCiscoIPsecPolicyAndPeers",
+        "method": "get",
+        "path": "/securetrack/api/bindings/{device_id}/ipsec_tunnels"
+      },
+      {
+        "fnName": "getCheckPointVPNIPSecCommunitiesAndGateways",
+        "method": "get",
+        "path": "/securetrack/api/bindings/{device_id}/ipsec_communities"
+      },
+      {
+        "fnName": "getCiscoCryptographicMapsByDevice",
+        "method": "get",
+        "path": "/securetrack/api/devices/{id}/crypto_maps"
+      },
+      {
+        "fnName": "getResolvedInternetRepresentationForDevice",
+        "method": "get",
+        "path": "/securetrack/api/internet_referral/{deviceId}/object"
+      },
+      {
+        "fnName": "createNewInternetRepresentationForADevice",
+        "method": "post",
+        "path": "/securetrack/api/internet_referral/"
+      },
+      {
+        "fnName": "deleteInternetRepresentationForDevice",
+        "method": "delete",
+        "path": "/securetrack/api/internet_referral/{deviceId}"
+      },
+      {
+        "fnName": "updateInternetRepresentationForDevice",
+        "method": "put",
+        "path": "/securetrack/api/internet_referral/{deviceId}"
+      },
+      {
+        "fnName": "getInternetRepresentationForDevice",
+        "method": "get",
+        "path": "/securetrack/api/internet_referral/{deviceId}"
+      },
+      {
+        "fnName": "getLDAPEntryDetailsByDN",
+        "method": "get",
+        "path": "/securetrack/api/ldap/getEntryByDN"
+      },
+      {
+        "fnName": "returnEntriesThatExactlyMatchOneOfTheGivenStrings",
+        "method": "post",
+        "path": "/securetrack/api/ldap/getEntriesByNames"
+      },
+      {
+        "fnName": "getTheBaseDNEntryDetails",
+        "method": "get",
+        "path": "/securetrack/api/ldap/getBaseDNEntry"
+      },
+      {
+        "fnName": "returnLDAPEntriesWhichMatchTheGivenSearchCriteria",
+        "method": "post",
+        "path": "/securetrack/api/ldap/search"
+      },
+      {
+        "fnName": "getTextualConfigurationByRevision",
+        "method": "get",
+        "path": "/securetrack/api/revisions/{id}/config"
+      },
+      {
+        "fnName": "importManagedDevices",
+        "method": "post",
+        "path": "/securetrack/api/devices/bulk/import"
+      },
+      {
+        "fnName": "editSecuretrackDevice",
+        "method": "patch",
+        "path": "/securetrack/api/devices/bulk/"
+      },
+      {
+        "fnName": "addDevicesToSecureTrack",
+        "method": "post",
+        "path": "/securetrack/api/devices/bulk/"
+      },
+      {
+        "fnName": "getSpecificTaskResultsOfBulkOperationsOnDevices",
+        "method": "get",
+        "path": "/securetrack/api/devices/bulk/tasks/{task_uid}"
+      },
+      {
+        "fnName": "addConfigurationForOfflineDevice",
+        "method": "post",
+        "path": "/securetrack/api/tasks/add_device_config_task"
+      },
+      {
+        "fnName": "getSpecificDevice",
+        "method": "get",
+        "path": "/securetrack/api/devices/{id}"
+      },
+      {
+        "fnName": "updateOfflineDevice",
+        "method": "put",
+        "path": "/securetrack/api/devices/{device_id}"
+      },
+      {
+        "fnName": "getDevices",
+        "method": "get",
+        "path": "/securetrack/api/devices/"
+      },
+      {
+        "fnName": "addOfflineDevice",
+        "method": "post",
+        "path": "/securetrack/api/devices/"
+      },
+      {
+        "fnName": "getTextualConfigurationByDevice",
+        "method": "get",
+        "path": "/securetrack/api/devices/{id}/config"
+      },
+      {
+        "fnName": "getNATObjectsByDevice",
+        "method": "get",
+        "path": "/securetrack/api/devices/{id}/nat_objects"
+      },
+      {
+        "fnName": "getNATObjectsByRevision",
+        "method": "get",
+        "path": "/securetrack/api/revisions/{id}/nat_objects"
+      },
+      {
+        "fnName": "getNATRulesByDevice",
+        "method": "get",
+        "path": "/securetrack/api/devices/{id}/nat_rules/bindings"
+      },
+      {
+        "fnName": "getNetworkGroupsContainingSpecifiedNetworkObject",
+        "method": "get",
+        "path": "/securetrack/api/network_objects/{id}/groups"
+      },
+      {
+        "fnName": "getSpecificNetworkObjectsByRevision",
+        "method": "get",
+        "path": "/securetrack/api/revisions/{revision_id}/network_objects/{ids}"
+      },
+      {
+        "fnName": "getSpecificNetworkObject",
+        "method": "get",
+        "path": "/securetrack/api/devices/{device_id}/network_objects/{ids}"
+      },
+      {
+        "fnName": "getNetworkObjectsByRevision",
+        "method": "get",
+        "path": "/securetrack/api/revisions/{id}/network_objects"
+      },
+      {
+        "fnName": "getNetworkObjectsMatchingSpecifiedCriteria",
+        "method": "get",
+        "path": "/securetrack/api/network_objects/search"
+      },
+      {
+        "fnName": "getRulesContainingSpecifiedNetworkObject",
+        "method": "get",
+        "path": "/securetrack/api/network_objects/{id}/rules"
+      },
+      {
+        "fnName": "getNetworkObjectsByDevice",
+        "method": "get",
+        "path": "/securetrack/api/devices/{id}/network_objects"
+      },
+      {
+        "fnName": "getSpecificTopologyCloud",
+        "method": "get",
+        "path": "/securetrack/api/topology/clouds/{id}"
+      },
+      {
+        "fnName": "updateACloud",
+        "method": "put",
+        "path": "/securetrack/api/topology/clouds/{id}"
+      },
+      {
+        "fnName": "getTopologySubnets",
+        "method": "get",
+        "path": "/securetrack/api/topology/subnets"
+      },
+      {
+        "fnName": "getTopologyNetworkInterfacesByDevice",
+        "method": "get",
+        "path": "/securetrack/api/devices/topology_interfaces"
+      },
+      {
+        "fnName": "getMostSpecificNetworkInterfacesFromWhichAHostIPIsAccessible",
+        "method": "get",
+        "path": "/securetrack/api/devices/interfaces/last_hop"
+      },
+      {
+        "fnName": "getSpecificTopologySubnet",
+        "method": "get",
+        "path": "/securetrack/api/topology/subnets/{id}"
+      },
+      {
+        "fnName": "getTopologySynchronizationStatus",
+        "method": "get",
+        "path": "/securetrack/api/topology/synchronize/status"
+      },
+      {
+        "fnName": "deleteGenericDeviceFromTopologyModel",
+        "method": "delete",
+        "path": "/securetrack/api/generic_devices/{id}"
+      },
+      {
+        "fnName": "updateAnExistingGenericDeviceInTheTopologyModel",
+        "method": "put",
+        "path": "/securetrack/api/generic_devices/{id}"
+      },
+      {
+        "fnName": "getCloudInternalNetworks",
+        "method": "get",
+        "path": "/securetrack/api/topology/cloud_internal_networks/{id}"
+      },
+      {
+        "fnName": "getCloudInformation",
+        "method": "get",
+        "path": "/securetrack/api/topology/cloud_suggestions/{cloud_id}"
+      },
+      {
+        "fnName": "synchronizeTheTopologyModel",
+        "method": "post",
+        "path": "/securetrack/api/topology/synchronize"
+      },
+      {
+        "fnName": "getTopologyGenericVPNConnections",
+        "method": "get",
+        "path": "/securetrack/api/topology/generic_vpns"
+      },
+      {
+        "fnName": "getTopologyRoutingTablesForAGivenDevice",
+        "method": "get",
+        "path": "/securetrack/api/devices/topology_routes"
+      },
+      {
+        "fnName": "getTopologyCloud_suggestions",
+        "method": "get",
+        "path": "/securetrack/api/topology/cloud_suggestions"
+      },
+      {
+        "fnName": "addGenericDeviceToTopologyModel",
+        "method": "post",
+        "path": "/securetrack/api/generic_devices/"
+      },
+      {
+        "fnName": "getGenericDevicesThatAreConfiguredInST",
+        "method": "get",
+        "path": "/securetrack/api/generic_devices/"
+      },
+      {
+        "fnName": "getPathImageForSpecifiedTraffic",
+        "method": "get",
+        "path": "/securetrack/api/topology/path_image"
+      },
+      {
+        "fnName": "getPathForSpecifiedTraffic",
+        "method": "get",
+        "path": "/securetrack/api/topology/path"
+      },
+      {
+        "fnName": "createAJoinedTopologyCloud",
+        "method": "post",
+        "path": "/securetrack/api/topology/clouds"
+      },
+      {
+        "fnName": "getTopologyClouds",
+        "method": "get",
+        "path": "/securetrack/api/topology/clouds"
+      },
+      {
+        "fnName": "getASpecificZonePatternEntryForASpecificZone",
+        "method": "get",
+        "path": "/securetrack/api/zones/{zone_id}/pattern-entries/{id}"
+      },
+      {
+        "fnName": "createAZonePatternEntryInASpecificZone",
+        "method": "post",
+        "path": "/securetrack/api/zones/{zone_id}/pattern-entries"
+      },
+      {
+        "fnName": "getAllPatternEntriesForSpecificZones",
+        "method": "get",
+        "path": "/securetrack/api/zones/{ids}/pattern-entries"
+      },
+      {
+        "fnName": "getASpecificZoneEntry",
+        "method": "get",
+        "path": "/securetrack/api/zones/{zone_id}/entries/{id}"
+      },
+      {
+        "fnName": "deleteZoneEntries",
+        "method": "delete",
+        "path": "/securetrack/api/zones/{zone_id}/entries/{id}"
+      },
+      {
+        "fnName": "modifyAZoneEntry",
+        "method": "put",
+        "path": "/securetrack/api/zones/{zone_id}/entries/{id}"
+      },
+      {
+        "fnName": "modifyMultipleExistingZoneEntries",
+        "method": "put",
+        "path": "/securetrack/api/zones/{zone_ids}/entries/{ids}"
+      },
+      {
+        "fnName": "deleteZonesZone_idsEntriesIds",
+        "method": "delete",
+        "path": "/securetrack/api/zones/{zone_ids}/entries/{ids}"
+      },
+      {
+        "fnName": "createAZoneEntry",
+        "method": "post",
+        "path": "/securetrack/api/zones/{zone_id}/entries"
+      },
+      {
+        "fnName": "getEntriesForAZone",
+        "method": "get",
+        "path": "/securetrack/api/zones/{ids}/entries"
+      },
+      {
+        "fnName": "importAZone",
+        "method": "post",
+        "path": "/securetrack/api/zones/import/{ids}"
+      },
+      {
+        "fnName": "getConfigurationUsagesForAZone",
+        "method": "get",
+        "path": "/securetrack/api/zones/{ids}/dependencies"
+      },
+      {
+        "fnName": "removeAZoneAsAnDescendantsToAZone",
+        "method": "delete",
+        "path": "/securetrack/api/zones/{parent_id}/descendants/{child_ids}"
+      },
+      {
+        "fnName": "addAZoneAsADescendantToAZone",
+        "method": "put",
+        "path": "/securetrack/api/zones/{parent_id}/descendants/{child_ids}"
+      },
+      {
+        "fnName": "createAZone",
+        "method": "post",
+        "path": "/securetrack/api/zones/"
+      },
+      {
+        "fnName": "getAllZones",
+        "method": "get",
+        "path": "/securetrack/api/zones/"
+      },
+      {
+        "fnName": "deleteAllZones",
+        "method": "delete",
+        "path": "/securetrack/api/zones/"
+      },
+      {
+        "fnName": "getSharedZones",
+        "method": "get",
+        "path": "/securetrack/api/zones/shared"
+      },
+      {
+        "fnName": "deleteAZone",
+        "method": "delete",
+        "path": "/securetrack/api/zones/{ids}"
+      },
+      {
+        "fnName": "addAZoneAsAnAncestorToAZone",
+        "method": "put",
+        "path": "/securetrack/api/zones/{child_id}/ancestors/{parent_ids}"
+      },
+      {
+        "fnName": "removeAZoneAsAnAncestorToAZone",
+        "method": "delete",
+        "path": "/securetrack/api/zones/{child_id}/ancestors/{parent_ids}"
+      },
+      {
+        "fnName": "modifyAZone",
+        "method": "put",
+        "path": "/securetrack/api/zones/{id}"
+      },
+      {
+        "fnName": "getASpecificZone",
+        "method": "get",
+        "path": "/securetrack/api/zones/{id}"
+      },
+      {
+        "fnName": "getAncestorZonesForAZone",
+        "method": "get",
+        "path": "/securetrack/api/zones/{ids}/ancestors"
+      },
+      {
+        "fnName": "getDescendantZonesForAZone",
+        "method": "get",
+        "path": "/securetrack/api/zones/{ids}/descendants"
+      },
+      {
+        "fnName": "mapNetworkElementsToSecurityZones",
+        "method": "post",
+        "path": "/securetrack/api/security_zones/"
+      },
+      {
+        "fnName": "getListOfSubPoliciesBindingsWithInputAndOrOutputInterfaces",
+        "method": "get",
+        "path": "/securetrack/api/bindings/{device_id}/binding_query"
+      },
+      {
+        "fnName": "getPoliciesByRevision",
+        "method": "get",
+        "path": "/securetrack/api/revisions/{id}/policies"
+      },
+      {
+        "fnName": "getSubPoliciesBindingsByDevice",
+        "method": "get",
+        "path": "/securetrack/api/devices/{id}/bindings"
+      },
+      {
+        "fnName": "getRulesByInputAndOutputInterfaces",
+        "method": "get",
+        "path": "/securetrack/api/bindings/{device_id}/topology_interfaces"
+      },
+      {
+        "fnName": "getSubPoliciesBindingsByRevision",
+        "method": "get",
+        "path": "/securetrack/api/revisions/{id}/bindings"
+      },
+      {
+        "fnName": "getPoliciesByDevice",
+        "method": "get",
+        "path": "/securetrack/api/devices/{id}/policies"
+      },
+      {
+        "fnName": "runPolicyAnalysisQuery",
+        "method": "get",
+        "path": "/securetrack/api/policy_analysis/query/matching_rules"
+      },
+      {
+        "fnName": "deleteSpecificRuleDocumentation",
+        "method": "delete",
+        "path": "/securetrack/api/devices/{id}/rules/{rule_id}/documentation"
+      },
+      {
+        "fnName": "getSpecificRuleDocumentation",
+        "method": "get",
+        "path": "/securetrack/api/devices/{id}/rules/{rule_id}/documentation"
+      },
+      {
+        "fnName": "modifySpecificRuleDocumentation",
+        "method": "put",
+        "path": "/securetrack/api/devices/{id}/rules/{rule_id}/documentation"
+      },
+      {
+        "fnName": "putRevisionsIdRulesRule_idDocumentation",
+        "method": "put",
+        "path": "/securetrack/api/revisions/{id}/rules/{rule_id}/documentation"
+      },
+      {
+        "fnName": "deleteRevisionsIdRulesRule_idDocumentation",
+        "method": "delete",
+        "path": "/securetrack/api/revisions/{id}/rules/{rule_id}/documentation"
+      },
+      {
+        "fnName": "getRevisionsIdRulesRule_idDocumentation",
+        "method": "get",
+        "path": "/securetrack/api/revisions/{id}/rules/{rule_id}/documentation"
+      },
+      {
+        "fnName": "getCleanupsResults",
+        "method": "get",
+        "path": "/securetrack/api/cleanup/"
+      },
+      {
+        "fnName": "getTheSpecificObjectsOrRulesIdentifiedForTheCleanupResults",
+        "method": "get",
+        "path": "/securetrack/api/cleanup/{cleanup_id}/instances"
+      },
+      {
+        "fnName": "getTheSpecificObjectsOrRulesIdentifiedForTheRiskResults",
+        "method": "get",
+        "path": "/securetrack/api/risk/{risk_id}/instances"
+      },
+      {
+        "fnName": "getCleanupsByDevice",
+        "method": "get",
+        "path": "/securetrack/api/devices/{device_id}/cleanups"
+      },
+      {
+        "fnName": "getDevicesInRiskResults",
+        "method": "get",
+        "path": "/securetrack/api/risk/{risk_id}/devices"
+      },
+      {
+        "fnName": "getRisksResults",
+        "method": "get",
+        "path": "/securetrack/api/risk/"
+      },
+      {
+        "fnName": "getShadowingRulesByDevice",
+        "method": "get",
+        "path": "/securetrack/api/devices/{device_id}/shadowing_rules"
+      },
+      {
+        "fnName": "getDevicesInCleanupResults",
+        "method": "get",
+        "path": "/securetrack/api/cleanup/{cleanup_id}/devices"
+      },
+      {
+        "fnName": "getRevisionsByDevice",
+        "method": "get",
+        "path": "/securetrack/api/devices/{id}/revisions"
+      },
+      {
+        "fnName": "getSpecificRevision",
+        "method": "get",
+        "path": "/securetrack/api/revisions/{revId}"
+      },
+      {
+        "fnName": "getLatestRevisionByDevice",
+        "method": "get",
+        "path": "/securetrack/api/devices/{id}/latest_revision"
+      },
+      {
+        "fnName": "getLastHitsForAllRulesByDevice",
+        "method": "get",
+        "path": "/securetrack/api/rule_last_usage/find_all/{device_id}"
+      },
+      {
+        "fnName": "getLastHitForASpecificRule",
+        "method": "get",
+        "path": "/securetrack/api/rule_last_usage/find/{device_id}/{rule_uid}"
+      },
+      {
+        "fnName": "getASpecificRule",
+        "method": "get",
+        "path": "/securetrack/api/rules/{ruleId}"
+      },
+      {
+        "fnName": "getSpecificRule",
+        "method": "get",
+        "path": "/securetrack/api/devices/{device_id}/rules/{ids}"
+      },
+      {
+        "fnName": "getRuleCountPerDevice",
+        "method": "get",
+        "path": "/securetrack/api/rule_search/"
+      },
+      {
+        "fnName": "getRevisionsRevision_idRulesIds",
+        "method": "get",
+        "path": "/securetrack/api/revisions/{revision_id}/rules/{ids}"
+      },
+      {
+        "fnName": "getRulesByRevision",
+        "method": "get",
+        "path": "/securetrack/api/revisions/{id}/rules"
+      },
+      {
+        "fnName": "findRules",
+        "method": "get",
+        "path": "/securetrack/api/rule_search/{device_id}"
+      },
+      {
+        "fnName": "getRulesByDevice",
+        "method": "get",
+        "path": "/securetrack/api/devices/{id}/rules"
+      },
+      {
+        "fnName": "getServiceGroupsContainingSpecifiedServiceObjects",
+        "method": "get",
+        "path": "/securetrack/api/services/{id}/groups"
+      },
+      {
+        "fnName": "getSpecificService",
+        "method": "get",
+        "path": "/securetrack/api/revisions/{revision_id}/services/{ids}"
+      },
+      {
+        "fnName": "getDevicesDevice_idServicesIds",
+        "method": "get",
+        "path": "/securetrack/api/devices/{device_id}/services/{ids}"
+      },
+      {
+        "fnName": "getRulesContainingSpecifiedServiceObject",
+        "method": "get",
+        "path": "/securetrack/api/services/{id}/rules"
+      },
+      {
+        "fnName": "getServicesByRevision",
+        "method": "get",
+        "path": "/securetrack/api/revisions/{id}/services"
+      },
+      {
+        "fnName": "getServicesObjectsMatchingSpecifiedCriteria",
+        "method": "get",
+        "path": "/securetrack/api/services/search"
+      },
+      {
+        "fnName": "getServicesByDevice",
+        "method": "get",
+        "path": "/securetrack/api/devices/{id}/services"
+      },
+      {
+        "fnName": "getTimeObjectsByRevision",
+        "method": "get",
+        "path": "/securetrack/api/revisions/{id}/time_objects"
+      },
+      {
+        "fnName": "getTimeObjectsByDevice",
+        "method": "get",
+        "path": "/securetrack/api/devices/{id}/time_objects"
+      },
+      {
+        "fnName": "getSpecificTimeObject",
+        "method": "get",
+        "path": "/securetrack/api/revisions/{revision_id}/time_objects/{ids}"
+      },
+      {
+        "fnName": "getPolicyRelevanceMetricsForTraffic",
+        "method": "post",
+        "path": "/securetrack/api/traffic_policy/"
+      },
+      {
+        "fnName": "startATaskToCalculateViolationsForAnAccessRequest",
+        "method": "post",
+        "path": "/securetrack/api/violations/access_requests/task"
+      },
+      {
+        "fnName": "getViolationTaskResults",
+        "method": "get",
+        "path": "/securetrack/api/violations/access_requests/result/{taskId}"
+      },
+      {
+        "fnName": "getViolationTaskStatus",
+        "method": "get",
+        "path": "/securetrack/api/violations/access_requests/status/{taskId}"
+      },
+      {
+        "fnName": "cancelViolationTask",
+        "method": "delete",
+        "path": "/securetrack/api/violations/access_requests/task/{taskId}"
+      },
+      {
+        "fnName": "getViolationsForAnAccessRequest",
+        "method": "post",
+        "path": "/securetrack/api/violations/access_requests/sync"
+      },
+      {
+        "fnName": "deleteAlertsByIds",
+        "method": "delete",
+        "path": "/securetrack/api/security_policies/alerts/{ids}"
+      },
+      {
+        "fnName": "getASpecificAlert",
+        "method": "get",
+        "path": "/securetrack/api/security_policies/alerts/{id}"
+      },
+      {
+        "fnName": "updateAnAlert",
+        "method": "put",
+        "path": "/securetrack/api/security_policies/alerts/{id}"
+      },
+      {
+        "fnName": "createAnAlert",
+        "method": "post",
+        "path": "/securetrack/api/security_policies/alerts/"
+      },
+      {
+        "fnName": "getAlerts",
+        "method": "get",
+        "path": "/securetrack/api/security_policies/alerts/"
+      },
+      {
+        "fnName": "deleteCloudTagPolicy",
+        "method": "delete",
+        "path": "/securetrack/api/policies/{policyId}"
+      },
+      {
+        "fnName": "replaceACloudTagPolicy",
+        "method": "put",
+        "path": "/securetrack/api/policies/{policyId}"
+      },
+      {
+        "fnName": "modifyACloudTagPolicy",
+        "method": "patch",
+        "path": "/securetrack/api/policies/{policyId}"
+      },
+      {
+        "fnName": "getCloudTagPolicy",
+        "method": "get",
+        "path": "/securetrack/api/policies/{policyId}"
+      },
+      {
+        "fnName": "checkIfTagsAreCompliantWithCloudTagPolicies",
+        "method": "post",
+        "path": "/securetrack/api/violation_check/"
+      },
+      {
+        "fnName": "getAllCloudTagPolicies",
+        "method": "get",
+        "path": "/securetrack/api/policies/"
+      },
+      {
+        "fnName": "createACloudTagPolicy",
+        "method": "post",
+        "path": "/securetrack/api/policies/"
+      },
+      {
+        "fnName": "getAllCloudTagPolicyViolationsForAVPC",
+        "method": "get",
+        "path": "/securetrack/api/tag_violations/"
+      },
+      {
+        "fnName": "startATaskToCalculateMatchingRulesForAnException",
+        "method": "post",
+        "path": "/securetrack/api/security_policies/exceptions/{exceptionId}/matching_rules/start"
+      },
+      {
+        "fnName": "getMatchingRulesTaskStatus",
+        "method": "get",
+        "path": "/securetrack/api/security_policies/exceptions/matching_rules/status/{taskId}"
+      },
+      {
+        "fnName": "deleteAnException",
+        "method": "delete",
+        "path": "/securetrack/api/security_policies/exceptions/{exceptionId}"
+      },
+      {
+        "fnName": "getASpecificException",
+        "method": "get",
+        "path": "/securetrack/api/security_policies/exceptions/{exceptionId}"
+      },
+      {
+        "fnName": "cancelMatchingRulesTask",
+        "method": "delete",
+        "path": "/securetrack/api/security_policies/exceptions/matching_rules/{taskId}"
+      },
+      {
+        "fnName": "getAllExceptions",
+        "method": "get",
+        "path": "/securetrack/api/security_policies/exceptions/"
+      },
+      {
+        "fnName": "createAnException",
+        "method": "post",
+        "path": "/securetrack/api/security_policies/exceptions/"
+      },
+      {
+        "fnName": "getMatchingRulesTaskResults",
+        "method": "get",
+        "path": "/securetrack/api/security_policies/exceptions/matching_rules/result/{taskId}"
+      },
+      {
+        "fnName": "getGlobalUnifiedSecurityPolicies",
+        "method": "get",
+        "path": "/securetrack/api/security_policies/global"
+      },
+      {
+        "fnName": "getUnifiedSecurityPolicies",
+        "method": "get",
+        "path": "/securetrack/api/security_policies/"
+      },
+      {
+        "fnName": "getUnifiedSecurityPolicyAsCSV",
+        "method": "get",
+        "path": "/securetrack/api/security_policies/{id}/export"
+      },
+      {
+        "fnName": "deleteUnifiedSecurityPolicy",
+        "method": "delete",
+        "path": "/securetrack/api/security_policies/{id}"
+      },
+      {
+        "fnName": "setManualDeviceMapping",
+        "method": "post",
+        "path": "/securetrack/api/security_policies/{deviceId}/manual_mapping"
+      },
+      {
+        "fnName": "getTheAmountOfViolatingRulesForTheSpecifiedDevice",
+        "method": "get",
+        "path": "/securetrack/api/violating_rules/{deviceId}/count"
+      },
+      {
+        "fnName": "getTheViolatingRulesForTheSpecifiedDevice",
+        "method": "get",
+        "path": "/securetrack/api/violating_rules/{deviceId}/device_violations"
+      }
+    ],
+    "errors": [],
+    "warnings": [],
+    "callsTotal": 180,
+    "callsConverted": 180,
+    "no_mockdata_num": 180
+  }
+}

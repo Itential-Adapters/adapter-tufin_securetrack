@@ -1,0 +1,22 @@
+{
+  "actions": [
+    {
+      "name": "getTheAmountOfViolatingRulesForTheSpecifiedDevice",
+      "protocol": "REST",
+      "method": "GET",
+      "entitypath": "{base_path}/{version}/securetrack/api/violating_rules/{pathv1}/count{query}",
+      "schema": "schema.json",
+      "headers": {},
+      "responseObjects": []
+    },
+    {
+      "name": "getTheViolatingRulesForTheSpecifiedDevice",
+      "protocol": "REST",
+      "method": "GET",
+      "entitypath": "{base_path}/{version}/securetrack/api/violating_rules/{pathv1}/device_violations{query}",
+      "schema": "schema.json",
+      "headers": {},
+      "responseObjects": []
+    }
+  ]
+}

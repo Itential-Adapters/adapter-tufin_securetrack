@@ -1,0 +1,31 @@
+{
+  "actions": [
+    {
+      "name": "getASpecificZonePatternEntryForASpecificZone",
+      "protocol": "REST",
+      "method": "GET",
+      "entitypath": "{base_path}/{version}/securetrack/api/zones/{pathv1}/pattern-entries/{pathv2}{query}",
+      "schema": "schema.json",
+      "headers": {},
+      "responseObjects": []
+    },
+    {
+      "name": "createAZonePatternEntryInASpecificZone",
+      "protocol": "REST",
+      "method": "POST",
+      "entitypath": "{base_path}/{version}/securetrack/api/zones/{pathv1}/pattern-entries{query}",
+      "schema": "schema.json",
+      "headers": {},
+      "responseObjects": []
+    },
+    {
+      "name": "getAllPatternEntriesForSpecificZones",
+      "protocol": "REST",
+      "method": "GET",
+      "entitypath": "{base_path}/{version}/securetrack/api/zones/{pathv1}/pattern-entries{query}",
+      "schema": "schema.json",
+      "headers": {},
+      "responseObjects": []
+    }
+  ]
+}

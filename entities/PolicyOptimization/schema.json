@@ -1,0 +1,38 @@
+{
+  "$id": "schema.json",
+  "type": "object",
+  "schema": "http://json-schema.org/draft-07/schema#",
+  "translate": true,
+  "dynamicfields": true,
+  "properties": {
+    "ph_request_type": {
+      "type": "string",
+      "description": "type of request (internal to adapter)",
+      "default": "getCleanupsResults",
+      "enum": [
+        "getCleanupsResults",
+        "getTheSpecificObjectsOrRulesIdentifiedForTheCleanupResults",
+        "getTheSpecificObjectsOrRulesIdentifiedForTheRiskResults",
+        "getCleanupsByDevice",
+        "getDevicesInRiskResults",
+        "getRisksResults",
+        "getShadowingRulesByDevice",
+        "getDevicesInCleanupResults"
+      ],
+      "external_name": "ph_request_type"
+    },
+    "cleanupId": {
+      "description": "path parameter",
+      "external_name": "cleanup_id"
+    },
+    "riskId": {
+      "description": "path parameter",
+      "external_name": "risk_id"
+    },
+    "deviceId": {
+      "description": "path parameter",
+      "external_name": "device_id"
+    }
+  },
+  "definitions": {}
+}

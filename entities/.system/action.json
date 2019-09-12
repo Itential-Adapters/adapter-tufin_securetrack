@@ -1,0 +1,34 @@
+{
+  "actions": [
+    {
+      "name": "getToken",
+      "protocol": "REST",
+      "method": "POST",
+      "entitypath": "{base_path}/{version}/login",
+      "schema": "schema.json",
+      "headers": {},
+      "responseObjects": [
+        {
+          "type": "default",
+          "key": "",
+          "mockFile": "mockdatafiles/getToken-default.json"
+        }
+      ]
+    },
+    {
+      "name": "healthcheck",
+      "protocol": "REST",
+      "method": "GET",
+      "entitypath": "{base_path}/{version}/healthcheck{query}",
+      "schema": "schema.json",
+      "headers": {},
+      "responseObjects": [
+        {
+          "type": "default",
+          "key": "",
+          "mockFile": "mockdatafiles/healthcheck-default.json"
+        }
+      ]
+    }
+  ]
+}

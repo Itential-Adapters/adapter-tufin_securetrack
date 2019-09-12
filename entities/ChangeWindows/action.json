@@ -1,0 +1,31 @@
+{
+  "actions": [
+    {
+      "name": "getNameAndStatusForAllChangeWindows",
+      "protocol": "REST",
+      "method": "GET",
+      "entitypath": "{base_path}/{version}/securetrack/api/change_windows/{query}",
+      "schema": "schema.json",
+      "headers": {},
+      "responseObjects": []
+    },
+    {
+      "name": "getSchedulingAndDeviceDetailsForASpecificChangeWindow",
+      "protocol": "REST",
+      "method": "GET",
+      "entitypath": "{base_path}/{version}/securetrack/api/change_windows/{pathv1}/tasks/{pathv2}{query}",
+      "schema": "schema.json",
+      "headers": {},
+      "responseObjects": []
+    },
+    {
+      "name": "getAListOfCompletedPolicyChangesForASpecificChangeWindow",
+      "protocol": "REST",
+      "method": "GET",
+      "entitypath": "{base_path}/{version}/securetrack/api/change_windows/{pathv1}/tasks{query}",
+      "schema": "schema.json",
+      "headers": {},
+      "responseObjects": []
+    }
+  ]
+}

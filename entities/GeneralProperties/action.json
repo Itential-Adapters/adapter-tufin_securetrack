@@ -1,0 +1,13 @@
+{
+  "actions": [
+    {
+      "name": "getGeneralProperties",
+      "protocol": "REST",
+      "method": "GET",
+      "entitypath": "{base_path}/{version}/securetrack/api/properties/{query}",
+      "schema": "schema.json",
+      "headers": {},
+      "responseObjects": []
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "actions": [
+    {
+      "name": "determineIfChangesBetweenTwoRevisionsAreAuthorized",
+      "protocol": "REST",
+      "method": "GET",
+      "entitypath": "{base_path}/{version}/securetrack/api/change_authorization/{query}",
+      "schema": "schema.json",
+      "headers": {},
+      "responseObjects": []
+    },
+    {
+      "name": "compareRevisionsOnTwoDifferentDevicesInTermsOfTraffic",
+      "protocol": "REST",
+      "method": "POST",
+      "entitypath": "{base_path}/{version}/securetrack/api/change_authorization/policyTrafficComparison{query}",
+      "schema": "schema.json",
+      "headers": {},
+      "responseObjects": []
+    }
+  ]
+}

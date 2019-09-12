@@ -1,0 +1,33 @@
+{
+  "$id": "schema.json",
+  "type": "object",
+  "schema": "http://json-schema.org/draft-07/schema#",
+  "translate": true,
+  "dynamicfields": true,
+  "properties": {
+    "ph_request_type": {
+      "type": "string",
+      "description": "type of request (internal to adapter)",
+      "default": "getASpecificRule",
+      "enum": [
+        "getASpecificRule",
+        "getSpecificRule",
+        "getRuleCountPerDevice",
+        "getRevisionsRevisionIdRulesIds",
+        "getRulesByRevision",
+        "findRules",
+        "getRulesByDevice"
+      ],
+      "external_name": "ph_request_type"
+    },
+    "deviceId": {
+      "description": "path parameter",
+      "external_name": "device_id"
+    },
+    "revisionId": {
+      "description": "path parameter",
+      "external_name": "revision_id"
+    }
+  },
+  "definitions": {}
+}

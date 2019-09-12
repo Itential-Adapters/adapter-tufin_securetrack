@@ -1,0 +1,25 @@
+{
+  "$id": "schema.json",
+  "type": "object",
+  "schema": "http://json-schema.org/draft-07/schema#",
+  "translate": true,
+  "dynamicfields": true,
+  "properties": {
+    "ph_request_type": {
+      "type": "string",
+      "description": "type of request (internal to adapter)",
+      "default": "getASpecificZonePatternEntryForASpecificZone",
+      "enum": [
+        "getASpecificZonePatternEntryForASpecificZone",
+        "createAZonePatternEntryInASpecificZone",
+        "getAllPatternEntriesForSpecificZones"
+      ],
+      "external_name": "ph_request_type"
+    },
+    "zoneId": {
+      "description": "path parameter",
+      "external_name": "zone_id"
+    }
+  },
+  "definitions": {}
+}

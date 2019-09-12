@@ -1,0 +1,39 @@
+{
+  "id": "Adapter-tufin_securetrack",
+  "properties": {
+    "protocol": "https",
+    "host": "localhost",
+    "port": 443,
+    "version": "",
+    "base_path": "/",
+    "stub": true,
+    "authentication": {
+      "auth_method": "no_authentication"
+    },
+    "healthcheck": {
+      "type": "none"
+    },
+    "request": {
+      "number_retries": 3,
+      "limit_retry_error": 0,
+      "attempt_timeout": 5000,
+      "healthcheck_on_timeout": true,
+      "archiving": false
+    },
+    "throttle": {
+      "throttle_enabled": false
+    },
+    "proxy": {
+      "enabled": false
+    },
+    "ssl": {
+      "enabled": false
+    },
+    "cache_location": "none"
+  },
+  "type": "Tufin_securetrack",
+  "groups": [],
+  "brokers": [],
+  "logLevel": "none",
+  "timeout": 120000
+}
