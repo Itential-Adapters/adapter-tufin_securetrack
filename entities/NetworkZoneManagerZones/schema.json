@@ -31,18 +31,42 @@
     },
     "parentId": {
       "description": "path parameter",
+      "parse": false,
+      "encode": false,
+      "encrypt": {
+        "type": "AES",
+        "key": ""
+      },
       "external_name": "parent_id"
     },
     "childIds": {
       "description": "path parameter",
+      "parse": false,
+      "encode": false,
+      "encrypt": {
+        "type": "AES",
+        "key": ""
+      },
       "external_name": "child_ids"
     },
     "childId": {
       "description": "path parameter",
+      "parse": false,
+      "encode": false,
+      "encrypt": {
+        "type": "AES",
+        "key": ""
+      },
       "external_name": "child_id"
     },
     "parentIds": {
       "description": "path parameter",
+      "parse": false,
+      "encode": false,
+      "encrypt": {
+        "type": "AES",
+        "key": ""
+      },
       "external_name": "parent_ids"
     }
   },

@@ -19,6 +19,12 @@
     },
     "deviceId": {
       "description": "path parameter",
+      "parse": false,
+      "encode": false,
+      "encrypt": {
+        "type": "AES",
+        "key": ""
+      },
       "external_name": "device_id"
     }
   },

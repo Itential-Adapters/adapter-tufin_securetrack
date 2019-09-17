@@ -269,14 +269,13 @@ class TufinSecuretrack extends AdapterBaseCl {
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -362,14 +361,13 @@ class TufinSecuretrack extends AdapterBaseCl {
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -455,14 +453,13 @@ class TufinSecuretrack extends AdapterBaseCl {
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -542,14 +539,13 @@ class TufinSecuretrack extends AdapterBaseCl {
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -635,14 +631,13 @@ class TufinSecuretrack extends AdapterBaseCl {
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -722,14 +717,13 @@ class TufinSecuretrack extends AdapterBaseCl {
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -815,14 +809,13 @@ class TufinSecuretrack extends AdapterBaseCl {
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -947,14 +940,13 @@ class TufinSecuretrack extends AdapterBaseCl {
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -1085,14 +1077,13 @@ class TufinSecuretrack extends AdapterBaseCl {
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -1172,14 +1163,13 @@ class TufinSecuretrack extends AdapterBaseCl {
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -1259,14 +1249,13 @@ class TufinSecuretrack extends AdapterBaseCl {
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -1346,14 +1335,13 @@ class TufinSecuretrack extends AdapterBaseCl {
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -1433,14 +1421,13 @@ class TufinSecuretrack extends AdapterBaseCl {
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -1520,14 +1507,13 @@ class TufinSecuretrack extends AdapterBaseCl {
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -1607,14 +1593,13 @@ class TufinSecuretrack extends AdapterBaseCl {
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -1694,14 +1679,13 @@ class TufinSecuretrack extends AdapterBaseCl {
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -2013,14 +1997,13 @@ class TufinSecuretrack extends AdapterBaseCl {
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -2100,14 +2083,13 @@ class TufinSecuretrack extends AdapterBaseCl {
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -2187,14 +2169,13 @@ class TufinSecuretrack extends AdapterBaseCl {
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -2274,14 +2255,13 @@ class TufinSecuretrack extends AdapterBaseCl {
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -2429,14 +2409,13 @@ class TufinSecuretrack extends AdapterBaseCl {
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -2590,14 +2569,13 @@ class TufinSecuretrack extends AdapterBaseCl {
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -2790,14 +2768,13 @@ class TufinSecuretrack extends AdapterBaseCl {
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -2922,14 +2899,13 @@ class TufinSecuretrack extends AdapterBaseCl {
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -3009,14 +2985,13 @@ class TufinSecuretrack extends AdapterBaseCl {
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -3097,14 +3072,13 @@ Currently supported types: Panorama, FortiManager, Cisco ASA. Please see example
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -3229,14 +3203,13 @@ Currently supported types: Panorama, FortiManager, Cisco ASA. Please see example
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -3317,14 +3290,13 @@ SecureTrack for a specific Task ID.  For a list of devices, the status of each d
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -3472,14 +3444,13 @@ SecureTrack for a specific Task ID.  For a list of devices, the status of each d
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -3565,14 +3536,13 @@ SecureTrack for a specific Task ID.  For a list of devices, the status of each d
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -3698,14 +3668,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -3785,14 +3754,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -3872,14 +3840,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -3959,14 +3926,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -4046,14 +4012,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -4133,14 +4098,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -4226,14 +4190,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -4319,14 +4282,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -4406,14 +4368,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -4538,14 +4499,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -4625,14 +4585,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -4712,14 +4671,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -4805,14 +4763,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -5027,14 +4984,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -5301,14 +5257,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -5388,14 +5343,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -5475,14 +5429,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -5900,14 +5853,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -6038,14 +5990,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -6131,14 +6082,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -6218,14 +6168,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -6311,14 +6260,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -6484,14 +6432,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -6583,14 +6530,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -6750,14 +6696,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -6837,14 +6782,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -6998,14 +6942,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -7239,14 +7182,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -7689,14 +7631,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -7776,14 +7717,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -7863,14 +7803,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -7950,14 +7889,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -8037,14 +7975,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -8124,14 +8061,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -8211,14 +8147,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -8298,14 +8233,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -8385,14 +8319,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -8472,14 +8405,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -8559,14 +8491,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -8771,14 +8702,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -8870,14 +8800,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -8969,14 +8898,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -9136,14 +9064,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -9268,14 +9195,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -9355,14 +9281,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -9442,14 +9367,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -9529,14 +9453,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -9661,14 +9584,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -9748,14 +9670,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -9835,14 +9756,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -9922,14 +9842,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -10009,14 +9928,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -10096,14 +10014,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -10189,14 +10106,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -10276,14 +10192,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -10369,14 +10284,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -10507,14 +10421,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -10594,14 +10507,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -10681,14 +10593,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -10768,14 +10679,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -10855,14 +10765,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -10948,14 +10857,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -11041,14 +10949,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -11128,14 +11035,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -11215,14 +11121,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -11347,14 +11252,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -11434,14 +11338,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -11521,14 +11424,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -11614,14 +11516,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -11701,14 +11602,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -11788,14 +11688,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -11875,14 +11774,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -11962,14 +11860,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -12117,14 +12014,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -12272,14 +12168,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -12365,14 +12260,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -12452,14 +12346,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -12584,14 +12477,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -12677,14 +12569,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -12764,14 +12655,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -12851,14 +12741,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -12938,14 +12827,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -13070,14 +12958,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -13276,14 +13163,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -13363,14 +13249,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -13450,14 +13335,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -13650,14 +13534,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -13737,14 +13620,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -14056,14 +13938,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -14143,14 +14024,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
@@ -14230,14 +14110,13 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     });
 
     // if you want to expose addlHeaders to workflow, add it to the method signature here and in pronghorn.json
-    const addlHeaders = null;
-    let thisHeaderData = addlHeaders;
+    let thisHeaderData = null;
 
     // if the additional headers was passed in as a string parse the json into an object
     if (thisHeaderData !== null && thisHeaderData.constructor === String) {
       try {
         // parse the additional headers object that was passed in
-        thisHeaderData = JSON.parse(addlHeaders);
+        thisHeaderData = JSON.parse(thisHeaderData);
       } catch (err) {
         const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'addlHeaders string must be a stringified JSON', [], null, null, null);
         log.error(`${origin}: ${errorObj.IAPerror.displayString}`);

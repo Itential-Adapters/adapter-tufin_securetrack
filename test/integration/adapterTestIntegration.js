@@ -365,6 +365,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     */
 
     const additionalPolicyFieldsRevisionId = 'fakedata';
+
     describe('#getAdditionalParametersIdentitiesByRevision - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -391,6 +392,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const additionalPolicyFieldsIds = 'fakedata';
+
     describe('#getSpecificAdditionalParameterIdentity - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -442,6 +444,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const applicationIDsId = 'fakedata';
+
     describe('#getApplicationIdentitiesByDevice - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -468,6 +471,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const applicationIDsIds = 'fakedata';
+
     describe('#getSpecificApplicationIdentity - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -519,6 +523,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const applicationIDsRevisionId = 'fakedata';
+
     describe('#getRevisionsRevisionIdApplicationsIds - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -545,6 +550,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const changeAuthorizationCompareRevisionsOnTwoDifferentDevicesInTermsOfTrafficBodyParam = {};
+
     describe('#compareRevisionsOnTwoDifferentDevicesInTermsOfTraffic - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -621,6 +627,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const changeWindowsUid = 'fakedata';
+
     describe('#getAListOfCompletedPolicyChangesForASpecificChangeWindow - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -647,6 +654,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const changeWindowsTaskId = 'fakedata';
+
     describe('#getSchedulingAndDeviceDetailsForASpecificChangeWindow - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -673,6 +681,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const deviceInterfacesAndZonesId = 'fakedata';
+
     describe('#getZonesAndNetworkInterfacesThatParticipateInSubPolicies - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -799,6 +808,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const domainsAddADomainBodyParam = {};
+
     describe('#addADomain - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -851,6 +861,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
 
     const domainsId = 'fakedata';
     const domainsUpdateADomainBodyParam = {};
+
     describe('#updateADomain - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -927,6 +938,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const iPsecVPNDeviceId = 'fakedata';
+
     describe('#getCheckPointVPNIPSecCommunitiesAndGateways - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -978,6 +990,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const iPsecVPNId = 'fakedata';
+
     describe('#getCiscoCryptographicMapsByDevice - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -1029,6 +1042,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const internetObjectsCreateNewInternetRepresentationForADeviceBodyParam = {};
+
     describe('#createNewInternetRepresentationForADevice - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -1056,6 +1070,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
 
     const internetObjectsDeviceId = 'fakedata';
     const internetObjectsUpdateInternetRepresentationForDeviceBodyParam = {};
+
     describe('#updateInternetRepresentationForDevice - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -1132,6 +1147,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const lDAPReturnEntriesThatExactlyMatchOneOfTheGivenStringsBodyParam = {};
+
     describe('#returnEntriesThatExactlyMatchOneOfTheGivenStrings - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -1158,6 +1174,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const lDAPReturnLDAPEntriesWhichMatchTheGivenSearchCriteriaBodyParam = {};
+
     describe('#returnLDAPEntriesWhichMatchTheGivenSearchCriteria - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -1234,6 +1251,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const monitoredDevicesAddOfflineDeviceBodyParam = {};
+
     describe('#addOfflineDevice - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -1260,6 +1278,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const monitoredDevicesAddDevicesToSecureTrackBodyParam = {};
+
     describe('#addDevicesToSecureTrack - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -1286,6 +1305,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const monitoredDevicesImportManagedDevicesBodyParam = {};
+
     describe('#importManagedDevices - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -1312,6 +1332,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const monitoredDevicesAddConfigurationForOfflineDeviceBodyParam = {};
+
     describe('#addConfigurationForOfflineDevice - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -1388,6 +1409,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const monitoredDevicesTaskUid = 'fakedata';
+
     describe('#getSpecificTaskResultsOfBulkOperationsOnDevices - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -1415,6 +1437,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
 
     const monitoredDevicesDeviceId = 'fakedata';
     const monitoredDevicesUpdateOfflineDeviceBodyParam = {};
+
     describe('#updateOfflineDevice - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -1441,6 +1464,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const monitoredDevicesId = 'fakedata';
+
     describe('#getSpecificDevice - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -1517,6 +1541,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const nATPoliciesId = 'fakedata';
+
     describe('#getNATObjectsByDevice - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -1594,6 +1619,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
 
     const networkObjectsDeviceId = 'fakedata';
     const networkObjectsIds = 'fakedata';
+
     describe('#getSpecificNetworkObject - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -1620,6 +1646,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const networkObjectsId = 'fakedata';
+
     describe('#getNetworkObjectsByDevice - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -1746,6 +1773,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const networkObjectsRevisionId = 'fakedata';
+
     describe('#getSpecificNetworkObjectsByRevision - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -1772,6 +1800,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const networkTopologyAddGenericDeviceToTopologyModelBodyParam = {};
+
     describe('#addGenericDeviceToTopologyModel - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -1798,6 +1827,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const networkTopologyCreateAJoinedTopologyCloudBodyParam = {};
+
     describe('#createAJoinedTopologyCloud - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -1824,6 +1854,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const networkTopologySynchronizeTheTopologyModelBodyParam = {};
+
     describe('#synchronizeTheTopologyModel - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -1951,6 +1982,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
 
     const networkTopologyId = 'fakedata';
     const networkTopologyUpdateAnExistingGenericDeviceInTheTopologyModelBodyParam = {};
+
     describe('#updateAnExistingGenericDeviceInTheTopologyModel - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -2027,6 +2059,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const networkTopologyCloudId = 'fakedata';
+
     describe('#getCloudInformation - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -2078,6 +2111,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const networkTopologyUpdateACloudBodyParam = {};
+
     describe('#updateACloud - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -2280,6 +2314,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
 
     const networkZoneManagerPatternsZoneId = 'fakedata';
     const networkZoneManagerPatternsCreateAZonePatternEntryInASpecificZoneBodyParam = {};
+
     describe('#createAZonePatternEntryInASpecificZone - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -2306,6 +2341,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const networkZoneManagerPatternsIds = 'fakedata';
+
     describe('#getAllPatternEntriesForSpecificZones - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -2332,6 +2368,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const networkZoneManagerPatternsId = 'fakedata';
+
     describe('#getASpecificZonePatternEntryForASpecificZone - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -2359,6 +2396,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
 
     const networkZoneManagerSubnetsZoneId = 'fakedata';
     const networkZoneManagerSubnetsCreateAZoneEntryBodyParam = {};
+
     describe('#createAZoneEntry - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -2385,6 +2423,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const networkZoneManagerSubnetsIds = 'fakedata';
+
     describe('#getEntriesForAZone - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -2412,6 +2451,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
 
     const networkZoneManagerSubnetsZoneIds = 'fakedata';
     const networkZoneManagerSubnetsModifyMultipleExistingZoneEntriesBodyParam = {};
+
     describe('#modifyMultipleExistingZoneEntries - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -2439,6 +2479,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
 
     const networkZoneManagerSubnetsId = 'fakedata';
     const networkZoneManagerSubnetsModifyAZoneEntryBodyParam = {};
+
     describe('#modifyAZoneEntry - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -2490,6 +2531,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const networkZoneManagerZonesMapNetworkElementsToSecurityZonesBodyParam = {};
+
     describe('#mapNetworkElementsToSecurityZones - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -2516,6 +2558,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const networkZoneManagerZonesCreateAZoneBodyParam = {};
+
     describe('#createAZone - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -2543,6 +2586,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
 
     const networkZoneManagerZonesIds = 'fakedata';
     const networkZoneManagerZonesImportAZoneBodyParam = {};
+
     describe('#importAZone - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -2621,6 +2665,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     const networkZoneManagerZonesChildId = 'fakedata';
     const networkZoneManagerZonesParentIds = 'fakedata';
     const networkZoneManagerZonesAddAZoneAsAnAncestorToAZoneBodyParam = {};
+
     describe('#addAZoneAsAnAncestorToAZone - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -2723,6 +2768,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
 
     const networkZoneManagerZonesId = 'fakedata';
     const networkZoneManagerZonesModifyAZoneBodyParam = {};
+
     describe('#modifyAZone - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -2776,6 +2822,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     const networkZoneManagerZonesParentId = 'fakedata';
     const networkZoneManagerZonesChildIds = 'fakedata';
     const networkZoneManagerZonesAddAZoneAsADescendantToAZoneBodyParam = {};
+
     describe('#addAZoneAsADescendantToAZone - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -2802,6 +2849,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const policiesAndSubPoliciesDeviceId = 'fakedata';
+
     describe('#getListOfSubPoliciesBindingsWithInputAndOrOutputInterfaces - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -2853,6 +2901,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const policiesAndSubPoliciesId = 'fakedata';
+
     describe('#getSubPoliciesBindingsByDevice - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -2981,6 +3030,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     const policyBrowserFormerlyRuleDocumentationId = 'fakedata';
     const policyBrowserFormerlyRuleDocumentationRuleId = 'fakedata';
     const policyBrowserFormerlyRuleDocumentationModifySpecificRuleDocumentationBodyParam = {};
+
     describe('#modifySpecificRuleDocumentation - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -3032,6 +3082,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const policyBrowserFormerlyRuleDocumentationPutRevisionsIdRulesRuleIdDocumentationBodyParam = {};
+
     describe('#putRevisionsIdRulesRuleIdDocumentation - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -3108,6 +3159,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const policyOptimizationCleanupId = 'fakedata';
+
     describe('#getDevicesInCleanupResults - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -3159,6 +3211,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const policyOptimizationDeviceId = 'fakedata';
+
     describe('#getCleanupsByDevice - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -3235,6 +3288,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const policyOptimizationRiskId = 'fakedata';
+
     describe('#getDevicesInRiskResults - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -3286,6 +3340,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const revisionsId = 'fakedata';
+
     describe('#getLatestRevisionByDevice - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -3337,6 +3392,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const revisionsRevId = 'fakedata';
+
     describe('#getSpecificRevision - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -3364,6 +3420,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
 
     const ruleUsageDeviceId = 'fakedata';
     const ruleUsageRuleUid = 'fakedata';
+
     describe('#getLastHitForASpecificRule - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -3416,6 +3473,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
 
     const securityRulesDeviceId = 'fakedata';
     const securityRulesIds = 'fakedata';
+
     describe('#getSpecificRule - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -3442,6 +3500,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const securityRulesId = 'fakedata';
+
     describe('#getRulesByDevice - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -3493,6 +3552,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const securityRulesRevisionId = 'fakedata';
+
     describe('#getRevisionsRevisionIdRulesIds - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -3569,6 +3629,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const securityRulesRuleId = 'fakedata';
+
     describe('#getASpecificRule - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -3596,6 +3657,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
 
     const servicesAndPortsDeviceId = 'fakedata';
     const servicesAndPortsIds = 'fakedata';
+
     describe('#getDevicesDeviceIdServicesIds - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -3622,6 +3684,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const servicesAndPortsId = 'fakedata';
+
     describe('#getServicesByDevice - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -3673,6 +3736,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const servicesAndPortsRevisionId = 'fakedata';
+
     describe('#getSpecificService - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -3774,6 +3838,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const timeObjectsId = 'fakedata';
+
     describe('#getTimeObjectsByDevice - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -3826,6 +3891,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
 
     const timeObjectsRevisionId = 'fakedata';
     const timeObjectsIds = 'fakedata';
+
     describe('#getSpecificTimeObject - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -3852,6 +3918,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const trafficPolicyMatcherGetPolicyRelevanceMetricsForTrafficBodyParam = {};
+
     describe('#getPolicyRelevanceMetricsForTraffic - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -3878,6 +3945,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const unifiedSecurityPolicyAccessRequestViolationsGetViolationsForAnAccessRequestBodyParam = {};
+
     describe('#getViolationsForAnAccessRequest - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -3904,6 +3972,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const unifiedSecurityPolicyAccessRequestViolationsStartATaskToCalculateViolationsForAnAccessRequestBodyParam = {};
+
     describe('#startATaskToCalculateViolationsForAnAccessRequest - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -3930,6 +3999,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const unifiedSecurityPolicyAccessRequestViolationsTaskId = 'fakedata';
+
     describe('#getViolationTaskResults - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -3981,6 +4051,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const unifiedSecurityPolicyAlertsCreateAnAlertBodyParam = {};
+
     describe('#createAnAlert - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -4033,6 +4104,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
 
     const unifiedSecurityPolicyAlertsId = 'fakedata';
     const unifiedSecurityPolicyAlertsUpdateAnAlertBodyParam = {};
+
     describe('#updateAnAlert - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -4084,6 +4156,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const unifiedSecurityPolicyCloudTagPolicyCreateACloudTagPolicyBodyParam = {};
+
     describe('#createACloudTagPolicy - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -4110,6 +4183,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const unifiedSecurityPolicyCloudTagPolicyCheckIfTagsAreCompliantWithCloudTagPoliciesBodyParam = {};
+
     describe('#checkIfTagsAreCompliantWithCloudTagPolicies - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -4162,6 +4236,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
 
     const unifiedSecurityPolicyCloudTagPolicyPolicyId = 'fakedata';
     const unifiedSecurityPolicyCloudTagPolicyReplaceACloudTagPolicyBodyParam = {};
+
     describe('#replaceACloudTagPolicy - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -4263,6 +4338,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const unifiedSecurityPolicyExceptionsCreateAnExceptionBodyParam = {};
+
     describe('#createAnException - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -4290,6 +4366,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
 
     const unifiedSecurityPolicyExceptionsExceptionId = 'fakedata';
     const unifiedSecurityPolicyExceptionsStartATaskToCalculateMatchingRulesForAnExceptionBodyParam = {};
+
     describe('#startATaskToCalculateMatchingRulesForAnException - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -4341,6 +4418,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const unifiedSecurityPolicyExceptionsTaskId = 'fakedata';
+
     describe('#getMatchingRulesTaskResults - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -4418,6 +4496,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
 
     const unifiedSecurityPolicySecurityZoneMatrixDeviceId = 'fakedata';
     const unifiedSecurityPolicySecurityZoneMatrixSetManualDeviceMappingBodyParam = {};
+
     describe('#setManualDeviceMapping - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -4494,6 +4573,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const unifiedSecurityPolicySecurityZoneMatrixId = 'fakedata';
+
     describe('#getUnifiedSecurityPolicyAsCSV - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -4520,6 +4600,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const unifiedSecurityPolicyViolationsDeviceId = 'fakedata';
+
     describe('#getTheAmountOfViolatingRulesForTheSpecifiedDevice - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -4846,6 +4927,7 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
     });
 
     const unifiedSecurityPolicyAlertsIds = 'fakedata';
+
     describe('#deleteAlertsByIds - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
