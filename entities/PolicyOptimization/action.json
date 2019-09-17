@@ -5,72 +5,160 @@
       "protocol": "REST",
       "method": "GET",
       "entitypath": "{base_path}/{version}/securetrack/api/cleanup/{query}",
-      "schema": "schema.json",
+      "requestSchema": "schema.json",
+      "responseSchema": "schema.json",
+      "timeout": 0,
+      "sendEmpty": false,
+      "requestDatatype": "JSON",
+      "responseDatatype": "JSON",
       "headers": {},
-      "responseObjects": []
+      "responseObjects": [
+        {
+          "type": "default",
+          "key": "",
+          "mockFile": ""
+        }
+      ]
     },
     {
       "name": "getTheSpecificObjectsOrRulesIdentifiedForTheCleanupResults",
       "protocol": "REST",
       "method": "GET",
       "entitypath": "{base_path}/{version}/securetrack/api/cleanup/{pathv1}/instances{query}",
-      "schema": "schema.json",
+      "requestSchema": "schema.json",
+      "responseSchema": "schema.json",
+      "timeout": 0,
+      "sendEmpty": false,
+      "requestDatatype": "JSON",
+      "responseDatatype": "JSON",
       "headers": {},
-      "responseObjects": []
+      "responseObjects": [
+        {
+          "type": "default",
+          "key": "",
+          "mockFile": ""
+        }
+      ]
     },
     {
       "name": "getTheSpecificObjectsOrRulesIdentifiedForTheRiskResults",
       "protocol": "REST",
       "method": "GET",
       "entitypath": "{base_path}/{version}/securetrack/api/risk/{pathv1}/instances{query}",
-      "schema": "schema.json",
+      "requestSchema": "schema.json",
+      "responseSchema": "schema.json",
+      "timeout": 0,
+      "sendEmpty": false,
+      "requestDatatype": "JSON",
+      "responseDatatype": "JSON",
       "headers": {},
-      "responseObjects": []
+      "responseObjects": [
+        {
+          "type": "default",
+          "key": "",
+          "mockFile": ""
+        }
+      ]
     },
     {
       "name": "getCleanupsByDevice",
       "protocol": "REST",
       "method": "GET",
       "entitypath": "{base_path}/{version}/securetrack/api/devices/{pathv1}/cleanups{query}",
-      "schema": "schema.json",
+      "requestSchema": "schema.json",
+      "responseSchema": "schema.json",
+      "timeout": 0,
+      "sendEmpty": false,
+      "requestDatatype": "JSON",
+      "responseDatatype": "JSON",
       "headers": {},
-      "responseObjects": []
+      "responseObjects": [
+        {
+          "type": "default",
+          "key": "",
+          "mockFile": ""
+        }
+      ]
     },
     {
       "name": "getDevicesInRiskResults",
       "protocol": "REST",
       "method": "GET",
       "entitypath": "{base_path}/{version}/securetrack/api/risk/{pathv1}/devices{query}",
-      "schema": "schema.json",
+      "requestSchema": "schema.json",
+      "responseSchema": "schema.json",
+      "timeout": 0,
+      "sendEmpty": false,
+      "requestDatatype": "JSON",
+      "responseDatatype": "JSON",
       "headers": {},
-      "responseObjects": []
+      "responseObjects": [
+        {
+          "type": "default",
+          "key": "",
+          "mockFile": ""
+        }
+      ]
     },
     {
       "name": "getRisksResults",
       "protocol": "REST",
       "method": "GET",
       "entitypath": "{base_path}/{version}/securetrack/api/risk/{query}",
-      "schema": "schema.json",
+      "requestSchema": "schema.json",
+      "responseSchema": "schema.json",
+      "timeout": 0,
+      "sendEmpty": false,
+      "requestDatatype": "JSON",
+      "responseDatatype": "JSON",
       "headers": {},
-      "responseObjects": []
+      "responseObjects": [
+        {
+          "type": "default",
+          "key": "",
+          "mockFile": ""
+        }
+      ]
     },
     {
       "name": "getShadowingRulesByDevice",
       "protocol": "REST",
       "method": "GET",
       "entitypath": "{base_path}/{version}/securetrack/api/devices/{pathv1}/shadowing_rules{query}",
-      "schema": "schema.json",
+      "requestSchema": "schema.json",
+      "responseSchema": "schema.json",
+      "timeout": 0,
+      "sendEmpty": false,
+      "requestDatatype": "JSON",
+      "responseDatatype": "JSON",
       "headers": {},
-      "responseObjects": []
+      "responseObjects": [
+        {
+          "type": "default",
+          "key": "",
+          "mockFile": ""
+        }
+      ]
     },
     {
       "name": "getDevicesInCleanupResults",
       "protocol": "REST",
       "method": "GET",
       "entitypath": "{base_path}/{version}/securetrack/api/cleanup/{pathv1}/devices{query}",
-      "schema": "schema.json",
+      "requestSchema": "schema.json",
+      "responseSchema": "schema.json",
+      "timeout": 0,
+      "sendEmpty": false,
+      "requestDatatype": "JSON",
+      "responseDatatype": "JSON",
       "headers": {},
-      "responseObjects": []
+      "responseObjects": [
+        {
+          "type": "default",
+          "key": "",
+          "mockFile": ""
+        }
+      ]
     }
   ]
 }

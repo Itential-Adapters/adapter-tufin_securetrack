@@ -23,14 +23,32 @@
     },
     "cleanupId": {
       "description": "path parameter",
+      "parse": false,
+      "encode": false,
+      "encrypt": {
+        "type": "AES",
+        "key": ""
+      },
       "external_name": "cleanup_id"
     },
     "riskId": {
       "description": "path parameter",
+      "parse": false,
+      "encode": false,
+      "encrypt": {
+        "type": "AES",
+        "key": ""
+      },
       "external_name": "risk_id"
     },
     "deviceId": {
       "description": "path parameter",
+      "parse": false,
+      "encode": false,
+      "encrypt": {
+        "type": "AES",
+        "key": ""
+      },
       "external_name": "device_id"
     }
   },

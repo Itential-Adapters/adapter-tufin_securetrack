@@ -18,6 +18,12 @@
     },
     "taskId": {
       "description": "path parameter",
+      "parse": false,
+      "encode": false,
+      "encrypt": {
+        "type": "AES",
+        "key": ""
+      },
       "external_name": "task_id"
     }
   },

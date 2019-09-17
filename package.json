@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "description": "This adapter integrates with system: sample.",
   "main": "adapter.js",
-  "wizardVersion": "2.34.4",
-  "engineVersion": "1.35.5",
+  "wizardVersion": "2.34.10",
+  "engineVersion": "1.38.0",
   "scripts": {
     "artifactize": "npm i && node utils/packModificationScript.js",
     "preinstall": "node utils/setup.js",
@@ -23,6 +23,7 @@
     "Integration",
     "App-Artifacts",
     "Adapter",
+    "Security",
     "tufin_securetrack",
     "Pre-Release"
   ],
@@ -32,10 +33,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@gitlab.com:itentialopensource/adapters/adapter-tufin_securetrack.git"
+    "url": "git@gitlab.com:itentialopensource/adapters/security/adapter-tufin_securetrack.git"
   },
   "author": "Itential",
-  "homepage": "https://gitlab.com/itentialopensource/adapters/adapter-tufin_securetrack#readme",
+  "homepage": "https://gitlab.com/itentialopensource/adapters/security/adapter-tufin_securetrack#readme",
   "dependencies": {
     "@itentialopensource/adapter-utils": "^4.17.2",
     "ajv": "^6.10.0",

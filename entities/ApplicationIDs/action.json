@@ -5,36 +5,80 @@
       "protocol": "REST",
       "method": "GET",
       "entitypath": "{base_path}/{version}/securetrack/api/devices/{pathv1}/applications{query}",
-      "schema": "schema.json",
+      "requestSchema": "schema.json",
+      "responseSchema": "schema.json",
+      "timeout": 0,
+      "sendEmpty": false,
+      "requestDatatype": "JSON",
+      "responseDatatype": "JSON",
       "headers": {},
-      "responseObjects": []
+      "responseObjects": [
+        {
+          "type": "default",
+          "key": "",
+          "mockFile": ""
+        }
+      ]
     },
     {
       "name": "getSpecificApplicationIdentity",
       "protocol": "REST",
       "method": "GET",
       "entitypath": "{base_path}/{version}/securetrack/api/devices/{pathv1}/applications/{pathv2}{query}",
-      "schema": "schema.json",
+      "requestSchema": "schema.json",
+      "responseSchema": "schema.json",
+      "timeout": 0,
+      "sendEmpty": false,
+      "requestDatatype": "JSON",
+      "responseDatatype": "JSON",
       "headers": {},
-      "responseObjects": []
+      "responseObjects": [
+        {
+          "type": "default",
+          "key": "",
+          "mockFile": ""
+        }
+      ]
     },
     {
       "name": "getApplicationsIdentitiesByRevision",
       "protocol": "REST",
       "method": "GET",
       "entitypath": "{base_path}/{version}/securetrack/api/revisions/{pathv1}/applications{query}",
-      "schema": "schema.json",
+      "requestSchema": "schema.json",
+      "responseSchema": "schema.json",
+      "timeout": 0,
+      "sendEmpty": false,
+      "requestDatatype": "JSON",
+      "responseDatatype": "JSON",
       "headers": {},
-      "responseObjects": []
+      "responseObjects": [
+        {
+          "type": "default",
+          "key": "",
+          "mockFile": ""
+        }
+      ]
     },
     {
       "name": "getRevisionsRevisionIdApplicationsIds",
       "protocol": "REST",
       "method": "GET",
       "entitypath": "{base_path}/{version}/securetrack/api/revisions/{pathv1}/applications/{pathv2}{query}",
-      "schema": "schema.json",
+      "requestSchema": "schema.json",
+      "responseSchema": "schema.json",
+      "timeout": 0,
+      "sendEmpty": false,
+      "requestDatatype": "JSON",
+      "responseDatatype": "JSON",
       "headers": {},
-      "responseObjects": []
+      "responseObjects": [
+        {
+          "type": "default",
+          "key": "",
+          "mockFile": ""
+        }
+      ]
     }
   ]
 }

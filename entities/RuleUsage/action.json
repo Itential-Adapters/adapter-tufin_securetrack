@@ -5,18 +5,40 @@
       "protocol": "REST",
       "method": "GET",
       "entitypath": "{base_path}/{version}/securetrack/api/rule_last_usage/find_all/{pathv1}{query}",
-      "schema": "schema.json",
+      "requestSchema": "schema.json",
+      "responseSchema": "schema.json",
+      "timeout": 0,
+      "sendEmpty": false,
+      "requestDatatype": "JSON",
+      "responseDatatype": "JSON",
       "headers": {},
-      "responseObjects": []
+      "responseObjects": [
+        {
+          "type": "default",
+          "key": "",
+          "mockFile": ""
+        }
+      ]
     },
     {
       "name": "getLastHitForASpecificRule",
       "protocol": "REST",
       "method": "GET",
       "entitypath": "{base_path}/{version}/securetrack/api/rule_last_usage/find/{pathv1}/{pathv2}{query}",
-      "schema": "schema.json",
+      "requestSchema": "schema.json",
+      "responseSchema": "schema.json",
+      "timeout": 0,
+      "sendEmpty": false,
+      "requestDatatype": "JSON",
+      "responseDatatype": "JSON",
       "headers": {},
-      "responseObjects": []
+      "responseObjects": [
+        {
+          "type": "default",
+          "key": "",
+          "mockFile": ""
+        }
+      ]
     }
   ]
 }

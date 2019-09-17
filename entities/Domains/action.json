@@ -5,36 +5,80 @@
       "protocol": "REST",
       "method": "GET",
       "entitypath": "{base_path}/{version}/securetrack/api/domains/{pathv1}{query}",
-      "schema": "schema.json",
+      "requestSchema": "schema.json",
+      "responseSchema": "schema.json",
+      "timeout": 0,
+      "sendEmpty": false,
+      "requestDatatype": "JSON",
+      "responseDatatype": "JSON",
       "headers": {},
-      "responseObjects": []
+      "responseObjects": [
+        {
+          "type": "default",
+          "key": "",
+          "mockFile": ""
+        }
+      ]
     },
     {
       "name": "updateADomain",
       "protocol": "REST",
       "method": "PUT",
       "entitypath": "{base_path}/{version}/securetrack/api/domains/{pathv1}{query}",
-      "schema": "schema.json",
+      "requestSchema": "schema.json",
+      "responseSchema": "schema.json",
+      "timeout": 0,
+      "sendEmpty": false,
+      "requestDatatype": "JSON",
+      "responseDatatype": "JSON",
       "headers": {},
-      "responseObjects": []
+      "responseObjects": [
+        {
+          "type": "default",
+          "key": "",
+          "mockFile": ""
+        }
+      ]
     },
     {
       "name": "addADomain",
       "protocol": "REST",
       "method": "POST",
       "entitypath": "{base_path}/{version}/securetrack/api/domains/{query}",
-      "schema": "schema.json",
+      "requestSchema": "schema.json",
+      "responseSchema": "schema.json",
+      "timeout": 0,
+      "sendEmpty": false,
+      "requestDatatype": "JSON",
+      "responseDatatype": "JSON",
       "headers": {},
-      "responseObjects": []
+      "responseObjects": [
+        {
+          "type": "default",
+          "key": "",
+          "mockFile": ""
+        }
+      ]
     },
     {
       "name": "getAllDomains",
       "protocol": "REST",
       "method": "GET",
       "entitypath": "{base_path}/{version}/securetrack/api/domains/{query}",
-      "schema": "schema.json",
+      "requestSchema": "schema.json",
+      "responseSchema": "schema.json",
+      "timeout": 0,
+      "sendEmpty": false,
+      "requestDatatype": "JSON",
+      "responseDatatype": "JSON",
       "headers": {},
-      "responseObjects": []
+      "responseObjects": [
+        {
+          "type": "default",
+          "key": "",
+          "mockFile": ""
+        }
+      ]
     }
   ]
 }
