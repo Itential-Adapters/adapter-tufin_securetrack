@@ -1,6 +1,6 @@
 {
   "name": "@itentialopensource/adapter-tufin_securetrack",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "This adapter integrates with system: sample.",
   "main": "adapter.js",
   "wizardVersion": "2.34.10",
