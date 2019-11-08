@@ -2,7 +2,7 @@
 
 // Set globals
 /* global describe it log pronghornProps */
-/* eslint global-require:warn */
+/* eslint global-require: warn */
 /* eslint no-unused-vars: warn */
 
 // include required items for testing & logging
@@ -51,6 +51,7 @@ global.pronghornProps = {
         base_path: '/',
         version: '',
         cache_location: 'none',
+        save_metric: false,
         protocol,
         stub,
         authentication: {
@@ -78,11 +79,19 @@ global.pronghornProps = {
           avg_runtime: 200
         },
         request: {
+          number_redirects: 0,
           number_retries: 3,
           limit_retry_error: 0,
           failover_codes: [],
           attempt_timeout: attemptTimeout,
+          global_request: {
+            payload: {},
+            uriOptions: {},
+            addlHeaders: {},
+            authData: {}
+          },
           healthcheck_on_timeout: true,
+          return_raw: true,
           archiving: false
         },
         proxy: {
@@ -98,6 +107,13 @@ global.pronghornProps = {
           ca_file: '',
           secure_protocol: '',
           ciphers: ''
+        },
+        mongo: {
+          host: '',
+          port: 0,
+          database: '',
+          username: '',
+          password: ''
         }
       }
     }]
@@ -468,6 +484,20 @@ describe('[unit] Tufin_securetrack Adapter Test', () => {
       it('should have an error.json', (done) => {
         try {
           fs.exists('error.json', (val) => {
+            assert.equal(true, val);
+            done();
+          });
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      });
+    });
+
+    describe('sampleProperties.json', () => {
+      it('should have a sampleProperties.json', (done) => {
+        try {
+          fs.exists('sampleProperties.json', (val) => {
             assert.equal(true, val);
             done();
           });

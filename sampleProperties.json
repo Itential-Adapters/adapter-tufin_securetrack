@@ -1,12 +1,13 @@
 {
   "id": "Adapter-tufin_securetrack",
-  "type": "Tufin_securetrack",
+  "type": "TufinSecuretrack",
   "properties": {
     "host": "localhost",
     "port": 443,
     "base_path": "/",
     "version": "",
     "cache_location": "none",
+    "save_metric": true,
     "stub": true,
     "protocol": "https",
     "authentication": {
@@ -46,6 +47,7 @@
         "authData": {}
       },
       "healthcheck_on_timeout": true,
+      "return_raw": false,
       "archiving": false
     },
     "proxy": {
@@ -61,6 +63,13 @@
       "ca_file": "",
       "secure_protocol": "",
       "ciphers": ""
+    },
+    "mongo": {
+      "host": "",
+      "port": 0,
+      "database": "",
+      "username": "",
+      "password": ""
     }
   },
   "groups": [],
