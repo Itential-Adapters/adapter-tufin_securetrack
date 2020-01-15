@@ -2,7 +2,6 @@
   "id": "@itentialopensource/adapter-tufin_securetrack",
   "type": "Adapter",
   "export": "TufinSecuretrack",
-  "displayName": "Tufin_securetrack",
   "title": "Tufin_securetrack",
   "src": "adapter.js",
   "roles": [
@@ -18,21 +17,29 @@
           "name": "revisionId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "revisionId",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getAdditionalParametersIdentitiesByRevision"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getAdditionalParametersIdentitiesByRevision"
+      },
       "task": true
     },
     {
@@ -44,27 +51,39 @@
           "name": "revisionId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "revisionId",
+            "type": "default"
+          }
         },
         {
           "name": "ids",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "ids",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getSpecificAdditionalParameterIdentity"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getSpecificAdditionalParameterIdentity"
+      },
       "task": true
     },
     {
@@ -76,27 +95,39 @@
           "name": "revisionId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "revisionId",
+            "type": "default"
+          }
         },
         {
           "name": "ids",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "ids",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getAURLCategory"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getAURLCategory"
+      },
       "task": true
     },
     {
@@ -108,21 +139,29 @@
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getApplicationIdentitiesByDevice"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getApplicationIdentitiesByDevice"
+      },
       "task": true
     },
     {
@@ -134,27 +173,39 @@
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         },
         {
           "name": "ids",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "ids",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getSpecificApplicationIdentity"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getSpecificApplicationIdentity"
+      },
       "task": true
     },
     {
@@ -166,21 +217,29 @@
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getApplicationsIdentitiesByRevision"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getApplicationsIdentitiesByRevision"
+      },
       "task": true
     },
     {
@@ -192,27 +251,39 @@
           "name": "revisionId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "revisionId",
+            "type": "default"
+          }
         },
         {
           "name": "ids",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "ids",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getRevisionsRevisionIdApplicationsIds"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getRevisionsRevisionIdApplicationsIds"
+      },
       "task": true
     },
     {
@@ -223,15 +294,19 @@
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "GET",
-        "path": "/determineIfChangesBetweenTwoRevisionsAreAuthorized"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "GET",
+        "path": "/determineIfChangesBetweenTwoRevisionsAreAuthorized"
+      },
       "task": true
     },
     {
@@ -243,21 +318,29 @@
           "name": "body",
           "type": "object",
           "info": "POST body parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "body",
+            "type": "object"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/compareRevisionsOnTwoDifferentDevicesInTermsOfTraffic"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/compareRevisionsOnTwoDifferentDevicesInTermsOfTraffic"
+      },
       "task": true
     },
     {
@@ -268,15 +351,19 @@
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "GET",
-        "path": "/getNameAndStatusForAllChangeWindows"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "GET",
+        "path": "/getNameAndStatusForAllChangeWindows"
+      },
       "task": true
     },
     {
@@ -288,27 +375,39 @@
           "name": "uid",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "uid",
+            "type": "default"
+          }
         },
         {
           "name": "taskId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "taskId",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getSchedulingAndDeviceDetailsForASpecificChangeWindow"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getSchedulingAndDeviceDetailsForASpecificChangeWindow"
+      },
       "task": true
     },
     {
@@ -320,21 +419,29 @@
           "name": "uid",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "uid",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getAListOfCompletedPolicyChangesForASpecificChangeWindow"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getAListOfCompletedPolicyChangesForASpecificChangeWindow"
+      },
       "task": true
     },
     {
@@ -346,21 +453,29 @@
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getNetworkInterfacesByDevice"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getNetworkInterfacesByDevice"
+      },
       "task": true
     },
     {
@@ -372,21 +487,29 @@
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getNetworkInterfacesByRevision"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getNetworkInterfacesByRevision"
+      },
       "task": true
     },
     {
@@ -398,21 +521,29 @@
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getDeviceZonesByRevision"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getDeviceZonesByRevision"
+      },
       "task": true
     },
     {
@@ -424,21 +555,29 @@
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getDeviceZonesByDevice"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getDeviceZonesByDevice"
+      },
       "task": true
     },
     {
@@ -450,21 +589,29 @@
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getZonesAndNetworkInterfacesThatParticipateInSubPolicies"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getZonesAndNetworkInterfacesThatParticipateInSubPolicies"
+      },
       "task": true
     },
     {
@@ -476,21 +623,29 @@
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getDomain"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getDomain"
+      },
       "task": true
     },
     {
@@ -502,27 +657,39 @@
           "name": "body",
           "type": "object",
           "info": "PUT body parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "body",
+            "type": "object"
+          }
         },
         {
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/updateADomain"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/updateADomain"
+      },
       "task": true
     },
     {
@@ -534,21 +701,29 @@
           "name": "body",
           "type": "object",
           "info": "POST body parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "body",
+            "type": "object"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/addADomain"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/addADomain"
+      },
       "task": true
     },
     {
@@ -559,15 +734,19 @@
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "GET",
-        "path": "/getAllDomains"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "GET",
+        "path": "/getAllDomains"
+      },
       "task": true
     },
     {
@@ -578,15 +757,19 @@
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "GET",
-        "path": "/getGeneralProperties"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "GET",
+        "path": "/getGeneralProperties"
+      },
       "task": true
     },
     {
@@ -598,21 +781,29 @@
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getCiscoCryptographicMapsByRevision"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getCiscoCryptographicMapsByRevision"
+      },
       "task": true
     },
     {
@@ -624,21 +815,29 @@
           "name": "deviceId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "deviceId",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getCiscoIPsecPolicyAndPeers"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getCiscoIPsecPolicyAndPeers"
+      },
       "task": true
     },
     {
@@ -650,21 +849,29 @@
           "name": "deviceId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "deviceId",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getCheckPointVPNIPSecCommunitiesAndGateways"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getCheckPointVPNIPSecCommunitiesAndGateways"
+      },
       "task": true
     },
     {
@@ -676,21 +883,29 @@
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getCiscoCryptographicMapsByDevice"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getCiscoCryptographicMapsByDevice"
+      },
       "task": true
     },
     {
@@ -702,21 +917,29 @@
           "name": "deviceId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "deviceId",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getResolvedInternetRepresentationForDevice"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getResolvedInternetRepresentationForDevice"
+      },
       "task": true
     },
     {
@@ -728,21 +951,29 @@
           "name": "body",
           "type": "object",
           "info": "POST body parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "body",
+            "type": "object"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/createNewInternetRepresentationForADevice"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/createNewInternetRepresentationForADevice"
+      },
       "task": true
     },
     {
@@ -754,21 +985,29 @@
           "name": "deviceId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "deviceId",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/deleteInternetRepresentationForDevice"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/deleteInternetRepresentationForDevice"
+      },
       "task": true
     },
     {
@@ -780,27 +1019,39 @@
           "name": "body",
           "type": "object",
           "info": "PUT body parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "body",
+            "type": "object"
+          }
         },
         {
           "name": "deviceId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "deviceId",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/updateInternetRepresentationForDevice"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/updateInternetRepresentationForDevice"
+      },
       "task": true
     },
     {
@@ -812,21 +1063,29 @@
           "name": "deviceId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "deviceId",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getInternetRepresentationForDevice"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getInternetRepresentationForDevice"
+      },
       "task": true
     },
     {
@@ -837,15 +1096,19 @@
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "GET",
-        "path": "/getLDAPEntryDetailsByDN"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "GET",
+        "path": "/getLDAPEntryDetailsByDN"
+      },
       "task": true
     },
     {
@@ -857,21 +1120,29 @@
           "name": "body",
           "type": "object",
           "info": "POST body parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "body",
+            "type": "object"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/returnEntriesThatExactlyMatchOneOfTheGivenStrings"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/returnEntriesThatExactlyMatchOneOfTheGivenStrings"
+      },
       "task": true
     },
     {
@@ -882,15 +1153,19 @@
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "GET",
-        "path": "/getTheBaseDNEntryDetails"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "GET",
+        "path": "/getTheBaseDNEntryDetails"
+      },
       "task": true
     },
     {
@@ -902,21 +1177,29 @@
           "name": "body",
           "type": "object",
           "info": "POST body parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "body",
+            "type": "object"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/returnLDAPEntriesWhichMatchTheGivenSearchCriteria"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/returnLDAPEntriesWhichMatchTheGivenSearchCriteria"
+      },
       "task": true
     },
     {
@@ -928,21 +1211,29 @@
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getTextualConfigurationByRevision"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getTextualConfigurationByRevision"
+      },
       "task": true
     },
     {
@@ -954,21 +1245,29 @@
           "name": "body",
           "type": "object",
           "info": "POST body parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "body",
+            "type": "object"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/importManagedDevices"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/importManagedDevices"
+      },
       "task": true
     },
     {
@@ -979,15 +1278,19 @@
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "GET",
-        "path": "/editSecuretrackDevice"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "GET",
+        "path": "/editSecuretrackDevice"
+      },
       "task": true
     },
     {
@@ -999,21 +1302,29 @@
           "name": "body",
           "type": "object",
           "info": "POST body parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "body",
+            "type": "object"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/addDevicesToSecureTrack"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/addDevicesToSecureTrack"
+      },
       "task": true
     },
     {
@@ -1025,21 +1336,29 @@
           "name": "taskUid",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "taskUid",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getSpecificTaskResultsOfBulkOperationsOnDevices"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getSpecificTaskResultsOfBulkOperationsOnDevices"
+      },
       "task": true
     },
     {
@@ -1051,21 +1370,29 @@
           "name": "body",
           "type": "object",
           "info": "POST body parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "body",
+            "type": "object"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/addConfigurationForOfflineDevice"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/addConfigurationForOfflineDevice"
+      },
       "task": true
     },
     {
@@ -1077,21 +1404,29 @@
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getSpecificDevice"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getSpecificDevice"
+      },
       "task": true
     },
     {
@@ -1103,27 +1438,39 @@
           "name": "body",
           "type": "object",
           "info": "PUT body parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "body",
+            "type": "object"
+          }
         },
         {
           "name": "deviceId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "deviceId",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/updateOfflineDevice"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/updateOfflineDevice"
+      },
       "task": true
     },
     {
@@ -1134,15 +1481,19 @@
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "GET",
-        "path": "/getDevices"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "GET",
+        "path": "/getDevices"
+      },
       "task": true
     },
     {
@@ -1154,21 +1505,29 @@
           "name": "body",
           "type": "object",
           "info": "POST body parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "body",
+            "type": "object"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/addOfflineDevice"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/addOfflineDevice"
+      },
       "task": true
     },
     {
@@ -1180,21 +1539,29 @@
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getTextualConfigurationByDevice"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getTextualConfigurationByDevice"
+      },
       "task": true
     },
     {
@@ -1206,21 +1573,29 @@
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getNATObjectsByDevice"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getNATObjectsByDevice"
+      },
       "task": true
     },
     {
@@ -1232,21 +1607,29 @@
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getNATObjectsByRevision"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getNATObjectsByRevision"
+      },
       "task": true
     },
     {
@@ -1258,21 +1641,29 @@
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getNATRulesByDevice"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getNATRulesByDevice"
+      },
       "task": true
     },
     {
@@ -1284,21 +1675,29 @@
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getNetworkGroupsContainingSpecifiedNetworkObject"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getNetworkGroupsContainingSpecifiedNetworkObject"
+      },
       "task": true
     },
     {
@@ -1310,27 +1709,39 @@
           "name": "revisionId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "revisionId",
+            "type": "default"
+          }
         },
         {
           "name": "ids",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "ids",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getSpecificNetworkObjectsByRevision"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getSpecificNetworkObjectsByRevision"
+      },
       "task": true
     },
     {
@@ -1342,27 +1753,39 @@
           "name": "deviceId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "deviceId",
+            "type": "default"
+          }
         },
         {
           "name": "ids",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "ids",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getSpecificNetworkObject"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getSpecificNetworkObject"
+      },
       "task": true
     },
     {
@@ -1374,21 +1797,29 @@
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getNetworkObjectsByRevision"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getNetworkObjectsByRevision"
+      },
       "task": true
     },
     {
@@ -1399,15 +1830,19 @@
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "GET",
-        "path": "/getNetworkObjectsMatchingSpecifiedCriteria"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "GET",
+        "path": "/getNetworkObjectsMatchingSpecifiedCriteria"
+      },
       "task": true
     },
     {
@@ -1419,21 +1854,29 @@
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getRulesContainingSpecifiedNetworkObject"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getRulesContainingSpecifiedNetworkObject"
+      },
       "task": true
     },
     {
@@ -1445,21 +1888,29 @@
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getNetworkObjectsByDevice"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getNetworkObjectsByDevice"
+      },
       "task": true
     },
     {
@@ -1471,21 +1922,29 @@
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getSpecificTopologyCloud"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getSpecificTopologyCloud"
+      },
       "task": true
     },
     {
@@ -1497,27 +1956,39 @@
           "name": "body",
           "type": "object",
           "info": "PUT body parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "body",
+            "type": "object"
+          }
         },
         {
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/updateACloud"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/updateACloud"
+      },
       "task": true
     },
     {
@@ -1528,15 +1999,19 @@
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "GET",
-        "path": "/getTopologySubnets"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "GET",
+        "path": "/getTopologySubnets"
+      },
       "task": true
     },
     {
@@ -1547,15 +2022,19 @@
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "GET",
-        "path": "/getTopologyNetworkInterfacesByDevice"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "GET",
+        "path": "/getTopologyNetworkInterfacesByDevice"
+      },
       "task": true
     },
     {
@@ -1566,15 +2045,19 @@
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "GET",
-        "path": "/getMostSpecificNetworkInterfacesFromWhichAHostIPIsAccessible"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "GET",
+        "path": "/getMostSpecificNetworkInterfacesFromWhichAHostIPIsAccessible"
+      },
       "task": true
     },
     {
@@ -1586,21 +2069,29 @@
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getSpecificTopologySubnet"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getSpecificTopologySubnet"
+      },
       "task": true
     },
     {
@@ -1611,15 +2102,19 @@
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "GET",
-        "path": "/getTopologySynchronizationStatus"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "GET",
+        "path": "/getTopologySynchronizationStatus"
+      },
       "task": true
     },
     {
@@ -1631,21 +2126,29 @@
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/deleteGenericDeviceFromTopologyModel"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/deleteGenericDeviceFromTopologyModel"
+      },
       "task": true
     },
     {
@@ -1657,27 +2160,39 @@
           "name": "body",
           "type": "object",
           "info": "PUT body parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "body",
+            "type": "object"
+          }
         },
         {
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/updateAnExistingGenericDeviceInTheTopologyModel"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/updateAnExistingGenericDeviceInTheTopologyModel"
+      },
       "task": true
     },
     {
@@ -1689,21 +2204,29 @@
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getCloudInternalNetworks"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getCloudInternalNetworks"
+      },
       "task": true
     },
     {
@@ -1715,21 +2238,29 @@
           "name": "cloudId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "cloudId",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getCloudInformation"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getCloudInformation"
+      },
       "task": true
     },
     {
@@ -1741,21 +2272,29 @@
           "name": "body",
           "type": "object",
           "info": "POST body parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "body",
+            "type": "object"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/synchronizeTheTopologyModel"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/synchronizeTheTopologyModel"
+      },
       "task": true
     },
     {
@@ -1766,15 +2305,19 @@
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "GET",
-        "path": "/getTopologyGenericVPNConnections"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "GET",
+        "path": "/getTopologyGenericVPNConnections"
+      },
       "task": true
     },
     {
@@ -1785,15 +2328,19 @@
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "GET",
-        "path": "/getTopologyRoutingTablesForAGivenDevice"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "GET",
+        "path": "/getTopologyRoutingTablesForAGivenDevice"
+      },
       "task": true
     },
     {
@@ -1804,15 +2351,19 @@
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "GET",
-        "path": "/getTopologyCloudSuggestions"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "GET",
+        "path": "/getTopologyCloudSuggestions"
+      },
       "task": true
     },
     {
@@ -1824,21 +2375,29 @@
           "name": "body",
           "type": "object",
           "info": "POST body parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "body",
+            "type": "object"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/addGenericDeviceToTopologyModel"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/addGenericDeviceToTopologyModel"
+      },
       "task": true
     },
     {
@@ -1849,15 +2408,19 @@
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "GET",
-        "path": "/getGenericDevicesThatAreConfiguredInST"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "GET",
+        "path": "/getGenericDevicesThatAreConfiguredInST"
+      },
       "task": true
     },
     {
@@ -1868,15 +2431,19 @@
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "GET",
-        "path": "/getPathImageForSpecifiedTraffic"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "GET",
+        "path": "/getPathImageForSpecifiedTraffic"
+      },
       "task": true
     },
     {
@@ -1887,15 +2454,19 @@
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "GET",
-        "path": "/getPathForSpecifiedTraffic"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "GET",
+        "path": "/getPathForSpecifiedTraffic"
+      },
       "task": true
     },
     {
@@ -1907,21 +2478,29 @@
           "name": "body",
           "type": "object",
           "info": "POST body parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "body",
+            "type": "object"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/createAJoinedTopologyCloud"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/createAJoinedTopologyCloud"
+      },
       "task": true
     },
     {
@@ -1932,15 +2511,19 @@
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "GET",
-        "path": "/getTopologyClouds"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "GET",
+        "path": "/getTopologyClouds"
+      },
       "task": true
     },
     {
@@ -1952,27 +2535,39 @@
           "name": "zoneId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "zoneId",
+            "type": "default"
+          }
         },
         {
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getASpecificZonePatternEntryForASpecificZone"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getASpecificZonePatternEntryForASpecificZone"
+      },
       "task": true
     },
     {
@@ -1984,27 +2579,39 @@
           "name": "body",
           "type": "object",
           "info": "POST body parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "body",
+            "type": "object"
+          }
         },
         {
           "name": "zoneId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "zoneId",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/createAZonePatternEntryInASpecificZone"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/createAZonePatternEntryInASpecificZone"
+      },
       "task": true
     },
     {
@@ -2016,21 +2623,29 @@
           "name": "ids",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "ids",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getAllPatternEntriesForSpecificZones"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getAllPatternEntriesForSpecificZones"
+      },
       "task": true
     },
     {
@@ -2042,27 +2657,39 @@
           "name": "zoneId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "zoneId",
+            "type": "default"
+          }
         },
         {
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getASpecificZoneEntry"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getASpecificZoneEntry"
+      },
       "task": true
     },
     {
@@ -2074,27 +2701,39 @@
           "name": "zoneId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "zoneId",
+            "type": "default"
+          }
         },
         {
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/deleteZoneEntries"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/deleteZoneEntries"
+      },
       "task": true
     },
     {
@@ -2106,33 +2745,49 @@
           "name": "body",
           "type": "object",
           "info": "PUT body parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "body",
+            "type": "object"
+          }
         },
         {
           "name": "zoneId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "zoneId",
+            "type": "default"
+          }
         },
         {
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/modifyAZoneEntry"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/modifyAZoneEntry"
+      },
       "task": true
     },
     {
@@ -2144,33 +2799,49 @@
           "name": "body",
           "type": "object",
           "info": "PUT body parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "body",
+            "type": "object"
+          }
         },
         {
           "name": "zoneIds",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "zoneIds",
+            "type": "default"
+          }
         },
         {
           "name": "ids",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "ids",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/modifyMultipleExistingZoneEntries"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/modifyMultipleExistingZoneEntries"
+      },
       "task": true
     },
     {
@@ -2182,27 +2853,39 @@
           "name": "zoneIds",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "zoneIds",
+            "type": "default"
+          }
         },
         {
           "name": "ids",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "ids",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/deleteZonesZoneIdsEntriesIds"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/deleteZonesZoneIdsEntriesIds"
+      },
       "task": true
     },
     {
@@ -2214,27 +2897,39 @@
           "name": "body",
           "type": "object",
           "info": "POST body parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "body",
+            "type": "object"
+          }
         },
         {
           "name": "zoneId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "zoneId",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/createAZoneEntry"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/createAZoneEntry"
+      },
       "task": true
     },
     {
@@ -2246,21 +2941,29 @@
           "name": "ids",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "ids",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getEntriesForAZone"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getEntriesForAZone"
+      },
       "task": true
     },
     {
@@ -2272,27 +2975,39 @@
           "name": "body",
           "type": "object",
           "info": "POST body parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "body",
+            "type": "object"
+          }
         },
         {
           "name": "ids",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "ids",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/importAZone"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/importAZone"
+      },
       "task": true
     },
     {
@@ -2304,21 +3019,29 @@
           "name": "ids",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "ids",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getConfigurationUsagesForAZone"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getConfigurationUsagesForAZone"
+      },
       "task": true
     },
     {
@@ -2330,27 +3053,39 @@
           "name": "parentId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "parentId",
+            "type": "default"
+          }
         },
         {
           "name": "childIds",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "childIds",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/removeAZoneAsAnDescendantsToAZone"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/removeAZoneAsAnDescendantsToAZone"
+      },
       "task": true
     },
     {
@@ -2362,33 +3097,49 @@
           "name": "body",
           "type": "object",
           "info": "PUT body parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "body",
+            "type": "object"
+          }
         },
         {
           "name": "parentId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "parentId",
+            "type": "default"
+          }
         },
         {
           "name": "childIds",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "childIds",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/addAZoneAsADescendantToAZone"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/addAZoneAsADescendantToAZone"
+      },
       "task": true
     },
     {
@@ -2400,21 +3151,29 @@
           "name": "body",
           "type": "object",
           "info": "POST body parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "body",
+            "type": "object"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/createAZone"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/createAZone"
+      },
       "task": true
     },
     {
@@ -2425,15 +3184,19 @@
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "GET",
-        "path": "/getAllZones"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "GET",
+        "path": "/getAllZones"
+      },
       "task": true
     },
     {
@@ -2444,15 +3207,19 @@
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "GET",
-        "path": "/deleteAllZones"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "GET",
+        "path": "/deleteAllZones"
+      },
       "task": true
     },
     {
@@ -2463,15 +3230,19 @@
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "GET",
-        "path": "/getSharedZones"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "GET",
+        "path": "/getSharedZones"
+      },
       "task": true
     },
     {
@@ -2483,21 +3254,29 @@
           "name": "ids",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "ids",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/deleteAZone"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/deleteAZone"
+      },
       "task": true
     },
     {
@@ -2509,33 +3288,49 @@
           "name": "body",
           "type": "object",
           "info": "PUT body parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "body",
+            "type": "object"
+          }
         },
         {
           "name": "childId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "childId",
+            "type": "default"
+          }
         },
         {
           "name": "parentIds",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "parentIds",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/addAZoneAsAnAncestorToAZone"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/addAZoneAsAnAncestorToAZone"
+      },
       "task": true
     },
     {
@@ -2547,27 +3342,39 @@
           "name": "childId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "childId",
+            "type": "default"
+          }
         },
         {
           "name": "parentIds",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "parentIds",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/removeAZoneAsAnAncestorToAZone"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/removeAZoneAsAnAncestorToAZone"
+      },
       "task": true
     },
     {
@@ -2579,27 +3386,39 @@
           "name": "body",
           "type": "object",
           "info": "PUT body parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "body",
+            "type": "object"
+          }
         },
         {
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/modifyAZone"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/modifyAZone"
+      },
       "task": true
     },
     {
@@ -2611,21 +3430,29 @@
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getASpecificZone"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getASpecificZone"
+      },
       "task": true
     },
     {
@@ -2637,21 +3464,29 @@
           "name": "ids",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "ids",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getAncestorZonesForAZone"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getAncestorZonesForAZone"
+      },
       "task": true
     },
     {
@@ -2663,21 +3498,29 @@
           "name": "ids",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "ids",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getDescendantZonesForAZone"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getDescendantZonesForAZone"
+      },
       "task": true
     },
     {
@@ -2689,21 +3532,29 @@
           "name": "body",
           "type": "object",
           "info": "POST body parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "body",
+            "type": "object"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/mapNetworkElementsToSecurityZones"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/mapNetworkElementsToSecurityZones"
+      },
       "task": true
     },
     {
@@ -2715,21 +3566,29 @@
           "name": "deviceId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "deviceId",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getListOfSubPoliciesBindingsWithInputAndOrOutputInterfaces"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getListOfSubPoliciesBindingsWithInputAndOrOutputInterfaces"
+      },
       "task": true
     },
     {
@@ -2741,21 +3600,29 @@
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getPoliciesByRevision"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getPoliciesByRevision"
+      },
       "task": true
     },
     {
@@ -2767,21 +3634,29 @@
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getSubPoliciesBindingsByDevice"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getSubPoliciesBindingsByDevice"
+      },
       "task": true
     },
     {
@@ -2793,21 +3668,29 @@
           "name": "deviceId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "deviceId",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getRulesByInputAndOutputInterfaces"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getRulesByInputAndOutputInterfaces"
+      },
       "task": true
     },
     {
@@ -2819,21 +3702,29 @@
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getSubPoliciesBindingsByRevision"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getSubPoliciesBindingsByRevision"
+      },
       "task": true
     },
     {
@@ -2845,21 +3736,29 @@
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getPoliciesByDevice"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getPoliciesByDevice"
+      },
       "task": true
     },
     {
@@ -2870,15 +3769,19 @@
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "GET",
-        "path": "/runPolicyAnalysisQuery"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "GET",
+        "path": "/runPolicyAnalysisQuery"
+      },
       "task": true
     },
     {
@@ -2890,27 +3793,39 @@
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         },
         {
           "name": "ruleId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "ruleId",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/deleteSpecificRuleDocumentation"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/deleteSpecificRuleDocumentation"
+      },
       "task": true
     },
     {
@@ -2922,27 +3837,39 @@
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         },
         {
           "name": "ruleId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "ruleId",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getSpecificRuleDocumentation"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getSpecificRuleDocumentation"
+      },
       "task": true
     },
     {
@@ -2954,33 +3881,49 @@
           "name": "body",
           "type": "object",
           "info": "PUT body parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "body",
+            "type": "object"
+          }
         },
         {
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         },
         {
           "name": "ruleId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "ruleId",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/modifySpecificRuleDocumentation"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/modifySpecificRuleDocumentation"
+      },
       "task": true
     },
     {
@@ -2992,33 +3935,49 @@
           "name": "body",
           "type": "object",
           "info": "PUT body parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "body",
+            "type": "object"
+          }
         },
         {
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         },
         {
           "name": "ruleId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "ruleId",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/putRevisionsIdRulesRuleIdDocumentation"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/putRevisionsIdRulesRuleIdDocumentation"
+      },
       "task": true
     },
     {
@@ -3030,27 +3989,39 @@
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         },
         {
           "name": "ruleId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "ruleId",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/deleteRevisionsIdRulesRuleIdDocumentation"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/deleteRevisionsIdRulesRuleIdDocumentation"
+      },
       "task": true
     },
     {
@@ -3062,27 +4033,39 @@
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         },
         {
           "name": "ruleId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "ruleId",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getRevisionsIdRulesRuleIdDocumentation"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getRevisionsIdRulesRuleIdDocumentation"
+      },
       "task": true
     },
     {
@@ -3093,15 +4076,19 @@
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "GET",
-        "path": "/getCleanupsResults"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "GET",
+        "path": "/getCleanupsResults"
+      },
       "task": true
     },
     {
@@ -3113,21 +4100,29 @@
           "name": "cleanupId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "cleanupId",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getTheSpecificObjectsOrRulesIdentifiedForTheCleanupResults"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getTheSpecificObjectsOrRulesIdentifiedForTheCleanupResults"
+      },
       "task": true
     },
     {
@@ -3139,21 +4134,29 @@
           "name": "riskId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "riskId",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getTheSpecificObjectsOrRulesIdentifiedForTheRiskResults"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getTheSpecificObjectsOrRulesIdentifiedForTheRiskResults"
+      },
       "task": true
     },
     {
@@ -3165,21 +4168,29 @@
           "name": "deviceId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "deviceId",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getCleanupsByDevice"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getCleanupsByDevice"
+      },
       "task": true
     },
     {
@@ -3191,21 +4202,29 @@
           "name": "riskId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "riskId",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getDevicesInRiskResults"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getDevicesInRiskResults"
+      },
       "task": true
     },
     {
@@ -3216,15 +4235,19 @@
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "GET",
-        "path": "/getRisksResults"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "GET",
+        "path": "/getRisksResults"
+      },
       "task": true
     },
     {
@@ -3236,21 +4259,29 @@
           "name": "deviceId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "deviceId",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getShadowingRulesByDevice"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getShadowingRulesByDevice"
+      },
       "task": true
     },
     {
@@ -3262,21 +4293,29 @@
           "name": "cleanupId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "cleanupId",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getDevicesInCleanupResults"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getDevicesInCleanupResults"
+      },
       "task": true
     },
     {
@@ -3288,21 +4327,29 @@
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getRevisionsByDevice"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getRevisionsByDevice"
+      },
       "task": true
     },
     {
@@ -3314,21 +4361,29 @@
           "name": "revId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "revId",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getSpecificRevision"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getSpecificRevision"
+      },
       "task": true
     },
     {
@@ -3340,21 +4395,29 @@
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getLatestRevisionByDevice"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getLatestRevisionByDevice"
+      },
       "task": true
     },
     {
@@ -3366,21 +4429,29 @@
           "name": "deviceId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "deviceId",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getLastHitsForAllRulesByDevice"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getLastHitsForAllRulesByDevice"
+      },
       "task": true
     },
     {
@@ -3392,27 +4463,39 @@
           "name": "deviceId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "deviceId",
+            "type": "default"
+          }
         },
         {
           "name": "ruleUid",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "ruleUid",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getLastHitForASpecificRule"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getLastHitForASpecificRule"
+      },
       "task": true
     },
     {
@@ -3424,21 +4507,29 @@
           "name": "ruleId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "ruleId",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getASpecificRule"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getASpecificRule"
+      },
       "task": true
     },
     {
@@ -3450,27 +4541,39 @@
           "name": "deviceId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "deviceId",
+            "type": "default"
+          }
         },
         {
           "name": "ids",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "ids",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getSpecificRule"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getSpecificRule"
+      },
       "task": true
     },
     {
@@ -3481,15 +4584,19 @@
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "GET",
-        "path": "/getRuleCountPerDevice"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "GET",
+        "path": "/getRuleCountPerDevice"
+      },
       "task": true
     },
     {
@@ -3501,27 +4608,39 @@
           "name": "revisionId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "revisionId",
+            "type": "default"
+          }
         },
         {
           "name": "ids",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "ids",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getRevisionsRevisionIdRulesIds"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getRevisionsRevisionIdRulesIds"
+      },
       "task": true
     },
     {
@@ -3533,21 +4652,29 @@
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getRulesByRevision"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getRulesByRevision"
+      },
       "task": true
     },
     {
@@ -3559,21 +4686,29 @@
           "name": "deviceId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "deviceId",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/findRules"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/findRules"
+      },
       "task": true
     },
     {
@@ -3585,21 +4720,29 @@
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getRulesByDevice"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getRulesByDevice"
+      },
       "task": true
     },
     {
@@ -3611,21 +4754,29 @@
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getServiceGroupsContainingSpecifiedServiceObjects"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getServiceGroupsContainingSpecifiedServiceObjects"
+      },
       "task": true
     },
     {
@@ -3637,27 +4788,39 @@
           "name": "revisionId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "revisionId",
+            "type": "default"
+          }
         },
         {
           "name": "ids",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "ids",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getSpecificService"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getSpecificService"
+      },
       "task": true
     },
     {
@@ -3669,27 +4832,39 @@
           "name": "deviceId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "deviceId",
+            "type": "default"
+          }
         },
         {
           "name": "ids",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "ids",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getDevicesDeviceIdServicesIds"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getDevicesDeviceIdServicesIds"
+      },
       "task": true
     },
     {
@@ -3701,21 +4876,29 @@
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getRulesContainingSpecifiedServiceObject"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getRulesContainingSpecifiedServiceObject"
+      },
       "task": true
     },
     {
@@ -3727,21 +4910,29 @@
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getServicesByRevision"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getServicesByRevision"
+      },
       "task": true
     },
     {
@@ -3752,15 +4943,19 @@
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "GET",
-        "path": "/getServicesObjectsMatchingSpecifiedCriteria"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "GET",
+        "path": "/getServicesObjectsMatchingSpecifiedCriteria"
+      },
       "task": true
     },
     {
@@ -3772,21 +4967,29 @@
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getServicesByDevice"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getServicesByDevice"
+      },
       "task": true
     },
     {
@@ -3798,21 +5001,29 @@
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getTimeObjectsByRevision"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getTimeObjectsByRevision"
+      },
       "task": true
     },
     {
@@ -3824,21 +5035,29 @@
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getTimeObjectsByDevice"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getTimeObjectsByDevice"
+      },
       "task": true
     },
     {
@@ -3850,27 +5069,39 @@
           "name": "revisionId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "revisionId",
+            "type": "default"
+          }
         },
         {
           "name": "ids",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "ids",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getSpecificTimeObject"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getSpecificTimeObject"
+      },
       "task": true
     },
     {
@@ -3882,21 +5113,29 @@
           "name": "body",
           "type": "object",
           "info": "POST body parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "body",
+            "type": "object"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getPolicyRelevanceMetricsForTraffic"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getPolicyRelevanceMetricsForTraffic"
+      },
       "task": true
     },
     {
@@ -3908,21 +5147,29 @@
           "name": "body",
           "type": "object",
           "info": "POST body parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "body",
+            "type": "object"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/startATaskToCalculateViolationsForAnAccessRequest"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/startATaskToCalculateViolationsForAnAccessRequest"
+      },
       "task": true
     },
     {
@@ -3934,21 +5181,29 @@
           "name": "taskId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "taskId",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getViolationTaskResults"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getViolationTaskResults"
+      },
       "task": true
     },
     {
@@ -3960,21 +5215,29 @@
           "name": "taskId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "taskId",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getViolationTaskStatus"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getViolationTaskStatus"
+      },
       "task": true
     },
     {
@@ -3986,21 +5249,29 @@
           "name": "taskId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "taskId",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/cancelViolationTask"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/cancelViolationTask"
+      },
       "task": true
     },
     {
@@ -4012,21 +5283,29 @@
           "name": "body",
           "type": "object",
           "info": "POST body parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "body",
+            "type": "object"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getViolationsForAnAccessRequest"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getViolationsForAnAccessRequest"
+      },
       "task": true
     },
     {
@@ -4038,21 +5317,29 @@
           "name": "ids",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "ids",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/deleteAlertsByIds"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/deleteAlertsByIds"
+      },
       "task": true
     },
     {
@@ -4064,21 +5351,29 @@
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getASpecificAlert"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getASpecificAlert"
+      },
       "task": true
     },
     {
@@ -4090,27 +5385,39 @@
           "name": "body",
           "type": "object",
           "info": "PUT body parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "body",
+            "type": "object"
+          }
         },
         {
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/updateAnAlert"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/updateAnAlert"
+      },
       "task": true
     },
     {
@@ -4122,21 +5429,29 @@
           "name": "body",
           "type": "object",
           "info": "POST body parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "body",
+            "type": "object"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/createAnAlert"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/createAnAlert"
+      },
       "task": true
     },
     {
@@ -4147,15 +5462,19 @@
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "GET",
-        "path": "/getAlerts"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "GET",
+        "path": "/getAlerts"
+      },
       "task": true
     },
     {
@@ -4167,21 +5486,29 @@
           "name": "policyId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "policyId",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/deleteCloudTagPolicy"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/deleteCloudTagPolicy"
+      },
       "task": true
     },
     {
@@ -4193,27 +5520,39 @@
           "name": "body",
           "type": "object",
           "info": "PUT body parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "body",
+            "type": "object"
+          }
         },
         {
           "name": "policyId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "policyId",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/replaceACloudTagPolicy"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/replaceACloudTagPolicy"
+      },
       "task": true
     },
     {
@@ -4225,21 +5564,29 @@
           "name": "policyId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "policyId",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/modifyACloudTagPolicy"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/modifyACloudTagPolicy"
+      },
       "task": true
     },
     {
@@ -4251,21 +5598,29 @@
           "name": "policyId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "policyId",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getCloudTagPolicy"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getCloudTagPolicy"
+      },
       "task": true
     },
     {
@@ -4277,21 +5632,29 @@
           "name": "body",
           "type": "object",
           "info": "POST body parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "body",
+            "type": "object"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/checkIfTagsAreCompliantWithCloudTagPolicies"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/checkIfTagsAreCompliantWithCloudTagPolicies"
+      },
       "task": true
     },
     {
@@ -4302,15 +5665,19 @@
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "GET",
-        "path": "/getAllCloudTagPolicies"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "GET",
+        "path": "/getAllCloudTagPolicies"
+      },
       "task": true
     },
     {
@@ -4322,21 +5689,29 @@
           "name": "body",
           "type": "object",
           "info": "POST body parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "body",
+            "type": "object"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/createACloudTagPolicy"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/createACloudTagPolicy"
+      },
       "task": true
     },
     {
@@ -4347,15 +5722,19 @@
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "GET",
-        "path": "/getAllCloudTagPolicyViolationsForAVPC"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "GET",
+        "path": "/getAllCloudTagPolicyViolationsForAVPC"
+      },
       "task": true
     },
     {
@@ -4367,27 +5746,39 @@
           "name": "body",
           "type": "object",
           "info": "POST body parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "body",
+            "type": "object"
+          }
         },
         {
           "name": "exceptionId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "exceptionId",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/startATaskToCalculateMatchingRulesForAnException"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/startATaskToCalculateMatchingRulesForAnException"
+      },
       "task": true
     },
     {
@@ -4399,21 +5790,29 @@
           "name": "taskId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "taskId",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getMatchingRulesTaskStatus"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getMatchingRulesTaskStatus"
+      },
       "task": true
     },
     {
@@ -4425,21 +5824,29 @@
           "name": "exceptionId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "exceptionId",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/deleteAnException"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/deleteAnException"
+      },
       "task": true
     },
     {
@@ -4451,21 +5858,29 @@
           "name": "exceptionId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "exceptionId",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getASpecificException"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getASpecificException"
+      },
       "task": true
     },
     {
@@ -4477,21 +5892,29 @@
           "name": "taskId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "taskId",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/cancelMatchingRulesTask"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/cancelMatchingRulesTask"
+      },
       "task": true
     },
     {
@@ -4502,15 +5925,19 @@
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "GET",
-        "path": "/getAllExceptions"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "GET",
+        "path": "/getAllExceptions"
+      },
       "task": true
     },
     {
@@ -4522,21 +5949,29 @@
           "name": "body",
           "type": "object",
           "info": "POST body parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "body",
+            "type": "object"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/createAnException"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/createAnException"
+      },
       "task": true
     },
     {
@@ -4548,21 +5983,29 @@
           "name": "taskId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "taskId",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getMatchingRulesTaskResults"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getMatchingRulesTaskResults"
+      },
       "task": true
     },
     {
@@ -4573,15 +6016,19 @@
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "GET",
-        "path": "/getGlobalUnifiedSecurityPolicies"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "GET",
+        "path": "/getGlobalUnifiedSecurityPolicies"
+      },
       "task": true
     },
     {
@@ -4592,15 +6039,19 @@
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "GET",
-        "path": "/getUnifiedSecurityPolicies"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "GET",
+        "path": "/getUnifiedSecurityPolicies"
+      },
       "task": true
     },
     {
@@ -4612,21 +6063,29 @@
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getUnifiedSecurityPolicyAsCSV"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getUnifiedSecurityPolicyAsCSV"
+      },
       "task": true
     },
     {
@@ -4638,21 +6097,29 @@
           "name": "id",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "id",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/deleteUnifiedSecurityPolicy"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/deleteUnifiedSecurityPolicy"
+      },
       "task": true
     },
     {
@@ -4664,27 +6131,39 @@
           "name": "body",
           "type": "object",
           "info": "POST body parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "body",
+            "type": "object"
+          }
         },
         {
           "name": "deviceId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "deviceId",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/setManualDeviceMapping"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/setManualDeviceMapping"
+      },
       "task": true
     },
     {
@@ -4696,21 +6175,29 @@
           "name": "deviceId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "deviceId",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getTheAmountOfViolatingRulesForTheSpecifiedDevice"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getTheAmountOfViolatingRulesForTheSpecifiedDevice"
+      },
       "task": true
     },
     {
@@ -4722,21 +6209,29 @@
           "name": "deviceId",
           "type": "default",
           "info": "path parameter",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "deviceId",
+            "type": "default"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
-      },
-      "route": {
-        "verb": "POST",
-        "path": "/getTheViolatingRulesForTheSpecifiedDevice"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getTheViolatingRulesForTheSpecifiedDevice"
+      },
       "task": true
     }
   ]
