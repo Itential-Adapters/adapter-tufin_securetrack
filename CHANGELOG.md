@@ -1,4 +1,12 @@
 
+## 0.4.2 [07-10-2020]
+
+* migration
+
+See merge request itentialopensource/adapters/security/adapter-tufin_securetrack!4
+
+---
+
 ## 0.4.1 [01-15-2020]
 
 * december migration
