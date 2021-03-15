@@ -62,11 +62,13 @@ global.pronghornProps = {
           token_cache: 'local',
           invalid_token_error: 401,
           auth_field: 'header.headers.Authorization',
-          auth_field_format: 'Basic {b64}{username}:{password}{/b64}'
+          auth_field_format: 'Basic {b64}{username}:{password}{/b64}',
+          auth_logging: false
         },
         healthcheck: {
           type: 'none',
-          frequency: 60000
+          frequency: 60000,
+          query_object: {}
         },
         throttle: {
           throttle_enabled: false,
@@ -97,13 +99,16 @@ global.pronghornProps = {
           },
           healthcheck_on_timeout: true,
           return_raw: true,
-          archiving: false
+          archiving: false,
+          return_request: false
         },
         proxy: {
           enabled: false,
           host: '',
           port: 1,
-          protocol: 'http'
+          protocol: 'http',
+          username: '',
+          password: ''
         },
         ssl: {
           ecdhCurve: '',

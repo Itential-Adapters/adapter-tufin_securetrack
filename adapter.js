@@ -82,6 +82,24 @@ class TufinSecuretrack extends AdapterBaseCl {
   }
 
   /**
+   * @getWorkflowFunctions
+   */
+  getWorkflowFunctions(inIgnore) {
+    let myIgnore = [];
+    if (!inIgnore && Array.isArray(inIgnore)) {
+      myIgnore = inIgnore;
+    } else if (!inIgnore && typeof inIgnore === 'string') {
+      myIgnore = [inIgnore];
+    }
+
+    // The generic adapter functions should already be ignored (e.g. healthCheck)
+    // you can add specific methods that you do not want to be workflow functions to ignore like below
+    // myIgnore.push('myMethodNotInWorkflow');
+
+    return super.getWorkflowFunctions(myIgnore);
+  }
+
+  /**
    * updateAdapterConfiguration is used to update any of the adapter configuration files. This
    * allows customers to make changes to adapter configuration without having to be on the
    * file system.
@@ -95,33 +113,141 @@ class TufinSecuretrack extends AdapterBaseCl {
    * @param {Callback} callback - The results of the call
    */
   updateAdapterConfiguration(configFile, changes, entity, type, action, callback) {
+    const origin = `${this.id}-adapter-updateAdapterConfiguration`;
+    log.trace(origin);
     super.updateAdapterConfiguration(configFile, changes, entity, type, action, callback);
   }
 
   /**
-   * @callback healthCallback
-   * @param {Object} result - the result of the get request (contains an id and a status)
+   * See if the API path provided is found in this adapter
+   *
+   * @function findPath
+   * @param {string} apiPath - the api path to check on
+   * @param {Callback} callback - The results of the call
    */
+  findPath(apiPath, callback) {
+    const origin = `${this.id}-adapter-findPath`;
+    log.trace(origin);
+    super.findPath(apiPath, callback);
+  }
+
   /**
-   * @callback getCallback
-   * @param {Object} result - the result of the get request (entity/ies)
-   * @param {String} error - any error that occurred
-   */
+    * @summary Suspends adapter
+    *
+    * @function suspend
+    * @param {Callback} callback - callback function
+    */
+  suspend(mode, callback) {
+    const origin = `${this.id}-adapter-suspend`;
+    log.trace(origin);
+    try {
+      return super.suspend(mode, callback);
+    } catch (error) {
+      log.error(`${origin}: ${error}`);
+      return callback(null, error);
+    }
+  }
+
   /**
-   * @callback createCallback
-   * @param {Object} item - the newly created entity
-   * @param {String} error - any error that occurred
-   */
+    * @summary Unsuspends adapter
+    *
+    * @function unsuspend
+    * @param {Callback} callback - callback function
+    */
+  unsuspend(callback) {
+    const origin = `${this.id}-adapter-unsuspend`;
+    log.trace(origin);
+    try {
+      return super.unsuspend(callback);
+    } catch (error) {
+      log.error(`${origin}: ${error}`);
+      return callback(null, error);
+    }
+  }
+
   /**
-   * @callback updateCallback
-   * @param {String} status - the status of the update action
-   * @param {String} error - any error that occurred
-   */
+    * @summary Get the Adaoter Queue
+    *
+    * @function getQueue
+    * @param {Callback} callback - callback function
+    */
+  getQueue(callback) {
+    const origin = `${this.id}-adapter-getQueue`;
+    log.trace(origin);
+    return super.getQueue(callback);
+  }
+
   /**
-   * @callback deleteCallback
-   * @param {String} status - the status of the delete action
-   * @param {String} error - any error that occurred
-   */
+  * @summary Runs troubleshoot scripts for adapter
+  *
+  * @function troubleshoot
+  * @param {Object} props - the connection, healthcheck and authentication properties
+  *
+  * @param {boolean} persistFlag - whether the adapter properties should be updated
+  * @param {Callback} callback - The results of the call
+  */
+  troubleshoot(props, persistFlag, callback) {
+    const origin = `${this.id}-adapter-troubleshoot`;
+    log.trace(origin);
+    try {
+      return super.troubleshoot(props, persistFlag, this, callback);
+    } catch (error) {
+      log.error(`${origin}: ${error}`);
+      return callback(null, error);
+    }
+  }
+
+  /**
+    * @summary runs healthcheck script for adapter
+    *
+    * @function runHealthcheck
+    * @param {Adapter} adapter - adapter instance to troubleshoot
+    * @param {Callback} callback - callback function
+    */
+  runHealthcheck(callback) {
+    const origin = `${this.id}-adapter-runHealthcheck`;
+    log.trace(origin);
+    try {
+      return super.runHealthcheck(this, callback);
+    } catch (error) {
+      log.error(`${origin}: ${error}`);
+      return callback(null, error);
+    }
+  }
+
+  /**
+    * @summary runs connectivity check script for adapter
+    *
+    * @function runConnectivity
+    * @param {Callback} callback - callback function
+    */
+  runConnectivity(callback) {
+    const origin = `${this.id}-adapter-runConnectivity`;
+    log.trace(origin);
+    try {
+      return super.runConnectivity(callback);
+    } catch (error) {
+      log.error(`${origin}: ${error}`);
+      return callback(null, error);
+    }
+  }
+
+  /**
+    * @summary runs basicGet script for adapter
+    *
+    * @function runBasicGet
+    * @param {Callback} callback - callback function
+    */
+  runBasicGet(callback) {
+    const origin = `${this.id}-adapter-runBasicGet`;
+    log.trace(origin);
+    try {
+      return super.runBasicGet(callback);
+    } catch (error) {
+      log.error(`${origin}: ${error}`);
+      return callback(null, error);
+    }
+  }
 
   /**
    * @summary Determines if this adapter supports the specific entity
@@ -293,6 +419,141 @@ class TufinSecuretrack extends AdapterBaseCl {
   }
 
   /**
+   * Makes the requested generic call
+   *
+   * @function genericAdapterRequest
+   * @param {String} uriPath - the path of the api call - do not include the host, port, base path or version (required)
+   * @param {String} restMethod - the rest method (GET, POST, PUT, PATCH, DELETE) (required)
+   * @param {Object} queryData - the parameters to be put on the url (optional).
+   *                 Can be a stringified Object.
+   * @param {Object} requestBody - the body to add to the request (optional).
+   *                 Can be a stringified Object.
+   * @param {Object} addlHeaders - additional headers to be put on the call (optional).
+   *                 Can be a stringified Object.
+   * @param {getCallback} callback - a callback function to return the result (Generics)
+   *                 or the error
+   */
+  genericAdapterRequest(uriPath, restMethod, queryData, requestBody, addlHeaders, callback) {
+    const meth = 'adapter-genericAdapterRequest';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (uriPath === undefined || uriPath === null || uriPath === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['uriPath'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+    if (restMethod === undefined || restMethod === null || restMethod === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['restMethod'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    // remove any leading / and split the uripath into path variables
+    let myPath = uriPath;
+    while (myPath.indexOf('/') === 0) {
+      myPath = myPath.substring(1);
+    }
+    const pathVars = myPath.split('/');
+    const queryParamsAvailable = queryData;
+    const queryParams = {};
+    const bodyVars = requestBody;
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams,
+      uriOptions: {}
+    };
+    // add headers if provided
+    if (addlHeaders) {
+      reqObj.addlHeaders = addlHeaders;
+    }
+
+    // determine the call and return flag
+    let action = 'getGenerics';
+    let returnF = true;
+    if (restMethod.toUpperCase() === 'POST') {
+      action = 'createGeneric';
+    } else if (restMethod.toUpperCase() === 'PUT') {
+      action = 'updateGeneric';
+    } else if (restMethod.toUpperCase() === 'PATCH') {
+      action = 'patchGeneric';
+    } else if (restMethod.toUpperCase() === 'DELETE') {
+      action = 'deleteGeneric';
+      returnF = false;
+    }
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('.generic', action, reqObj, returnF, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['genericAdapterRequest'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @callback healthCallback
+   * @param {Object} result - the result of the get request (contains an id and a status)
+   */
+  /**
+   * @callback getCallback
+   * @param {Object} result - the result of the get request (entity/ies)
+   * @param {String} error - any error that occurred
+   */
+  /**
+   * @callback createCallback
+   * @param {Object} item - the newly created entity
+   * @param {String} error - any error that occurred
+   */
+  /**
+   * @callback updateCallback
+   * @param {String} status - the status of the update action
+   * @param {String} error - any error that occurred
+   */
+  /**
+   * @callback deleteCallback
+   * @param {String} status - the status of the delete action
+   * @param {String} error - any error that occurred
+   */
+
+  /**
    * @summary Some firewall vendors use special fields in their security policy. For example: Palo Alto uses Tags, Security Profiles and Log Profiles and Fortinet uses NAT Pools and other NAT configurations. SecureTrack refers to these fields as “Additional Parameters”. The additional parameters API retrieves the possible values of these fields. This API is currently supported for Palo Alto Networks firewalls and Fortinet devices managed by Fortimanager.   Parameters:  context: Global MSSP context [optional] ...(description truncated)
    *
    * @function getAdditionalParametersIdentitiesByRevision
@@ -304,6 +565,12 @@ class TufinSecuretrack extends AdapterBaseCl {
     const meth = 'adapter-getAdditionalParametersIdentitiesByRevision';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (revisionId === undefined || revisionId === null || revisionId === '') {
@@ -391,6 +658,12 @@ class TufinSecuretrack extends AdapterBaseCl {
     const meth = 'adapter-getSpecificAdditionalParameterIdentity';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (revisionId === undefined || revisionId === null || revisionId === '') {
@@ -484,6 +757,12 @@ class TufinSecuretrack extends AdapterBaseCl {
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (revisionId === undefined || revisionId === null || revisionId === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['revisionId'], null, null, null);
@@ -575,6 +854,12 @@ class TufinSecuretrack extends AdapterBaseCl {
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (id === undefined || id === null || id === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
@@ -661,6 +946,12 @@ class TufinSecuretrack extends AdapterBaseCl {
     const meth = 'adapter-getSpecificApplicationIdentity';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (id === undefined || id === null || id === '') {
@@ -753,6 +1044,12 @@ class TufinSecuretrack extends AdapterBaseCl {
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (id === undefined || id === null || id === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
@@ -839,6 +1136,12 @@ class TufinSecuretrack extends AdapterBaseCl {
     const meth = 'adapter-getRevisionsRevisionIdApplicationsIds';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (revisionId === undefined || revisionId === null || revisionId === '') {
@@ -930,6 +1233,12 @@ class TufinSecuretrack extends AdapterBaseCl {
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
 
     /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
@@ -975,6 +1284,12 @@ class TufinSecuretrack extends AdapterBaseCl {
     const meth = 'adapter-compareRevisionsOnTwoDifferentDevicesInTermsOfTraffic';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (body === undefined || body === null || body === '') {
@@ -1061,6 +1376,12 @@ class TufinSecuretrack extends AdapterBaseCl {
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
 
     /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
@@ -1107,6 +1428,12 @@ class TufinSecuretrack extends AdapterBaseCl {
     const meth = 'adapter-getSchedulingAndDeviceDetailsForASpecificChangeWindow';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (uid === undefined || uid === null || uid === '') {
@@ -1199,6 +1526,12 @@ class TufinSecuretrack extends AdapterBaseCl {
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (uid === undefined || uid === null || uid === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['uid'], null, null, null);
@@ -1284,6 +1617,12 @@ class TufinSecuretrack extends AdapterBaseCl {
     const meth = 'adapter-getNetworkInterfacesByDevice';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (id === undefined || id === null || id === '') {
@@ -1371,6 +1710,12 @@ class TufinSecuretrack extends AdapterBaseCl {
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (id === undefined || id === null || id === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
@@ -1456,6 +1801,12 @@ class TufinSecuretrack extends AdapterBaseCl {
     const meth = 'adapter-getDeviceZonesByRevision';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (id === undefined || id === null || id === '') {
@@ -1543,6 +1894,12 @@ class TufinSecuretrack extends AdapterBaseCl {
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (id === undefined || id === null || id === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
@@ -1629,6 +1986,12 @@ class TufinSecuretrack extends AdapterBaseCl {
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (id === undefined || id === null || id === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
@@ -1714,6 +2077,12 @@ class TufinSecuretrack extends AdapterBaseCl {
     const meth = 'adapter-getDomain';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (id === undefined || id === null || id === '') {
@@ -1802,6 +2171,12 @@ class TufinSecuretrack extends AdapterBaseCl {
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (body === undefined || body === null || body === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['body'], null, null, null);
@@ -1875,6 +2250,12 @@ class TufinSecuretrack extends AdapterBaseCl {
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (body === undefined || body === null || body === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['body'], null, null, null);
@@ -1942,6 +2323,12 @@ class TufinSecuretrack extends AdapterBaseCl {
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
 
     /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
@@ -1986,6 +2373,12 @@ class TufinSecuretrack extends AdapterBaseCl {
     const meth = 'adapter-getGeneralProperties';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
 
@@ -2032,6 +2425,12 @@ class TufinSecuretrack extends AdapterBaseCl {
     const meth = 'adapter-getCiscoCryptographicMapsByRevision';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (id === undefined || id === null || id === '') {
@@ -2119,6 +2518,12 @@ class TufinSecuretrack extends AdapterBaseCl {
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (deviceId === undefined || deviceId === null || deviceId === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['deviceId'], null, null, null);
@@ -2204,6 +2609,12 @@ class TufinSecuretrack extends AdapterBaseCl {
     const meth = 'adapter-getCheckPointVPNIPSecCommunitiesAndGateways';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (deviceId === undefined || deviceId === null || deviceId === '') {
@@ -2291,6 +2702,12 @@ class TufinSecuretrack extends AdapterBaseCl {
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (id === undefined || id === null || id === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
@@ -2377,6 +2794,12 @@ class TufinSecuretrack extends AdapterBaseCl {
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (deviceId === undefined || deviceId === null || deviceId === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['deviceId'], null, null, null);
@@ -2444,6 +2867,12 @@ class TufinSecuretrack extends AdapterBaseCl {
     const meth = 'adapter-createNewInternetRepresentationForADevice';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (body === undefined || body === null || body === '') {
@@ -2531,6 +2960,12 @@ class TufinSecuretrack extends AdapterBaseCl {
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (deviceId === undefined || deviceId === null || deviceId === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['deviceId'], null, null, null);
@@ -2599,6 +3034,12 @@ class TufinSecuretrack extends AdapterBaseCl {
     const meth = 'adapter-updateInternetRepresentationForDevice';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (body === undefined || body === null || body === '') {
@@ -2691,6 +3132,12 @@ class TufinSecuretrack extends AdapterBaseCl {
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (deviceId === undefined || deviceId === null || deviceId === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['deviceId'], null, null, null);
@@ -2758,6 +3205,12 @@ class TufinSecuretrack extends AdapterBaseCl {
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
 
     /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
@@ -2803,6 +3256,12 @@ class TufinSecuretrack extends AdapterBaseCl {
     const meth = 'adapter-returnEntriesThatExactlyMatchOneOfTheGivenStrings';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (body === undefined || body === null || body === '') {
@@ -2889,6 +3348,12 @@ class TufinSecuretrack extends AdapterBaseCl {
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
 
     /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
@@ -2934,6 +3399,12 @@ class TufinSecuretrack extends AdapterBaseCl {
     const meth = 'adapter-returnLDAPEntriesWhichMatchTheGivenSearchCriteria';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (body === undefined || body === null || body === '') {
@@ -3020,6 +3491,12 @@ class TufinSecuretrack extends AdapterBaseCl {
     const meth = 'adapter-getTextualConfigurationByRevision';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (id === undefined || id === null || id === '') {
@@ -3108,6 +3585,12 @@ Currently supported types: Panorama, FortiManager, Cisco ASA. Please see example
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (body === undefined || body === null || body === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['body'], null, null, null);
@@ -3193,6 +3676,12 @@ Currently supported types: Panorama, FortiManager, Cisco ASA. Please see example
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
 
     /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
@@ -3238,6 +3727,12 @@ Currently supported types: Panorama, FortiManager, Cisco ASA. Please see example
     const meth = 'adapter-addDevicesToSecureTrack';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (body === undefined || body === null || body === '') {
@@ -3326,6 +3821,12 @@ SecureTrack for a specific Task ID.  For a list of devices, the status of each d
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (taskUid === undefined || taskUid === null || taskUid === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['taskUid'], null, null, null);
@@ -3412,6 +3913,12 @@ SecureTrack for a specific Task ID.  For a list of devices, the status of each d
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (body === undefined || body === null || body === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['body'], null, null, null);
@@ -3479,6 +3986,12 @@ SecureTrack for a specific Task ID.  For a list of devices, the status of each d
     const meth = 'adapter-getSpecificDevice';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (id === undefined || id === null || id === '') {
@@ -3566,6 +4079,12 @@ SecureTrack for a specific Task ID.  For a list of devices, the status of each d
     const meth = 'adapter-updateOfflineDevice';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (body === undefined || body === null || body === '') {
@@ -3657,6 +4176,12 @@ SecureTrack for a specific Task ID.  For a list of devices, the status of each d
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
 
     /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
@@ -3703,6 +4228,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-addOfflineDevice';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (body === undefined || body === null || body === '') {
@@ -3790,6 +4321,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (id === undefined || id === null || id === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
@@ -3875,6 +4412,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-getNATObjectsByDevice';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (id === undefined || id === null || id === '') {
@@ -3962,6 +4505,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (id === undefined || id === null || id === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
@@ -4047,6 +4596,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-getNATRulesByDevice';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (id === undefined || id === null || id === '') {
@@ -4134,6 +4689,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (id === undefined || id === null || id === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
@@ -4220,6 +4781,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-getSpecificNetworkObjectsByRevision';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (revisionId === undefined || revisionId === null || revisionId === '') {
@@ -4313,6 +4880,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (deviceId === undefined || deviceId === null || deviceId === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['deviceId'], null, null, null);
@@ -4404,6 +4977,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (id === undefined || id === null || id === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
@@ -4489,6 +5068,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
 
     /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
@@ -4534,6 +5119,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-getRulesContainingSpecifiedNetworkObject';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (id === undefined || id === null || id === '') {
@@ -4621,6 +5212,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (id === undefined || id === null || id === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
@@ -4706,6 +5303,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-getSpecificTopologyCloud';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (id === undefined || id === null || id === '') {
@@ -4793,6 +5396,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-updateACloud';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (body === undefined || body === null || body === '') {
@@ -4884,6 +5493,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
 
     /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
@@ -4928,6 +5543,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-getTopologyNetworkInterfacesByDevice';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
 
@@ -4974,6 +5595,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
 
     /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
@@ -5019,6 +5646,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-getSpecificTopologySubnet';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (id === undefined || id === null || id === '') {
@@ -5105,6 +5738,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
 
     /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
@@ -5150,6 +5789,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-deleteGenericDeviceFromTopologyModel';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (id === undefined || id === null || id === '') {
@@ -5219,6 +5864,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-updateAnExistingGenericDeviceInTheTopologyModel';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (body === undefined || body === null || body === '') {
@@ -5292,6 +5943,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-getCloudInternalNetworks';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (id === undefined || id === null || id === '') {
@@ -5379,6 +6036,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (cloudId === undefined || cloudId === null || cloudId === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['cloudId'], null, null, null);
@@ -5465,6 +6128,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (body === undefined || body === null || body === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['body'], null, null, null);
@@ -5550,6 +6219,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
 
     /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
@@ -5594,6 +6269,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-getTopologyRoutingTablesForAGivenDevice';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
 
@@ -5640,6 +6321,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
 
     /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
@@ -5685,6 +6372,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-addGenericDeviceToTopologyModel';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (body === undefined || body === null || body === '') {
@@ -5753,6 +6446,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
 
     /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
@@ -5797,6 +6496,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-getPathImageForSpecifiedTraffic';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
 
@@ -5843,6 +6548,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
 
     /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
@@ -5888,6 +6599,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-createAJoinedTopologyCloud';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (body === undefined || body === null || body === '') {
@@ -5974,6 +6691,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
 
     /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
@@ -6020,6 +6743,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-getASpecificZonePatternEntryForASpecificZone';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (zoneId === undefined || zoneId === null || zoneId === '') {
@@ -6113,6 +6842,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (body === undefined || body === null || body === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['body'], null, null, null);
@@ -6204,6 +6939,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (ids === undefined || ids === null || ids === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['ids'], null, null, null);
@@ -6290,6 +7031,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-getASpecificZoneEntry';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (zoneId === undefined || zoneId === null || zoneId === '') {
@@ -6383,6 +7130,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (zoneId === undefined || zoneId === null || zoneId === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['zoneId'], null, null, null);
@@ -6457,6 +7210,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-modifyAZoneEntry';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (body === undefined || body === null || body === '') {
@@ -6556,6 +7315,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (body === undefined || body === null || body === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['body'], null, null, null);
@@ -6653,6 +7418,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (zoneIds === undefined || zoneIds === null || zoneIds === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['zoneIds'], null, null, null);
@@ -6726,6 +7497,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-createAZoneEntry';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (body === undefined || body === null || body === '') {
@@ -6818,6 +7595,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (ids === undefined || ids === null || ids === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['ids'], null, null, null);
@@ -6905,6 +7688,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (body === undefined || body === null || body === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['body'], null, null, null);
@@ -6977,6 +7766,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-getConfigurationUsagesForAZone';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (ids === undefined || ids === null || ids === '') {
@@ -7065,6 +7860,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (parentId === undefined || parentId === null || parentId === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['parentId'], null, null, null);
@@ -7139,6 +7940,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-addAZoneAsADescendantToAZone';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (body === undefined || body === null || body === '') {
@@ -7217,6 +8024,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-createAZone';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (body === undefined || body === null || body === '') {
@@ -7303,6 +8116,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
 
     /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
@@ -7347,6 +8166,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-deleteAllZones';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
 
@@ -7393,6 +8218,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
 
     /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
@@ -7438,6 +8269,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-deleteAZone';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (ids === undefined || ids === null || ids === '') {
@@ -7508,6 +8345,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-addAZoneAsAnAncestorToAZone';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (body === undefined || body === null || body === '') {
@@ -7588,6 +8431,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (childId === undefined || childId === null || childId === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['childId'], null, null, null);
@@ -7661,6 +8510,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-modifyAZone';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (body === undefined || body === null || body === '') {
@@ -7753,6 +8608,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (id === undefined || id === null || id === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
@@ -7838,6 +8699,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-getAncestorZonesForAZone';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (ids === undefined || ids === null || ids === '') {
@@ -7925,6 +8792,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (ids === undefined || ids === null || ids === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['ids'], null, null, null);
@@ -8010,6 +8883,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-mapNetworkElementsToSecurityZones';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (body === undefined || body === null || body === '') {
@@ -8097,6 +8976,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (deviceId === undefined || deviceId === null || deviceId === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['deviceId'], null, null, null);
@@ -8182,6 +9067,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-getPoliciesByRevision';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (id === undefined || id === null || id === '') {
@@ -8269,6 +9160,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (id === undefined || id === null || id === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
@@ -8354,6 +9251,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-getRulesByInputAndOutputInterfaces';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (deviceId === undefined || deviceId === null || deviceId === '') {
@@ -8441,6 +9344,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (id === undefined || id === null || id === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
@@ -8527,6 +9436,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (id === undefined || id === null || id === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
@@ -8612,6 +9527,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
 
     /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
@@ -8658,6 +9579,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-deleteSpecificRuleDocumentation';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (id === undefined || id === null || id === '') {
@@ -8732,6 +9659,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-getSpecificRuleDocumentation';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (id === undefined || id === null || id === '') {
@@ -8825,6 +9758,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-modifySpecificRuleDocumentation';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (body === undefined || body === null || body === '') {
@@ -8924,6 +9863,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (body === undefined || body === null || body === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['body'], null, null, null);
@@ -9021,6 +9966,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (id === undefined || id === null || id === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
@@ -9094,6 +10045,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-getRevisionsIdRulesRuleIdDocumentation';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (id === undefined || id === null || id === '') {
@@ -9185,6 +10142,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
 
     /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
@@ -9230,6 +10193,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-getTheSpecificObjectsOrRulesIdentifiedForTheCleanupResults';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (cleanupId === undefined || cleanupId === null || cleanupId === '') {
@@ -9317,6 +10286,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (riskId === undefined || riskId === null || riskId === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['riskId'], null, null, null);
@@ -9402,6 +10377,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-getCleanupsByDevice';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (deviceId === undefined || deviceId === null || deviceId === '') {
@@ -9489,6 +10470,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (riskId === undefined || riskId === null || riskId === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['riskId'], null, null, null);
@@ -9574,6 +10561,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
 
     /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
@@ -9619,6 +10612,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-getShadowingRulesByDevice';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (deviceId === undefined || deviceId === null || deviceId === '') {
@@ -9706,6 +10705,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (cleanupId === undefined || cleanupId === null || cleanupId === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['cleanupId'], null, null, null);
@@ -9791,6 +10796,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-getRevisionsByDevice';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (id === undefined || id === null || id === '') {
@@ -9878,6 +10889,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (revId === undefined || revId === null || revId === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['revId'], null, null, null);
@@ -9963,6 +10980,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-getLatestRevisionByDevice';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (id === undefined || id === null || id === '') {
@@ -10050,6 +11073,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (deviceId === undefined || deviceId === null || deviceId === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['deviceId'], null, null, null);
@@ -10136,6 +11165,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-getLastHitForASpecificRule';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (deviceId === undefined || deviceId === null || deviceId === '') {
@@ -10228,6 +11263,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (ruleId === undefined || ruleId === null || ruleId === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['ruleId'], null, null, null);
@@ -10314,6 +11355,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-getSpecificRule';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (deviceId === undefined || deviceId === null || deviceId === '') {
@@ -10405,6 +11452,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
 
     /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
@@ -10451,6 +11504,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-getRevisionsRevisionIdRulesIds';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (revisionId === undefined || revisionId === null || revisionId === '') {
@@ -10543,6 +11602,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (id === undefined || id === null || id === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
@@ -10628,6 +11693,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-findRules';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (deviceId === undefined || deviceId === null || deviceId === '') {
@@ -10715,6 +11786,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (id === undefined || id === null || id === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
@@ -10800,6 +11877,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-getServiceGroupsContainingSpecifiedServiceObjects';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (id === undefined || id === null || id === '') {
@@ -10887,6 +11970,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-getSpecificService';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (revisionId === undefined || revisionId === null || revisionId === '') {
@@ -10980,6 +12069,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (deviceId === undefined || deviceId === null || deviceId === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['deviceId'], null, null, null);
@@ -11071,6 +12166,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (id === undefined || id === null || id === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
@@ -11157,6 +12258,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (id === undefined || id === null || id === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
@@ -11242,6 +12349,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
 
     /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
@@ -11287,6 +12400,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-getServicesByDevice';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (id === undefined || id === null || id === '') {
@@ -11374,6 +12493,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (id === undefined || id === null || id === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
@@ -11459,6 +12584,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-getTimeObjectsByDevice';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (id === undefined || id === null || id === '') {
@@ -11546,6 +12677,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-getSpecificTimeObject';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (revisionId === undefined || revisionId === null || revisionId === '') {
@@ -11638,6 +12775,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (body === undefined || body === null || body === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['body'], null, null, null);
@@ -11723,6 +12866,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-startATaskToCalculateViolationsForAnAccessRequest';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (body === undefined || body === null || body === '') {
@@ -11810,6 +12959,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (taskId === undefined || taskId === null || taskId === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['taskId'], null, null, null);
@@ -11895,6 +13050,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-getViolationTaskStatus';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (taskId === undefined || taskId === null || taskId === '') {
@@ -11982,6 +13143,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (taskId === undefined || taskId === null || taskId === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['taskId'], null, null, null);
@@ -12049,6 +13216,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-getViolationsForAnAccessRequest';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (body === undefined || body === null || body === '') {
@@ -12136,6 +13309,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (ids === undefined || ids === null || ids === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['ids'], null, null, null);
@@ -12203,6 +13382,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-getASpecificAlert';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (id === undefined || id === null || id === '') {
@@ -12290,6 +13475,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-updateAnAlert';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (body === undefined || body === null || body === '') {
@@ -12382,6 +13573,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (body === undefined || body === null || body === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['body'], null, null, null);
@@ -12467,6 +13664,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
 
     /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
@@ -12512,6 +13715,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-deleteCloudTagPolicy';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (policyId === undefined || policyId === null || policyId === '') {
@@ -12599,6 +13808,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-replaceACloudTagPolicy';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (body === undefined || body === null || body === '') {
@@ -12691,6 +13906,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (policyId === undefined || policyId === null || policyId === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['policyId'], null, null, null);
@@ -12776,6 +13997,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-getCloudTagPolicy';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (policyId === undefined || policyId === null || policyId === '') {
@@ -12863,6 +14090,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (body === undefined || body === null || body === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['body'], null, null, null);
@@ -12948,6 +14181,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
 
     /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
@@ -12993,6 +14232,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-createACloudTagPolicy';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (body === undefined || body === null || body === '') {
@@ -13079,6 +14324,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
 
     /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
@@ -13125,6 +14376,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-startATaskToCalculateMatchingRulesForAnException';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (body === undefined || body === null || body === '') {
@@ -13198,6 +14455,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-getMatchingRulesTaskStatus';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (taskId === undefined || taskId === null || taskId === '') {
@@ -13285,6 +14548,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (exceptionId === undefined || exceptionId === null || exceptionId === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['exceptionId'], null, null, null);
@@ -13370,6 +14639,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-getASpecificException';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (exceptionId === undefined || exceptionId === null || exceptionId === '') {
@@ -13457,6 +14732,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (taskId === undefined || taskId === null || taskId === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['taskId'], null, null, null);
@@ -13524,6 +14805,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
 
     /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
@@ -13569,6 +14856,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-createAnException';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (body === undefined || body === null || body === '') {
@@ -13656,6 +14949,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (taskId === undefined || taskId === null || taskId === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['taskId'], null, null, null);
@@ -13741,6 +15040,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
 
     /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
@@ -13785,6 +15090,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-getUnifiedSecurityPolicies';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
 
@@ -13831,6 +15142,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-getUnifiedSecurityPolicyAsCSV';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (id === undefined || id === null || id === '') {
@@ -13900,6 +15217,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (id === undefined || id === null || id === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
@@ -13968,6 +15291,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-setManualDeviceMapping';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (body === undefined || body === null || body === '') {
@@ -14060,6 +15389,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (deviceId === undefined || deviceId === null || deviceId === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['deviceId'], null, null, null);
@@ -14145,6 +15480,12 @@ Device name should contain only Lower and upper case letters, digits, space, dot
     const meth = 'adapter-getTheViolatingRulesForTheSpecifiedDevice';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
 
     /* HERE IS WHERE YOU VALIDATE DATA */
     if (deviceId === undefined || deviceId === null || deviceId === '') {
