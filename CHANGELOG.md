@@ -1,4 +1,12 @@
 
+## 0.5.0 [05-27-2022]
+
+* Migration to the latest Adapter Foundation
+
+See merge request itentialopensource/adapters/security/adapter-tufin_securetrack!6
+
+---
+
 ## 0.4.3 [03-15-2021]
 
 - Migration to bring up to the latest foundation
