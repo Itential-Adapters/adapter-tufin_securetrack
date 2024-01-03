@@ -4,6 +4,7 @@
   "properties": {
     "host": "localhost",
     "port": 443,
+    "choosepath": "",
     "base_path": "/",
     "version": "",
     "cache_location": "none",
@@ -25,12 +26,27 @@
       "auth_logging": false,
       "client_id": "",
       "client_secret": "",
-      "grant_type": ""
+      "grant_type": "",
+      "sensitive": [],
+      "sso": {
+        "protocol": "",
+        "host": "",
+        "port": 0
+      },
+      "multiStepAuthCalls": [
+        {
+          "name": "",
+          "requestFields": {},
+          "responseFields": {},
+          "successfullResponseCode": 200
+        }
+      ]
     },
     "healthcheck": {
       "type": "none",
       "frequency": 60000,
-      "query_object": {}
+      "query_object": {},
+      "addlHeaders": {}
     },
     "throttle": {
       "throttle_enabled": false,
@@ -123,6 +139,12 @@
         {
           "path": "/get/devices",
           "method": "GET",
+          "pagination": {
+            "offsetVar": "",
+            "limitVar": "",
+            "incrementBy": "limit",
+            "requestLocation": "query"
+          },
           "query": {},
           "body": {},
           "headers": {},
@@ -182,6 +204,45 @@
           "requestFields": {},
           "responseDatakey": "",
           "responseFields": {}
+        }
+      ]
+    },
+    "cache": {
+      "enabled": false,
+      "entities": [
+        {
+          "entityType": "",
+          "frequency": 1440,
+          "flushOnFail": false,
+          "limit": 1000,
+          "retryAttempts": 5,
+          "sort": true,
+          "populate": [
+            {
+              "path": "",
+              "method": "GET",
+              "pagination": {
+                "offsetVar": "",
+                "limitVar": "",
+                "incrementBy": "limit",
+                "requestLocation": "query"
+              },
+              "query": {},
+              "body": {},
+              "headers": {},
+              "handleFailure": "ignore",
+              "requestFields": {},
+              "responseDatakey": "",
+              "responseFields": {}
+            }
+          ],
+          "cachedTasks": [
+            {
+              "name": "",
+              "filterField": "",
+              "filterLoc": ""
+            }
+          ]
         }
       ]
     }
