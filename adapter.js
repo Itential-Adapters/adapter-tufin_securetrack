@@ -88,9 +88,6 @@ class TufinSecuretrack extends AdapterBaseCl {
     let myIgnore = [
       'healthCheck',
       'iapGetAdapterWorkflowFunctions',
-      'iapHasAdapterEntity',
-      'iapVerifyAdapterCapability',
-      'iapUpdateAdapterEntityCache',
       'hasEntities',
       'getAuthorization'
     ];
@@ -118,29 +115,15 @@ class TufinSecuretrack extends AdapterBaseCl {
    * @param {string} entity - the entity to be changed, if an action, schema or mock data file (optional)
    * @param {string} type - the type of entity file to change, (action, schema, mock) (optional)
    * @param {string} action - the action to be changed, if an action, schema or mock data file (optional)
+   * @param {boolean} replace - true to replace entire mock data, false to merge/append
    * @param {Callback} callback - The results of the call
    */
-  iapUpdateAdapterConfiguration(configFile, changes, entity, type, action, callback) {
+  iapUpdateAdapterConfiguration(configFile, changes, entity, type, action, replace, callback) {
     const meth = 'adapter-iapUpdateAdapterConfiguration';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
-    super.iapUpdateAdapterConfiguration(configFile, changes, entity, type, action, callback);
-  }
-
-  /**
-   * See if the API path provided is found in this adapter
-   *
-   * @function iapFindAdapterPath
-   * @param {string} apiPath - the api path to check on
-   * @param {Callback} callback - The results of the call
-   */
-  iapFindAdapterPath(apiPath, callback) {
-    const meth = 'adapter-iapFindAdapterPath';
-    const origin = `${this.id}-${meth}`;
-    log.trace(origin);
-
-    super.iapFindAdapterPath(apiPath, callback);
+    super.iapUpdateAdapterConfiguration(configFile, changes, entity, type, action, replace, callback);
   }
 
   /**
@@ -182,7 +165,7 @@ class TufinSecuretrack extends AdapterBaseCl {
   }
 
   /**
-    * @summary Get the Adaoter Queue
+    * @summary Get the Adapter Queue
     *
     * @function iapGetAdapterQueue
     * @param {Callback} callback - callback function
@@ -193,6 +176,22 @@ class TufinSecuretrack extends AdapterBaseCl {
     log.trace(origin);
 
     return super.iapGetAdapterQueue(callback);
+  }
+
+  /* SCRIPT CALLS */
+  /**
+   * See if the API path provided is found in this adapter
+   *
+   * @function iapFindAdapterPath
+   * @param {string} apiPath - the api path to check on
+   * @param {Callback} callback - The results of the call
+   */
+  iapFindAdapterPath(apiPath, callback) {
+    const meth = 'adapter-iapFindAdapterPath';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    super.iapFindAdapterPath(apiPath, callback);
   }
 
   /**
@@ -295,176 +294,93 @@ class TufinSecuretrack extends AdapterBaseCl {
     }
   }
 
-  /* BROKER CALLS */
   /**
-   * @summary Determines if this adapter supports the specific entity
+   * @summary Deactivate adapter tasks
    *
-   * @function iapHasAdapterEntity
-   * @param {String} entityType - the entity type to check for
-   * @param {String/Array} entityId - the specific entity we are looking for
+   * @function iapDeactivateTasks
    *
-   * @param {Callback} callback - An array of whether the adapter can has the
-   *                              desired capability or an error
+   * @param {Array} tasks - List of tasks to deactivate
+   * @param {Callback} callback
    */
-  iapHasAdapterEntity(entityType, entityId, callback) {
-    const origin = `${this.id}-adapter-iapHasAdapterEntity`;
-    log.trace(origin);
-
-    // Make the call -
-    // iapVerifyAdapterCapability(entityType, actionType, entityId, callback)
-    return this.iapVerifyAdapterCapability(entityType, null, entityId, callback);
-  }
-
-  /**
-   * @summary Provides a way for the adapter to tell north bound integrations
-   * whether the adapter supports type, action and specific entity
-   *
-   * @function iapVerifyAdapterCapability
-   * @param {String} entityType - the entity type to check for
-   * @param {String} actionType - the action type to check for
-   * @param {String/Array} entityId - the specific entity we are looking for
-   *
-   * @param {Callback} callback - An array of whether the adapter can has the
-   *                              desired capability or an error
-   */
-  iapVerifyAdapterCapability(entityType, actionType, entityId, callback) {
-    const meth = 'adapterBase-iapVerifyAdapterCapability';
+  iapDeactivateTasks(tasks, callback) {
+    const meth = 'adapter-iapDeactivateTasks';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
-    // if caching
-    if (this.caching) {
-      // Make the call - iapVerifyAdapterCapability(entityType, actionType, entityId, callback)
-      return this.requestHandlerInst.iapVerifyAdapterCapability(entityType, actionType, entityId, (results, error) => {
-        if (error) {
-          return callback(null, error);
-        }
-
-        // if the cache needs to be updated, update and try again
-        if (results && results[0] === 'needupdate') {
-          switch (entityType) {
-            case 'template_entity': {
-              // if the cache is invalid, update the cache
-              return this.getEntities(null, null, null, null, (data, err) => {
-                if (err) {
-                  const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Could not update entity: $VARIABLE$, cache', [entityType], null, null, null);
-                  log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
-                  return callback(null, errorObj);
-                }
-
-                // need to check the cache again since it has been updated
-                return this.requestHandlerInst.iapVerifyAdapterCapability(entityType, actionType, entityId, (vcapable, verror) => {
-                  if (verror) {
-                    return callback(null, verror);
-                  }
-
-                  return this.capabilityResults(vcapable, callback);
-                });
-              });
-            }
-            default: {
-              // unsupported entity type
-              const result = [false];
-
-              // put false in array for all entities
-              if (Array.isArray(entityId)) {
-                for (let e = 1; e < entityId.length; e += 1) {
-                  result.push(false);
-                }
-              }
-
-              return callback(result);
-            }
-          }
-        }
-
-        // return the results
-        return this.capabilityResults(results, callback);
-      });
-    }
-
-    // if no entity id
-    if (!entityId) {
-      // need to check the cache again since it has been updated
-      return this.requestHandlerInst.iapVerifyAdapterCapability(entityType, actionType, null, (vcapable, verror) => {
-        if (verror) {
-          return callback(null, verror);
-        }
-
-        return this.capabilityResults(vcapable, callback);
-      });
-    }
-
-    // if not caching
-    switch (entityType) {
-      case 'template_entity': {
-        // need to get the entities to check
-        return this.getEntities(null, null, null, null, (data, err) => {
-          if (err) {
-            const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Could not update entity: $VARIABLE$, cache', [entityType], null, null, null);
-            log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
-            return callback(null, errorObj);
-          }
-
-          // need to check the cache again since it has been updated
-          return this.requestHandlerInst.iapVerifyAdapterCapability(entityType, actionType, null, (vcapable, verror) => {
-            if (verror) {
-              return callback(null, verror);
-            }
-
-            // is the entity in the list?
-            const isEntity = this.entityInList(entityId, data.response, callback);
-            const res = [];
-
-            // not found
-            for (let i = 0; i < isEntity.length; i += 1) {
-              if (vcapable) {
-                res.push(isEntity[i]);
-              } else {
-                res.push(false);
-              }
-            }
-
-            return callback(res);
-          });
-        });
-      }
-      default: {
-        // unsupported entity type
-        const result = [false];
-
-        // put false in array for all entities
-        if (Array.isArray(entityId)) {
-          for (let e = 1; e < entityId.length; e += 1) {
-            result.push(false);
-          }
-        }
-
-        return callback(result);
-      }
+    try {
+      return super.iapDeactivateTasks(tasks, callback);
+    } catch (err) {
+      log.error(`${origin}: ${err}`);
+      return callback(null, err);
     }
   }
 
   /**
-   * @summary Updates the cache for all entities by call the get All entity method
+   * @summary Activate adapter tasks that have previously been deactivated
    *
-   * @function iapUpdateAdapterEntityCache
+   * @function iapActivateTasks
    *
+   * @param {Array} tasks - List of tasks to activate
+   * @param {Callback} callback
    */
-  iapUpdateAdapterEntityCache() {
-    const origin = `${this.id}-adapter-iapUpdateAdapterEntityCache`;
+  iapActivateTasks(tasks, callback) {
+    const meth = 'adapter-iapActivateTasks';
+    const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
-    if (this.caching) {
-      // if the cache is invalid, update the cache
-      this.getEntities(null, null, null, null, (data, err) => {
-        if (err) {
-          log.trace(`${origin}: Could not load template_entity into cache - ${err}`);
-        }
-      });
+    try {
+      return super.iapActivateTasks(tasks, callback);
+    } catch (err) {
+      log.error(`${origin}: ${err}`);
+      return callback(null, err);
     }
   }
 
+  /* CACHE CALLS */
+  /**
+   * @summary Populate the cache for the given entities
+   *
+   * @function iapPopulateEntityCache
+   * @param {String/Array of Strings} entityType - the entity type(s) to populate
+   * @param {Callback} callback - whether the cache was updated or not for each entity type
+   *
+   * @returns status of the populate
+   */
+  iapPopulateEntityCache(entityTypes, callback) {
+    const meth = 'adapter-iapPopulateEntityCache';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    try {
+      return super.iapPopulateEntityCache(entityTypes, callback);
+    } catch (err) {
+      log.error(`${origin}: ${err}`);
+      return callback(null, err);
+    }
+  }
+
+  /**
+   * @summary Retrieves data from cache for specified entity type
+   *
+   * @function iapRetrieveEntitiesCache
+   * @param {String} entityType - entity of which to retrieve
+   * @param {Object} options - settings of which data to return and how to return it
+   * @param {Callback} callback - the data if it was retrieved
+   */
+  iapRetrieveEntitiesCache(entityType, options, callback) {
+    const meth = 'adapter-iapCheckEiapRetrieveEntitiesCachentityCached';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    try {
+      return super.iapRetrieveEntitiesCache(entityType, options, callback);
+    } catch (err) {
+      log.error(`${origin}: ${err}`);
+      return callback(null, err);
+    }
+  }
+
+  /* BROKER CALLS */
   /**
    * @summary Determines if this adapter supports any in a list of entities
    *
@@ -602,6 +518,38 @@ class TufinSecuretrack extends AdapterBaseCl {
   /**
    * Makes the requested generic call
    *
+   * @function iapExpandedGenericAdapterRequest
+   * @param {Object} metadata - metadata for the call (optional).
+   *                 Can be a stringified Object.
+   * @param {String} uriPath - the path of the api call - do not include the host, port, base path or version (optional)
+   * @param {String} restMethod - the rest method (GET, POST, PUT, PATCH, DELETE) (optional)
+   * @param {Object} pathVars - the parameters to be put within the url path (optional).
+   *                 Can be a stringified Object.
+   * @param {Object} queryData - the parameters to be put on the url (optional).
+   *                 Can be a stringified Object.
+   * @param {Object} requestBody - the body to add to the request (optional).
+   *                 Can be a stringified Object.
+   * @param {Object} addlHeaders - additional headers to be put on the call (optional).
+   *                 Can be a stringified Object.
+   * @param {getCallback} callback - a callback function to return the result (Generics)
+   *                 or the error
+   */
+  iapExpandedGenericAdapterRequest(metadata, uriPath, restMethod, pathVars, queryData, requestBody, addlHeaders, callback) {
+    const meth = 'adapter-iapExpandedGenericAdapterRequest';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    try {
+      return super.iapExpandedGenericAdapterRequest(metadata, uriPath, restMethod, pathVars, queryData, requestBody, addlHeaders, callback);
+    } catch (err) {
+      log.error(`${origin}: ${err}`);
+      return callback(null, err);
+    }
+  }
+
+  /**
+   * Makes the requested generic call
+   *
    * @function genericAdapterRequest
    * @param {String} uriPath - the path of the api call - do not include the host, port, base path or version (required)
    * @param {String} restMethod - the rest method (GET, POST, PUT, PATCH, DELETE) (required)
@@ -619,93 +567,11 @@ class TufinSecuretrack extends AdapterBaseCl {
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
-    if (this.suspended && this.suspendMode === 'error') {
-      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
-      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
-      return callback(null, errorObj);
-    }
-
-    /* HERE IS WHERE YOU VALIDATE DATA */
-    if (uriPath === undefined || uriPath === null || uriPath === '') {
-      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['uriPath'], null, null, null);
-      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
-      return callback(null, errorObj);
-    }
-    if (restMethod === undefined || restMethod === null || restMethod === '') {
-      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['restMethod'], null, null, null);
-      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
-      return callback(null, errorObj);
-    }
-
-    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
-    // remove any leading / and split the uripath into path variables
-    let myPath = uriPath;
-    while (myPath.indexOf('/') === 0) {
-      myPath = myPath.substring(1);
-    }
-    const pathVars = myPath.split('/');
-    const queryParamsAvailable = queryData;
-    const queryParams = {};
-    const bodyVars = requestBody;
-
-    // loop in template. long callback arg name to avoid identifier conflicts
-    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
-      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
-        && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
-        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
-      }
-    });
-
-    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders
-    const reqObj = {
-      payload: bodyVars,
-      uriPathVars: pathVars,
-      uriQuery: queryParams,
-      uriOptions: {}
-    };
-    // add headers if provided
-    if (addlHeaders) {
-      reqObj.addlHeaders = addlHeaders;
-    }
-
-    // determine the call and return flag
-    let action = 'getGenerics';
-    let returnF = true;
-    if (restMethod.toUpperCase() === 'POST') {
-      action = 'createGeneric';
-    } else if (restMethod.toUpperCase() === 'PUT') {
-      action = 'updateGeneric';
-    } else if (restMethod.toUpperCase() === 'PATCH') {
-      action = 'patchGeneric';
-    } else if (restMethod.toUpperCase() === 'DELETE') {
-      action = 'deleteGeneric';
-      returnF = false;
-    }
-
     try {
-      // Make the call -
-      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
-      return this.requestHandlerInst.identifyRequest('.generic', action, reqObj, returnF, (irReturnData, irReturnError) => {
-        // if we received an error or their is no response on the results
-        // return an error
-        if (irReturnError) {
-          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
-          return callback(null, irReturnError);
-        }
-        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
-          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['genericAdapterRequest'], null, null, null);
-          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
-          return callback(null, errorObj);
-        }
-
-        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
-        // return the response
-        return callback(irReturnData, null);
-      });
-    } catch (ex) {
-      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
-      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
-      return callback(null, errorObj);
+      return super.genericAdapterRequest(uriPath, restMethod, queryData, requestBody, addlHeaders, callback);
+    } catch (err) {
+      log.error(`${origin}: ${err}`);
+      return callback(null, err);
     }
   }
 
@@ -729,94 +595,56 @@ class TufinSecuretrack extends AdapterBaseCl {
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
-    if (this.suspended && this.suspendMode === 'error') {
-      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
-      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
-      return callback(null, errorObj);
-    }
-
-    /* HERE IS WHERE YOU VALIDATE DATA */
-    if (uriPath === undefined || uriPath === null || uriPath === '') {
-      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['uriPath'], null, null, null);
-      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
-      return callback(null, errorObj);
-    }
-    if (restMethod === undefined || restMethod === null || restMethod === '') {
-      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['restMethod'], null, null, null);
-      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
-      return callback(null, errorObj);
-    }
-
-    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
-    // remove any leading / and split the uripath into path variables
-    let myPath = uriPath;
-    while (myPath.indexOf('/') === 0) {
-      myPath = myPath.substring(1);
-    }
-    const pathVars = myPath.split('/');
-    const queryParamsAvailable = queryData;
-    const queryParams = {};
-    const bodyVars = requestBody;
-
-    // loop in template. long callback arg name to avoid identifier conflicts
-    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
-      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
-        && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
-        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
-      }
-    });
-
-    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders
-    const reqObj = {
-      payload: bodyVars,
-      uriPathVars: pathVars,
-      uriQuery: queryParams,
-      uriOptions: {}
-    };
-    // add headers if provided
-    if (addlHeaders) {
-      reqObj.addlHeaders = addlHeaders;
-    }
-
-    // determine the call and return flag
-    let action = 'getGenericsNoBase';
-    let returnF = true;
-    if (restMethod.toUpperCase() === 'POST') {
-      action = 'createGenericNoBase';
-    } else if (restMethod.toUpperCase() === 'PUT') {
-      action = 'updateGenericNoBase';
-    } else if (restMethod.toUpperCase() === 'PATCH') {
-      action = 'patchGenericNoBase';
-    } else if (restMethod.toUpperCase() === 'DELETE') {
-      action = 'deleteGenericNoBase';
-      returnF = false;
-    }
-
     try {
-      // Make the call -
-      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
-      return this.requestHandlerInst.identifyRequest('.generic', action, reqObj, returnF, (irReturnData, irReturnError) => {
-        // if we received an error or their is no response on the results
-        // return an error
-        if (irReturnError) {
-          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
-          return callback(null, irReturnError);
-        }
-        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
-          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['genericAdapterRequestNoBasePath'], null, null, null);
-          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
-          return callback(null, errorObj);
-        }
-
-        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
-        // return the response
-        return callback(irReturnData, null);
-      });
-    } catch (ex) {
-      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
-      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
-      return callback(null, errorObj);
+      return super.genericAdapterRequestNoBasePath(uriPath, restMethod, queryData, requestBody, addlHeaders, callback);
+    } catch (err) {
+      log.error(`${origin}: ${err}`);
+      return callback(null, err);
     }
+  }
+
+  /* INVENTORY CALLS */
+  /**
+   * @summary run the adapter lint script to return the results.
+   *
+   * @function iapRunAdapterLint
+   * @param {Callback} callback - callback function
+   */
+  iapRunAdapterLint(callback) {
+    const meth = 'adapter-iapRunAdapterLint';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    return super.iapRunAdapterLint(callback);
+  }
+
+  /**
+   * @summary run the adapter test scripts (baseunit and unit) to return the results.
+   *    can not run integration as there can be implications with that.
+   *
+   * @function iapRunAdapterTests
+   * @param {Callback} callback - callback function
+   */
+  iapRunAdapterTests(callback) {
+    const meth = 'adapter-iapRunAdapterTests';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    return super.iapRunAdapterTests(callback);
+  }
+
+  /**
+   * @summary provide inventory information abbout the adapter
+   *
+   * @function iapGetAdapterInventory
+   * @param {Callback} callback - callback function
+   */
+  iapGetAdapterInventory(callback) {
+    const meth = 'adapter-iapGetAdapterInventory';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    return super.iapGetAdapterInventory(callback);
   }
 
   /**
@@ -848,7 +676,7 @@ class TufinSecuretrack extends AdapterBaseCl {
    * @summary Some firewall vendors use special fields in their security policy. For example: Palo Alto uses Tags, Security Profiles and Log Profiles and Fortinet uses NAT Pools and other NAT configurations. SecureTrack refers to these fields as “Additional Parameters”. The additional parameters API retrieves the possible values of these fields. This API is currently supported for Palo Alto Networks firewalls and Fortinet devices managed by Fortimanager.   Parameters:  context: Global MSSP context [optional] ...(description truncated)
    *
    * @function getAdditionalParametersIdentitiesByRevision
-   * @param {default} revisionId - path parameter
+   * @param {string} revisionId - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -940,8 +768,8 @@ class TufinSecuretrack extends AdapterBaseCl {
    * @summary Some firewall vendors use special fields in their security policy. For example: Palo Alto uses Tags, Security Profiles and Log Profiles and Fortinet uses NAT Pools and other NAT configurations. SecureTrack refers to these fields as “Additional Parameters”. The additional parameters API retrieves the possible values of these fields. This API is currently supported for Palo Alto Networks firewalls and Fortinet devices managed by Fortimanager.   Parameters:  context: Global MSSP context [optional] ...(description truncated)
    *
    * @function getSpecificAdditionalParameterIdentity
-   * @param {default} revisionId - path parameter
-   * @param {default} ids - path parameter
+   * @param {string} revisionId - path parameter
+   * @param {string} ids - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -1038,8 +866,8 @@ class TufinSecuretrack extends AdapterBaseCl {
    * @summary Fetches one or more URL Categories. This API is supported for Panorama in advanced mode and Panorama Device Groups.   Parameters:  context: Global MSSP context [optional] revision_id: Revision ID ids: Url Category IDs separated by commas   Usage Example  https://192.168.1.1/securetrack/api/revisions/762/url_categories/242767,242768,242760
    *
    * @function getAURLCategory
-   * @param {default} revisionId - path parameter
-   * @param {default} ids - path parameter
+   * @param {string} revisionId - path parameter
+   * @param {string} ids - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -1136,7 +964,7 @@ class TufinSecuretrack extends AdapterBaseCl {
    * @summary Fetches list of applications defined on device given by ID. This API is currently supported for Palo Alto Networks firewalls. In Panorama NG, overrides property in returned ApplicationDTO will be set to true, if the application overrides an original value. The default value for get_total is false. For API calls that have pagination, set get_total to true on the first call. Use the value to returned in total to determine how many additional calls are required to retrieve all the desired results. ...(description truncated)
    *
    * @function getApplicationIdentitiesByDevice
-   * @param {default} id - path parameter
+   * @param {string} id - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -1228,8 +1056,8 @@ class TufinSecuretrack extends AdapterBaseCl {
    * @summary Fetches one or more applications defined by a device ID and Application Id or comma separated applications ids list. This API is currently supported for Palo Alto Networks firewalls.  Note:  This API retrieves the information from the latest revision. In Panorama NG, overrides property in returned ApplicationDTO will be set to true, if the application overrides an original value.    Parameters:  context: Global MSSP context [optional] id: Device ID ids: Application IDs separated by commas   Usag...(description truncated)
    *
    * @function getSpecificApplicationIdentity
-   * @param {default} id - path parameter
-   * @param {default} ids - path parameter
+   * @param {string} id - path parameter
+   * @param {string} ids - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -1326,7 +1154,7 @@ class TufinSecuretrack extends AdapterBaseCl {
    * @summary Fetches list of applications defined in a revision given by ID. This API is currently supported for Palo Alto Networks firewalls. In Panorama NG, overrides property in returned ApplicationDTO will be set to true, if the application overrides an original value. The default value for get_total is false. For API calls that have pagination, set get_total to true on the first call. Use the value to returned in total to determine how many additional calls are required to retrieve all the desired resul...(description truncated)
    *
    * @function getApplicationsIdentitiesByRevision
-   * @param {default} id - path parameter
+   * @param {string} id - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -1418,8 +1246,8 @@ class TufinSecuretrack extends AdapterBaseCl {
    * @summary Fetches one or more applications defined by a revision ID and Application Id or comma separated applications ids list. This API is currently supported for Palo Alto Networks firewalls. In Panorama NG, overrides property in returned ApplicationDTO will be set to true, if the application overrides an original value.    Parameters:  context: Global MSSP context [optional] revision_id: Revision ID ids: Application IDs separated by commas   Usage Example  https://192.168.1.1/securetrack/api/revisions...(description truncated)
    *
    * @function getRevisionsRevisionIdApplicationsIds
-   * @param {default} revisionId - path parameter
-   * @param {default} ids - path parameter
+   * @param {string} revisionId - path parameter
+   * @param {string} ids - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -1710,8 +1538,8 @@ class TufinSecuretrack extends AdapterBaseCl {
    * @summary Retrieves scheduling and device details for a specific change window.   Parameters:  context: Global MSSP context [optional] uid: Change window uuid task_id: Task Id   Usage Example     URL  https://192.168.1.1/securetrack/api/change_windows/fc7b167c-29ea-49a1-9ee3-efb6d1351343/tasks/1     OUTPUT   { &nbsp;&nbsp;&nbsp;&nbsp;"commit_task": { &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"id": 1, &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"start_date": "04-Nov-2018 01:30:00PM +0200", &nbsp;...(description truncated)
    *
    * @function getSchedulingAndDeviceDetailsForASpecificChangeWindow
-   * @param {default} uid - path parameter
-   * @param {default} taskId - path parameter
+   * @param {string} uid - path parameter
+   * @param {string} taskId - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -1808,7 +1636,7 @@ class TufinSecuretrack extends AdapterBaseCl {
    * @summary Retrieves a list of completed policy changes for a specific change window. For valid pagination, both  start  and  count  should be provided. Otherwise, pagination is turned off.  The default value for  get_total  is false. For API calls that have pagination, set  get_total  to true on the first call.  Use the value to returned in total to determine how many additional calls are required to retrieve all the desired results.  To improve performance, omit or set  get_total  to false on any subsequ...(description truncated)
    *
    * @function getAListOfCompletedPolicyChangesForASpecificChangeWindow
-   * @param {default} uid - path parameter
+   * @param {string} uid - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -1900,7 +1728,7 @@ class TufinSecuretrack extends AdapterBaseCl {
    * @summary Reflects static data from the running-config. For dynamic information see the /topology_interfaces API. This API is not applicable for Check Point.   Parameters:  context: Global MSSP context [optional] id: Device ID   Usage Example  https://192.168.1.1/securetrack/api/devices/10/interfaces
    *
    * @function getNetworkInterfacesByDevice
-   * @param {default} id - path parameter
+   * @param {string} id - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -1992,7 +1820,7 @@ class TufinSecuretrack extends AdapterBaseCl {
    * @summary Reflects static data from the running-config. For dynamic information see the /topology_interfaces API. This API is not applicable for Check Point.   Parameters:  context: Global MSSP context [optional] id: Revision ID   Usage Example  https://192.168.1.1/securetrack/api/revisions/227/interfaces
    *
    * @function getNetworkInterfacesByRevision
-   * @param {default} id - path parameter
+   * @param {string} id - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -2084,7 +1912,7 @@ class TufinSecuretrack extends AdapterBaseCl {
    * @summary Returns a list of the zones for the specified Juniper, Stonesoft, Fortinet or Palo Alto Networks revision. Note: this API returns device zones, not Tufin zones.   Parameters:  context: Global MSSP context [optional] id: Revision ID   Usage Example  https://192.168.1.1/securetrack/api/revisions/787/zones
    *
    * @function getDeviceZonesByRevision
-   * @param {default} id - path parameter
+   * @param {string} id - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -2176,7 +2004,7 @@ class TufinSecuretrack extends AdapterBaseCl {
    * @summary Returns a list of the zones for the specified Juniper, Stonesoft, Fortinet or Palo Alto Networks device. Note: this API returns device zones, not Tufin zones.   Parameters:  context: Global MSSP context [optional] id: Device ID   Usage Example  https://192.168.1.1/securetrack/api/devices/104/zones
    *
    * @function getDeviceZonesByDevice
-   * @param {default} id - path parameter
+   * @param {string} id - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -2268,7 +2096,7 @@ class TufinSecuretrack extends AdapterBaseCl {
    * @summary Parameters:  context: Global MSSP context [optional] id: Device ID   Usage Example  https://192.168.1.1/securetrack/api/devices/104/bindable_objects
    *
    * @function getZonesAndNetworkInterfacesThatParticipateInSubPolicies
-   * @param {default} id - path parameter
+   * @param {string} id - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -2360,7 +2188,7 @@ class TufinSecuretrack extends AdapterBaseCl {
    * @summary Parameters:  context: Global MSSP context [optional] id: Domain id   Usage Example  https://192.168.1.1/securetrack/api/domains/1   Response Messages:  401: User not permitted to access domains 400: Domain with ID was not found
    *
    * @function getDomain
-   * @param {default} id - path parameter
+   * @param {string} id - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -2453,7 +2281,7 @@ class TufinSecuretrack extends AdapterBaseCl {
    *
    * @function updateADomain
    * @param {object} body - PUT body parameter
-   * @param {default} id - path parameter
+   * @param {string} id - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -2708,7 +2536,7 @@ class TufinSecuretrack extends AdapterBaseCl {
    * @summary Parameters:  context: Global MSSP context [optional] id: Revision ID   Usage Example  https://191.168.1.1/securetrack/api/revisions/18/crypto_maps
    *
    * @function getCiscoCryptographicMapsByRevision
-   * @param {default} id - path parameter
+   * @param {string} id - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -2800,7 +2628,7 @@ class TufinSecuretrack extends AdapterBaseCl {
    * @summary Get policy and peers defined on a Cisco crypto map which is applied to specific interface (provided through the outputInterfaceName parameter) in the running config. You can retrieve the interface names by calling the /devices/id/interfaces API.   Parameters:  device_id: The unique identifier of target device outputInterfaceName: Interface name   Usage Example  https://192.168.1.1/securetrack/api/bindings/32/ipsec_tunnels?outputInterfaceName=GigabitEthernet1
    *
    * @function getCiscoIPsecPolicyAndPeers
-   * @param {default} deviceId - path parameter
+   * @param {string} deviceId - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -2892,7 +2720,7 @@ class TufinSecuretrack extends AdapterBaseCl {
    * @summary Get Check Point VPN (IPSec) Communities and gateways that partcipant in those communities. Works on clusters and gateways, not on management servers.   Parameters:  device_id: The unique identifier of target device   Usage Example  https://192.168.1.1/securetrack/api/bindings/20/ipsec_communities
    *
    * @function getCheckPointVPNIPSecCommunitiesAndGateways
-   * @param {default} deviceId - path parameter
+   * @param {string} deviceId - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -2984,7 +2812,7 @@ class TufinSecuretrack extends AdapterBaseCl {
    * @summary Parameters:  context: Global MSSP context [optional] id: Device ID   Usage Example  https://192.168.1.1/securetrack/api/devices/19/crypto_maps
    *
    * @function getCiscoCryptographicMapsByDevice
-   * @param {default} id - path parameter
+   * @param {string} id - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -3076,7 +2904,7 @@ class TufinSecuretrack extends AdapterBaseCl {
    * @summary The order of precedence used to resolve the Internet object is: Step 1: Identify the Internet referral: Search for a defined Internet referral on the specified device. If it is not found on the device, search the parent and grandparents (up the device tree) for a defined Internet referral. If a defined Internet referral is found, then match the name in the Internet referral to a network object, as defined in Step 2. If an Internet referral is not found, it resolves to “Any”. Step 2: Resolve the ...(description truncated)
    *
    * @function getResolvedInternetRepresentationForDevice
-   * @param {default} deviceId - path parameter
+   * @param {string} deviceId - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -3242,7 +3070,7 @@ class TufinSecuretrack extends AdapterBaseCl {
    * @summary Parameters:  deviceId: SecureTrack Device ID   Usage Example  https://192.168.1.1/securetrack/api/internet_referral/2   Response Messages:  200: Internet referral configuration was deleted 400: Device with given ID does not exist 400: Internet referral object can only be configured for StoneSoft (except master engine) or Check Point SMC/CMA devices 400: Internet referral configuration for device ID does not exist 401: Access is denied.
    *
    * @function deleteInternetRepresentationForDevice
-   * @param {default} deviceId - path parameter
+   * @param {string} deviceId - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -3317,7 +3145,7 @@ class TufinSecuretrack extends AdapterBaseCl {
    *
    * @function updateInternetRepresentationForDevice
    * @param {object} body - PUT body parameter
-   * @param {default} deviceId - path parameter
+   * @param {string} deviceId - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -3414,7 +3242,7 @@ class TufinSecuretrack extends AdapterBaseCl {
    * @summary Parameters:  deviceId: SecureTrack Device ID   Usage Example  https://192.168.1.1/securetrack/api/internet_referral/2   Response Messages:  200: Internet referral configuration is returned 400: Device with given ID does not exist 400: Internet referral object can only be configured for StoneSoft (except master engine) or Check Point SMC/CMA devices 404: Internet referral configuration was not found for device ID 401: Access is denied.
    *
    * @function getInternetRepresentationForDevice
-   * @param {default} deviceId - path parameter
+   * @param {string} deviceId - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -3774,7 +3602,7 @@ class TufinSecuretrack extends AdapterBaseCl {
    * @summary Returns textual configuration for the specified revision Id.    Parameters:  context: Global MSSP context [optional] id: Revision id   Usage Example  https://192.168.1.1/securetrack/api/revisions/227/config
    *
    * @function getTextualConfigurationByRevision
-   * @param {default} id - path parameter
+   * @param {string} id - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -4103,7 +3931,7 @@ Currently supported types: Panorama, FortiManager, Cisco ASA. Please see example
 SecureTrack for a specific Task ID.  For a list of devices, the status of each device is displayed.  A device that was not added due to some reason will be added to "failed" list with status element containing a description. For example: "description": "No connection to device".   Parameters:  task_uid: Task UID   Usage Example     URL  https://192.168.1.1/securetrack/api/devices/bulk/tasks/d7e88799-a6...(description truncated)
    *
    * @function getSpecificTaskResultsOfBulkOperationsOnDevices
-   * @param {default} taskUid - path parameter
+   * @param {string} taskUid - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -4269,7 +4097,7 @@ SecureTrack for a specific Task ID.  For a list of devices, the status of each d
    * @summary Returns the vendor, model, name, domain and ID for the specified device. For more information on supported devices, supported models and virtual types please refer to 'Device and Revision Resources' section in the Tufin Knowledge Center .   Parameters:  context: Global MSSP context [optional] id: Device ID show_os_version: Show os version as apart of the response [optional]   Usage Example  https://192.168.1.1/securetrack/api/devices/60   Usage Example  https://192.168.1.1/securetrack/api/device...(description truncated)
    *
    * @function getSpecificDevice
-   * @param {default} id - path parameter
+   * @param {string} id - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -4362,7 +4190,7 @@ SecureTrack for a specific Task ID.  For a list of devices, the status of each d
    *
    * @function updateOfflineDevice
    * @param {object} body - PUT body parameter
-   * @param {default} deviceId - path parameter
+   * @param {string} deviceId - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -4603,7 +4431,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Get latest revision of running configuration for a given device Id.    Parameters:  context: global MSSP context [optional] id: Device ID   Usage Example  https://192.168.1.1/securetrack/api/devices/111/config
    *
    * @function getTextualConfigurationByDevice
-   * @param {default} id - path parameter
+   * @param {string} id - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -4695,7 +4523,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Fetches a list of NAT objects defined on device given by device ID Note: NAT objects are only relevant for Check Point management servers and Juniper Netscreen devices. The default value for get_total is false. For API calls that have pagination, set get_total to true on the first call. Use the value to returned in total to determine how many additional calls are required to retrieve all the desired results. To improve performance, omit or set get_total to false on any subsequent calls.    Param...(description truncated)
    *
    * @function getNATObjectsByDevice
-   * @param {default} id - path parameter
+   * @param {string} id - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -4787,7 +4615,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Fetches a list of NAT objects for a given revision Note: NAT objects are only relevant for Check Point management servers and Juniper Netscreen devices. The default value for get_total is false. For API calls that have pagination, set get_total to true on the first call. Use the value to returned in total to determine how many additional calls are required to retrieve all the desired results. To improve performance, omit or set get_total to false on any subsequent calls.    Parameters:  context:...(description truncated)
    *
    * @function getNATObjectsByRevision
-   * @param {default} id - path parameter
+   * @param {string} id - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -4879,7 +4707,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Fetches list of NAT rules for device given by device ID  input_interface and output_interface are not supported for Panorama running in Advanced management mode nat_stage is supported for Netscreen and JunOS nat_type is supported for FortiManager Note: For Check Point, NAT rules are available from the modules (not managements) Note: For Palo Alto, filtering NAT rules by interface is only available for firewall devices   Parameters:  context: Global MSSP context [optional] id: Device ID input_int...(description truncated)
    *
    * @function getNATRulesByDevice
-   * @param {default} id - path parameter
+   * @param {string} id - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -4971,7 +4799,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Returns groups that contain the specified network object    Parameters:  context: Returns results for the specified domain ID. [optional] id: The SecureTrack object ID of the network object.   Usage Example  https://192.168.1.1/securetrack/api/network_objects/69577/groups
    *
    * @function getNetworkGroupsContainingSpecifiedNetworkObject
-   * @param {default} id - path parameter
+   * @param {string} id - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -5063,8 +4891,8 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Fetches a single or partial list of the network objects for a given revision. For group network objects, the returned results will also include full details of every group member. Set show_members=false to return only the name and ID of the members, and omit the full details of the group members.   Parameters:  context: Global MSSP context [optional] revision_id: Revision id ids: Network object IDs separated by commas show_members: Set to false to return only the name and ID of the members [opti...(description truncated)
    *
    * @function getSpecificNetworkObjectsByRevision
-   * @param {default} revisionId - path parameter
-   * @param {default} ids - path parameter
+   * @param {string} revisionId - path parameter
+   * @param {string} ids - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -5161,8 +4989,8 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Fetches a single or partial list of the network objects for a given device ID. For group network objects, the returned results will also include full details of every group member. Set show_members=false to return only the name and ID of the members, and omit the full details of the group members.  Note:  This API retrieves the information from the latest revision.   Parameters:  context: Global MSSP context [optional] device_id: Device ID ids: Network object IDs separated by commas show_members...(description truncated)
    *
    * @function getSpecificNetworkObject
-   * @param {default} deviceId - path parameter
-   * @param {default} ids - path parameter
+   * @param {string} deviceId - path parameter
+   * @param {string} ids - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -5259,7 +5087,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Fetches list of network objects from specific revision The default value for get_total is false. For API calls that have pagination, set get_total to true on the first call. Use the value to returned in total to determine how many additional calls are required to retrieve all the desired results. To improve performance, omit or set get_total to false on any subsequent calls. The show_members parameter is only relevant if type=group. If type=group, the returned results will also include full deta...(description truncated)
    *
    * @function getNetworkObjectsByRevision
-   * @param {default} id - path parameter
+   * @param {string} id - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -5402,7 +5230,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Returns the security rules that contain the specified network object    Parameters:  context: Returns results for the specified domain ID. [optional] id: The SecureTrack object ID of the network object. include_groups: You can add "include_groups" to find rules that include the network object and rules that include the groups that include the network object. [optional] start: Returns the results beginning with the specified result number. [optional] count: Returns the specified number of results...(description truncated)
    *
    * @function getRulesContainingSpecifiedNetworkObject
-   * @param {default} id - path parameter
+   * @param {string} id - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -5494,7 +5322,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Fetches list of network objects defined on device given by ID The default value for get_total is false. For API calls that have pagination, set get_total to true on the first call. Use the value to returned in total to determine how many additional calls are required to retrieve all the desired results. To improve performance, omit or set get_total to false on any subsequent calls. The show_members parameter is only relevant if type=group. If type=group, the returned results will also include fu...(description truncated)
    *
    * @function getNetworkObjectsByDevice
-   * @param {default} id - path parameter
+   * @param {string} id - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -5586,7 +5414,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Returns the topology cloud data for the specified id. This API requires 'Super admin' or 'Multi-Domain admin' privileges. Multi-Domain user must have access permission to the domain where the cloud resides.   Parameters:  id: Cloud id   Usage Example     URL  https://192.168.1.1/securetrack/api/topology/clouds/48    OUTPUT  { &nbsp;&nbsp;&nbsp;&nbsp;"topology_cloud": { &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"id": 48, &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"name": "Cloud 69.70.1...(description truncated)
    *
    * @function getSpecificTopologyCloud
-   * @param {default} id - path parameter
+   * @param {string} id - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -5679,7 +5507,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    *
    * @function updateACloud
    * @param {object} body - PUT body parameter
-   * @param {default} id - path parameter
+   * @param {string} id - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -5929,7 +5757,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Returns the subnet for the specified id, including information regarding attached devices and join candidates. This API requires 'Super admin' or 'Multi-Domain admin' privileges. Multi-Domain user must have access permission to the domain where the subnet resides.   Parameters:  id: Subnet id   Usage Example     URL  https://192.168.1.1/securetrack/api/topology/subnets/20    OUTPUT  { &nbsp;&nbsp;&nbsp;&nbsp;"subnet": { &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"id": 18, &nbsp;&nbsp;&nbsp;...(description truncated)
    *
    * @function getSpecificTopologySubnet
-   * @param {default} id - path parameter
+   * @param {string} id - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -6072,7 +5900,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Delete a generic device from the Topology model. The ID must be for a valid generic device listed in the Topology Model. If update update_topology = true, then the Topology model will be updated immediately after the device is deleted. For maximum efficiency, if you are deleting multiple generic devices in consecutive API calls, you can set update_topology = false on all API calls  except for the last one. On the last call, set update_toplogy = true. Default value for update_topology = true.   P...(description truncated)
    *
    * @function deleteGenericDeviceFromTopologyModel
-   * @param {default} id - path parameter
+   * @param {string} id - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -6147,7 +5975,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    *
    * @function updateAnExistingGenericDeviceInTheTopologyModel
    * @param {object} body - PUT body parameter
-   * @param {default} id - path parameter
+   * @param {string} id - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -6226,7 +6054,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Returns the internal networks for the specified Cloud management id. This API requires 'Super admin' privileges.   Parameters:  id: Cloud management id   Usage Example     URL  https://192.168.1.1/securetrack/api/topology/cloud_internal_networks/20    OUTPUT  { &nbsp;&nbsp;&nbsp;&nbsp;"network_list": &nbsp;&nbsp;&nbsp;&nbsp;{ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"count": 3, &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"total": 3, &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"net...(description truncated)
    *
    * @function getCloudInternalNetworks
-   * @param {default} id - path parameter
+   * @param {string} id - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -6318,7 +6146,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Returns information about a specific cloud in the topology. This API includes the ID of the cloud, the number of routes that point to the cloud, and the relevant devices (including the management_id) that have routes that point to the cloud. This information can be used to identify missing devices that may need to be added to the topology or to identify clouds that are candidates for being joined.   Parameters:  cloud_id: cloud id start: The starting element to include in the returned results [o...(description truncated)
    *
    * @function getCloudInformation
-   * @param {default} cloudId - path parameter
+   * @param {string} cloudId - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -7025,8 +6853,8 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Get a specific zone pattern entry for a specific zone by identifier   Parameters:  context: Global MSSP context. [optional] zone_id: Identifier of the zone containing the zone entry. id: Identifier of the zone pattern entry.   Usage Example     URL  https://192.168.1.1/securetrack/api/zones/75/pattern-entries/2    BODY  &lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt; &lt;pattern_match_entry&gt; &nbsp;&nbsp;&nbsp;&nbsp;&lt;id&gt;2&lt;/id&gt;&nbsp;&nbsp;&nbsp;&nbsp;&lt;type&gt;securi...(description truncated)
    *
    * @function getASpecificZonePatternEntryForASpecificZone
-   * @param {default} zoneId - path parameter
-   * @param {default} id - path parameter
+   * @param {string} zoneId - path parameter
+   * @param {string} id - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -7124,7 +6952,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    *
    * @function createAZonePatternEntryInASpecificZone
    * @param {object} body - POST body parameter
-   * @param {default} zoneId - path parameter
+   * @param {string} zoneId - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -7221,7 +7049,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Get the list of zone pattern entries for specific zones by identifiers   Parameters:  context: Global MSSP context. [optional] ids: Filter by IDs for the pattern entry results. [optional] pattern: Filter by pattern string for the zone entry results. [optional] name: Filter by zone name for the pattern entry results. [optional] comment: Filter by comment for the pattern entry results. [optional] sort: Sort ascending or descending. [optional] start: Starting page number for query results. [optiona...(description truncated)
    *
    * @function getAllPatternEntriesForSpecificZones
-   * @param {default} ids - path parameter
+   * @param {string} ids - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -7313,8 +7141,8 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Get a specific zone entry by ID for a zone.   Parameters:  context: Global MSSP context. [optional] zone_id: The ID of the zone containing the zone entry. id: The ID of the zone entry.   Usage Example  https://192.168.1.1/securetrack/api/zones/2/entries/123   Response Messages:  200: The zone entry was successfully retrieved. 401: User is not permitted to access the specified domain 404: A zone with the specified ID was not found. 404: A zone entry with the specified ID was not found.
    *
    * @function getASpecificZoneEntry
-   * @param {default} zoneId - path parameter
-   * @param {default} id - path parameter
+   * @param {string} zoneId - path parameter
+   * @param {string} id - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -7411,8 +7239,8 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Delete existing zone entries.   Parameters:  context: Global MSSP context. [optional] zone_id: The ID of the zone containing the zone entry. id: The ID of the zone entry to delete.   Usage Example  https://192.168.1.1/securetrack/api/zones/2/entries/10   Response Messages:  200: The zone entry was deleted successfully. 401: User is not permitted to access the specified domain 404: A zone with the specified ID was not found. 404: A zone entry with the specified ID was not found.
    *
    * @function deleteZoneEntries
-   * @param {default} zoneId - path parameter
-   * @param {default} id - path parameter
+   * @param {string} zoneId - path parameter
+   * @param {string} id - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -7492,8 +7320,8 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    *
    * @function modifyAZoneEntry
    * @param {object} body - PUT body parameter
-   * @param {default} zoneId - path parameter
-   * @param {default} id - path parameter
+   * @param {string} zoneId - path parameter
+   * @param {string} id - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -7596,8 +7424,8 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    *
    * @function modifyMultipleExistingZoneEntries
    * @param {object} body - PUT body parameter
-   * @param {default} zoneIds - path parameter
-   * @param {default} ids - path parameter
+   * @param {string} zoneIds - path parameter
+   * @param {string} ids - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -7699,8 +7527,8 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Modify an existing zone entry.   Parameters:  context: Global MSSP context. [optional] zone_ids: The ID(s) of the zones containing the zone entry. ids: The ID(s) of the zone entries to delete.   Usage Example  https://192.168.1.1/securetrack/api/zones/2,3/entries/10,20   Response Messages:  200: The zone entry was deleted successfully. 401: User is not permitted to access the specified domain 404: A zone with the specified ID was not found. 404: A zone entry with the specified ID was not found.
    *
    * @function deleteZonesZoneIdsEntriesIds
-   * @param {default} zoneIds - path parameter
-   * @param {default} ids - path parameter
+   * @param {string} zoneIds - path parameter
+   * @param {string} ids - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -7780,7 +7608,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    *
    * @function createAZoneEntry
    * @param {object} body - POST body parameter
-   * @param {default} zoneId - path parameter
+   * @param {string} zoneId - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -7877,7 +7705,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Get the list of zone entries for a zone.   Parameters:  context: Global MSSP context. [optional] ids: Filter by IDs for the zone entry results. [optional] name: Filter by name for the zone entry results. [optional] ip: Filter by IP for the zone entry results. [optional] netmask: Filter by netmask for the zone entry results. [optional] prefix: Filter by prefix for the zone entry results. [optional] comment: Filter by comment for the zone entry results. [optional] group: Filter by device group for...(description truncated)
    *
    * @function getEntriesForAZone
-   * @param {default} ids - path parameter
+   * @param {string} ids - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -7970,7 +7798,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    *
    * @function importAZone
    * @param {object} body - POST body parameter
-   * @param {default} ids - path parameter
+   * @param {string} ids - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -8049,7 +7877,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Get a list of configuration usages for the specified zone(s).   Parameters:  context: Global MSSP context. [optional] ids: The ID(s) of the zones for which to look for configuration dependencies.   Usage Example  https://192.168.1.1/securetrack/api/zones/2,3/dependencies   Response Messages:  200: The zone dependencies were retrieved successfully. 401: User is not permitted to access the specified domain 404: A zone with the specified ID was not found.
    *
    * @function getConfigurationUsagesForAZone
-   * @param {default} ids - path parameter
+   * @param {string} ids - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -8141,8 +7969,8 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Remove a zone(s) as an descendants to a existing zone.   Parameters:  context: Global MSSP context. [optional] parent_id: The ID of the zone for which to remove descendant zone(s). child_ids: The ID(s) of the zone to remove as a descendant.   Usage Example  https://192.168.1.1/securetrack/api/zones/1/descendants/10,20   Response Messages:  200: The zone was removed as an descendant successfully. 401: User is not permitted to access the specified domain 404: A zone with the specified ID was not f...(description truncated)
    *
    * @function removeAZoneAsAnDescendantsToAZone
-   * @param {default} parentId - path parameter
-   * @param {default} childIds - path parameter
+   * @param {string} parentId - path parameter
+   * @param {string} childIds - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -8222,8 +8050,8 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    *
    * @function addAZoneAsADescendantToAZone
    * @param {object} body - PUT body parameter
-   * @param {default} parentId - path parameter
-   * @param {default} childIds - path parameter
+   * @param {string} parentId - path parameter
+   * @param {string} childIds - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -8552,7 +8380,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Delete an existing zone.   Parameters:  context: Global MSSP context. [optional] ids: The ID(s) of the zone to delete.   Usage Example  https://192.168.1.1/securetrack/api/zones/1,2   Response Messages:  204: The specified zone was successfully deleted. 401: User is not permitted to access the specified domain 404: A zone with the specified ID was not found.
    *
    * @function deleteAZone
-   * @param {default} ids - path parameter
+   * @param {string} ids - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -8627,8 +8455,8 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    *
    * @function addAZoneAsAnAncestorToAZone
    * @param {object} body - PUT body parameter
-   * @param {default} childId - path parameter
-   * @param {default} parentIds - path parameter
+   * @param {string} childId - path parameter
+   * @param {string} parentIds - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -8712,8 +8540,8 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Remove a zone(s) as an ancestor to a existing zone.   Parameters:  context: Global MSSP context. [optional] child_id: The ID of the zone for which to remove ancestors zone(s). parent_ids: The ID(s) of the zones to remove as ancestors.   Usage Example  https://192.168.1.1/securetrack/api/zones/1/ancestors/10,20   Response Messages:  200: The zone was removed as an ancestor successfully. 401: User is not permitted to access the specified domain 404: A zone with the specified ID was not found.
    *
    * @function removeAZoneAsAnAncestorToAZone
-   * @param {default} childId - path parameter
-   * @param {default} parentIds - path parameter
+   * @param {string} childId - path parameter
+   * @param {string} parentIds - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -8793,7 +8621,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    *
    * @function modifyAZone
    * @param {object} body - PUT body parameter
-   * @param {default} id - path parameter
+   * @param {string} id - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -8890,7 +8718,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Get the zone with the specified ID.   Parameters:  context: Global MSSP context. [optional] id: The ID of the zone to get. imported: List domains that imported zones. [optional]   Usage Example  https://192.168.1.1/securetrack/api/zones/2   Response Messages:  200: The zone was retrieved successfully. 401: User is not permitted to access the specified domain 401: A zone with the specified ID does not exist.
    *
    * @function getASpecificZone
-   * @param {default} id - path parameter
+   * @param {string} id - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -8982,7 +8810,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Get a list of ancestor zones for the specified zone(s).   Parameters:  context: Global MSSP context. [optional] ids: The ID(s) of the zones for which to look for ancestor zones.   Usage Example  https://192.168.1.1/securetrack/api/zones/123,234/ancestors   Response Messages:  200: The zone ancestors were retrieved successfully. 401: User is not permitted to access the specified domain 404: A zone with the specified ID was not found.
    *
    * @function getAncestorZonesForAZone
-   * @param {default} ids - path parameter
+   * @param {string} ids - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -9074,7 +8902,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Get a list of zones descended from the specified zone(s).   Parameters:  context: Global MSSP context. [optional] ids: The ID(s) of the zones for which to look for descendant zones.   Usage Example  https://192.168.1.1/securetrack/api/zones/10,20/descendants   Response Messages:  200: The zone descendants were retrieved successfully. 401: User is not permitted to access the specified domain 404: A zone with the specified ID was not found.
    *
    * @function getDescendantZonesForAZone
-   * @param {default} ids - path parameter
+   * @param {string} ids - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -9258,7 +9086,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Retrieve list of bindings of input and/or output interfaces   Parameters:  device_id: The unique identifier of target device supremum_version_id: The unique identifier of target revision inputInterfaceName: Input interface name outputInterfaceName: Output interface name   Usage Example  https://192.168.1.1/securetrack/api/bindings/20/binding_query?supremum_version_id=785&inputInterfaceName=Any&outputInterfaceName=Any
    *
    * @function getListOfSubPoliciesBindingsWithInputAndOrOutputInterfaces
-   * @param {default} deviceId - path parameter
+   * @param {string} deviceId - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -9350,7 +9178,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Fetches list of policies defined on a given revision ID    Parameters:  context: Global MSSP context [optional] id: Revision ID   Usage Example  https://192.168.1.1/securetrack/api/revisions/785/policies
    *
    * @function getPoliciesByRevision
-   * @param {default} id - path parameter
+   * @param {string} id - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -9442,7 +9270,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Returns a list of all of the subpolicies (bindings) for a given device. The definition of subpolicy is different for each vendor: Check Point - policy package and inline layer (inline layer will be returned only when the optional include_subpolicy parameter is set to true) Cisco - ACL Juniper/Fortinet/Palo Alto/Stonesoft - zone-to-zone policy Cloud platforms - Security Groups    Parameters:  context: Global MSSP context [optional] id: Device ID ipType: Policy ip Type, values can be 'ipv4' or 'ip...(description truncated)
    *
    * @function getSubPoliciesBindingsByDevice
-   * @param {default} id - path parameter
+   * @param {string} id - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -9534,7 +9362,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Parameters:  device_id: The unique identifier of target device inputInterfaceName: Input interface name [optional] outputInterfaceName: Output interface name [optional]   Usage Example  https://192.168.1.1/securetrack/api/bindings/2/topology_interfaces?inputInterfaceName=ethernet1/1&outputInterfaceName=ethernet1/2
    *
    * @function getRulesByInputAndOutputInterfaces
-   * @param {default} deviceId - path parameter
+   * @param {string} deviceId - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -9626,7 +9454,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Returns a list of all of the subpolicies (bindings) for a given revision. The definition of subpolicy is different for each vendor: Check Point - policy package and inline layer (inline layer will be returned only when the optional include_subpolicy parameter is set to true) Cisco - ACL Juniper/Fortinet/Palo Alto/Stonesoft - zone-to-zone policy Cloud platforms - Security Groups    Parameters:  context: Global MSSP context [optional] id: Revision ID ipType: Policy ip Type, values can be 'ipv4' or...(description truncated)
    *
    * @function getSubPoliciesBindingsByRevision
-   * @param {default} id - path parameter
+   * @param {string} id - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -9718,7 +9546,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Fetches list of policies defined on a given device ID.  Supported devices: CheckPoint, Panorama Advanced, FortiManager Basic and Advanced, FMC and NSX.   Parameters:  context: Global MSSP context [optional] id: Device ID   Usage Example  https://192.168.1.1/securetrack/api/devices/20/policies
    *
    * @function getPoliciesByDevice
-   * @param {default} id - path parameter
+   * @param {string} id - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -9861,8 +9689,8 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Delete rule documentation for a single rule given by device ID and rule ID   Parameters:  context: Global MSSP context [optional] id: Device ID rule_id: Rule ID   Usage Example  https://192.168.1.1/securetrack/api/devices/20/rules/3040/documentation
    *
    * @function deleteSpecificRuleDocumentation
-   * @param {default} id - path parameter
-   * @param {default} ruleId - path parameter
+   * @param {string} id - path parameter
+   * @param {string} ruleId - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -9941,8 +9769,8 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Fetches rule documentation for a single rule given by device ID and rule ID   Parameters:  context: Global MSSP context [optional] id: Device ID rule_id: Rule ID   Usage Example  https://192.168.1.1/securetrack/api/devices/20/rules/16373/documentation
    *
    * @function getSpecificRuleDocumentation
-   * @param {default} id - path parameter
-   * @param {default} ruleId - path parameter
+   * @param {string} id - path parameter
+   * @param {string} ruleId - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -10040,8 +9868,8 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    *
    * @function modifySpecificRuleDocumentation
    * @param {object} body - PUT body parameter
-   * @param {default} id - path parameter
-   * @param {default} ruleId - path parameter
+   * @param {string} id - path parameter
+   * @param {string} ruleId - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -10144,8 +9972,8 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    *
    * @function putRevisionsIdRulesRuleIdDocumentation
    * @param {object} body - PUT body parameter
-   * @param {default} id - path parameter
-   * @param {default} ruleId - path parameter
+   * @param {string} id - path parameter
+   * @param {string} ruleId - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -10247,8 +10075,8 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Delete rule documentation for a single rule given by revision ID and rule ID. If the rule has automatic mapping to a ticket, the record is not deleted.   Parameters:  context: Global MSSP context [optional] id: Revision id rule_id: Rule id   Usage Example  https://192.168.1.1/securetrack/api/revisions/173/rules/3373/documentation
    *
    * @function deleteRevisionsIdRulesRuleIdDocumentation
-   * @param {default} id - path parameter
-   * @param {default} ruleId - path parameter
+   * @param {string} id - path parameter
+   * @param {string} ruleId - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -10327,8 +10155,8 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Fetches rule documentation for a single rule given by revision ID and rule ID.   Parameters:  context: Global MSSP context [optional] id: Revision id rule_id: Id of the requested rule   Usage Example  https://192.168.1.1/securetrack/api/revisions/785/rules/16373/documentation
    *
    * @function getRevisionsIdRulesRuleIdDocumentation
-   * @param {default} id - path parameter
-   * @param {default} ruleId - path parameter
+   * @param {string} id - path parameter
+   * @param {string} ruleId - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -10476,7 +10304,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Parameters:  context: Global MSSP context [optional] cleanup_id: Cleanup id devices: Devices ids [optional] start: Start [optional] count: Results count [optional]   Usage Example  https://192.168.1.1/securetrack/api/cleanup/1/instances
    *
    * @function getTheSpecificObjectsOrRulesIdentifiedForTheCleanupResults
-   * @param {default} cleanupId - path parameter
+   * @param {string} cleanupId - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -10568,7 +10396,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Parameters:  context: Global MSSP context [optional] risk_id: Risk id devices: Devices ids [optional] start: Start [optional] count: Results count [optional]   Usage Example  https://192.168.1.1/securetrack/api/risk/1/instances
    *
    * @function getTheSpecificObjectsOrRulesIdentifiedForTheRiskResults
-   * @param {default} riskId - path parameter
+   * @param {string} riskId - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -10660,7 +10488,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Fetches set of Cleanup calculation results for a device given by ID. Only fully shadowed rules (cleanup code C01) are supported.   Parameters:  context: Global MSSP context [optional] device_id: Device ID code: Cleanup category code start: Starting page for query allowable values are numeric [optional] count: Number of pages for query result allowable values are numeric [optional]   Usage Example  https://192.168.1.1/securetrack/api/devices/31/cleanups?code=C01
    *
    * @function getCleanupsByDevice
-   * @param {default} deviceId - path parameter
+   * @param {string} deviceId - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -10752,7 +10580,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Parameters:  context: Global MSSP context [optional] risk_id: Risk id   Usage Example  https://192.168.1.1/securetrack/api/risk/1/devices
    *
    * @function getDevicesInRiskResults
-   * @param {default} riskId - path parameter
+   * @param {string} riskId - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -10895,7 +10723,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Find shadowing rules for given shadowed rules of a specific device   Parameters:  device_id: Device ID shadowed_uids: UIDs of shadowed rules separated by commas   Usage Example  https://192.168.1.1/securetrack/api/devices/31/shadowing_rules?shadowed_uids=78786a0d-b9cc-478e-b7a2-dea953c976c7
    *
    * @function getShadowingRulesByDevice
-   * @param {default} deviceId - path parameter
+   * @param {string} deviceId - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -10987,7 +10815,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Parameters:  context: Global MSSP context [optional] cleanup_id: Cleanup id   Usage Example  https://192.168.1.1/securetrack/api/cleanup/1/devices
    *
    * @function getDevicesInCleanupResults
-   * @param {default} cleanupId - path parameter
+   * @param {string} cleanupId - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -11079,7 +10907,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Fetches revisions for a given device   Parameters:  context: Global MSSP context [optional] id: Device ID start: Starting page for query allowable type is numeric [optional] count: Number of pages for query starting from starting page allowable type is numeric [optional]   Usage Example  https://192.168.1.1/securetrack/api/devices/105/revisions
    *
    * @function getRevisionsByDevice
-   * @param {default} id - path parameter
+   * @param {string} id - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -11171,7 +10999,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Fetches a revision specified by revision Id. To get revId for this API, use the 'id' property of RevisionDTO that is returned by 'Get revisions by device' or 'Get latest revision by device' APIs   Parameters:  context: Global MSSP context [optional] revId: Id of fetched revision   Usage Example  https://192.168.1.1/securetrack/api/revisions/785
    *
    * @function getSpecificRevision
-   * @param {default} revId - path parameter
+   * @param {string} revId - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -11263,7 +11091,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Fetches latest revision for a given device   Parameters:  context: Global MSSP context [optional] id: Device ID   Usage Example  https://192.168.1.1/securetrack/api/devices/105/latest_revision
    *
    * @function getLatestRevisionByDevice
-   * @param {default} id - path parameter
+   * @param {string} id - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -11355,7 +11183,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Get last hit dates for all rules in a given device. For Palo Alto firewalls, this also returns last hits for users and applications in the rule.   Parameters:  device_id: device id   Usage Example  https://192.168.1.1/securetrack/api/rule_last_usage/find_all/20
    *
    * @function getLastHitsForAllRulesByDevice
-   * @param {default} deviceId - path parameter
+   * @param {string} deviceId - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -11447,8 +11275,8 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Get last hit dates for all rules in a given device. For Palo Alto firewalls, this also returns last hits for users and applications in the rule. The rule_uid is the value from the uid field returned by the /rules API: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx   Parameters:  device_id: device_id rule_uid: rule_uid   Usage Example  https://192.168.1.1/securetrack/api/rule_last_usage/find/20/ea9db13e-d058-45c6-a2f0-cd731027c22b
    *
    * @function getLastHitForASpecificRule
-   * @param {default} deviceId - path parameter
-   * @param {default} ruleUid - path parameter
+   * @param {string} deviceId - path parameter
+   * @param {string} ruleUid - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -11545,7 +11373,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Parameters:  ruleId: Rule ID   Usage Example  https://192.168.1.1/securetrack/api/rules/60
    *
    * @function getASpecificRule
-   * @param {default} ruleId - path parameter
+   * @param {string} ruleId - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -11637,8 +11465,8 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Returns a list of rules by device ID, rule IDs and additional criteria.  Note:  This API retrieves the information from the latest revision.    Parameters:  context: Global MSSP context [optional] device_id: Device ID ids: Rule IDs policy: Policy Name [optional] interface: Interfaces to query [optional] zone: Zone name [optional] is_global: Get global rules only(device dependent, see implementation Notes) [optional] add: If set to "documentation" result will include rule documentation [optional]...(description truncated)
    *
    * @function getSpecificRule
-   * @param {default} deviceId - path parameter
-   * @param {default} ids - path parameter
+   * @param {string} deviceId - path parameter
+   * @param {string} ids - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -11786,8 +11614,8 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Returns a list of rules by revision ID, rule IDs and additional criteria   Parameters:  context: Global MSSP context [optional] revision_id: Revision id ids: Rule IDs policy: Policy name [optional] interface: Interfaces to query [optional] zone: Zone name [optional] is_global: Get global rules (Only for: ACL devices) [optional] add: If set to \"documentation\" result will include rule documentation [optional] groupBy: Rules grouping criteria, can be set only to \"bindings\" [optional]   Usage Ex...(description truncated)
    *
    * @function getRevisionsRevisionIdRulesIds
-   * @param {default} revisionId - path parameter
-   * @param {default} ids - path parameter
+   * @param {string} revisionId - path parameter
+   * @param {string} ids - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -11884,7 +11712,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Returns a list of all of the security rules for the specified revision.  Use add=documentation to retrieve rule documentation.  The is_global parameter is device dependent. For ACL devices, only global rules are returned when set to true. For Check Point R80, only global layers are returned when set to true, and specify a layer name in the subpolicy_name parameter This parameter is ignored for all other vendors. The default value is false.  The subpolicy_name parameter is device dependent. For C...(description truncated)
    *
    * @function getRulesByRevision
-   * @param {default} id - path parameter
+   * @param {string} id - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -11976,7 +11804,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary The search_text parameter provides the same capabilities as the Policy Browser feature in SecureTrack. You can search for a string across all rule fields, or you can search for a combination of specific strings in specific fields. The text format is for a field is &lt;fieldname&gt;:&lt;text&gt; for example uid:9259f6ee-47a0-4996-a214-ab7edc14a916. See the search info documentation in Securetrack Policy Browser page for more information.To get more information regarding objects included in the re...(description truncated)
    *
    * @function findRules
-   * @param {default} deviceId - path parameter
+   * @param {string} deviceId - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -12068,7 +11896,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Returns a list of all of the security rules for the specified device.  Use add=documentation to retrieve rule documentation.  The is_global parameter is device dependent. For ACL devices, only global rules are returned when set to true. For Check Point R80, only global layers are returned when set to true, and specify a layer name in the subpolicy_name parameter This parameter is ignored for all other vendors. The default value is false.  The subpolicy_name parameter is device dependent. For Che...(description truncated)
    *
    * @function getRulesByDevice
-   * @param {default} id - path parameter
+   * @param {string} id - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -12160,7 +11988,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Returns groups that contain the specified service objects    Parameters:  context: Returns results for the specified domain ID. [optional] id: The SecureTrack object ID of the service object.   Usage Example  https://192.168.1.1/securetrack/api/services/69577/groups
    *
    * @function getServiceGroupsContainingSpecifiedServiceObjects
-   * @param {default} id - path parameter
+   * @param {string} id - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -12252,8 +12080,8 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Fetches list of specific service objects defined in revision given by revision ID and specified by their IDs    Parameters:  context: Global MSSP context [optional] revision_id: Revision id ids: Rule IDs show_members: Set to false to return only the name and ID of the members [optional]   Usage Example  https://192.168.1.1/securetrack/api/revisions/785/services/959888
    *
    * @function getSpecificService
-   * @param {default} revisionId - path parameter
-   * @param {default} ids - path parameter
+   * @param {string} revisionId - path parameter
+   * @param {string} ids - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -12350,8 +12178,8 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Fetches list of specific service objects defined in device given by device ID and specified by their IDs.  Note:  This API retrieves the information from the latest revision.   Parameters:  context: Global MSSP context [optional] device_id: Device ID ids: Service object IDs separated by commas show_members: Set to false to return only the name and ID of the members [optional]   Usage Example  https://192.168.1.1/securetrack/api/devices/20/services/959888,959966
    *
    * @function getDevicesDeviceIdServicesIds
-   * @param {default} deviceId - path parameter
-   * @param {default} ids - path parameter
+   * @param {string} deviceId - path parameter
+   * @param {string} ids - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -12448,7 +12276,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Returns the security rules that contain the specified service object    Parameters:  context: Returns results for the specified domain ID. [optional] id: The SecureTrack object ID of the service object. include_groups: You can add "include_groups" to find rules that include the service object and rules that include the groups that include the service object. [optional] start: Returns the results beginning with the specified result number. [optional] count: Returns the specified number of results...(description truncated)
    *
    * @function getRulesContainingSpecifiedServiceObject
-   * @param {default} id - path parameter
+   * @param {string} id - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -12540,7 +12368,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Fetches list of service objects defined in revision given by revision ID  The default value for get_total is false. For API calls that have pagination, set get_total to true on the first call. Use the value to returned in total to determine how many additional calls are required to retrieve all the desired results. To improve performance, omit or set get_total to false on any subsequent calls.    Parameters:  context: Global MSSP context [optional] id: Revision id show_members: Set to false to r...(description truncated)
    *
    * @function getServicesByRevision
-   * @param {default} id - path parameter
+   * @param {string} id - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -12683,7 +12511,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Fetches list of service objects defined on device given by device ID. The default value for get_total is false. For APIF calls that have pagination, set get_total to true on the first call. Use the value to returned in total to determine how many additional calls are required to retrieve all the desired results. To improve performance, omit or set get_total to false on any subsequent calls.    Parameters:  context: Global MSSP context [optional] id: Device ID show_members: Set to false to return...(description truncated)
    *
    * @function getServicesByDevice
-   * @param {default} id - path parameter
+   * @param {string} id - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -12775,7 +12603,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Returns the time objects used in the specified revision.   Parameters:  context: Global MSSP context [optional] id: Revision ID start: Starting page for query allowable value is numeric [optional] count: Number of pages for query starting from starting page, allowable type is numeric [optional]   Usage Example  https://192.168.1.1/securetrack/api/revisions/785/time_objects
    *
    * @function getTimeObjectsByRevision
-   * @param {default} id - path parameter
+   * @param {string} id - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -12867,7 +12695,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Returns the time objects used in the specified device.   Parameters:  context: Global MSSP context [optional] id: Device ID start: Starting page for query allowable values are numeric [optional] count: Starting page for query allowable values are numeric [optional]   Usage Example  https://192.168.1.1/securetrack/api/devices/20/time_objects
    *
    * @function getTimeObjectsByDevice
-   * @param {default} id - path parameter
+   * @param {string} id - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -12959,8 +12787,8 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Fetches list of time objects by revision ID and rule ID   Parameters:  context: Global MSSP context [optional] revision_id: Revision ID ids: Rule IDs   Usage Example  https://192.168.1.1/securetrack/api/revisions/7/time_objects/9
    *
    * @function getSpecificTimeObject
-   * @param {default} revisionId - path parameter
-   * @param {default} ids - path parameter
+   * @param {string} revisionId - path parameter
+   * @param {string} ids - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -13241,7 +13069,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Get result of access requests violations task.   Parameters:  taskId: The unique identifier of the access request violations task.   Usage Example  https://192.168.1.1/securetrack/api/violations/access_requests/result/2d8e0a3c-2b07-42b8-b501-336fe74080a3   Response Messages:  200: Access request violations task results were received. 401: Access is denied. 404: An error occurred during the calculation. 404: The calculation for the task has not finished yet.
    *
    * @function getViolationTaskResults
-   * @param {default} taskId - path parameter
+   * @param {string} taskId - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -13333,7 +13161,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Get access requests violations task status.   Parameters:  taskId: The unique identifier of the access request violations task.   Usage Example  https://192.168.1.1/securetrack/api/violations/access_requests/status/2d8e0a3c-2b07-42b8-b501-336fe74080a3   Response Messages:  200: Access request violations task status was received. 401: Access is denied. 404: Access request violations task status was not found.
    *
    * @function getViolationTaskStatus
-   * @param {default} taskId - path parameter
+   * @param {string} taskId - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -13425,7 +13253,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Delete an access request violations task.   Parameters:  taskId: The unique identifier of the access request violations task.   Usage Example  https://192.168.1.1/securetrack/api/violations/access_requests/task/2d8e0a3c-2b07-42b8-b501-336fe74080a3   Response Messages:  204: Access request violations task has been aborted successfully. 401: Access is denied. 404: Access request violations task was not found.
    *
    * @function cancelViolationTask
-   * @param {default} taskId - path parameter
+   * @param {string} taskId - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -13591,7 +13419,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Delete specified alerts by IDs To delete multiple alert_ids, use a comma between each ID   Parameters:  context: Delete alerts in the specified domain ID. [optional] ids: The alert Ids for deletion   Usage Example  https://192.168.1.1/securetrack/api/security_policies/alerts/87   Usage Example  https://192.168.1.1/securetrack/api/security_policies/alerts/86,87,88   Response Messages:  200:  401: Security Policy Alert Ids: :|'alert ids'| don't exist
    *
    * @function deleteAlertsByIds
-   * @param {default} ids - path parameter
+   * @param {string} ids - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -13665,7 +13493,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Returns a specified alert. If the alert_id does not exist, an error message is returned.   Parameters:  context: MSSP context [optional] id: The alert Id   Usage Example  https://192.168.1.1/securetrack/api/security_policies/alerts/1   Response Messages:  401: Alert ID does not exist
    *
    * @function getASpecificAlert
-   * @param {default} id - path parameter
+   * @param {string} id - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -13758,7 +13586,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    *
    * @function updateAnAlert
    * @param {object} body - PUT body parameter
-   * @param {default} id - path parameter
+   * @param {string} id - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -13998,7 +13826,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Delete the cloud tag policy specified by policyId.  If the return code is not OK, the errorMessage field of the TagPolicyResponseDTO may contain additional details describing the cause of the error.   Parameters:  context: Delete policy of the specified domain ID [optional] policyId: cloud tag policy id [optional]   Usage Example     URL  https://192.168.1.1/securetrack/api/tagpolicy/policies/policyId     OUTPUT   { &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"status": "OK", &nbsp;&nbsp;&nbs...(description truncated)
    *
    * @function deleteCloudTagPolicy
-   * @param {default} policyId - path parameter
+   * @param {string} policyId - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -14091,7 +13919,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    *
    * @function replaceACloudTagPolicy
    * @param {object} body - PUT body parameter
-   * @param {default} policyId - path parameter
+   * @param {string} policyId - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -14188,7 +14016,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Partially modify a cloud tag policy by stating the modified attributes. Providing requirements replaces the entire list.  Specifying an empty requirement list is not permitted. Modify some attributes of the cloud tag policy specified by policyID with the attributes provided. If one or more "requirement" objects is provided, the exsiting "requirement" objects will be deleted and replaced with the new objetcs. Specifying an empty requirement list is not permitted.If the return code is not OK, the ...(description truncated)
    *
    * @function modifyACloudTagPolicy
-   * @param {default} policyId - path parameter
+   * @param {string} policyId - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -14280,7 +14108,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary This API retrieves the details of the cloud tag policy specified by policyId.  User must have admin permissions to the policy affiliated domain. If the return code is not OK, the errorMessage field of the TagPolicyResponseDTO may contain additional details describing the cause of the error.   Parameters:  context: Returns results for the specified domain ID [optional] policyId: cloud tag policy id [optional]   Usage Example     URL  https://192.168.1.1/securetrack/api/tagpolicy/policies/policyId...(description truncated)
    *
    * @function getCloudTagPolicy
-   * @param {default} policyId - path parameter
+   * @param {string} policyId - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -14659,7 +14487,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    *
    * @function startATaskToCalculateMatchingRulesForAnException
    * @param {object} body - POST body parameter
-   * @param {default} exceptionId - path parameter
+   * @param {string} exceptionId - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -14738,7 +14566,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Parameters:  taskId: The unique identifier of the matching rules task.   Usage Example  https://192.168.1.1/securetrack/api/security_policies/exceptions/matching_rules/status/2d8e0a3c-2b07-42b8-b501-336fe74080a3   Response Messages:  200: Matching rules task status was received. 401: User not permitted to Security policy exceptions. 404: Matching rules task status was not found.
    *
    * @function getMatchingRulesTaskStatus
-   * @param {default} taskId - path parameter
+   * @param {string} taskId - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -14830,7 +14658,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Delete the specific unified security policy exceptions   Parameters:  exceptionId: The ID of the exception to delete.   Usage Example  https://192.168.1.1/securetrack/api/security_policies/exceptions/14   Response Messages:  404: The security policy with the specified ID does not exist 401: User not permitted to access the specified domain.
    *
    * @function deleteAnException
-   * @param {default} exceptionId - path parameter
+   * @param {string} exceptionId - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -14922,7 +14750,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Gets a specific exception for unified security policies.   Parameters:  exceptionId: The ID of the exception to get. context: Global MSSP context [optional]   Usage Example  https://192.168.1.1/securetrack/api/security_policies/exceptions/14   Response Messages:  401: User not permitted to access the specified domain 404: A security policy exception with the specified ID was not found.
    *
    * @function getASpecificException
-   * @param {default} exceptionId - path parameter
+   * @param {string} exceptionId - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -15014,7 +14842,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Parameters:  taskId: The unique identifier of the matching rules task.   Usage Example  https://192.168.1.1/securetrack/api/security_policies/exceptions/matching_rules/2d8e0a3c-2b07-42b8-b501-336fe74080a3   Response Messages:  204: Matching rules task has been aborted successfully. 401: User not permitted to Security policy exceptions. 404: Matching rules task was not found.
    *
    * @function cancelMatchingRulesTask
-   * @param {default} taskId - path parameter
+   * @param {string} taskId - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -15231,7 +15059,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Parameters:  taskId: The unique identifier of the matching rules task.   Usage Example  https://192.168.1.1/securetrack/api/security_policies/exceptions/matching_rules/result/2d8e0a3c-2b07-42b8-b501-336fe74080a3   Response Messages:  200: Matching rules task results were received. 401: User not permitted to Security policy exceptions. 404: An error occurred during the calculation. 404: The calculation for the task has not finished yet.
    *
    * @function getMatchingRulesTaskResults
-   * @param {default} taskId - path parameter
+   * @param {string} taskId - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -15425,7 +15253,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Exports a Security Policy in CSV format   Parameters:  context: Returns results for the specified domain ID. [optional] id: ID of the security policy. [optional]   Usage Example  https://192.168.1.1/securetrack/api/security_policies/1/export   Response Messages:  401: User not permitted to access the specified domain 404: Security Policy does not exist
    *
    * @function getUnifiedSecurityPolicyAsCSV
-   * @param {default} id - path parameter
+   * @param {string} id - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -15499,7 +15327,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Delete a Security Policy Matrix   Parameters:  context: Returns results for the specified domain ID. [optional] id: The unique identifier of the security policy matrix to delete   Usage Example  https://192.168.1.1/securetrack/api/security_policies/1
    *
    * @function deleteUnifiedSecurityPolicy
-   * @param {default} id - path parameter
+   * @param {string} id - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -15574,7 +15402,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    *
    * @function setManualDeviceMapping
    * @param {object} body - POST body parameter
-   * @param {default} deviceId - path parameter
+   * @param {string} deviceId - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -15671,7 +15499,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary Parameters:  deviceId: The device ID for which to get violations.   Usage Example  https://192.168.1.1/securetrack/api/violating_rules/1/count   Response Messages:  200: The violation count was successfully retrieved 404: A device with the specified ID was not found
    *
    * @function getTheAmountOfViolatingRulesForTheSpecifiedDevice
-   * @param {default} deviceId - path parameter
+   * @param {string} deviceId - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
@@ -15763,7 +15591,7 @@ Device name should contain only Lower and upper case letters, digits, space, dot
    * @summary policyName is supported for management devices running in Advanced management mode.   Parameters:  deviceId: The device ID for which to get violations policyName: Return only violations that match this policy [optional] severity: Return only violations of this severity type: Return only violations of this type   Usage Example  https://192.168.1.1/securetrack/api/violating_rules/1/device_violations?policy=policy_name&type=SECURITY_POLICY&severity=MEDIUM   Response Messages:  200: The violations w...(description truncated)
    *
    * @function getTheViolatingRulesForTheSpecifiedDevice
-   * @param {default} deviceId - path parameter
+   * @param {string} deviceId - path parameter
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
