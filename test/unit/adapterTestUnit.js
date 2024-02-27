@@ -316,10 +316,10 @@ describe('[unit] Tufin_securetrack Adapter Test', () => {
           assert.notEqual(null, packageDotJson.dependencies);
           assert.notEqual('', packageDotJson.dependencies);
           assert.equal('^8.12.0', packageDotJson.dependencies.ajv);
-          assert.equal('^1.6.3', packageDotJson.dependencies.axios);
+          assert.equal('^1.6.7', packageDotJson.dependencies.axios);
           assert.equal('^11.0.0', packageDotJson.dependencies.commander);
           assert.equal('^11.1.1', packageDotJson.dependencies['fs-extra']);
-          assert.equal('^10.2.0', packageDotJson.dependencies.mocha);
+          assert.equal('^10.3.0', packageDotJson.dependencies.mocha);
           assert.equal('^2.0.1', packageDotJson.dependencies['mocha-param']);
           assert.equal('^15.1.0', packageDotJson.dependencies.nyc);
           assert.equal('^0.4.4', packageDotJson.dependencies.ping);
