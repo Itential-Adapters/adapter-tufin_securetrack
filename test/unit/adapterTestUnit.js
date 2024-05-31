@@ -6960,5 +6960,5767 @@ describe('[unit] Tufin_securetrack Adapter Test', () => {
         }
       }).timeout(attemptTimeout);
     });
+
+    describe('#getSpecificAdditionalParameterIdentityQuery - errors', () => {
+      it('should have a getSpecificAdditionalParameterIdentityQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getSpecificAdditionalParameterIdentityQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing revisionId', (done) => {
+        try {
+          a.getSpecificAdditionalParameterIdentityQuery(null, null, null, (data, error) => {
+            try {
+              const displayE = 'revisionId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getSpecificAdditionalParameterIdentityQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing ids', (done) => {
+        try {
+          a.getSpecificAdditionalParameterIdentityQuery('fakeparam', null, null, (data, error) => {
+            try {
+              const displayE = 'ids is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getSpecificAdditionalParameterIdentityQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getAURLCategoryQuery - errors', () => {
+      it('should have a getAURLCategoryQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getAURLCategoryQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing revisionId', (done) => {
+        try {
+          a.getAURLCategoryQuery(null, null, null, (data, error) => {
+            try {
+              const displayE = 'revisionId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getAURLCategoryQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing ids', (done) => {
+        try {
+          a.getAURLCategoryQuery('fakeparam', null, null, (data, error) => {
+            try {
+              const displayE = 'ids is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getAURLCategoryQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getAdditionalParametersIdentitiesByRevisionQuery - errors', () => {
+      it('should have a getAdditionalParametersIdentitiesByRevisionQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getAdditionalParametersIdentitiesByRevisionQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing revisionId', (done) => {
+        try {
+          a.getAdditionalParametersIdentitiesByRevisionQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'revisionId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getAdditionalParametersIdentitiesByRevisionQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getApplicationsIdentitiesByRevisionQuery - errors', () => {
+      it('should have a getApplicationsIdentitiesByRevisionQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getApplicationsIdentitiesByRevisionQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.getApplicationsIdentitiesByRevisionQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getApplicationsIdentitiesByRevisionQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getRevisionsRevisionIdApplicationsIdsQuery - errors', () => {
+      it('should have a getRevisionsRevisionIdApplicationsIdsQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getRevisionsRevisionIdApplicationsIdsQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing revisionId', (done) => {
+        try {
+          a.getRevisionsRevisionIdApplicationsIdsQuery(null, null, null, (data, error) => {
+            try {
+              const displayE = 'revisionId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getRevisionsRevisionIdApplicationsIdsQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing ids', (done) => {
+        try {
+          a.getRevisionsRevisionIdApplicationsIdsQuery('fakeparam', null, null, (data, error) => {
+            try {
+              const displayE = 'ids is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getRevisionsRevisionIdApplicationsIdsQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getApplicationIdentitiesByDeviceQuery - errors', () => {
+      it('should have a getApplicationIdentitiesByDeviceQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getApplicationIdentitiesByDeviceQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.getApplicationIdentitiesByDeviceQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getApplicationIdentitiesByDeviceQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getSpecificApplicationIdentityQuery - errors', () => {
+      it('should have a getSpecificApplicationIdentityQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getSpecificApplicationIdentityQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.getSpecificApplicationIdentityQuery(null, null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getSpecificApplicationIdentityQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing ids', (done) => {
+        try {
+          a.getSpecificApplicationIdentityQuery('fakeparam', null, null, (data, error) => {
+            try {
+              const displayE = 'ids is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getSpecificApplicationIdentityQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#determineIfChangesBetweenTwoRevisionsAreAuthorizedQuery - errors', () => {
+      it('should have a determineIfChangesBetweenTwoRevisionsAreAuthorizedQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.determineIfChangesBetweenTwoRevisionsAreAuthorizedQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getNameAndStatusForAllChangeWindowsQuery - errors', () => {
+      it('should have a getNameAndStatusForAllChangeWindowsQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getNameAndStatusForAllChangeWindowsQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getSchedulingAndDeviceDetailsForASpecificChangeWindowQuery - errors', () => {
+      it('should have a getSchedulingAndDeviceDetailsForASpecificChangeWindowQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getSchedulingAndDeviceDetailsForASpecificChangeWindowQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing uid', (done) => {
+        try {
+          a.getSchedulingAndDeviceDetailsForASpecificChangeWindowQuery(null, null, null, (data, error) => {
+            try {
+              const displayE = 'uid is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getSchedulingAndDeviceDetailsForASpecificChangeWindowQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing taskId', (done) => {
+        try {
+          a.getSchedulingAndDeviceDetailsForASpecificChangeWindowQuery('fakeparam', null, null, (data, error) => {
+            try {
+              const displayE = 'taskId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getSchedulingAndDeviceDetailsForASpecificChangeWindowQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getAListOfCompletedPolicyChangesForASpecificChangeWindowQuery - errors', () => {
+      it('should have a getAListOfCompletedPolicyChangesForASpecificChangeWindowQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getAListOfCompletedPolicyChangesForASpecificChangeWindowQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing uid', (done) => {
+        try {
+          a.getAListOfCompletedPolicyChangesForASpecificChangeWindowQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'uid is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getAListOfCompletedPolicyChangesForASpecificChangeWindowQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getDeviceZonesByRevisionQuery - errors', () => {
+      it('should have a getDeviceZonesByRevisionQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getDeviceZonesByRevisionQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.getDeviceZonesByRevisionQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getDeviceZonesByRevisionQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getNetworkInterfacesByRevisionQuery - errors', () => {
+      it('should have a getNetworkInterfacesByRevisionQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getNetworkInterfacesByRevisionQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.getNetworkInterfacesByRevisionQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getNetworkInterfacesByRevisionQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getDeviceZonesByDeviceQuery - errors', () => {
+      it('should have a getDeviceZonesByDeviceQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getDeviceZonesByDeviceQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.getDeviceZonesByDeviceQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getDeviceZonesByDeviceQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getZonesAndNetworkInterfacesThatParticipateInSubPoliciesQuery - errors', () => {
+      it('should have a getZonesAndNetworkInterfacesThatParticipateInSubPoliciesQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getZonesAndNetworkInterfacesThatParticipateInSubPoliciesQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.getZonesAndNetworkInterfacesThatParticipateInSubPoliciesQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getZonesAndNetworkInterfacesThatParticipateInSubPoliciesQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getNetworkInterfacesByDeviceQuery - errors', () => {
+      it('should have a getNetworkInterfacesByDeviceQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getNetworkInterfacesByDeviceQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.getNetworkInterfacesByDeviceQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getNetworkInterfacesByDeviceQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getDomainQuery - errors', () => {
+      it('should have a getDomainQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getDomainQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.getDomainQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getDomainQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getCiscoCryptographicMapsByRevisionQuery - errors', () => {
+      it('should have a getCiscoCryptographicMapsByRevisionQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getCiscoCryptographicMapsByRevisionQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.getCiscoCryptographicMapsByRevisionQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getCiscoCryptographicMapsByRevisionQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getCiscoCryptographicMapsByDeviceQuery - errors', () => {
+      it('should have a getCiscoCryptographicMapsByDeviceQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getCiscoCryptographicMapsByDeviceQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.getCiscoCryptographicMapsByDeviceQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getCiscoCryptographicMapsByDeviceQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getCiscoIPsecPolicyAndPeersQuery - errors', () => {
+      it('should have a getCiscoIPsecPolicyAndPeersQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getCiscoIPsecPolicyAndPeersQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing deviceId', (done) => {
+        try {
+          a.getCiscoIPsecPolicyAndPeersQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'deviceId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getCiscoIPsecPolicyAndPeersQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getCheckPointVPNIPSecCommunitiesAndGatewaysQuery - errors', () => {
+      it('should have a getCheckPointVPNIPSecCommunitiesAndGatewaysQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getCheckPointVPNIPSecCommunitiesAndGatewaysQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing deviceId', (done) => {
+        try {
+          a.getCheckPointVPNIPSecCommunitiesAndGatewaysQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'deviceId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getCheckPointVPNIPSecCommunitiesAndGatewaysQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getLDAPEntryDetailsByDNQuery - errors', () => {
+      it('should have a getLDAPEntryDetailsByDNQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getLDAPEntryDetailsByDNQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getLicense - errors', () => {
+      it('should have a getLicense function', (done) => {
+        try {
+          assert.equal(true, typeof a.getLicense === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.getLicense(null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getLicense', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getLicenses - errors', () => {
+      it('should have a getLicenses function', (done) => {
+        try {
+          assert.equal(true, typeof a.getLicenses === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getQueueSizeConfig - errors', () => {
+      it('should have a getQueueSizeConfig function', (done) => {
+        try {
+          assert.equal(true, typeof a.getQueueSizeConfig === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#updateQueueMaxSize - errors', () => {
+      it('should have a updateQueueMaxSize function', (done) => {
+        try {
+          assert.equal(true, typeof a.updateQueueMaxSize === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing body', (done) => {
+        try {
+          a.updateQueueMaxSize(null, (data, error) => {
+            try {
+              const displayE = 'body is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-updateQueueMaxSize', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getTextualConfigurationByRevisionQuery - errors', () => {
+      it('should have a getTextualConfigurationByRevisionQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getTextualConfigurationByRevisionQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.getTextualConfigurationByRevisionQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getTextualConfigurationByRevisionQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getDevicesQuery - errors', () => {
+      it('should have a getDevicesQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getDevicesQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getSpecificDeviceQuery - errors', () => {
+      it('should have a getSpecificDeviceQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getSpecificDeviceQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.getSpecificDeviceQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getSpecificDeviceQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getTextualConfigurationByDeviceQuery - errors', () => {
+      it('should have a getTextualConfigurationByDeviceQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getTextualConfigurationByDeviceQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.getTextualConfigurationByDeviceQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getTextualConfigurationByDeviceQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#abortTask - errors', () => {
+      it('should have a abortTask function', (done) => {
+        try {
+          assert.equal(true, typeof a.abortTask === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#abortAllTasks - errors', () => {
+      it('should have a abortAllTasks function', (done) => {
+        try {
+          assert.equal(true, typeof a.abortAllTasks === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getWaitingTasks - errors', () => {
+      it('should have a getWaitingTasks function', (done) => {
+        try {
+          assert.equal(true, typeof a.getWaitingTasks === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getWaitingTasksForDevice - errors', () => {
+      it('should have a getWaitingTasksForDevice function', (done) => {
+        try {
+          assert.equal(true, typeof a.getWaitingTasksForDevice === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing deviceId', (done) => {
+        try {
+          a.getWaitingTasksForDevice(null, (data, error) => {
+            try {
+              const displayE = 'deviceId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getWaitingTasksForDevice', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#updateOfflineDeviceQuery - errors', () => {
+      it('should have a updateOfflineDeviceQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.updateOfflineDeviceQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing deviceId', (done) => {
+        try {
+          a.updateOfflineDeviceQuery(null, null, null, (data, error) => {
+            try {
+              const displayE = 'deviceId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-updateOfflineDeviceQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing body', (done) => {
+        try {
+          a.updateOfflineDeviceQuery('fakeparam', 'fakeparam', null, (data, error) => {
+            try {
+              const displayE = 'body is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-updateOfflineDeviceQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getNATObjectsByRevisionQuery - errors', () => {
+      it('should have a getNATObjectsByRevisionQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getNATObjectsByRevisionQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.getNATObjectsByRevisionQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getNATObjectsByRevisionQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getNATObjectsByDeviceQuery - errors', () => {
+      it('should have a getNATObjectsByDeviceQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getNATObjectsByDeviceQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.getNATObjectsByDeviceQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getNATObjectsByDeviceQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getNATRulesByDeviceQuery - errors', () => {
+      it('should have a getNATRulesByDeviceQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getNATRulesByDeviceQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.getNATRulesByDeviceQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getNATRulesByDeviceQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getNetworkObjectsByRevisionQuery - errors', () => {
+      it('should have a getNetworkObjectsByRevisionQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getNetworkObjectsByRevisionQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.getNetworkObjectsByRevisionQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getNetworkObjectsByRevisionQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getSpecificNetworkObjectsByRevisionQuery - errors', () => {
+      it('should have a getSpecificNetworkObjectsByRevisionQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getSpecificNetworkObjectsByRevisionQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing revisionId', (done) => {
+        try {
+          a.getSpecificNetworkObjectsByRevisionQuery(null, null, null, (data, error) => {
+            try {
+              const displayE = 'revisionId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getSpecificNetworkObjectsByRevisionQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing ids', (done) => {
+        try {
+          a.getSpecificNetworkObjectsByRevisionQuery('fakeparam', null, null, (data, error) => {
+            try {
+              const displayE = 'ids is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getSpecificNetworkObjectsByRevisionQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getNetworkObjectsByDeviceQuery - errors', () => {
+      it('should have a getNetworkObjectsByDeviceQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getNetworkObjectsByDeviceQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.getNetworkObjectsByDeviceQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getNetworkObjectsByDeviceQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getSpecificNetworkObjectQuery - errors', () => {
+      it('should have a getSpecificNetworkObjectQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getSpecificNetworkObjectQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing deviceId', (done) => {
+        try {
+          a.getSpecificNetworkObjectQuery(null, null, null, (data, error) => {
+            try {
+              const displayE = 'deviceId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getSpecificNetworkObjectQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing ids', (done) => {
+        try {
+          a.getSpecificNetworkObjectQuery('fakeparam', null, null, (data, error) => {
+            try {
+              const displayE = 'ids is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getSpecificNetworkObjectQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getNetworkObjectsMatchingSpecifiedCriteriaQuery - errors', () => {
+      it('should have a getNetworkObjectsMatchingSpecifiedCriteriaQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getNetworkObjectsMatchingSpecifiedCriteriaQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getNetworkGroupsContainingSpecifiedNetworkObjectQuery - errors', () => {
+      it('should have a getNetworkGroupsContainingSpecifiedNetworkObjectQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getNetworkGroupsContainingSpecifiedNetworkObjectQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.getNetworkGroupsContainingSpecifiedNetworkObjectQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getNetworkGroupsContainingSpecifiedNetworkObjectQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getRulesContainingSpecifiedNetworkObjectQuery - errors', () => {
+      it('should have a getRulesContainingSpecifiedNetworkObjectQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getRulesContainingSpecifiedNetworkObjectQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.getRulesContainingSpecifiedNetworkObjectQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getRulesContainingSpecifiedNetworkObjectQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getTopologyGenericVPNConnectionsQuery - errors', () => {
+      it('should have a getTopologyGenericVPNConnectionsQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getTopologyGenericVPNConnectionsQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#updateACloudQuery - errors', () => {
+      it('should have a updateACloudQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.updateACloudQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.updateACloudQuery(null, null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-updateACloudQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing body', (done) => {
+        try {
+          a.updateACloudQuery('fakeparam', 'fakeparam', null, (data, error) => {
+            try {
+              const displayE = 'body is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-updateACloudQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#synchronizeTheTopologyModelQuery - errors', () => {
+      it('should have a synchronizeTheTopologyModelQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.synchronizeTheTopologyModelQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getSynchronizerCronTabDetails - errors', () => {
+      it('should have a getSynchronizerCronTabDetails function', (done) => {
+        try {
+          assert.equal(true, typeof a.getSynchronizerCronTabDetails === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getPathPdf - errors', () => {
+      it('should have a getPathPdf function', (done) => {
+        try {
+          assert.equal(true, typeof a.getPathPdf === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getPathDomains - errors', () => {
+      it('should have a getPathDomains function', (done) => {
+        try {
+          assert.equal(true, typeof a.getPathDomains === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getPathObjectTraffic - errors', () => {
+      it('should have a getPathObjectTraffic function', (done) => {
+        try {
+          assert.equal(true, typeof a.getPathObjectTraffic === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getPathImageForSpecifiedTrafficQuery - errors', () => {
+      it('should have a getPathImageForSpecifiedTrafficQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getPathImageForSpecifiedTrafficQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getPathForSpecifiedTrafficQuery - errors', () => {
+      it('should have a getPathForSpecifiedTrafficQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getPathForSpecifiedTrafficQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getTopologyCloudsQuery - errors', () => {
+      it('should have a getTopologyCloudsQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getTopologyCloudsQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#createAJoinedTopologyCloudQuery - errors', () => {
+      it('should have a createAJoinedTopologyCloudQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.createAJoinedTopologyCloudQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing body', (done) => {
+        try {
+          a.createAJoinedTopologyCloudQuery('fakeparam', null, (data, error) => {
+            try {
+              const displayE = 'body is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-createAJoinedTopologyCloudQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getTopologySubnetsQuery - errors', () => {
+      it('should have a getTopologySubnetsQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getTopologySubnetsQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getget - errors', () => {
+      it('should have a getget function', (done) => {
+        try {
+          assert.equal(true, typeof a.getget === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing cloudId', (done) => {
+        try {
+          a.getget(null, (data, error) => {
+            try {
+              const displayE = 'cloudId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getget', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#deletedelete - errors', () => {
+      it('should have a deletedelete function', (done) => {
+        try {
+          assert.equal(true, typeof a.deletedelete === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing cloudId', (done) => {
+        try {
+          a.deletedelete(null, null, (data, error) => {
+            try {
+              const displayE = 'cloudId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-deletedelete', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#createJoinCloud - errors', () => {
+      it('should have a createJoinCloud function', (done) => {
+        try {
+          assert.equal(true, typeof a.createJoinCloud === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#updateJoinClouds - errors', () => {
+      it('should have a updateJoinClouds function', (done) => {
+        try {
+          assert.equal(true, typeof a.updateJoinClouds === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getVpn - errors', () => {
+      it('should have a getVpn function', (done) => {
+        try {
+          assert.equal(true, typeof a.getVpn === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing vpnId', (done) => {
+        try {
+          a.getVpn(null, (data, error) => {
+            try {
+              const displayE = 'vpnId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getVpn', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#deleteVpn - errors', () => {
+      it('should have a deleteVpn function', (done) => {
+        try {
+          assert.equal(true, typeof a.deleteVpn === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing vpnId', (done) => {
+        try {
+          a.deleteVpn(null, (data, error) => {
+            try {
+              const displayE = 'vpnId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-deleteVpn', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getInterface - errors', () => {
+      it('should have a getInterface function', (done) => {
+        try {
+          assert.equal(true, typeof a.getInterface === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing inId', (done) => {
+        try {
+          a.getInterface(null, (data, error) => {
+            try {
+              const displayE = 'inId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getInterface', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#deleteInterface - errors', () => {
+      it('should have a deleteInterface function', (done) => {
+        try {
+          assert.equal(true, typeof a.deleteInterface === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing inId', (done) => {
+        try {
+          a.deleteInterface(null, (data, error) => {
+            try {
+              const displayE = 'inId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-deleteInterface', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getRoute - errors', () => {
+      it('should have a getRoute function', (done) => {
+        try {
+          assert.equal(true, typeof a.getRoute === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing routeId', (done) => {
+        try {
+          a.getRoute(null, (data, error) => {
+            try {
+              const displayE = 'routeId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getRoute', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#deleteRoute - errors', () => {
+      it('should have a deleteRoute function', (done) => {
+        try {
+          assert.equal(true, typeof a.deleteRoute === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing routeId', (done) => {
+        try {
+          a.deleteRoute(null, (data, error) => {
+            try {
+              const displayE = 'routeId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-deleteRoute', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#createRoutes - errors', () => {
+      it('should have a createRoutes function', (done) => {
+        try {
+          assert.equal(true, typeof a.createRoutes === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#updateRoutes - errors', () => {
+      it('should have a updateRoutes function', (done) => {
+        try {
+          assert.equal(true, typeof a.updateRoutes === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getRoutes - errors', () => {
+      it('should have a getRoutes function', (done) => {
+        try {
+          assert.equal(true, typeof a.getRoutes === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing mgmtId', (done) => {
+        try {
+          a.getRoutes(null, (data, error) => {
+            try {
+              const displayE = 'mgmtId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getRoutes', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#deleteRoutes - errors', () => {
+      it('should have a deleteRoutes function', (done) => {
+        try {
+          assert.equal(true, typeof a.deleteRoutes === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing mgmtId', (done) => {
+        try {
+          a.deleteRoutes(null, (data, error) => {
+            try {
+              const displayE = 'mgmtId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-deleteRoutes', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getInterfaceCustomer - errors', () => {
+      it('should have a getInterfaceCustomer function', (done) => {
+        try {
+          assert.equal(true, typeof a.getInterfaceCustomer === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing interfaceCustomerId', (done) => {
+        try {
+          a.getInterfaceCustomer(null, (data, error) => {
+            try {
+              const displayE = 'interfaceCustomerId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getInterfaceCustomer', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#deleteInterfaceCustomer - errors', () => {
+      it('should have a deleteInterfaceCustomer function', (done) => {
+        try {
+          assert.equal(true, typeof a.deleteInterfaceCustomer === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing interfaceCustomerId', (done) => {
+        try {
+          a.deleteInterfaceCustomer(null, (data, error) => {
+            try {
+              const displayE = 'interfaceCustomerId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-deleteInterfaceCustomer', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getInterfaceCustomers - errors', () => {
+      it('should have a getInterfaceCustomers function', (done) => {
+        try {
+          assert.equal(true, typeof a.getInterfaceCustomers === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing deviceId', (done) => {
+        try {
+          a.getInterfaceCustomers(null, null, (data, error) => {
+            try {
+              const displayE = 'deviceId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getInterfaceCustomers', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#deleteInterfaceCustomers - errors', () => {
+      it('should have a deleteInterfaceCustomers function', (done) => {
+        try {
+          assert.equal(true, typeof a.deleteInterfaceCustomers === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing deviceId', (done) => {
+        try {
+          a.deleteInterfaceCustomers(null, null, (data, error) => {
+            try {
+              const displayE = 'deviceId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-deleteInterfaceCustomers', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#createInterfaceCustomers - errors', () => {
+      it('should have a createInterfaceCustomers function', (done) => {
+        try {
+          assert.equal(true, typeof a.createInterfaceCustomers === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#updateInterfaceCustomers - errors', () => {
+      it('should have a updateInterfaceCustomers function', (done) => {
+        try {
+          assert.equal(true, typeof a.updateInterfaceCustomers === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getgetInterfaces - errors', () => {
+      it('should have a getgetInterfaces function', (done) => {
+        try {
+          assert.equal(true, typeof a.getgetInterfaces === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing mgmtId', (done) => {
+        try {
+          a.getgetInterfaces(null, (data, error) => {
+            try {
+              const displayE = 'mgmtId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getgetInterfaces', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#deleteInterfaces - errors', () => {
+      it('should have a deleteInterfaces function', (done) => {
+        try {
+          assert.equal(true, typeof a.deleteInterfaces === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing mgmtId', (done) => {
+        try {
+          a.deleteInterfaces(null, (data, error) => {
+            try {
+              const displayE = 'mgmtId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-deleteInterfaces', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#createInterfaces - errors', () => {
+      it('should have a createInterfaces function', (done) => {
+        try {
+          assert.equal(true, typeof a.createInterfaces === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#updateInterfaces - errors', () => {
+      it('should have a updateInterfaces function', (done) => {
+        try {
+          assert.equal(true, typeof a.updateInterfaces === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getVpns - errors', () => {
+      it('should have a getVpns function', (done) => {
+        try {
+          assert.equal(true, typeof a.getVpns === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing deviceId', (done) => {
+        try {
+          a.getVpns(null, null, (data, error) => {
+            try {
+              const displayE = 'deviceId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getVpns', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#deleteVpns - errors', () => {
+      it('should have a deleteVpns function', (done) => {
+        try {
+          assert.equal(true, typeof a.deleteVpns === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing deviceId', (done) => {
+        try {
+          a.deleteVpns(null, null, (data, error) => {
+            try {
+              const displayE = 'deviceId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-deleteVpns', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#createVpns - errors', () => {
+      it('should have a createVpns function', (done) => {
+        try {
+          assert.equal(true, typeof a.createVpns === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#updateVpns - errors', () => {
+      it('should have a updateVpns function', (done) => {
+        try {
+          assert.equal(true, typeof a.updateVpns === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getTransparentFirewalls - errors', () => {
+      it('should have a getTransparentFirewalls function', (done) => {
+        try {
+          assert.equal(true, typeof a.getTransparentFirewalls === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing deviceId', (done) => {
+        try {
+          a.getTransparentFirewalls(null, null, (data, error) => {
+            try {
+              const displayE = 'deviceId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getTransparentFirewalls', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#deleteTransparentFirewalls - errors', () => {
+      it('should have a deleteTransparentFirewalls function', (done) => {
+        try {
+          assert.equal(true, typeof a.deleteTransparentFirewalls === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing deviceId', (done) => {
+        try {
+          a.deleteTransparentFirewalls(null, (data, error) => {
+            try {
+              const displayE = 'deviceId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-deleteTransparentFirewalls', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#deleteTransparentFirewall - errors', () => {
+      it('should have a deleteTransparentFirewall function', (done) => {
+        try {
+          assert.equal(true, typeof a.deleteTransparentFirewall === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing layer2DataId', (done) => {
+        try {
+          a.deleteTransparentFirewall(null, (data, error) => {
+            try {
+              const displayE = 'layer2DataId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-deleteTransparentFirewall', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#createTransparentFirewalls - errors', () => {
+      it('should have a createTransparentFirewalls function', (done) => {
+        try {
+          assert.equal(true, typeof a.createTransparentFirewalls === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#updateTransparentFirewalls - errors', () => {
+      it('should have a updateTransparentFirewalls function', (done) => {
+        try {
+          assert.equal(true, typeof a.updateTransparentFirewalls === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getIgnoredInterfaces - errors', () => {
+      it('should have a getIgnoredInterfaces function', (done) => {
+        try {
+          assert.equal(true, typeof a.getIgnoredInterfaces === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing mgmtId', (done) => {
+        try {
+          a.getIgnoredInterfaces(null, (data, error) => {
+            try {
+              const displayE = 'mgmtId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getIgnoredInterfaces', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#deleteIgnoredInterfaces - errors', () => {
+      it('should have a deleteIgnoredInterfaces function', (done) => {
+        try {
+          assert.equal(true, typeof a.deleteIgnoredInterfaces === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing mgmtId', (done) => {
+        try {
+          a.deleteIgnoredInterfaces(null, (data, error) => {
+            try {
+              const displayE = 'mgmtId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-deleteIgnoredInterfaces', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#createIgnoredInterfaces - errors', () => {
+      it('should have a createIgnoredInterfaces function', (done) => {
+        try {
+          assert.equal(true, typeof a.createIgnoredInterfaces === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#deleteGenericDeviceFromTopologyModelQuery - errors', () => {
+      it('should have a deleteGenericDeviceFromTopologyModelQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.deleteGenericDeviceFromTopologyModelQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.deleteGenericDeviceFromTopologyModelQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-deleteGenericDeviceFromTopologyModelQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getGenericDevicesThatAreConfiguredInSTQuery - errors', () => {
+      it('should have a getGenericDevicesThatAreConfiguredInSTQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getGenericDevicesThatAreConfiguredInSTQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getTopologyRoutingTablesForAGivenDeviceQuery - errors', () => {
+      it('should have a getTopologyRoutingTablesForAGivenDeviceQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getTopologyRoutingTablesForAGivenDeviceQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getTopologyNetworkInterfacesByDeviceQuery - errors', () => {
+      it('should have a getTopologyNetworkInterfacesByDeviceQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getTopologyNetworkInterfacesByDeviceQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getMostSpecificNetworkInterfacesFromWhichAHostIPIsAccessibleQuery - errors', () => {
+      it('should have a getMostSpecificNetworkInterfacesFromWhichAHostIPIsAccessibleQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getMostSpecificNetworkInterfacesFromWhichAHostIPIsAccessibleQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#joinOrSplitSubnet - errors', () => {
+      it('should have a joinOrSplitSubnet function', (done) => {
+        try {
+          assert.equal(true, typeof a.joinOrSplitSubnet === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#modifyAZoneEntryQuery - errors', () => {
+      it('should have a modifyAZoneEntryQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.modifyAZoneEntryQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing zoneId', (done) => {
+        try {
+          a.modifyAZoneEntryQuery(null, null, null, null, (data, error) => {
+            try {
+              const displayE = 'zoneId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-modifyAZoneEntryQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.modifyAZoneEntryQuery('fakeparam', null, null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-modifyAZoneEntryQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing body', (done) => {
+        try {
+          a.modifyAZoneEntryQuery('fakeparam', 'fakeparam', 'fakeparam', null, (data, error) => {
+            try {
+              const displayE = 'body is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-modifyAZoneEntryQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getASpecificZoneEntryQuery - errors', () => {
+      it('should have a getASpecificZoneEntryQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getASpecificZoneEntryQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.getASpecificZoneEntryQuery(null, null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getASpecificZoneEntryQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing zoneId', (done) => {
+        try {
+          a.getASpecificZoneEntryQuery('fakeparam', null, null, (data, error) => {
+            try {
+              const displayE = 'zoneId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getASpecificZoneEntryQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#deleteZoneEntriesQuery - errors', () => {
+      it('should have a deleteZoneEntriesQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.deleteZoneEntriesQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.deleteZoneEntriesQuery(null, null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-deleteZoneEntriesQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing zoneId', (done) => {
+        try {
+          a.deleteZoneEntriesQuery('fakeparam', null, null, (data, error) => {
+            try {
+              const displayE = 'zoneId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-deleteZoneEntriesQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#createAZoneEntryQuery - errors', () => {
+      it('should have a createAZoneEntryQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.createAZoneEntryQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing zoneId', (done) => {
+        try {
+          a.createAZoneEntryQuery(null, null, null, (data, error) => {
+            try {
+              const displayE = 'zoneId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-createAZoneEntryQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing body', (done) => {
+        try {
+          a.createAZoneEntryQuery('fakeparam', 'fakeparam', null, (data, error) => {
+            try {
+              const displayE = 'body is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-createAZoneEntryQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#deleteZonesZoneIdsEntriesIdsQuery - errors', () => {
+      it('should have a deleteZonesZoneIdsEntriesIdsQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.deleteZonesZoneIdsEntriesIdsQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing zoneIds', (done) => {
+        try {
+          a.deleteZonesZoneIdsEntriesIdsQuery(null, null, null, (data, error) => {
+            try {
+              const displayE = 'zoneIds is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-deleteZonesZoneIdsEntriesIdsQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing ids', (done) => {
+        try {
+          a.deleteZonesZoneIdsEntriesIdsQuery('fakeparam', null, null, (data, error) => {
+            try {
+              const displayE = 'ids is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-deleteZonesZoneIdsEntriesIdsQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#modifyMultipleExistingZoneEntriesQuery - errors', () => {
+      it('should have a modifyMultipleExistingZoneEntriesQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.modifyMultipleExistingZoneEntriesQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing zoneIds', (done) => {
+        try {
+          a.modifyMultipleExistingZoneEntriesQuery(null, null, null, null, (data, error) => {
+            try {
+              const displayE = 'zoneIds is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-modifyMultipleExistingZoneEntriesQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing ids', (done) => {
+        try {
+          a.modifyMultipleExistingZoneEntriesQuery('fakeparam', null, null, null, (data, error) => {
+            try {
+              const displayE = 'ids is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-modifyMultipleExistingZoneEntriesQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getEntriesForAZoneQuery - errors', () => {
+      it('should have a getEntriesForAZoneQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getEntriesForAZoneQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing ids', (done) => {
+        try {
+          a.getEntriesForAZoneQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'ids is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getEntriesForAZoneQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getASpecificZoneQuery - errors', () => {
+      it('should have a getASpecificZoneQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getASpecificZoneQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.getASpecificZoneQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getASpecificZoneQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#modifyAZoneQuery - errors', () => {
+      it('should have a modifyAZoneQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.modifyAZoneQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.modifyAZoneQuery(null, null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-modifyAZoneQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getAllZonesQuery - errors', () => {
+      it('should have a getAllZonesQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getAllZonesQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#createAZoneQuery - errors', () => {
+      it('should have a createAZoneQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.createAZoneQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing body', (done) => {
+        try {
+          a.createAZoneQuery('fakeparam', null, (data, error) => {
+            try {
+              const displayE = 'body is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-createAZoneQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#deleteAllZonesQuery - errors', () => {
+      it('should have a deleteAllZonesQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.deleteAllZonesQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getSharedZonesQuery - errors', () => {
+      it('should have a getSharedZonesQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getSharedZonesQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getConfigurationUsagesForAZoneQuery - errors', () => {
+      it('should have a getConfigurationUsagesForAZoneQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getConfigurationUsagesForAZoneQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing ids', (done) => {
+        try {
+          a.getConfigurationUsagesForAZoneQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'ids is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getConfigurationUsagesForAZoneQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getDescendantZonesForAZoneQuery - errors', () => {
+      it('should have a getDescendantZonesForAZoneQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getDescendantZonesForAZoneQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing ids', (done) => {
+        try {
+          a.getDescendantZonesForAZoneQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'ids is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getDescendantZonesForAZoneQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getAncestorZonesForAZoneQuery - errors', () => {
+      it('should have a getAncestorZonesForAZoneQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getAncestorZonesForAZoneQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing ids', (done) => {
+        try {
+          a.getAncestorZonesForAZoneQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'ids is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getAncestorZonesForAZoneQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#addAZoneAsADescendantToAZoneQuery - errors', () => {
+      it('should have a addAZoneAsADescendantToAZoneQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.addAZoneAsADescendantToAZoneQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing parentId', (done) => {
+        try {
+          a.addAZoneAsADescendantToAZoneQuery(null, null, null, (data, error) => {
+            try {
+              const displayE = 'parentId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-addAZoneAsADescendantToAZoneQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing childIds', (done) => {
+        try {
+          a.addAZoneAsADescendantToAZoneQuery('fakeparam', null, null, (data, error) => {
+            try {
+              const displayE = 'childIds is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-addAZoneAsADescendantToAZoneQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#removeAZoneAsAnDescendantsToAZoneQuery - errors', () => {
+      it('should have a removeAZoneAsAnDescendantsToAZoneQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.removeAZoneAsAnDescendantsToAZoneQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing parentId', (done) => {
+        try {
+          a.removeAZoneAsAnDescendantsToAZoneQuery(null, null, null, (data, error) => {
+            try {
+              const displayE = 'parentId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-removeAZoneAsAnDescendantsToAZoneQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing childIds', (done) => {
+        try {
+          a.removeAZoneAsAnDescendantsToAZoneQuery('fakeparam', null, null, (data, error) => {
+            try {
+              const displayE = 'childIds is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-removeAZoneAsAnDescendantsToAZoneQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#addAZoneAsAnAncestorToAZoneQuery - errors', () => {
+      it('should have a addAZoneAsAnAncestorToAZoneQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.addAZoneAsAnAncestorToAZoneQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing childId', (done) => {
+        try {
+          a.addAZoneAsAnAncestorToAZoneQuery(null, null, null, (data, error) => {
+            try {
+              const displayE = 'childId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-addAZoneAsAnAncestorToAZoneQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing parentIds', (done) => {
+        try {
+          a.addAZoneAsAnAncestorToAZoneQuery('fakeparam', null, null, (data, error) => {
+            try {
+              const displayE = 'parentIds is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-addAZoneAsAnAncestorToAZoneQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#removeAZoneAsAnAncestorToAZoneQuery - errors', () => {
+      it('should have a removeAZoneAsAnAncestorToAZoneQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.removeAZoneAsAnAncestorToAZoneQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing childId', (done) => {
+        try {
+          a.removeAZoneAsAnAncestorToAZoneQuery(null, null, null, (data, error) => {
+            try {
+              const displayE = 'childId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-removeAZoneAsAnAncestorToAZoneQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing parentIds', (done) => {
+        try {
+          a.removeAZoneAsAnAncestorToAZoneQuery('fakeparam', null, null, (data, error) => {
+            try {
+              const displayE = 'parentIds is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-removeAZoneAsAnAncestorToAZoneQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#deleteAZoneQuery - errors', () => {
+      it('should have a deleteAZoneQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.deleteAZoneQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing ids', (done) => {
+        try {
+          a.deleteAZoneQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'ids is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-deleteAZoneQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#importAZoneQuery - errors', () => {
+      it('should have a importAZoneQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.importAZoneQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing ids', (done) => {
+        try {
+          a.importAZoneQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'ids is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-importAZoneQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getPoliciesByRevisionQuery - errors', () => {
+      it('should have a getPoliciesByRevisionQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getPoliciesByRevisionQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.getPoliciesByRevisionQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getPoliciesByRevisionQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getSubPoliciesBindingsByRevisionQuery - errors', () => {
+      it('should have a getSubPoliciesBindingsByRevisionQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getSubPoliciesBindingsByRevisionQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.getSubPoliciesBindingsByRevisionQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getSubPoliciesBindingsByRevisionQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getPoliciesByDeviceQuery - errors', () => {
+      it('should have a getPoliciesByDeviceQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getPoliciesByDeviceQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.getPoliciesByDeviceQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getPoliciesByDeviceQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getSubPoliciesBindingsByDeviceQuery - errors', () => {
+      it('should have a getSubPoliciesBindingsByDeviceQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getSubPoliciesBindingsByDeviceQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.getSubPoliciesBindingsByDeviceQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getSubPoliciesBindingsByDeviceQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getRulesByInputAndOutputInterfacesQuery - errors', () => {
+      it('should have a getRulesByInputAndOutputInterfacesQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getRulesByInputAndOutputInterfacesQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing deviceId', (done) => {
+        try {
+          a.getRulesByInputAndOutputInterfacesQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'deviceId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getRulesByInputAndOutputInterfacesQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getListOfSubPoliciesBindingsWithInputAndOrOutputInterfacesQuery - errors', () => {
+      it('should have a getListOfSubPoliciesBindingsWithInputAndOrOutputInterfacesQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getListOfSubPoliciesBindingsWithInputAndOrOutputInterfacesQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing deviceId', (done) => {
+        try {
+          a.getListOfSubPoliciesBindingsWithInputAndOrOutputInterfacesQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'deviceId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getListOfSubPoliciesBindingsWithInputAndOrOutputInterfacesQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#runPolicyAnalysisQueryQuery - errors', () => {
+      it('should have a runPolicyAnalysisQueryQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.runPolicyAnalysisQueryQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getRisksResultsQuery - errors', () => {
+      it('should have a getRisksResultsQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getRisksResultsQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getCleanupsResultsQuery - errors', () => {
+      it('should have a getCleanupsResultsQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getCleanupsResultsQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getTheSpecificObjectsOrRulesIdentifiedForTheRiskResultsQuery - errors', () => {
+      it('should have a getTheSpecificObjectsOrRulesIdentifiedForTheRiskResultsQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getTheSpecificObjectsOrRulesIdentifiedForTheRiskResultsQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing riskId', (done) => {
+        try {
+          a.getTheSpecificObjectsOrRulesIdentifiedForTheRiskResultsQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'riskId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getTheSpecificObjectsOrRulesIdentifiedForTheRiskResultsQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getDevicesInRiskResultsQuery - errors', () => {
+      it('should have a getDevicesInRiskResultsQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getDevicesInRiskResultsQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing riskId', (done) => {
+        try {
+          a.getDevicesInRiskResultsQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'riskId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getDevicesInRiskResultsQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getTheSpecificObjectsOrRulesIdentifiedForTheCleanupResultsQuery - errors', () => {
+      it('should have a getTheSpecificObjectsOrRulesIdentifiedForTheCleanupResultsQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getTheSpecificObjectsOrRulesIdentifiedForTheCleanupResultsQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing cleanupId', (done) => {
+        try {
+          a.getTheSpecificObjectsOrRulesIdentifiedForTheCleanupResultsQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'cleanupId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getTheSpecificObjectsOrRulesIdentifiedForTheCleanupResultsQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getDevicesInCleanupResultsQuery - errors', () => {
+      it('should have a getDevicesInCleanupResultsQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getDevicesInCleanupResultsQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing cleanupId', (done) => {
+        try {
+          a.getDevicesInCleanupResultsQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'cleanupId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getDevicesInCleanupResultsQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getCleanupsByDeviceQuery - errors', () => {
+      it('should have a getCleanupsByDeviceQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getCleanupsByDeviceQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing deviceId', (done) => {
+        try {
+          a.getCleanupsByDeviceQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'deviceId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getCleanupsByDeviceQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getShadowingRulesByDeviceQuery - errors', () => {
+      it('should have a getShadowingRulesByDeviceQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getShadowingRulesByDeviceQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing deviceId', (done) => {
+        try {
+          a.getShadowingRulesByDeviceQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'deviceId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getShadowingRulesByDeviceQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getRevisionsByDeviceQuery - errors', () => {
+      it('should have a getRevisionsByDeviceQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getRevisionsByDeviceQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.getRevisionsByDeviceQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getRevisionsByDeviceQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getLatestRevisionByDeviceQuery - errors', () => {
+      it('should have a getLatestRevisionByDeviceQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getLatestRevisionByDeviceQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.getLatestRevisionByDeviceQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getLatestRevisionByDeviceQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getSpecificRevisionQuery - errors', () => {
+      it('should have a getSpecificRevisionQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getSpecificRevisionQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing revId', (done) => {
+        try {
+          a.getSpecificRevisionQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'revId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getSpecificRevisionQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getRuleCountPerDeviceQuery - errors', () => {
+      it('should have a getRuleCountPerDeviceQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getRuleCountPerDeviceQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getRulesByRevisionQuery - errors', () => {
+      it('should have a getRulesByRevisionQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getRulesByRevisionQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.getRulesByRevisionQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getRulesByRevisionQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getRevisionsRevisionIdRulesIdsQuery - errors', () => {
+      it('should have a getRevisionsRevisionIdRulesIdsQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getRevisionsRevisionIdRulesIdsQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing revisionId', (done) => {
+        try {
+          a.getRevisionsRevisionIdRulesIdsQuery(null, null, null, (data, error) => {
+            try {
+              const displayE = 'revisionId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getRevisionsRevisionIdRulesIdsQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing ids', (done) => {
+        try {
+          a.getRevisionsRevisionIdRulesIdsQuery('fakeparam', null, null, (data, error) => {
+            try {
+              const displayE = 'ids is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getRevisionsRevisionIdRulesIdsQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getRulesByDeviceQuery - errors', () => {
+      it('should have a getRulesByDeviceQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getRulesByDeviceQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.getRulesByDeviceQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getRulesByDeviceQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getSpecificRuleQuery - errors', () => {
+      it('should have a getSpecificRuleQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getSpecificRuleQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing deviceId', (done) => {
+        try {
+          a.getSpecificRuleQuery(null, null, null, (data, error) => {
+            try {
+              const displayE = 'deviceId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getSpecificRuleQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing ids', (done) => {
+        try {
+          a.getSpecificRuleQuery('fakeparam', null, null, (data, error) => {
+            try {
+              const displayE = 'ids is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getSpecificRuleQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#findRulesQuery - errors', () => {
+      it('should have a findRulesQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.findRulesQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing deviceId', (done) => {
+        try {
+          a.findRulesQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'deviceId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-findRulesQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getASpecificRuleQuery - errors', () => {
+      it('should have a getASpecificRuleQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getASpecificRuleQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing ruleId', (done) => {
+        try {
+          a.getASpecificRuleQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'ruleId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getASpecificRuleQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getServiceGroupsContainingSpecifiedServiceObjectsQuery - errors', () => {
+      it('should have a getServiceGroupsContainingSpecifiedServiceObjectsQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getServiceGroupsContainingSpecifiedServiceObjectsQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.getServiceGroupsContainingSpecifiedServiceObjectsQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getServiceGroupsContainingSpecifiedServiceObjectsQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getRulesContainingSpecifiedServiceObjectQuery - errors', () => {
+      it('should have a getRulesContainingSpecifiedServiceObjectQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getRulesContainingSpecifiedServiceObjectQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.getRulesContainingSpecifiedServiceObjectQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getRulesContainingSpecifiedServiceObjectQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getServicesByRevisionQuery - errors', () => {
+      it('should have a getServicesByRevisionQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getServicesByRevisionQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.getServicesByRevisionQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getServicesByRevisionQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getSpecificServiceQuery - errors', () => {
+      it('should have a getSpecificServiceQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getSpecificServiceQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing revisionId', (done) => {
+        try {
+          a.getSpecificServiceQuery(null, null, null, (data, error) => {
+            try {
+              const displayE = 'revisionId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getSpecificServiceQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing ids', (done) => {
+        try {
+          a.getSpecificServiceQuery('fakeparam', null, null, (data, error) => {
+            try {
+              const displayE = 'ids is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getSpecificServiceQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getServicesByDeviceQuery - errors', () => {
+      it('should have a getServicesByDeviceQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getServicesByDeviceQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.getServicesByDeviceQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getServicesByDeviceQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getDevicesDeviceIdServicesIdsQuery - errors', () => {
+      it('should have a getDevicesDeviceIdServicesIdsQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getDevicesDeviceIdServicesIdsQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing deviceId', (done) => {
+        try {
+          a.getDevicesDeviceIdServicesIdsQuery(null, null, null, (data, error) => {
+            try {
+              const displayE = 'deviceId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getDevicesDeviceIdServicesIdsQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing ids', (done) => {
+        try {
+          a.getDevicesDeviceIdServicesIdsQuery('fakeparam', null, null, (data, error) => {
+            try {
+              const displayE = 'ids is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getDevicesDeviceIdServicesIdsQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getTimeObjectsByRevisionQuery - errors', () => {
+      it('should have a getTimeObjectsByRevisionQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getTimeObjectsByRevisionQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.getTimeObjectsByRevisionQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getTimeObjectsByRevisionQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getSpecificTimeObjectQuery - errors', () => {
+      it('should have a getSpecificTimeObjectQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getSpecificTimeObjectQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing revisionId', (done) => {
+        try {
+          a.getSpecificTimeObjectQuery(null, null, null, (data, error) => {
+            try {
+              const displayE = 'revisionId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getSpecificTimeObjectQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing ids', (done) => {
+        try {
+          a.getSpecificTimeObjectQuery('fakeparam', null, null, (data, error) => {
+            try {
+              const displayE = 'ids is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getSpecificTimeObjectQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getTimeObjectsByDeviceQuery - errors', () => {
+      it('should have a getTimeObjectsByDeviceQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getTimeObjectsByDeviceQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.getTimeObjectsByDeviceQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getTimeObjectsByDeviceQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getPolicyRelevanceMetricsForTrafficQuery - errors', () => {
+      it('should have a getPolicyRelevanceMetricsForTrafficQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getPolicyRelevanceMetricsForTrafficQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing body', (done) => {
+        try {
+          a.getPolicyRelevanceMetricsForTrafficQuery('fakeparam', null, (data, error) => {
+            try {
+              const displayE = 'body is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getPolicyRelevanceMetricsForTrafficQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getViolationsForAnAccessRequestQuery - errors', () => {
+      it('should have a getViolationsForAnAccessRequestQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getViolationsForAnAccessRequestQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing body', (done) => {
+        try {
+          a.getViolationsForAnAccessRequestQuery('fakeparam', null, (data, error) => {
+            try {
+              const displayE = 'body is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getViolationsForAnAccessRequestQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#startATaskToCalculateViolationsForAnAccessRequestQuery - errors', () => {
+      it('should have a startATaskToCalculateViolationsForAnAccessRequestQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.startATaskToCalculateViolationsForAnAccessRequestQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getAlertsQuery - errors', () => {
+      it('should have a getAlertsQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getAlertsQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#createAnAlertQuery - errors', () => {
+      it('should have a createAnAlertQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.createAnAlertQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getASpecificAlertQuery - errors', () => {
+      it('should have a getASpecificAlertQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getASpecificAlertQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.getASpecificAlertQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getASpecificAlertQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#updateAnAlertQuery - errors', () => {
+      it('should have a updateAnAlertQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.updateAnAlertQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.updateAnAlertQuery(null, null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-updateAnAlertQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#deleteAlertsByIdsQuery - errors', () => {
+      it('should have a deleteAlertsByIdsQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.deleteAlertsByIdsQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing ids', (done) => {
+        try {
+          a.deleteAlertsByIdsQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'ids is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-deleteAlertsByIdsQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#createACloudTagPolicyQuery - errors', () => {
+      it('should have a createACloudTagPolicyQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.createACloudTagPolicyQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getAllCloudTagPoliciesQuery - errors', () => {
+      it('should have a getAllCloudTagPoliciesQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getAllCloudTagPoliciesQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getCloudTagPolicyQuery - errors', () => {
+      it('should have a getCloudTagPolicyQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getCloudTagPolicyQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing policyId', (done) => {
+        try {
+          a.getCloudTagPolicyQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'policyId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getCloudTagPolicyQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#replaceACloudTagPolicyQuery - errors', () => {
+      it('should have a replaceACloudTagPolicyQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.replaceACloudTagPolicyQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing policyId', (done) => {
+        try {
+          a.replaceACloudTagPolicyQuery(null, null, null, (data, error) => {
+            try {
+              const displayE = 'policyId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-replaceACloudTagPolicyQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#modifyACloudTagPolicyQuery - errors', () => {
+      it('should have a modifyACloudTagPolicyQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.modifyACloudTagPolicyQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing policyId', (done) => {
+        try {
+          a.modifyACloudTagPolicyQuery(null, null, null, (data, error) => {
+            try {
+              const displayE = 'policyId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-modifyACloudTagPolicyQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#deleteCloudTagPolicyQuery - errors', () => {
+      it('should have a deleteCloudTagPolicyQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.deleteCloudTagPolicyQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing policyId', (done) => {
+        try {
+          a.deleteCloudTagPolicyQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'policyId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-deleteCloudTagPolicyQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#checkIfTagsAreCompliantWithCloudTagPoliciesQuery - errors', () => {
+      it('should have a checkIfTagsAreCompliantWithCloudTagPoliciesQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.checkIfTagsAreCompliantWithCloudTagPoliciesQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing body', (done) => {
+        try {
+          a.checkIfTagsAreCompliantWithCloudTagPoliciesQuery('fakeparam', null, (data, error) => {
+            try {
+              const displayE = 'body is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-checkIfTagsAreCompliantWithCloudTagPoliciesQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getAllCloudTagPolicyViolationsForAVPCQuery - errors', () => {
+      it('should have a getAllCloudTagPolicyViolationsForAVPCQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getAllCloudTagPolicyViolationsForAVPCQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#createAnExceptionQuery - errors', () => {
+      it('should have a createAnExceptionQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.createAnExceptionQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getAllExceptionsQuery - errors', () => {
+      it('should have a getAllExceptionsQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getAllExceptionsQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getASpecificExceptionQuery - errors', () => {
+      it('should have a getASpecificExceptionQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getASpecificExceptionQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing exceptionId', (done) => {
+        try {
+          a.getASpecificExceptionQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'exceptionId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getASpecificExceptionQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#deleteAnExceptionQuery - errors', () => {
+      it('should have a deleteAnExceptionQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.deleteAnExceptionQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing exceptionId', (done) => {
+        try {
+          a.deleteAnExceptionQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'exceptionId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-deleteAnExceptionQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#startATaskToCalculateMatchingRulesForAnExceptionQuery - errors', () => {
+      it('should have a startATaskToCalculateMatchingRulesForAnExceptionQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.startATaskToCalculateMatchingRulesForAnExceptionQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing exceptionId', (done) => {
+        try {
+          a.startATaskToCalculateMatchingRulesForAnExceptionQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'exceptionId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-startATaskToCalculateMatchingRulesForAnExceptionQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getGlobalUnifiedSecurityPoliciesQuery - errors', () => {
+      it('should have a getGlobalUnifiedSecurityPoliciesQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getGlobalUnifiedSecurityPoliciesQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getUnifiedSecurityPoliciesQuery - errors', () => {
+      it('should have a getUnifiedSecurityPoliciesQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getUnifiedSecurityPoliciesQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#deleteUnifiedSecurityPolicyQuery - errors', () => {
+      it('should have a deleteUnifiedSecurityPolicyQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.deleteUnifiedSecurityPolicyQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.deleteUnifiedSecurityPolicyQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-deleteUnifiedSecurityPolicyQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getUnifiedSecurityPolicyAsCSVQuery - errors', () => {
+      it('should have a getUnifiedSecurityPolicyAsCSVQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getUnifiedSecurityPolicyAsCSVQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.getUnifiedSecurityPolicyAsCSVQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getUnifiedSecurityPolicyAsCSVQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#setManualDeviceMappingQuery - errors', () => {
+      it('should have a setManualDeviceMappingQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.setManualDeviceMappingQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing deviceId', (done) => {
+        try {
+          a.setManualDeviceMappingQuery(null, null, null, (data, error) => {
+            try {
+              const displayE = 'deviceId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-setManualDeviceMappingQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing body', (done) => {
+        try {
+          a.setManualDeviceMappingQuery('fakeparam', 'fakeparam', null, (data, error) => {
+            try {
+              const displayE = 'body is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-setManualDeviceMappingQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getUrlCategories - errors', () => {
+      it('should have a getUrlCategories function', (done) => {
+        try {
+          assert.equal(true, typeof a.getUrlCategories === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing revisionId', (done) => {
+        try {
+          a.getUrlCategories(null, null, (data, error) => {
+            try {
+              const displayE = 'revisionId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getUrlCategories', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getProperties - errors', () => {
+      it('should have a getProperties function', (done) => {
+        try {
+          assert.equal(true, typeof a.getProperties === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#setProperties - errors', () => {
+      it('should have a setProperties function', (done) => {
+        try {
+          assert.equal(true, typeof a.setProperties === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing body', (done) => {
+        try {
+          a.setProperties(null, (data, error) => {
+            try {
+              const displayE = 'body is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-setProperties', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getPBRRules - errors', () => {
+      it('should have a getPBRRules function', (done) => {
+        try {
+          assert.equal(true, typeof a.getPBRRules === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing deviceId', (done) => {
+        try {
+          a.getPBRRules(null, null, (data, error) => {
+            try {
+              const displayE = 'deviceId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getPBRRules', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#cloudSuggestions - errors', () => {
+      it('should have a cloudSuggestions function', (done) => {
+        try {
+          assert.equal(true, typeof a.cloudSuggestions === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#cloudSuggestion - errors', () => {
+      it('should have a cloudSuggestion function', (done) => {
+        try {
+          assert.equal(true, typeof a.cloudSuggestion === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing cloudId', (done) => {
+        try {
+          a.cloudSuggestion(null, null, (data, error) => {
+            try {
+              const displayE = 'cloudId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-cloudSuggestion', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getRouteMaps - errors', () => {
+      it('should have a getRouteMaps function', (done) => {
+        try {
+          assert.equal(true, typeof a.getRouteMaps === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing deviceId', (done) => {
+        try {
+          a.getRouteMaps(null, null, (data, error) => {
+            try {
+              const displayE = 'deviceId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getRouteMaps', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#addZonesEntries - errors', () => {
+      it('should have a addZonesEntries function', (done) => {
+        try {
+          assert.equal(true, typeof a.addZonesEntries === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing body', (done) => {
+        try {
+          a.addZonesEntries('fakeparam', null, (data, error) => {
+            try {
+              const displayE = 'body is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-addZonesEntries', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getSdWanBindingsByRevision - errors', () => {
+      it('should have a getSdWanBindingsByRevision function', (done) => {
+        try {
+          assert.equal(true, typeof a.getSdWanBindingsByRevision === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.getSdWanBindingsByRevision(null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getSdWanBindingsByRevision', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getSdWanBindingsByDevice - errors', () => {
+      it('should have a getSdWanBindingsByDevice function', (done) => {
+        try {
+          assert.equal(true, typeof a.getSdWanBindingsByDevice === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.getSdWanBindingsByDevice(null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getSdWanBindingsByDevice', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#exportRulesToCsv - errors', () => {
+      it('should have a exportRulesToCsv function', (done) => {
+        try {
+          assert.equal(true, typeof a.exportRulesToCsv === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#findServicesObjects - errors', () => {
+      it('should have a findServicesObjects function', (done) => {
+        try {
+          assert.equal(true, typeof a.findServicesObjects === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getDeviceMapping - errors', () => {
+      it('should have a getDeviceMapping function', (done) => {
+        try {
+          assert.equal(true, typeof a.getDeviceMapping === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing deviceId', (done) => {
+        try {
+          a.getDeviceMapping(null, null, (data, error) => {
+            try {
+              const displayE = 'deviceId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getDeviceMapping', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getResolvedInternetRepresentationForDeviceQuery - errors', () => {
+      it('should have a getResolvedInternetRepresentationForDeviceQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getResolvedInternetRepresentationForDeviceQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing deviceId', (done) => {
+        try {
+          a.getResolvedInternetRepresentationForDeviceQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'deviceId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getResolvedInternetRepresentationForDeviceQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#updateInternetRepresentationForDeviceQuery - errors', () => {
+      it('should have a updateInternetRepresentationForDeviceQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.updateInternetRepresentationForDeviceQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing deviceId', (done) => {
+        try {
+          a.updateInternetRepresentationForDeviceQuery(null, null, null, (data, error) => {
+            try {
+              const displayE = 'deviceId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-updateInternetRepresentationForDeviceQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing body', (done) => {
+        try {
+          a.updateInternetRepresentationForDeviceQuery('fakeparam', 'fakeparam', null, (data, error) => {
+            try {
+              const displayE = 'body is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-updateInternetRepresentationForDeviceQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getInternetRepresentationForDeviceQuery - errors', () => {
+      it('should have a getInternetRepresentationForDeviceQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getInternetRepresentationForDeviceQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing deviceId', (done) => {
+        try {
+          a.getInternetRepresentationForDeviceQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'deviceId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getInternetRepresentationForDeviceQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#deleteInternetRepresentationForDeviceQuery - errors', () => {
+      it('should have a deleteInternetRepresentationForDeviceQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.deleteInternetRepresentationForDeviceQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing deviceId', (done) => {
+        try {
+          a.deleteInternetRepresentationForDeviceQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'deviceId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-deleteInternetRepresentationForDeviceQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#createAZonePatternEntryInASpecificZoneQuery - errors', () => {
+      it('should have a createAZonePatternEntryInASpecificZoneQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.createAZonePatternEntryInASpecificZoneQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing zoneId', (done) => {
+        try {
+          a.createAZonePatternEntryInASpecificZoneQuery(null, null, null, (data, error) => {
+            try {
+              const displayE = 'zoneId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-createAZonePatternEntryInASpecificZoneQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing body', (done) => {
+        try {
+          a.createAZonePatternEntryInASpecificZoneQuery('fakeparam', 'fakeparam', null, (data, error) => {
+            try {
+              const displayE = 'body is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-createAZonePatternEntryInASpecificZoneQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getAllPatternEntriesForSpecificZonesQuery - errors', () => {
+      it('should have a getAllPatternEntriesForSpecificZonesQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getAllPatternEntriesForSpecificZonesQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing ids', (done) => {
+        try {
+          a.getAllPatternEntriesForSpecificZonesQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'ids is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getAllPatternEntriesForSpecificZonesQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getASpecificZonePatternEntryForASpecificZoneQuery - errors', () => {
+      it('should have a getASpecificZonePatternEntryForASpecificZoneQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getASpecificZonePatternEntryForASpecificZoneQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.getASpecificZonePatternEntryForASpecificZoneQuery(null, null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getASpecificZonePatternEntryForASpecificZoneQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing zoneId', (done) => {
+        try {
+          a.getASpecificZonePatternEntryForASpecificZoneQuery('fakeparam', null, null, (data, error) => {
+            try {
+              const displayE = 'zoneId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getASpecificZonePatternEntryForASpecificZoneQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getRevisionsIdRulesRuleIdDocumentationQuery - errors', () => {
+      it('should have a getRevisionsIdRulesRuleIdDocumentationQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getRevisionsIdRulesRuleIdDocumentationQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.getRevisionsIdRulesRuleIdDocumentationQuery(null, null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getRevisionsIdRulesRuleIdDocumentationQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing ruleId', (done) => {
+        try {
+          a.getRevisionsIdRulesRuleIdDocumentationQuery('fakeparam', null, null, (data, error) => {
+            try {
+              const displayE = 'ruleId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getRevisionsIdRulesRuleIdDocumentationQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#putRevisionsIdRulesRuleIdDocumentationQuery - errors', () => {
+      it('should have a putRevisionsIdRulesRuleIdDocumentationQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.putRevisionsIdRulesRuleIdDocumentationQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.putRevisionsIdRulesRuleIdDocumentationQuery(null, null, null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-putRevisionsIdRulesRuleIdDocumentationQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing ruleId', (done) => {
+        try {
+          a.putRevisionsIdRulesRuleIdDocumentationQuery('fakeparam', null, null, null, (data, error) => {
+            try {
+              const displayE = 'ruleId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-putRevisionsIdRulesRuleIdDocumentationQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing body', (done) => {
+        try {
+          a.putRevisionsIdRulesRuleIdDocumentationQuery('fakeparam', 'fakeparam', 'fakeparam', null, (data, error) => {
+            try {
+              const displayE = 'body is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-putRevisionsIdRulesRuleIdDocumentationQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#deleteRuleDocumentation - errors', () => {
+      it('should have a deleteRuleDocumentation function', (done) => {
+        try {
+          assert.equal(true, typeof a.deleteRuleDocumentation === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.deleteRuleDocumentation(null, null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-deleteRuleDocumentation', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing ruleId', (done) => {
+        try {
+          a.deleteRuleDocumentation('fakeparam', null, null, (data, error) => {
+            try {
+              const displayE = 'ruleId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-deleteRuleDocumentation', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getSpecificRuleDocumentationQuery - errors', () => {
+      it('should have a getSpecificRuleDocumentationQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getSpecificRuleDocumentationQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.getSpecificRuleDocumentationQuery(null, null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getSpecificRuleDocumentationQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing ruleId', (done) => {
+        try {
+          a.getSpecificRuleDocumentationQuery('fakeparam', null, null, (data, error) => {
+            try {
+              const displayE = 'ruleId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getSpecificRuleDocumentationQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#modifySpecificRuleDocumentationQuery - errors', () => {
+      it('should have a modifySpecificRuleDocumentationQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.modifySpecificRuleDocumentationQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.modifySpecificRuleDocumentationQuery(null, null, null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-modifySpecificRuleDocumentationQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing ruleId', (done) => {
+        try {
+          a.modifySpecificRuleDocumentationQuery('fakeparam', null, null, null, (data, error) => {
+            try {
+              const displayE = 'ruleId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-modifySpecificRuleDocumentationQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing body', (done) => {
+        try {
+          a.modifySpecificRuleDocumentationQuery('fakeparam', 'fakeparam', 'fakeparam', null, (data, error) => {
+            try {
+              const displayE = 'body is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-modifySpecificRuleDocumentationQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#deleteSpecificRuleDocumentationQuery - errors', () => {
+      it('should have a deleteSpecificRuleDocumentationQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.deleteSpecificRuleDocumentationQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing id', (done) => {
+        try {
+          a.deleteSpecificRuleDocumentationQuery(null, null, null, (data, error) => {
+            try {
+              const displayE = 'id is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-deleteSpecificRuleDocumentationQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing ruleId', (done) => {
+        try {
+          a.deleteSpecificRuleDocumentationQuery('fakeparam', null, null, (data, error) => {
+            try {
+              const displayE = 'ruleId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-deleteSpecificRuleDocumentationQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getLastHitsForAllRulesByDeviceQuery - errors', () => {
+      it('should have a getLastHitsForAllRulesByDeviceQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getLastHitsForAllRulesByDeviceQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing deviceId', (done) => {
+        try {
+          a.getLastHitsForAllRulesByDeviceQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'deviceId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getLastHitsForAllRulesByDeviceQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getlasthitforaspecificruleQuery - errors', () => {
+      it('should have a getlasthitforaspecificruleQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getlasthitforaspecificruleQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing ruleUid', (done) => {
+        try {
+          a.getlasthitforaspecificruleQuery(null, null, null, (data, error) => {
+            try {
+              const displayE = 'ruleUid is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getlasthitforaspecificruleQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing deviceId', (done) => {
+        try {
+          a.getlasthitforaspecificruleQuery('fakeparam', null, null, (data, error) => {
+            try {
+              const displayE = 'deviceId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getlasthitforaspecificruleQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getTheAmountOfViolatingRulesForTheSpecifiedDeviceQuery - errors', () => {
+      it('should have a getTheAmountOfViolatingRulesForTheSpecifiedDeviceQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getTheAmountOfViolatingRulesForTheSpecifiedDeviceQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing deviceId', (done) => {
+        try {
+          a.getTheAmountOfViolatingRulesForTheSpecifiedDeviceQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'deviceId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getTheAmountOfViolatingRulesForTheSpecifiedDeviceQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getTheViolatingRulesForTheSpecifiedDeviceQuery - errors', () => {
+      it('should have a getTheViolatingRulesForTheSpecifiedDeviceQuery function', (done) => {
+        try {
+          assert.equal(true, typeof a.getTheViolatingRulesForTheSpecifiedDeviceQuery === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing deviceId', (done) => {
+        try {
+          a.getTheViolatingRulesForTheSpecifiedDeviceQuery(null, null, (data, error) => {
+            try {
+              const displayE = 'deviceId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-tufin_securetrack-adapter-getTheViolatingRulesForTheSpecifiedDeviceQuery', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
   });
 });

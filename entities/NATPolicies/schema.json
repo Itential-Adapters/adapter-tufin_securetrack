@@ -12,7 +12,10 @@
       "enum": [
         "getNATObjectsByDevice",
         "getNATObjectsByRevision",
-        "getNATRulesByDevice"
+        "getNATRulesByDevice",
+        "getNATObjectsByRevisionQuery",
+        "getNATObjectsByDeviceQuery",
+        "getNATRulesByDeviceQuery"
       ],
       "external_name": "ph_request_type"
     }

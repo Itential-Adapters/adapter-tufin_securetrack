@@ -1,10 +1,10 @@
 {
   "actions": [
     {
-      "name": "getASpecificRule",
+      "name": "getUrlCategories",
       "protocol": "REST",
       "method": "GET",
-      "entitypath": "{base_path}/{version}/securetrack/api/rules/{pathv1}?{query}",
+      "entitypath": "{base_path}/{version}/securetrack/api/revisions/{pathv1}/url_categories?{query}",
       "requestSchema": "schema.json",
       "responseSchema": "schema.json",
       "timeout": 0,
@@ -22,10 +22,10 @@
       ]
     },
     {
-      "name": "getSpecificRule",
+      "name": "getProperties",
       "protocol": "REST",
       "method": "GET",
-      "entitypath": "{base_path}/{version}/securetrack/api/devices/{pathv1}/rules/{pathv2}?{query}",
+      "entitypath": "{base_path}/{version}/securetrack/api/properties?{query}",
       "requestSchema": "schema.json",
       "responseSchema": "schema.json",
       "timeout": 0,
@@ -43,10 +43,30 @@
       ]
     },
     {
-      "name": "getRuleCountPerDevice",
+      "name": "setProperties",
+      "protocol": "REST",
+      "method": "PUT",
+      "entitypath": "{base_path}/{version}/securetrack/api/properties?{query}",
+      "requestSchema": "schema.json",
+      "responseSchema": "schema.json",
+      "timeout": 0,
+      "sendEmpty": false,
+      "requestDatatype": "JSON",
+      "responseDatatype": "JSON",
+      "headers": {},
+      "responseObjects": [
+        {
+          "type": "default",
+          "key": "",
+          "mockFile": ""
+        }
+      ]
+    },
+    {
+      "name": "getPBRRules",
       "protocol": "REST",
       "method": "GET",
-      "entitypath": "{base_path}/{version}/securetrack/api/rule_search/?{query}",
+      "entitypath": "{base_path}/{version}/securetrack/api/bindings/{pathv1}/PBR_rules?{query}",
       "requestSchema": "schema.json",
       "responseSchema": "schema.json",
       "timeout": 0,
@@ -64,10 +84,10 @@
       ]
     },
     {
-      "name": "getRevisionsRevisionIdRulesIds",
+      "name": "cloudSuggestions",
       "protocol": "REST",
       "method": "GET",
-      "entitypath": "{base_path}/{version}/securetrack/api/revisions/{pathv1}/rules/{pathv2}?{query}",
+      "entitypath": "{base_path}/{version}/securetrack/api/topology/cloud_suggestions?{query}",
       "requestSchema": "schema.json",
       "responseSchema": "schema.json",
       "timeout": 0,
@@ -85,10 +105,10 @@
       ]
     },
     {
-      "name": "getRulesByRevision",
+      "name": "cloudSuggestion",
       "protocol": "REST",
       "method": "GET",
-      "entitypath": "{base_path}/{version}/securetrack/api/revisions/{pathv1}/rules?{query}",
+      "entitypath": "{base_path}/{version}/securetrack/api/topology/cloud_suggestions/{pathv1}?{query}",
       "requestSchema": "schema.json",
       "responseSchema": "schema.json",
       "timeout": 0,
@@ -106,10 +126,10 @@
       ]
     },
     {
-      "name": "findRules",
+      "name": "getRouteMaps",
       "protocol": "REST",
       "method": "GET",
-      "entitypath": "{base_path}/{version}/securetrack/api/rule_search/{pathv1}?{query}",
+      "entitypath": "{base_path}/{version}/securetrack/api/devices/{pathv1}/route_maps?{query}",
       "requestSchema": "schema.json",
       "responseSchema": "schema.json",
       "timeout": 0,
@@ -127,10 +147,30 @@
       ]
     },
     {
-      "name": "getRulesByDevice",
+      "name": "addZonesEntries",
+      "protocol": "REST",
+      "method": "POST",
+      "entitypath": "{base_path}/{version}/securetrack/api/zones/entries?{query}",
+      "requestSchema": "schema.json",
+      "responseSchema": "schema.json",
+      "timeout": 0,
+      "sendEmpty": false,
+      "requestDatatype": "JSON",
+      "responseDatatype": "JSON",
+      "headers": {},
+      "responseObjects": [
+        {
+          "type": "default",
+          "key": "",
+          "mockFile": ""
+        }
+      ]
+    },
+    {
+      "name": "getSdWanBindingsByRevision",
       "protocol": "REST",
       "method": "GET",
-      "entitypath": "{base_path}/{version}/securetrack/api/devices/{pathv1}/rules?{query}",
+      "entitypath": "{base_path}/{version}/securetrack/api/revisions/{pathv1}/sdwan_bindings?{query}",
       "requestSchema": "schema.json",
       "responseSchema": "schema.json",
       "timeout": 0,
@@ -148,10 +188,10 @@
       ]
     },
     {
-      "name": "getRuleCountPerDeviceQuery",
+      "name": "getSdWanBindingsByDevice",
       "protocol": "REST",
       "method": "GET",
-      "entitypath": "{base_path}/{version}/securetrack/api/rule_search?{query}",
+      "entitypath": "{base_path}/{version}/securetrack/api/devices/{pathv1}/sdwan_bindings?{query}",
       "requestSchema": "schema.json",
       "responseSchema": "schema.json",
       "timeout": 0,
@@ -169,10 +209,10 @@
       ]
     },
     {
-      "name": "getRulesByRevisionQuery",
+      "name": "exportRulesToCsv",
       "protocol": "REST",
       "method": "GET",
-      "entitypath": "{base_path}/{version}/securetrack/api/revisions/{pathv1}/rules?{query}",
+      "entitypath": "{base_path}/{version}/securetrack/api/rule_search/export?{query}",
       "requestSchema": "schema.json",
       "responseSchema": "schema.json",
       "timeout": 0,
@@ -190,10 +230,10 @@
       ]
     },
     {
-      "name": "getRevisionsRevisionIdRulesIdsQuery",
+      "name": "findServicesObjects",
       "protocol": "REST",
       "method": "GET",
-      "entitypath": "{base_path}/{version}/securetrack/api/revisions/{pathv1}/rules/{pathv2}?{query}",
+      "entitypath": "{base_path}/{version}/securetrack/api/services/search?{query}",
       "requestSchema": "schema.json",
       "responseSchema": "schema.json",
       "timeout": 0,
@@ -211,73 +251,10 @@
       ]
     },
     {
-      "name": "getRulesByDeviceQuery",
+      "name": "getDeviceMapping",
       "protocol": "REST",
       "method": "GET",
-      "entitypath": "{base_path}/{version}/securetrack/api/devices/{pathv1}/rules?{query}",
-      "requestSchema": "schema.json",
-      "responseSchema": "schema.json",
-      "timeout": 0,
-      "sendEmpty": false,
-      "sendGetBody": false,
-      "requestDatatype": "JSON",
-      "responseDatatype": "JSON",
-      "headers": {},
-      "responseObjects": [
-        {
-          "type": "default",
-          "key": "",
-          "mockFile": ""
-        }
-      ]
-    },
-    {
-      "name": "getSpecificRuleQuery",
-      "protocol": "REST",
-      "method": "GET",
-      "entitypath": "{base_path}/{version}/securetrack/api/devices/{pathv1}/rules/{pathv2}?{query}",
-      "requestSchema": "schema.json",
-      "responseSchema": "schema.json",
-      "timeout": 0,
-      "sendEmpty": false,
-      "sendGetBody": false,
-      "requestDatatype": "JSON",
-      "responseDatatype": "JSON",
-      "headers": {},
-      "responseObjects": [
-        {
-          "type": "default",
-          "key": "",
-          "mockFile": ""
-        }
-      ]
-    },
-    {
-      "name": "findRulesQuery",
-      "protocol": "REST",
-      "method": "GET",
-      "entitypath": "{base_path}/{version}/securetrack/api/rule_search/{pathv1}?{query}",
-      "requestSchema": "schema.json",
-      "responseSchema": "schema.json",
-      "timeout": 0,
-      "sendEmpty": false,
-      "sendGetBody": false,
-      "requestDatatype": "JSON",
-      "responseDatatype": "JSON",
-      "headers": {},
-      "responseObjects": [
-        {
-          "type": "default",
-          "key": "",
-          "mockFile": ""
-        }
-      ]
-    },
-    {
-      "name": "getASpecificRuleQuery",
-      "protocol": "REST",
-      "method": "GET",
-      "entitypath": "{base_path}/{version}/securetrack/api/rules/{pathv1}?{query}",
+      "entitypath": "{base_path}/{version}/securetrack/api/security_policies/{pathv1}/mapping?{query}",
       "requestSchema": "schema.json",
       "responseSchema": "schema.json",
       "timeout": 0,

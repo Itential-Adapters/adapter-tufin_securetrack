@@ -17,7 +17,15 @@
         "getDevicesInRiskResults",
         "getRisksResults",
         "getShadowingRulesByDevice",
-        "getDevicesInCleanupResults"
+        "getDevicesInCleanupResults",
+        "getRisksResultsQuery",
+        "getCleanupsResultsQuery",
+        "getTheSpecificObjectsOrRulesIdentifiedForTheRiskResultsQuery",
+        "getDevicesInRiskResultsQuery",
+        "getTheSpecificObjectsOrRulesIdentifiedForTheCleanupResultsQuery",
+        "getDevicesInCleanupResultsQuery",
+        "getCleanupsByDeviceQuery",
+        "getShadowingRulesByDeviceQuery"
       ],
       "external_name": "ph_request_type"
     },

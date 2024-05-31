@@ -20,7 +20,18 @@
         "updateOfflineDevice",
         "getDevices",
         "addOfflineDevice",
-        "getTextualConfigurationByDevice"
+        "getTextualConfigurationByDevice",
+        "getQueueSizeConfig",
+        "updateQueueMaxSize",
+        "getTextualConfigurationByRevisionQuery",
+        "getDevicesQuery",
+        "getSpecificDeviceQuery",
+        "getTextualConfigurationByDeviceQuery",
+        "abortTask",
+        "abortAllTasks",
+        "getWaitingTasks",
+        "getWaitingTasksForDevice",
+        "updateOfflineDeviceQuery"
       ],
       "external_name": "ph_request_type"
     },

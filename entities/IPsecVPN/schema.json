@@ -13,7 +13,11 @@
         "getCiscoCryptographicMapsByRevision",
         "getCiscoIPsecPolicyAndPeers",
         "getCheckPointVPNIPSecCommunitiesAndGateways",
-        "getCiscoCryptographicMapsByDevice"
+        "getCiscoCryptographicMapsByDevice",
+        "getCiscoCryptographicMapsByRevisionQuery",
+        "getCiscoCryptographicMapsByDeviceQuery",
+        "getCiscoIPsecPolicyAndPeersQuery",
+        "getCheckPointVPNIPSecCommunitiesAndGatewaysQuery"
       ],
       "external_name": "ph_request_type"
     },

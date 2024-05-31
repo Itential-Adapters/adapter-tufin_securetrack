@@ -11,7 +11,9 @@
       "default": "getLastHitsForAllRulesByDevice",
       "enum": [
         "getLastHitsForAllRulesByDevice",
-        "getLastHitForASpecificRule"
+        "getLastHitForASpecificRule",
+        "getLastHitsForAllRulesByDeviceQuery",
+        "getlasthitforaspecificruleQuery"
       ],
       "external_name": "ph_request_type"
     },

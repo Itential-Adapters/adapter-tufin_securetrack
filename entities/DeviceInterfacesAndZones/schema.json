@@ -14,7 +14,12 @@
         "getNetworkInterfacesByRevision",
         "getDeviceZonesByRevision",
         "getDeviceZonesByDevice",
-        "getZonesAndNetworkInterfacesThatParticipateInSubPolicies"
+        "getZonesAndNetworkInterfacesThatParticipateInSubPolicies",
+        "getDeviceZonesByRevisionQuery",
+        "getNetworkInterfacesByRevisionQuery",
+        "getDeviceZonesByDeviceQuery",
+        "getZonesAndNetworkInterfacesThatParticipateInSubPoliciesQuery",
+        "getNetworkInterfacesByDeviceQuery"
       ],
       "external_name": "ph_request_type"
     }

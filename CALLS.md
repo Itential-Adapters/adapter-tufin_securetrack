@@ -1282,5 +1282,1271 @@ Specific adapter calls are built based on the API of the Tufin_securetrack. The 
     <td style="padding:15px">{base_path}/{version}/securetrack/api/violating_rules/{pathv1}/device_violations?{query}</td>
     <td style="padding:15px">Yes</td>
   </tr>
+  <tr>
+    <td style="padding:15px">getSpecificAdditionalParameterIdentityQuery(revisionId, ids, queryObject, callback)</td>
+    <td style="padding:15px">GetspecificadditionalparameteridentityQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/revisions/{pathv1}/additional_parameters/{pathv2}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getAURLCategoryQuery(revisionId, ids, queryObject, callback)</td>
+    <td style="padding:15px">GetaURLCategory.Query</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/revisions/{pathv1}/url_categories/{pathv2}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getAdditionalParametersIdentitiesByRevisionQuery(revisionId, queryObject, callback)</td>
+    <td style="padding:15px">getAdditionalParameters</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/revisions/{pathv1}/additional_parameters?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getApplicationsIdentitiesByRevisionQuery(id, queryObject, callback)</td>
+    <td style="padding:15px">GetapplicationsidentitiesbyrevisionQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/revisions/{pathv1}/applications?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getRevisionsRevisionIdApplicationsIdsQuery(revisionId, ids, queryObject, callback)</td>
+    <td style="padding:15px">Fetches one or more applications</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/revisions/{pathv1}/applications/{pathv2}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getApplicationIdentitiesByDeviceQuery(id, queryObject, callback)</td>
+    <td style="padding:15px">GetapplicationidentitiesbydeviceQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/devices/{pathv1}/applications?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getSpecificApplicationIdentityQuery(id, ids, queryObject, callback)</td>
+    <td style="padding:15px">GetgetSpecificApplication</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/devices/{pathv1}/applications/{pathv2}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">determineIfChangesBetweenTwoRevisionsAreAuthorizedQuery(queryObject, callback)</td>
+    <td style="padding:15px">DetermineifchangesbetweentworevisionsareauthorizedQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/change_authorization?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getNameAndStatusForAllChangeWindowsQuery(queryObject, callback)</td>
+    <td style="padding:15px">GetnameandstatusforallchangewindowsQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/change_windows?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getSchedulingAndDeviceDetailsForASpecificChangeWindowQuery(uid, taskId, queryObject, callback)</td>
+    <td style="padding:15px">GetschedulinganddevicedetailsforaspecificchangewindowQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/change_windows/{pathv1}/tasks/{pathv2}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getAListOfCompletedPolicyChangesForASpecificChangeWindowQuery(uid, queryObject, callback)</td>
+    <td style="padding:15px">GetalistofcompletedpolicychangesforaspecificchangewindowQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/change_windows/{pathv1}/tasks?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getDeviceZonesByRevisionQuery(id, queryObject, callback)</td>
+    <td style="padding:15px">GetdevicezonesbyrevisionQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/revisions/{pathv1}/zones?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getNetworkInterfacesByRevisionQuery(id, queryObject, callback)</td>
+    <td style="padding:15px">GetnetworkinterfacesbyrevisionQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/revisions/{pathv1}/interfaces?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getDeviceZonesByDeviceQuery(id, queryObject, callback)</td>
+    <td style="padding:15px">GetdevicezonesbydeviceQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/devices/{pathv1}/zones?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getZonesAndNetworkInterfacesThatParticipateInSubPoliciesQuery(id, queryObject, callback)</td>
+    <td style="padding:15px">Getzonesandnetworkinterfacesthatparticipateinsub-policiesQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/devices/{pathv1}/bindable_objects?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getNetworkInterfacesByDeviceQuery(id, queryObject, callback)</td>
+    <td style="padding:15px">GetnetworkinterfacesbydeviceQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/devices/{pathv1}/interfaces?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getDomainQuery(id, queryObject, callback)</td>
+    <td style="padding:15px">GetdomainQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/domains/{pathv1}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getCiscoCryptographicMapsByRevisionQuery(id, queryObject, callback)</td>
+    <td style="padding:15px">GetCiscocryptographicmapsbyrevisionQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/revisions/{pathv1}/crypto_maps?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getCiscoCryptographicMapsByDeviceQuery(id, queryObject, callback)</td>
+    <td style="padding:15px">GetCiscocryptographicmapsbydeviceQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/devices/{pathv1}/crypto_maps?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getCiscoIPsecPolicyAndPeersQuery(deviceId, queryObject, callback)</td>
+    <td style="padding:15px">GetIpsecTunnelsForTopologyInterface</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/bindings/{pathv1}/ipsec_tunnels?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getCheckPointVPNIPSecCommunitiesAndGatewaysQuery(deviceId, queryObject, callback)</td>
+    <td style="padding:15px">GetIpsecCommunitiesForManagementId</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/bindings/{pathv1}/ipsec_communities?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getLDAPEntryDetailsByDNQuery(queryObject, callback)</td>
+    <td style="padding:15px">GetLDAPentrydetailsbyDNQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/ldap/getEntryByDN?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getLicense(id, queryObject, callback)</td>
+    <td style="padding:15px">getLicense</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/licenses/{pathv1}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getLicenses(callback)</td>
+    <td style="padding:15px">getLicenses</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/licenses?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getQueueSizeConfig(callback)</td>
+    <td style="padding:15px">getQueueSizeConfig</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/devices/provisioning/config/queue_size?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">updateQueueMaxSize(body, callback)</td>
+    <td style="padding:15px">updateQueueMaxSize</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/devices/provisioning/config/queue_size?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getTextualConfigurationByRevisionQuery(id, queryObject, callback)</td>
+    <td style="padding:15px">GettextualconfigurationbyrevisionQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/revisions/{pathv1}/config?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getDevicesQuery(queryObject, callback)</td>
+    <td style="padding:15px">GetdevicesQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/devices?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getSpecificDeviceQuery(id, queryObject, callback)</td>
+    <td style="padding:15px">GetspecificdeviceQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/devices/{pathv1}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getTextualConfigurationByDeviceQuery(id, queryObject, callback)</td>
+    <td style="padding:15px">GettextualconfigurationbydeviceQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/devices/{pathv1}/config?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">abortTask(body, callback)</td>
+    <td style="padding:15px">abort</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/devices/provisioning/abort_task?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">abortAllTasks(body, callback)</td>
+    <td style="padding:15px">abortAllTasks</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/devices/provisioning/abort_all_tasks?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getWaitingTasks(callback)</td>
+    <td style="padding:15px">getWaitingTasks</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/devices/provisioning/waiting_tasks?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getWaitingTasksForDevice(deviceId, callback)</td>
+    <td style="padding:15px">getWaitingTasksForDevice</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/devices/provisioning/waiting_tasks/{pathv1}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">updateOfflineDeviceQuery(deviceId, queryObject, body, callback)</td>
+    <td style="padding:15px">updateDevice</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/devices/{pathv1}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getNATObjectsByRevisionQuery(id, queryObject, callback)</td>
+    <td style="padding:15px">GetNATobjectsbyrevisionQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/revisions/{pathv1}/nat_objects?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getNATObjectsByDeviceQuery(id, queryObject, callback)</td>
+    <td style="padding:15px">GetNATobjectsbydeviceQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/devices/{pathv1}/nat_objects?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getNATRulesByDeviceQuery(id, queryObject, callback)</td>
+    <td style="padding:15px">GetNATrulesbydeviceQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/devices/{pathv1}/nat_rules/bindings?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getNetworkObjectsByRevisionQuery(id, queryObject, callback)</td>
+    <td style="padding:15px">GetnetworkobjectsbyrevisionQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/revisions/{pathv1}/network_objects?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getSpecificNetworkObjectsByRevisionQuery(revisionId, ids, queryObject, callback)</td>
+    <td style="padding:15px">GetspecificnetworkobjectsbyrevisionQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/revisions/{pathv1}/network_objects/{pathv2}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getNetworkObjectsByDeviceQuery(id, queryObject, callback)</td>
+    <td style="padding:15px">GetnetworkobjectsbydeviceQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/devices/{pathv1}/network_objects?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getSpecificNetworkObjectQuery(deviceId, ids, queryObject, callback)</td>
+    <td style="padding:15px">GetspecificnetworkobjectQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/devices/{pathv1}/network_objects/{pathv2}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getNetworkObjectsMatchingSpecifiedCriteriaQuery(queryObject, callback)</td>
+    <td style="padding:15px">GetnetworkobjectsmatchingspecifiedcriteriaQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/network_objects/search?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getNetworkGroupsContainingSpecifiedNetworkObjectQuery(id, queryObject, callback)</td>
+    <td style="padding:15px">GetnetworkgroupscontainingspecifiednetworkobjectQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/network_objects/{pathv1}/groups?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getRulesContainingSpecifiedNetworkObjectQuery(id, queryObject, callback)</td>
+    <td style="padding:15px">GetrulescontainingspecifiednetworkobjectQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/network_objects/{pathv1}/rules?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getTopologyGenericVPNConnectionsQuery(queryObject, callback)</td>
+    <td style="padding:15px">GettopologygenericVPNconnectionsQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/topology/generic_vpns?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">updateACloudQuery(id, queryObject, body, callback)</td>
+    <td style="padding:15px">UpdateacloudQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/topology/clouds/{pathv1}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">synchronizeTheTopologyModelQuery(queryObject, callback)</td>
+    <td style="padding:15px">SynchronizetheTopologymodelQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/topology/synchronize?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getSynchronizerCronTabDetails(callback)</td>
+    <td style="padding:15px">getSynchronizerCronTabDetails</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/topology/synchronize/getSynchronizerCronTabDetails?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getPathPdf(queryObject, callback)</td>
+    <td style="padding:15px">getPathPdf</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/topology/export_path_results.pdf?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getPathDomains(queryObject, callback)</td>
+    <td style="padding:15px">getPathDomains</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/topology/path_domains?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getPathObjectTraffic(queryObject, callback)</td>
+    <td style="padding:15px">getPathObjectTraffic</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/topology/path_objects_traffic?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getPathImageForSpecifiedTrafficQuery(queryObject, callback)</td>
+    <td style="padding:15px">GetpathimageforspecifiedtrafficQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/topology/path_image?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getPathForSpecifiedTrafficQuery(queryObject, callback)</td>
+    <td style="padding:15px">GetpathforspecifiedtrafficQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/topology/path?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getTopologyCloudsQuery(queryObject, callback)</td>
+    <td style="padding:15px">GettopologycloudsQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/topology/clouds?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">createAJoinedTopologyCloudQuery(queryObject, body, callback)</td>
+    <td style="padding:15px">CreateajoinedtopologycloudQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/topology/clouds?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getTopologySubnetsQuery(queryObject, callback)</td>
+    <td style="padding:15px">GettopologysubnetsQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/topology/subnets?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getget(cloudId, callback)</td>
+    <td style="padding:15px">Getget</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/topology/join/clouds/{pathv1}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">deletedelete(cloudId, queryObject, callback)</td>
+    <td style="padding:15px">Deletedelete</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/topology/join/clouds/{pathv1}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">createJoinCloud(queryObject, body, callback)</td>
+    <td style="padding:15px">Create Join Cloud</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/topology/join/clouds?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">updateJoinClouds(queryObject, body, callback)</td>
+    <td style="padding:15px">update join clouds</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/topology/join/clouds?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getVpn(vpnId, callback)</td>
+    <td style="padding:15px">getVpn</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/topology/generic/vpn/{pathv1}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">deleteVpn(vpnId, callback)</td>
+    <td style="padding:15px">deleteVpn</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/topology/generic/vpn/{pathv1}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getInterface(inId, callback)</td>
+    <td style="padding:15px">getInterface</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/topology/generic/interface/{pathv1}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">deleteInterface(inId, callback)</td>
+    <td style="padding:15px">deleteInterface</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/topology/generic/interface/{pathv1}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getRoute(routeId, callback)</td>
+    <td style="padding:15px">getRoute</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/topology/generic/route/{pathv1}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">deleteRoute(routeId, callback)</td>
+    <td style="padding:15px">deleteRoute</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/topology/generic/route/{pathv1}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">createRoutes(body, callback)</td>
+    <td style="padding:15px">createRoutes</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/topology/generic/route?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">updateRoutes(body, callback)</td>
+    <td style="padding:15px">updateRoutes</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/topology/generic/route?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getRoutes(mgmtId, callback)</td>
+    <td style="padding:15px">getRoutes</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/topology/generic/route/mgmt/{pathv1}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">deleteRoutes(mgmtId, callback)</td>
+    <td style="padding:15px">deleteRoutes</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/topology/generic/route/mgmt/{pathv1}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getInterfaceCustomer(interfaceCustomerId, callback)</td>
+    <td style="padding:15px">getInterfaceCustomer</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/topology/generic/interfacecustomer/{pathv1}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">deleteInterfaceCustomer(interfaceCustomerId, callback)</td>
+    <td style="padding:15px">deleteInterfaceCustomer</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/topology/generic/interfacecustomer/{pathv1}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getInterfaceCustomers(deviceId, queryObject, callback)</td>
+    <td style="padding:15px">getInterfaceCustomers</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/topology/generic/interfacecustomer/device/{pathv1}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">deleteInterfaceCustomers(deviceId, queryObject, callback)</td>
+    <td style="padding:15px">deleteInterfaceCustomers</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/topology/generic/interfacecustomer/device/{pathv1}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">createInterfaceCustomers(body, callback)</td>
+    <td style="padding:15px">createInterfaceCustomers</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/topology/generic/interfacecustomer?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">updateInterfaceCustomers(body, callback)</td>
+    <td style="padding:15px">updateInterfaceCustomers</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/topology/generic/interfacecustomer?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getgetInterfaces(mgmtId, callback)</td>
+    <td style="padding:15px">GetgetInterfaces</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/topology/generic/interface/mgmt/{pathv1}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">deleteInterfaces(mgmtId, callback)</td>
+    <td style="padding:15px">deleteInterfaces</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/topology/generic/interface/mgmt/{pathv1}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">createInterfaces(body, callback)</td>
+    <td style="padding:15px">createInterfaces</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/topology/generic/interface?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">updateInterfaces(body, callback)</td>
+    <td style="padding:15px">updateInterfaces</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/topology/generic/interface?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getVpns(deviceId, queryObject, callback)</td>
+    <td style="padding:15px">getVpns</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/topology/generic/vpn/device/{pathv1}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">deleteVpns(deviceId, queryObject, callback)</td>
+    <td style="padding:15px">deleteVpns</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/topology/generic/vpn/device/{pathv1}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">createVpns(body, callback)</td>
+    <td style="padding:15px">createVpns</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/topology/generic/vpn?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">updateVpns(body, callback)</td>
+    <td style="padding:15px">updateVpns</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/topology/generic/vpn?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getTransparentFirewalls(deviceId, queryObject, callback)</td>
+    <td style="padding:15px">getTransparentFirewalls</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/topology/generic/transparentfw/device/{pathv1}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">deleteTransparentFirewalls(deviceId, callback)</td>
+    <td style="padding:15px">deleteTransparentFirewalls</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/topology/generic/transparentfw/device/{pathv1}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">deleteTransparentFirewall(layer2DataId, callback)</td>
+    <td style="padding:15px">deleteTransparentFirewall</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/topology/generic/transparentfw/{pathv1}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">createTransparentFirewalls(body, callback)</td>
+    <td style="padding:15px">createTransparentFirewalls</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/topology/generic/transparentfw?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">updateTransparentFirewalls(body, callback)</td>
+    <td style="padding:15px">updateTransparentFirewalls</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/topology/generic/transparentfw?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getIgnoredInterfaces(mgmtId, callback)</td>
+    <td style="padding:15px">getIgnoredInterfaces</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/topology/generic/ignoredinterface/mgmt/{pathv1}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">deleteIgnoredInterfaces(mgmtId, callback)</td>
+    <td style="padding:15px">deleteIgnoredInterfaces</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/topology/generic/ignoredinterface/mgmt/{pathv1}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">createIgnoredInterfaces(body, callback)</td>
+    <td style="padding:15px">createIgnoredInterfaces</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/topology/generic/ignoredinterface?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">deleteGenericDeviceFromTopologyModelQuery(id, queryObject, callback)</td>
+    <td style="padding:15px">DeletegenericdevicefromTopologymodelQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/generic_devices/{pathv1}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getGenericDevicesThatAreConfiguredInSTQuery(queryObject, callback)</td>
+    <td style="padding:15px">GetgenericdevicesthatareconfiguredinSTQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/generic_devices?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getTopologyRoutingTablesForAGivenDeviceQuery(queryObject, callback)</td>
+    <td style="padding:15px">GettopologyroutingtablesforagivendeviceQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/devices/topology_routes?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getTopologyNetworkInterfacesByDeviceQuery(queryObject, callback)</td>
+    <td style="padding:15px">GettopologynetworkinterfacesbydeviceQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/devices/topology_interfaces?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getMostSpecificNetworkInterfacesFromWhichAHostIPIsAccessibleQuery(queryObject, callback)</td>
+    <td style="padding:15px">GetmostspecificnetworkinterfacesfromwhichahostIPisaccessibleQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/devices/interfaces/last_hop?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">joinOrSplitSubnet(queryObject, body, callback)</td>
+    <td style="padding:15px">Join/Split Subnet.</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/topology/join/subnets?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">modifyAZoneEntryQuery(zoneId, id, queryObject, body, callback)</td>
+    <td style="padding:15px">PutModifyazoneentryQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/zones/{pathv1}/entries/{pathv2}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getASpecificZoneEntryQuery(id, zoneId, queryObject, callback)</td>
+    <td style="padding:15px">getZoneEntry</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/zones/{pathv1}/entries/{pathv2}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">deleteZoneEntriesQuery(id, zoneId, queryObject, callback)</td>
+    <td style="padding:15px">deleteZoneEntry</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/zones/{pathv1}/entries/{pathv2}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">createAZoneEntryQuery(zoneId, queryObject, body, callback)</td>
+    <td style="padding:15px">addZoneEntry</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/zones/{pathv1}/entries?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">deleteZonesZoneIdsEntriesIdsQuery(zoneIds, ids, queryObject, callback)</td>
+    <td style="padding:15px">deleteZoneEntries</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/zones/{pathv1}/entries/{pathv2}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">modifyMultipleExistingZoneEntriesQuery(zoneIds, ids, queryObject, body, callback)</td>
+    <td style="padding:15px">editZoneEntries</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/zones/{pathv1}/entries/{pathv2}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getEntriesForAZoneQuery(ids, queryObject, callback)</td>
+    <td style="padding:15px">getZoneEntries</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/zones/{pathv1}/entries?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getASpecificZoneQuery(id, queryObject, callback)</td>
+    <td style="padding:15px">GetaspecificzoneQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/zones/{pathv1}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">modifyAZoneQuery(id, queryObject, body, callback)</td>
+    <td style="padding:15px">ModifyazoneQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/zones/{pathv1}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getAllZonesQuery(queryObject, callback)</td>
+    <td style="padding:15px">GetallzonesQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/zones?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">createAZoneQuery(queryObject, body, callback)</td>
+    <td style="padding:15px">CreateazoneQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/zones?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">deleteAllZonesQuery(queryObject, callback)</td>
+    <td style="padding:15px">DeleteallzonesQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/zones?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getSharedZonesQuery(queryObject, callback)</td>
+    <td style="padding:15px">GetsharedzonesQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/zones/shared?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getConfigurationUsagesForAZoneQuery(ids, queryObject, callback)</td>
+    <td style="padding:15px">getZoneDependencies</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/zones/{pathv1}/dependencies?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getDescendantZonesForAZoneQuery(ids, queryObject, callback)</td>
+    <td style="padding:15px">getChildrenHierarchy</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/zones/{pathv1}/descendants?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getAncestorZonesForAZoneQuery(ids, queryObject, callback)</td>
+    <td style="padding:15px">getParentsHierarchy</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/zones/{pathv1}/ancestors?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">addAZoneAsADescendantToAZoneQuery(parentId, childIds, queryObject, callback)</td>
+    <td style="padding:15px">addContainedZone</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/zones/{pathv1}/descendants/{pathv2}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">removeAZoneAsAnDescendantsToAZoneQuery(parentId, childIds, queryObject, callback)</td>
+    <td style="padding:15px">deleteContainedZone</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/zones/{pathv1}/descendants/{pathv2}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">addAZoneAsAnAncestorToAZoneQuery(childId, parentIds, queryObject, callback)</td>
+    <td style="padding:15px">addToZone</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/zones/{pathv1}/ancestors/{pathv2}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">removeAZoneAsAnAncestorToAZoneQuery(childId, parentIds, queryObject, callback)</td>
+    <td style="padding:15px">deleteFromZone</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/zones/{pathv1}/ancestors/{pathv2}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">deleteAZoneQuery(ids, queryObject, callback)</td>
+    <td style="padding:15px">deleteZones</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/zones/{pathv1}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">importAZoneQuery(ids, queryObject, callback)</td>
+    <td style="padding:15px">importZones</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/zones/import/{pathv1}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getPoliciesByRevisionQuery(id, queryObject, callback)</td>
+    <td style="padding:15px">GetpoliciesbyrevisionQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/revisions/{pathv1}/policies?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getSubPoliciesBindingsByRevisionQuery(id, queryObject, callback)</td>
+    <td style="padding:15px">Getsub-policies(bindings)byrevisionQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/revisions/{pathv1}/bindings?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getPoliciesByDeviceQuery(id, queryObject, callback)</td>
+    <td style="padding:15px">GetpoliciesbydeviceQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/devices/{pathv1}/policies?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getSubPoliciesBindingsByDeviceQuery(id, queryObject, callback)</td>
+    <td style="padding:15px">Getsub-policies(bindings)bydeviceQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/devices/{pathv1}/bindings?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getRulesByInputAndOutputInterfacesQuery(deviceId, queryObject, callback)</td>
+    <td style="padding:15px">getBindingsForTopologyInterfaces</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/bindings/{pathv1}/topology_interfaces?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getListOfSubPoliciesBindingsWithInputAndOrOutputInterfacesQuery(deviceId, queryObject, callback)</td>
+    <td style="padding:15px">getLastInstalledVersionBindingsByVersionId</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/bindings/{pathv1}/binding_query?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">runPolicyAnalysisQueryQuery(queryObject, callback)</td>
+    <td style="padding:15px">RunPolicyAnalysisqueryQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/policy_analysis/query/matching_rules?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getRisksResultsQuery(queryObject, callback)</td>
+    <td style="padding:15px">GetrisksresultsQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/risk?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getCleanupsResultsQuery(queryObject, callback)</td>
+    <td style="padding:15px">GetcleanupsresultsQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/cleanup?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getTheSpecificObjectsOrRulesIdentifiedForTheRiskResultsQuery(riskId, queryObject, callback)</td>
+    <td style="padding:15px">getRiskInstances</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/risk/{pathv1}/instances?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getDevicesInRiskResultsQuery(riskId, queryObject, callback)</td>
+    <td style="padding:15px">getRiskDevices</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/risk/{pathv1}/devices?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getTheSpecificObjectsOrRulesIdentifiedForTheCleanupResultsQuery(cleanupId, queryObject, callback)</td>
+    <td style="padding:15px">getCleanupInstances</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/cleanup/{pathv1}/instances?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getDevicesInCleanupResultsQuery(cleanupId, queryObject, callback)</td>
+    <td style="padding:15px">getCleanupDevices</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/cleanup/{pathv1}/devices?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getCleanupsByDeviceQuery(deviceId, queryObject, callback)</td>
+    <td style="padding:15px">getCleanupInstanceResultAndInfo</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/devices/{pathv1}/cleanups?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getShadowingRulesByDeviceQuery(deviceId, queryObject, callback)</td>
+    <td style="padding:15px">getShadowingResultAndInfo</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/devices/{pathv1}/shadowing_rules?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getRevisionsByDeviceQuery(id, queryObject, callback)</td>
+    <td style="padding:15px">GetrevisionsbydeviceQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/devices/{pathv1}/revisions?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getLatestRevisionByDeviceQuery(id, queryObject, callback)</td>
+    <td style="padding:15px">GetlatestrevisionbydeviceQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/devices/{pathv1}/latest_revision?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getSpecificRevisionQuery(revId, queryObject, callback)</td>
+    <td style="padding:15px">getRevision</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/revisions/{pathv1}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getRuleCountPerDeviceQuery(queryObject, callback)</td>
+    <td style="padding:15px">GetrulecountperdeviceQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/rule_search?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getRulesByRevisionQuery(id, queryObject, callback)</td>
+    <td style="padding:15px">GetrulesbyrevisionQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/revisions/{pathv1}/rules?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getRevisionsRevisionIdRulesIdsQuery(revisionId, ids, queryObject, callback)</td>
+    <td style="padding:15px">Returns a list of rules</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/revisions/{pathv1}/rules/{pathv2}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getRulesByDeviceQuery(id, queryObject, callback)</td>
+    <td style="padding:15px">GetrulesbydeviceQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/devices/{pathv1}/rules?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getSpecificRuleQuery(deviceId, ids, queryObject, callback)</td>
+    <td style="padding:15px">GetspecificruleQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/devices/{pathv1}/rules/{pathv2}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">findRulesQuery(deviceId, queryObject, callback)</td>
+    <td style="padding:15px">findRules</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/rule_search/{pathv1}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getASpecificRuleQuery(ruleId, queryObject, callback)</td>
+    <td style="padding:15px">getRule</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/rules/{pathv1}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getServiceGroupsContainingSpecifiedServiceObjectsQuery(id, queryObject, callback)</td>
+    <td style="padding:15px">GetservicegroupscontainingspecifiedserviceobjectsQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/services/{pathv1}/groups?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getRulesContainingSpecifiedServiceObjectQuery(id, queryObject, callback)</td>
+    <td style="padding:15px">GetrulescontainingspecifiedserviceobjectQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/services/{pathv1}/rules?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getServicesByRevisionQuery(id, queryObject, callback)</td>
+    <td style="padding:15px">GetservicesbyrevisionQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/revisions/{pathv1}/services?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getSpecificServiceQuery(revisionId, ids, queryObject, callback)</td>
+    <td style="padding:15px">GetspecificserviceQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/revisions/{pathv1}/services/{pathv2}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getServicesByDeviceQuery(id, queryObject, callback)</td>
+    <td style="padding:15px">GetservicesbydeviceQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/devices/{pathv1}/services?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getDevicesDeviceIdServicesIdsQuery(deviceId, ids, queryObject, callback)</td>
+    <td style="padding:15px">Fetches list of specific service objects</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/devices/{pathv1}/services/{pathv2}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getTimeObjectsByRevisionQuery(id, queryObject, callback)</td>
+    <td style="padding:15px">GettimeobjectsbyrevisionQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/revisions/{pathv1}/time_objects?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getSpecificTimeObjectQuery(revisionId, ids, queryObject, callback)</td>
+    <td style="padding:15px">GetspecifictimeobjectQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/revisions/{pathv1}/time_objects/{pathv2}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getTimeObjectsByDeviceQuery(id, queryObject, callback)</td>
+    <td style="padding:15px">GettimeobjectsbydeviceQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/devices/{pathv1}/time_objects?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getPolicyRelevanceMetricsForTrafficQuery(queryObject, body, callback)</td>
+    <td style="padding:15px">GetpolicyrelevancemetricsfortrafficQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/traffic_policy?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getViolationsForAnAccessRequestQuery(queryObject, body, callback)</td>
+    <td style="padding:15px">GetviolationsforanaccessrequestQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/violations/access_requests/sync?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">startATaskToCalculateViolationsForAnAccessRequestQuery(queryObject, body, callback)</td>
+    <td style="padding:15px">StartatasktocalculateviolationsforanaccessrequestQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/violations/access_requests/task?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getAlertsQuery(queryObject, callback)</td>
+    <td style="padding:15px">GetalertsQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/security_policies/alerts?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">createAnAlertQuery(queryObject, body, callback)</td>
+    <td style="padding:15px">CreateanalertQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/security_policies/alerts?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getASpecificAlertQuery(id, queryObject, callback)</td>
+    <td style="padding:15px">GetaspecificalertQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/security_policies/alerts/{pathv1}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">updateAnAlertQuery(id, queryObject, body, callback)</td>
+    <td style="padding:15px">UpdateanalertQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/security_policies/alerts/{pathv1}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">deleteAlertsByIdsQuery(ids, queryObject, callback)</td>
+    <td style="padding:15px">deleteUSPAlert</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/security_policies/alerts/{pathv1}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">createACloudTagPolicyQuery(queryObject, body, callback)</td>
+    <td style="padding:15px">CreateacloudtagpolicyQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/policies?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getAllCloudTagPoliciesQuery(queryObject, callback)</td>
+    <td style="padding:15px">GetallcloudtagpoliciesQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/policies?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getCloudTagPolicyQuery(policyId, queryObject, callback)</td>
+    <td style="padding:15px">GetcloudtagpolicyQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/policies/{pathv1}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">replaceACloudTagPolicyQuery(policyId, queryObject, body, callback)</td>
+    <td style="padding:15px">ReplaceacloudtagpolicyQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/policies/{pathv1}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">modifyACloudTagPolicyQuery(policyId, queryObject, body, callback)</td>
+    <td style="padding:15px">ModifyacloudtagpolicyQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/policies/{pathv1}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">deleteCloudTagPolicyQuery(policyId, queryObject, callback)</td>
+    <td style="padding:15px">DeletecloudtagpolicyQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/policies/{pathv1}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">checkIfTagsAreCompliantWithCloudTagPoliciesQuery(queryObject, body, callback)</td>
+    <td style="padding:15px">CheckiftagsarecompliantwithcloudtagpoliciesQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/violation_check?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getAllCloudTagPolicyViolationsForAVPCQuery(queryObject, callback)</td>
+    <td style="padding:15px">GetallcloudtagpolicyviolationsforaVPCQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/tag_violations?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">createAnExceptionQuery(queryObject, body, callback)</td>
+    <td style="padding:15px">CreateanexceptionQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/security_policies/exceptions?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getAllExceptionsQuery(queryObject, callback)</td>
+    <td style="padding:15px">GetallexceptionsQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/security_policies/exceptions?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getASpecificExceptionQuery(exceptionId, queryObject, callback)</td>
+    <td style="padding:15px">Getget2</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/security_policies/exceptions/{pathv1}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">deleteAnExceptionQuery(exceptionId, queryObject, callback)</td>
+    <td style="padding:15px">Deletedelete2</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/security_policies/exceptions/{pathv1}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">startATaskToCalculateMatchingRulesForAnExceptionQuery(exceptionId, queryObject, callback)</td>
+    <td style="padding:15px">Postcreate4</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/security_policies/exceptions/{pathv1}/matching_rules/start?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getGlobalUnifiedSecurityPoliciesQuery(queryObject, callback)</td>
+    <td style="padding:15px">GetglobalunifiedsecuritypoliciesQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/security_policies/global?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getUnifiedSecurityPoliciesQuery(queryObject, callback)</td>
+    <td style="padding:15px">GetunifiedsecuritypoliciesQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/security_policies?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">deleteUnifiedSecurityPolicyQuery(id, queryObject, callback)</td>
+    <td style="padding:15px">DeleteunifiedsecuritypolicyQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/security_policies/{pathv1}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getUnifiedSecurityPolicyAsCSVQuery(id, queryObject, callback)</td>
+    <td style="padding:15px">GetunifiedsecuritypolicyasCSVQuery</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/security_policies/{pathv1}/export?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">setManualDeviceMappingQuery(deviceId, queryObject, body, callback)</td>
+    <td style="padding:15px">setManualDeviceMapping</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/security_policies/{pathv1}/manual_mapping?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getUrlCategories(revisionId, queryObject, callback)</td>
+    <td style="padding:15px">getUrlCategories</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/revisions/{pathv1}/url_categories?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getProperties(callback)</td>
+    <td style="padding:15px">getProperties</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/properties?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">setProperties(body, callback)</td>
+    <td style="padding:15px">setProperties</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/properties?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getPBRRules(deviceId, queryObject, callback)</td>
+    <td style="padding:15px">getPBRRules</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/bindings/{pathv1}/PBR_rules?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">cloudSuggestions(queryObject, callback)</td>
+    <td style="padding:15px">cloudSuggestions</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/topology/cloud_suggestions?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">cloudSuggestion(cloudId, queryObject, callback)</td>
+    <td style="padding:15px">cloudSuggestion</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/topology/cloud_suggestions/{pathv1}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getRouteMaps(deviceId, queryObject, callback)</td>
+    <td style="padding:15px">getRouteMaps</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/devices/{pathv1}/route_maps?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">addZonesEntries(queryObject, body, callback)</td>
+    <td style="padding:15px">addZonesEntries</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/zones/entries?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getSdWanBindingsByRevision(id, queryObject, callback)</td>
+    <td style="padding:15px">Returns a list of all of the subpolicies (bindings) for a given revision.</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/revisions/{pathv1}/sdwan_bindings?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getSdWanBindingsByDevice(id, queryObject, callback)</td>
+    <td style="padding:15px">Returns a list of all of the subpolicies (bindings) for a given device</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/devices/{pathv1}/sdwan_bindings?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">exportRulesToCsv(queryObject, callback)</td>
+    <td style="padding:15px">exportRulesToCsv</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/rule_search/export?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">findServicesObjects(queryObject, callback)</td>
+    <td style="padding:15px">findServicesObjects</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/services/search?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getDeviceMapping(deviceId, queryObject, callback)</td>
+    <td style="padding:15px">getDeviceMapping</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/security_policies/{pathv1}/mapping?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getResolvedInternetRepresentationForDeviceQuery(deviceId, queryObject, callback)</td>
+    <td style="padding:15px">getInternetObject</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/internet_referral/{pathv1}/object?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">updateInternetRepresentationForDeviceQuery(deviceId, queryObject, body, callback)</td>
+    <td style="padding:15px">update</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/internet_referral/{pathv1}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getInternetRepresentationForDeviceQuery(deviceId, queryObject, callback)</td>
+    <td style="padding:15px">get</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/internet_referral/{pathv1}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">deleteInternetRepresentationForDeviceQuery(deviceId, queryObject, callback)</td>
+    <td style="padding:15px">delete</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/internet_referral/{pathv1}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">createAZonePatternEntryInASpecificZoneQuery(zoneId, queryObject, body, callback)</td>
+    <td style="padding:15px">addPatternMatchEntry</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/zones/{pathv1}/pattern-entries?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getAllPatternEntriesForSpecificZonesQuery(ids, queryObject, callback)</td>
+    <td style="padding:15px">getPatternMatchEntries</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/zones/{pathv1}/pattern-entries?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getASpecificZonePatternEntryForASpecificZoneQuery(id, zoneId, queryObject, callback)</td>
+    <td style="padding:15px">getPatternMatchEntry</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/zones/{pathv1}/pattern-entries/{pathv2}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getRevisionsIdRulesRuleIdDocumentationQuery(id, ruleId, queryObject, callback)</td>
+    <td style="padding:15px">Fetches rule documentation</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/revisions/{pathv1}/rules/{pathv2}/documentation?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">putRevisionsIdRulesRuleIdDocumentationQuery(id, ruleId, queryObject, body, callback)</td>
+    <td style="padding:15px">modifyRuleDocumentation</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/revisions/{pathv1}/rules/{pathv2}/documentation?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">deleteRuleDocumentation(id, ruleId, queryObject, callback)</td>
+    <td style="padding:15px">deleteRuleDocumentation</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/revisions/{pathv1}/rules/{pathv2}/documentation?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getSpecificRuleDocumentationQuery(id, ruleId, queryObject, callback)</td>
+    <td style="padding:15px">Fetches rule documentation for a single rule given by device ID and rule ID</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/devices/{pathv1}/rules/{pathv2}/documentation?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">modifySpecificRuleDocumentationQuery(id, ruleId, queryObject, body, callback)</td>
+    <td style="padding:15px">Modify rule documentation for a single rule given by device ID and rule ID</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/devices/{pathv1}/rules/{pathv2}/documentation?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">deleteSpecificRuleDocumentationQuery(id, ruleId, queryObject, callback)</td>
+    <td style="padding:15px">Delete rule documentation for a single rule</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/devices/{pathv1}/rules/{pathv2}/documentation?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getLastHitsForAllRulesByDeviceQuery(deviceId, queryObject, callback)</td>
+    <td style="padding:15px">findAllWithObjects</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/rule_last_usage/find_all/{pathv1}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getlasthitforaspecificruleQuery(ruleUid, deviceId, queryObject, callback)</td>
+    <td style="padding:15px">findWithObjects</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/rule_last_usage/find/{pathv1}/{pathv2}?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getTheAmountOfViolatingRulesForTheSpecifiedDeviceQuery(deviceId, queryObject, callback)</td>
+    <td style="padding:15px">getRulesCount</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/violating_rules/{pathv1}/count?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
+  <tr>
+    <td style="padding:15px">getTheViolatingRulesForTheSpecifiedDeviceQuery(deviceId, queryObject, callback)</td>
+    <td style="padding:15px">GetgetDeviceViolations</td>
+    <td style="padding:15px">{base_path}/{version}/securetrack/api/violating_rules/{pathv1}/device_violations?{query}</td>
+    <td style="padding:15px">Yes</td>
+  </tr>
 </table>
 <br>

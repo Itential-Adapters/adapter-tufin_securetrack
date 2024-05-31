@@ -13,7 +13,8 @@
         "getDomain",
         "updateADomain",
         "addADomain",
-        "getAllDomains"
+        "getAllDomains",
+        "getDomainQuery"
       ],
       "external_name": "ph_request_type"
     }

@@ -12,7 +12,10 @@
       "enum": [
         "getNameAndStatusForAllChangeWindows",
         "getSchedulingAndDeviceDetailsForASpecificChangeWindow",
-        "getAListOfCompletedPolicyChangesForASpecificChangeWindow"
+        "getAListOfCompletedPolicyChangesForASpecificChangeWindow",
+        "getNameAndStatusForAllChangeWindowsQuery",
+        "getSchedulingAndDeviceDetailsForASpecificChangeWindowQuery",
+        "getAListOfCompletedPolicyChangesForASpecificChangeWindowQuery"
       ],
       "external_name": "ph_request_type"
     },

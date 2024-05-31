@@ -12,7 +12,10 @@
       "enum": [
         "getTimeObjectsByRevision",
         "getTimeObjectsByDevice",
-        "getSpecificTimeObject"
+        "getSpecificTimeObject",
+        "getTimeObjectsByRevisionQuery",
+        "getSpecificTimeObjectQuery",
+        "getTimeObjectsByDeviceQuery"
       ],
       "external_name": "ph_request_type"
     },

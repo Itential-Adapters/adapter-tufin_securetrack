@@ -5161,5 +5161,5322 @@ describe('[integration] Tufin_securetrack Adapter Test', () => {
         }
       }).timeout(attemptTimeout);
     });
+
+    describe('#getSpecificAdditionalParameterIdentityQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getSpecificAdditionalParameterIdentityQuery('fakedata', 'fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('AdditionalPolicyFields', 'getSpecificAdditionalParameterIdentityQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getAURLCategoryQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getAURLCategoryQuery('fakedata', 'fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('AdditionalPolicyFields', 'getAURLCategoryQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getAdditionalParametersIdentitiesByRevisionQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getAdditionalParametersIdentitiesByRevisionQuery('fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('AdditionalPolicyFields', 'getAdditionalParametersIdentitiesByRevisionQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getApplicationsIdentitiesByRevisionQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getApplicationsIdentitiesByRevisionQuery(555, null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('ApplicationIDs', 'getApplicationsIdentitiesByRevisionQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getRevisionsRevisionIdApplicationsIdsQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getRevisionsRevisionIdApplicationsIdsQuery('fakedata', 'fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('ApplicationIDs', 'getRevisionsRevisionIdApplicationsIdsQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getApplicationIdentitiesByDeviceQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getApplicationIdentitiesByDeviceQuery(555, null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('ApplicationIDs', 'getApplicationIdentitiesByDeviceQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getSpecificApplicationIdentityQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getSpecificApplicationIdentityQuery(555, 'fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('ApplicationIDs', 'getSpecificApplicationIdentityQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#determineIfChangesBetweenTwoRevisionsAreAuthorizedQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.determineIfChangesBetweenTwoRevisionsAreAuthorizedQuery(null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('ChangeAuthorization', 'determineIfChangesBetweenTwoRevisionsAreAuthorizedQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getNameAndStatusForAllChangeWindowsQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getNameAndStatusForAllChangeWindowsQuery(null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('ChangeWindows', 'getNameAndStatusForAllChangeWindowsQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getSchedulingAndDeviceDetailsForASpecificChangeWindowQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getSchedulingAndDeviceDetailsForASpecificChangeWindowQuery('fakedata', 555, null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('ChangeWindows', 'getSchedulingAndDeviceDetailsForASpecificChangeWindowQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getAListOfCompletedPolicyChangesForASpecificChangeWindowQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getAListOfCompletedPolicyChangesForASpecificChangeWindowQuery('fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('ChangeWindows', 'getAListOfCompletedPolicyChangesForASpecificChangeWindowQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getDeviceZonesByRevisionQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getDeviceZonesByRevisionQuery(555, null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('DeviceInterfacesAndZones', 'getDeviceZonesByRevisionQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getNetworkInterfacesByRevisionQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getNetworkInterfacesByRevisionQuery(555, null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('DeviceInterfacesAndZones', 'getNetworkInterfacesByRevisionQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getDeviceZonesByDeviceQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getDeviceZonesByDeviceQuery(555, null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('DeviceInterfacesAndZones', 'getDeviceZonesByDeviceQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getZonesAndNetworkInterfacesThatParticipateInSubPoliciesQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getZonesAndNetworkInterfacesThatParticipateInSubPoliciesQuery(555, null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('DeviceInterfacesAndZones', 'getZonesAndNetworkInterfacesThatParticipateInSubPoliciesQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getNetworkInterfacesByDeviceQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getNetworkInterfacesByDeviceQuery(555, null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('DeviceInterfacesAndZones', 'getNetworkInterfacesByDeviceQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getDomainQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getDomainQuery(555, null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('Domains', 'getDomainQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getCiscoCryptographicMapsByRevisionQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getCiscoCryptographicMapsByRevisionQuery(555, null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('IPsecVPN', 'getCiscoCryptographicMapsByRevisionQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getCiscoCryptographicMapsByDeviceQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getCiscoCryptographicMapsByDeviceQuery(555, null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('IPsecVPN', 'getCiscoCryptographicMapsByDeviceQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getCiscoIPsecPolicyAndPeersQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getCiscoIPsecPolicyAndPeersQuery('fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('IPsecVPN', 'getCiscoIPsecPolicyAndPeersQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getCheckPointVPNIPSecCommunitiesAndGatewaysQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getCheckPointVPNIPSecCommunitiesAndGatewaysQuery('fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('IPsecVPN', 'getCheckPointVPNIPSecCommunitiesAndGatewaysQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getLDAPEntryDetailsByDNQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getLDAPEntryDetailsByDNQuery(null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('LDAP', 'getLDAPEntryDetailsByDNQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getLicense - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getLicense('fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('Licenses', 'getLicense', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getLicenses - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getLicenses((data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('Licenses', 'getLicenses', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getQueueSizeConfig - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getQueueSizeConfig((data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('MonitoredDevices', 'getQueueSizeConfig', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    const monitoredDevicesUpdateQueueMaxSizeBodyParam = {};
+    describe('#updateQueueMaxSize - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.updateQueueMaxSize(monitoredDevicesUpdateQueueMaxSizeBodyParam, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('MonitoredDevices', 'updateQueueMaxSize', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getTextualConfigurationByRevisionQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getTextualConfigurationByRevisionQuery(555, null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('MonitoredDevices', 'getTextualConfigurationByRevisionQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getDevicesQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getDevicesQuery(null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('MonitoredDevices', 'getDevicesQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getSpecificDeviceQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getSpecificDeviceQuery(555, null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('MonitoredDevices', 'getSpecificDeviceQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getTextualConfigurationByDeviceQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getTextualConfigurationByDeviceQuery(555, null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('MonitoredDevices', 'getTextualConfigurationByDeviceQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    const monitoredDevicesAbortTaskBodyParam = {};
+    describe('#abortTask - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.abortTask(monitoredDevicesAbortTaskBodyParam, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('MonitoredDevices', 'abortTask', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    const monitoredDevicesAbortAllTasksBodyParam = {};
+    describe('#abortAllTasks - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.abortAllTasks(monitoredDevicesAbortAllTasksBodyParam, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('MonitoredDevices', 'abortAllTasks', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getWaitingTasks - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getWaitingTasks((data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('MonitoredDevices', 'getWaitingTasks', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getWaitingTasksForDevice - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getWaitingTasksForDevice(555, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('MonitoredDevices', 'getWaitingTasksForDevice', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    const monitoredDevicesUpdateOfflineDeviceQueryBodyParam = {};
+    describe('#updateOfflineDeviceQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.updateOfflineDeviceQuery('fakedata', null, monitoredDevicesUpdateOfflineDeviceQueryBodyParam, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('MonitoredDevices', 'updateOfflineDeviceQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getNATObjectsByRevisionQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getNATObjectsByRevisionQuery(555, null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NATPolicies', 'getNATObjectsByRevisionQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getNATObjectsByDeviceQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getNATObjectsByDeviceQuery(555, null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NATPolicies', 'getNATObjectsByDeviceQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getNATRulesByDeviceQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getNATRulesByDeviceQuery(555, null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NATPolicies', 'getNATRulesByDeviceQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getNetworkObjectsByRevisionQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getNetworkObjectsByRevisionQuery(555, null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkObjects', 'getNetworkObjectsByRevisionQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getSpecificNetworkObjectsByRevisionQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getSpecificNetworkObjectsByRevisionQuery('fakedata', 'fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkObjects', 'getSpecificNetworkObjectsByRevisionQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getNetworkObjectsByDeviceQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getNetworkObjectsByDeviceQuery(555, null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkObjects', 'getNetworkObjectsByDeviceQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getSpecificNetworkObjectQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getSpecificNetworkObjectQuery('fakedata', 'fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkObjects', 'getSpecificNetworkObjectQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getNetworkObjectsMatchingSpecifiedCriteriaQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getNetworkObjectsMatchingSpecifiedCriteriaQuery(null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkObjects', 'getNetworkObjectsMatchingSpecifiedCriteriaQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getNetworkGroupsContainingSpecifiedNetworkObjectQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getNetworkGroupsContainingSpecifiedNetworkObjectQuery(555, null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkObjects', 'getNetworkGroupsContainingSpecifiedNetworkObjectQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getRulesContainingSpecifiedNetworkObjectQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getRulesContainingSpecifiedNetworkObjectQuery(555, null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkObjects', 'getRulesContainingSpecifiedNetworkObjectQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getTopologyGenericVPNConnectionsQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getTopologyGenericVPNConnectionsQuery(null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkTopology', 'getTopologyGenericVPNConnectionsQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    const networkTopologyUpdateACloudQueryBodyParam = {};
+    describe('#updateACloudQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.updateACloudQuery(555, null, networkTopologyUpdateACloudQueryBodyParam, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkTopology', 'updateACloudQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#synchronizeTheTopologyModelQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.synchronizeTheTopologyModelQuery(null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkTopology', 'synchronizeTheTopologyModelQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getSynchronizerCronTabDetails - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getSynchronizerCronTabDetails((data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkTopology', 'getSynchronizerCronTabDetails', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getPathPdf - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getPathPdf(null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkTopology', 'getPathPdf', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getPathDomains - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getPathDomains(null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkTopology', 'getPathDomains', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getPathObjectTraffic - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getPathObjectTraffic(null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkTopology', 'getPathObjectTraffic', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getPathImageForSpecifiedTrafficQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getPathImageForSpecifiedTrafficQuery(null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkTopology', 'getPathImageForSpecifiedTrafficQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getPathForSpecifiedTrafficQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getPathForSpecifiedTrafficQuery(null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkTopology', 'getPathForSpecifiedTrafficQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getTopologyCloudsQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getTopologyCloudsQuery(null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkTopology', 'getTopologyCloudsQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    const networkTopologyCreateAJoinedTopologyCloudQueryBodyParam = {};
+    describe('#createAJoinedTopologyCloudQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.createAJoinedTopologyCloudQuery(null, networkTopologyCreateAJoinedTopologyCloudQueryBodyParam, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkTopology', 'createAJoinedTopologyCloudQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getTopologySubnetsQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getTopologySubnetsQuery(null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkTopology', 'getTopologySubnetsQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getget - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getget(555, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkTopology', 'getget', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#deletedelete - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.deletedelete(555, null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkTopology', 'deletedelete', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    const networkTopologyCreateJoinCloudBodyParam = {};
+    describe('#createJoinCloud - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.createJoinCloud(null, networkTopologyCreateJoinCloudBodyParam, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkTopology', 'createJoinCloud', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    const networkTopologyUpdateJoinCloudsBodyParam = {};
+    describe('#updateJoinClouds - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.updateJoinClouds(null, networkTopologyUpdateJoinCloudsBodyParam, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkTopology', 'updateJoinClouds', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getVpn - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getVpn(555, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkTopology', 'getVpn', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#deleteVpn - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.deleteVpn(555, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkTopology', 'deleteVpn', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getInterface - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getInterface(555, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkTopology', 'getInterface', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#deleteInterface - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.deleteInterface(555, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkTopology', 'deleteInterface', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getRoute - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getRoute(555, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkTopology', 'getRoute', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#deleteRoute - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.deleteRoute(555, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkTopology', 'deleteRoute', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    const networkTopologyCreateRoutesBodyParam = {};
+    describe('#createRoutes - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.createRoutes(networkTopologyCreateRoutesBodyParam, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkTopology', 'createRoutes', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    const networkTopologyUpdateRoutesBodyParam = {};
+    describe('#updateRoutes - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.updateRoutes(networkTopologyUpdateRoutesBodyParam, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkTopology', 'updateRoutes', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getRoutes - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getRoutes(555, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkTopology', 'getRoutes', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#deleteRoutes - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.deleteRoutes(555, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkTopology', 'deleteRoutes', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getInterfaceCustomer - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getInterfaceCustomer(555, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkTopology', 'getInterfaceCustomer', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#deleteInterfaceCustomer - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.deleteInterfaceCustomer(555, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkTopology', 'deleteInterfaceCustomer', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getInterfaceCustomers - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getInterfaceCustomers(555, null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkTopology', 'getInterfaceCustomers', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#deleteInterfaceCustomers - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.deleteInterfaceCustomers(555, null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkTopology', 'deleteInterfaceCustomers', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    const networkTopologyCreateInterfaceCustomersBodyParam = {};
+    describe('#createInterfaceCustomers - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.createInterfaceCustomers(networkTopologyCreateInterfaceCustomersBodyParam, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkTopology', 'createInterfaceCustomers', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    const networkTopologyUpdateInterfaceCustomersBodyParam = {};
+    describe('#updateInterfaceCustomers - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.updateInterfaceCustomers(networkTopologyUpdateInterfaceCustomersBodyParam, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkTopology', 'updateInterfaceCustomers', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getgetInterfaces - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getgetInterfaces(555, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkTopology', 'getgetInterfaces', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#deleteInterfaces - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.deleteInterfaces(555, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkTopology', 'deleteInterfaces', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    const networkTopologyCreateInterfacesBodyParam = {};
+    describe('#createInterfaces - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.createInterfaces(networkTopologyCreateInterfacesBodyParam, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkTopology', 'createInterfaces', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    const networkTopologyUpdateInterfacesBodyParam = {};
+    describe('#updateInterfaces - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.updateInterfaces(networkTopologyUpdateInterfacesBodyParam, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkTopology', 'updateInterfaces', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getVpns - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getVpns(555, null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkTopology', 'getVpns', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#deleteVpns - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.deleteVpns(555, null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkTopology', 'deleteVpns', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    const networkTopologyCreateVpnsBodyParam = {};
+    describe('#createVpns - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.createVpns(networkTopologyCreateVpnsBodyParam, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkTopology', 'createVpns', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    const networkTopologyUpdateVpnsBodyParam = {};
+    describe('#updateVpns - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.updateVpns(networkTopologyUpdateVpnsBodyParam, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkTopology', 'updateVpns', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getTransparentFirewalls - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getTransparentFirewalls(555, null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkTopology', 'getTransparentFirewalls', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#deleteTransparentFirewalls - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.deleteTransparentFirewalls(555, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkTopology', 'deleteTransparentFirewalls', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#deleteTransparentFirewall - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.deleteTransparentFirewall(555, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkTopology', 'deleteTransparentFirewall', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    const networkTopologyCreateTransparentFirewallsBodyParam = {};
+    describe('#createTransparentFirewalls - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.createTransparentFirewalls(networkTopologyCreateTransparentFirewallsBodyParam, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkTopology', 'createTransparentFirewalls', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    const networkTopologyUpdateTransparentFirewallsBodyParam = {};
+    describe('#updateTransparentFirewalls - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.updateTransparentFirewalls(networkTopologyUpdateTransparentFirewallsBodyParam, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkTopology', 'updateTransparentFirewalls', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getIgnoredInterfaces - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getIgnoredInterfaces(555, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkTopology', 'getIgnoredInterfaces', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#deleteIgnoredInterfaces - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.deleteIgnoredInterfaces(555, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkTopology', 'deleteIgnoredInterfaces', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    const networkTopologyCreateIgnoredInterfacesBodyParam = {};
+    describe('#createIgnoredInterfaces - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.createIgnoredInterfaces(networkTopologyCreateIgnoredInterfacesBodyParam, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkTopology', 'createIgnoredInterfaces', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#deleteGenericDeviceFromTopologyModelQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.deleteGenericDeviceFromTopologyModelQuery(555, null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkTopology', 'deleteGenericDeviceFromTopologyModelQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getGenericDevicesThatAreConfiguredInSTQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getGenericDevicesThatAreConfiguredInSTQuery(null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkTopology', 'getGenericDevicesThatAreConfiguredInSTQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getTopologyRoutingTablesForAGivenDeviceQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getTopologyRoutingTablesForAGivenDeviceQuery(null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkTopology', 'getTopologyRoutingTablesForAGivenDeviceQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getTopologyNetworkInterfacesByDeviceQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getTopologyNetworkInterfacesByDeviceQuery(null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkTopology', 'getTopologyNetworkInterfacesByDeviceQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getMostSpecificNetworkInterfacesFromWhichAHostIPIsAccessibleQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getMostSpecificNetworkInterfacesFromWhichAHostIPIsAccessibleQuery(null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkTopology', 'getMostSpecificNetworkInterfacesFromWhichAHostIPIsAccessibleQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    const networkTopologyJoinOrSplitSubnetBodyParam = {};
+    describe('#joinOrSplitSubnet - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.joinOrSplitSubnet(null, networkTopologyJoinOrSplitSubnetBodyParam, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkTopology', 'joinOrSplitSubnet', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    const networkZoneManagerSubnetsModifyAZoneEntryQueryBodyParam = {};
+    describe('#modifyAZoneEntryQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.modifyAZoneEntryQuery('fakedata', 555, null, networkZoneManagerSubnetsModifyAZoneEntryQueryBodyParam, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkZoneManagerSubnets', 'modifyAZoneEntryQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getASpecificZoneEntryQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getASpecificZoneEntryQuery(555, 'fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkZoneManagerSubnets', 'getASpecificZoneEntryQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#deleteZoneEntriesQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.deleteZoneEntriesQuery(555, 'fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkZoneManagerSubnets', 'deleteZoneEntriesQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    const networkZoneManagerSubnetsCreateAZoneEntryQueryBodyParam = {};
+    describe('#createAZoneEntryQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.createAZoneEntryQuery('fakedata', null, networkZoneManagerSubnetsCreateAZoneEntryQueryBodyParam, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkZoneManagerSubnets', 'createAZoneEntryQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#deleteZonesZoneIdsEntriesIdsQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.deleteZonesZoneIdsEntriesIdsQuery('fakedata', 'fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkZoneManagerSubnets', 'deleteZonesZoneIdsEntriesIdsQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    const networkZoneManagerSubnetsModifyMultipleExistingZoneEntriesQueryBodyParam = {};
+    describe('#modifyMultipleExistingZoneEntriesQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.modifyMultipleExistingZoneEntriesQuery('fakedata', 'fakedata', null, networkZoneManagerSubnetsModifyMultipleExistingZoneEntriesQueryBodyParam, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkZoneManagerSubnets', 'modifyMultipleExistingZoneEntriesQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getEntriesForAZoneQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getEntriesForAZoneQuery('fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkZoneManagerSubnets', 'getEntriesForAZoneQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getASpecificZoneQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getASpecificZoneQuery(555, null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkZoneManagerZones', 'getASpecificZoneQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    const networkZoneManagerZonesModifyAZoneQueryBodyParam = {};
+    describe('#modifyAZoneQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.modifyAZoneQuery(555, null, networkZoneManagerZonesModifyAZoneQueryBodyParam, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkZoneManagerZones', 'modifyAZoneQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getAllZonesQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getAllZonesQuery(null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkZoneManagerZones', 'getAllZonesQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    const networkZoneManagerZonesCreateAZoneQueryBodyParam = {};
+    describe('#createAZoneQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.createAZoneQuery(null, networkZoneManagerZonesCreateAZoneQueryBodyParam, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkZoneManagerZones', 'createAZoneQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#deleteAllZonesQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.deleteAllZonesQuery(null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkZoneManagerZones', 'deleteAllZonesQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getSharedZonesQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getSharedZonesQuery(null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkZoneManagerZones', 'getSharedZonesQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getConfigurationUsagesForAZoneQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getConfigurationUsagesForAZoneQuery('fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkZoneManagerZones', 'getConfigurationUsagesForAZoneQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getDescendantZonesForAZoneQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getDescendantZonesForAZoneQuery('fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkZoneManagerZones', 'getDescendantZonesForAZoneQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getAncestorZonesForAZoneQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getAncestorZonesForAZoneQuery('fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkZoneManagerZones', 'getAncestorZonesForAZoneQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#addAZoneAsADescendantToAZoneQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.addAZoneAsADescendantToAZoneQuery(555, 'fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkZoneManagerZones', 'addAZoneAsADescendantToAZoneQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#removeAZoneAsAnDescendantsToAZoneQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.removeAZoneAsAnDescendantsToAZoneQuery(555, 'fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkZoneManagerZones', 'removeAZoneAsAnDescendantsToAZoneQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#addAZoneAsAnAncestorToAZoneQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.addAZoneAsAnAncestorToAZoneQuery(555, 'fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkZoneManagerZones', 'addAZoneAsAnAncestorToAZoneQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#removeAZoneAsAnAncestorToAZoneQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.removeAZoneAsAnAncestorToAZoneQuery(555, 'fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkZoneManagerZones', 'removeAZoneAsAnAncestorToAZoneQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#deleteAZoneQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.deleteAZoneQuery('fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkZoneManagerZones', 'deleteAZoneQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#importAZoneQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.importAZoneQuery('fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkZoneManagerZones', 'importAZoneQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getPoliciesByRevisionQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getPoliciesByRevisionQuery(555, null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('PoliciesAndSubPolicies', 'getPoliciesByRevisionQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getSubPoliciesBindingsByRevisionQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getSubPoliciesBindingsByRevisionQuery(555, null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('PoliciesAndSubPolicies', 'getSubPoliciesBindingsByRevisionQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getPoliciesByDeviceQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getPoliciesByDeviceQuery(555, null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('PoliciesAndSubPolicies', 'getPoliciesByDeviceQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getSubPoliciesBindingsByDeviceQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getSubPoliciesBindingsByDeviceQuery(555, null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('PoliciesAndSubPolicies', 'getSubPoliciesBindingsByDeviceQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getRulesByInputAndOutputInterfacesQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getRulesByInputAndOutputInterfacesQuery('fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('PoliciesAndSubPolicies', 'getRulesByInputAndOutputInterfacesQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getListOfSubPoliciesBindingsWithInputAndOrOutputInterfacesQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getListOfSubPoliciesBindingsWithInputAndOrOutputInterfacesQuery('fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('PoliciesAndSubPolicies', 'getListOfSubPoliciesBindingsWithInputAndOrOutputInterfacesQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#runPolicyAnalysisQueryQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.runPolicyAnalysisQueryQuery(null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('PolicyAnalysis', 'runPolicyAnalysisQueryQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getRisksResultsQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getRisksResultsQuery(null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('PolicyOptimization', 'getRisksResultsQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getCleanupsResultsQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getCleanupsResultsQuery(null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('PolicyOptimization', 'getCleanupsResultsQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getTheSpecificObjectsOrRulesIdentifiedForTheRiskResultsQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getTheSpecificObjectsOrRulesIdentifiedForTheRiskResultsQuery('fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('PolicyOptimization', 'getTheSpecificObjectsOrRulesIdentifiedForTheRiskResultsQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getDevicesInRiskResultsQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getDevicesInRiskResultsQuery('fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('PolicyOptimization', 'getDevicesInRiskResultsQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getTheSpecificObjectsOrRulesIdentifiedForTheCleanupResultsQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getTheSpecificObjectsOrRulesIdentifiedForTheCleanupResultsQuery('fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('PolicyOptimization', 'getTheSpecificObjectsOrRulesIdentifiedForTheCleanupResultsQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getDevicesInCleanupResultsQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getDevicesInCleanupResultsQuery('fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('PolicyOptimization', 'getDevicesInCleanupResultsQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getCleanupsByDeviceQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getCleanupsByDeviceQuery('fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('PolicyOptimization', 'getCleanupsByDeviceQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getShadowingRulesByDeviceQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getShadowingRulesByDeviceQuery('fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('PolicyOptimization', 'getShadowingRulesByDeviceQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getRevisionsByDeviceQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getRevisionsByDeviceQuery(555, null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('Revisions', 'getRevisionsByDeviceQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getLatestRevisionByDeviceQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getLatestRevisionByDeviceQuery(555, null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('Revisions', 'getLatestRevisionByDeviceQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getSpecificRevisionQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getSpecificRevisionQuery('fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('Revisions', 'getSpecificRevisionQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getRuleCountPerDeviceQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getRuleCountPerDeviceQuery(null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('SecurityRules', 'getRuleCountPerDeviceQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getRulesByRevisionQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getRulesByRevisionQuery(555, null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('SecurityRules', 'getRulesByRevisionQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getRevisionsRevisionIdRulesIdsQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getRevisionsRevisionIdRulesIdsQuery('fakedata', 'fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('SecurityRules', 'getRevisionsRevisionIdRulesIdsQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getRulesByDeviceQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getRulesByDeviceQuery(555, null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('SecurityRules', 'getRulesByDeviceQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getSpecificRuleQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getSpecificRuleQuery('fakedata', 'fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('SecurityRules', 'getSpecificRuleQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#findRulesQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.findRulesQuery('fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('SecurityRules', 'findRulesQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getASpecificRuleQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getASpecificRuleQuery('fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('SecurityRules', 'getASpecificRuleQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getServiceGroupsContainingSpecifiedServiceObjectsQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getServiceGroupsContainingSpecifiedServiceObjectsQuery(555, null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('ServicesAndPorts', 'getServiceGroupsContainingSpecifiedServiceObjectsQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getRulesContainingSpecifiedServiceObjectQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getRulesContainingSpecifiedServiceObjectQuery(555, null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('ServicesAndPorts', 'getRulesContainingSpecifiedServiceObjectQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getServicesByRevisionQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getServicesByRevisionQuery(555, null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('ServicesAndPorts', 'getServicesByRevisionQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getSpecificServiceQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getSpecificServiceQuery('fakedata', 'fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('ServicesAndPorts', 'getSpecificServiceQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getServicesByDeviceQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getServicesByDeviceQuery(555, null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('ServicesAndPorts', 'getServicesByDeviceQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getDevicesDeviceIdServicesIdsQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getDevicesDeviceIdServicesIdsQuery('fakedata', 'fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('ServicesAndPorts', 'getDevicesDeviceIdServicesIdsQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getTimeObjectsByRevisionQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getTimeObjectsByRevisionQuery(555, null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('TimeObjects', 'getTimeObjectsByRevisionQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getSpecificTimeObjectQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getSpecificTimeObjectQuery('fakedata', 'fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('TimeObjects', 'getSpecificTimeObjectQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getTimeObjectsByDeviceQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getTimeObjectsByDeviceQuery(555, null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('TimeObjects', 'getTimeObjectsByDeviceQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    const trafficPolicyMatcherGetPolicyRelevanceMetricsForTrafficQueryBodyParam = {};
+    describe('#getPolicyRelevanceMetricsForTrafficQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getPolicyRelevanceMetricsForTrafficQuery(null, trafficPolicyMatcherGetPolicyRelevanceMetricsForTrafficQueryBodyParam, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('TrafficPolicyMatcher', 'getPolicyRelevanceMetricsForTrafficQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    const unifiedSecurityPolicyAccessRequestViolationsGetViolationsForAnAccessRequestQueryBodyParam = {};
+    describe('#getViolationsForAnAccessRequestQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getViolationsForAnAccessRequestQuery(null, unifiedSecurityPolicyAccessRequestViolationsGetViolationsForAnAccessRequestQueryBodyParam, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('UnifiedSecurityPolicyAccessRequestViolations', 'getViolationsForAnAccessRequestQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    const unifiedSecurityPolicyAccessRequestViolationsStartATaskToCalculateViolationsForAnAccessRequestQueryBodyParam = {};
+    describe('#startATaskToCalculateViolationsForAnAccessRequestQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.startATaskToCalculateViolationsForAnAccessRequestQuery(null, unifiedSecurityPolicyAccessRequestViolationsStartATaskToCalculateViolationsForAnAccessRequestQueryBodyParam, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('UnifiedSecurityPolicyAccessRequestViolations', 'startATaskToCalculateViolationsForAnAccessRequestQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getAlertsQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getAlertsQuery(null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('UnifiedSecurityPolicyAlerts', 'getAlertsQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    const unifiedSecurityPolicyAlertsCreateAnAlertQueryBodyParam = {};
+    describe('#createAnAlertQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.createAnAlertQuery(null, unifiedSecurityPolicyAlertsCreateAnAlertQueryBodyParam, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('UnifiedSecurityPolicyAlerts', 'createAnAlertQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getASpecificAlertQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getASpecificAlertQuery(555, null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('UnifiedSecurityPolicyAlerts', 'getASpecificAlertQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    const unifiedSecurityPolicyAlertsUpdateAnAlertQueryBodyParam = {};
+    describe('#updateAnAlertQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.updateAnAlertQuery(555, null, unifiedSecurityPolicyAlertsUpdateAnAlertQueryBodyParam, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('UnifiedSecurityPolicyAlerts', 'updateAnAlertQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#deleteAlertsByIdsQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.deleteAlertsByIdsQuery('fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('UnifiedSecurityPolicyAlerts', 'deleteAlertsByIdsQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    const unifiedSecurityPolicyCloudTagPolicyCreateACloudTagPolicyQueryBodyParam = {};
+    describe('#createACloudTagPolicyQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.createACloudTagPolicyQuery(null, unifiedSecurityPolicyCloudTagPolicyCreateACloudTagPolicyQueryBodyParam, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('UnifiedSecurityPolicyCloudTagPolicy', 'createACloudTagPolicyQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getAllCloudTagPoliciesQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getAllCloudTagPoliciesQuery(null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('UnifiedSecurityPolicyCloudTagPolicy', 'getAllCloudTagPoliciesQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getCloudTagPolicyQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getCloudTagPolicyQuery('fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('UnifiedSecurityPolicyCloudTagPolicy', 'getCloudTagPolicyQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    const unifiedSecurityPolicyCloudTagPolicyReplaceACloudTagPolicyQueryBodyParam = {};
+    describe('#replaceACloudTagPolicyQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.replaceACloudTagPolicyQuery('fakedata', null, unifiedSecurityPolicyCloudTagPolicyReplaceACloudTagPolicyQueryBodyParam, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('UnifiedSecurityPolicyCloudTagPolicy', 'replaceACloudTagPolicyQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    const unifiedSecurityPolicyCloudTagPolicyModifyACloudTagPolicyQueryBodyParam = {};
+    describe('#modifyACloudTagPolicyQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.modifyACloudTagPolicyQuery('fakedata', null, unifiedSecurityPolicyCloudTagPolicyModifyACloudTagPolicyQueryBodyParam, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('UnifiedSecurityPolicyCloudTagPolicy', 'modifyACloudTagPolicyQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#deleteCloudTagPolicyQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.deleteCloudTagPolicyQuery('fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('UnifiedSecurityPolicyCloudTagPolicy', 'deleteCloudTagPolicyQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    const unifiedSecurityPolicyCloudTagPolicyCheckIfTagsAreCompliantWithCloudTagPoliciesQueryBodyParam = {};
+    describe('#checkIfTagsAreCompliantWithCloudTagPoliciesQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.checkIfTagsAreCompliantWithCloudTagPoliciesQuery(null, unifiedSecurityPolicyCloudTagPolicyCheckIfTagsAreCompliantWithCloudTagPoliciesQueryBodyParam, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('UnifiedSecurityPolicyCloudTagPolicy', 'checkIfTagsAreCompliantWithCloudTagPoliciesQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getAllCloudTagPolicyViolationsForAVPCQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getAllCloudTagPolicyViolationsForAVPCQuery(null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('UnifiedSecurityPolicyCloudTagPolicy', 'getAllCloudTagPolicyViolationsForAVPCQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    const unifiedSecurityPolicyExceptionsCreateAnExceptionQueryBodyParam = {};
+    describe('#createAnExceptionQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.createAnExceptionQuery(null, unifiedSecurityPolicyExceptionsCreateAnExceptionQueryBodyParam, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('UnifiedSecurityPolicyExceptions', 'createAnExceptionQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getAllExceptionsQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getAllExceptionsQuery(null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('UnifiedSecurityPolicyExceptions', 'getAllExceptionsQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getASpecificExceptionQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getASpecificExceptionQuery('fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('UnifiedSecurityPolicyExceptions', 'getASpecificExceptionQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#deleteAnExceptionQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.deleteAnExceptionQuery('fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('UnifiedSecurityPolicyExceptions', 'deleteAnExceptionQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#startATaskToCalculateMatchingRulesForAnExceptionQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.startATaskToCalculateMatchingRulesForAnExceptionQuery('fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('UnifiedSecurityPolicyExceptions', 'startATaskToCalculateMatchingRulesForAnExceptionQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getGlobalUnifiedSecurityPoliciesQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getGlobalUnifiedSecurityPoliciesQuery(null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('UnifiedSecurityPolicySecurityZoneMatrix', 'getGlobalUnifiedSecurityPoliciesQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getUnifiedSecurityPoliciesQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getUnifiedSecurityPoliciesQuery(null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('UnifiedSecurityPolicySecurityZoneMatrix', 'getUnifiedSecurityPoliciesQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#deleteUnifiedSecurityPolicyQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.deleteUnifiedSecurityPolicyQuery(555, null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('UnifiedSecurityPolicySecurityZoneMatrix', 'deleteUnifiedSecurityPolicyQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getUnifiedSecurityPolicyAsCSVQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getUnifiedSecurityPolicyAsCSVQuery(555, null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('UnifiedSecurityPolicySecurityZoneMatrix', 'getUnifiedSecurityPolicyAsCSVQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    const unifiedSecurityPolicySecurityZoneMatrixSetManualDeviceMappingQueryBodyParam = {};
+    describe('#setManualDeviceMappingQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.setManualDeviceMappingQuery('fakedata', null, unifiedSecurityPolicySecurityZoneMatrixSetManualDeviceMappingQueryBodyParam, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('UnifiedSecurityPolicySecurityZoneMatrix', 'setManualDeviceMappingQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getUrlCategories - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getUrlCategories('fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('Securetrack', 'getUrlCategories', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getProperties - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getProperties((data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('Securetrack', 'getProperties', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    const securetrackSetPropertiesBodyParam = {};
+    describe('#setProperties - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.setProperties(securetrackSetPropertiesBodyParam, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('Securetrack', 'setProperties', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getPBRRules - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getPBRRules('fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('Securetrack', 'getPBRRules', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#cloudSuggestions - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.cloudSuggestions(null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('Securetrack', 'cloudSuggestions', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#cloudSuggestion - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.cloudSuggestion(555, null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('Securetrack', 'cloudSuggestion', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getRouteMaps - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getRouteMaps('fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('Securetrack', 'getRouteMaps', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    const securetrackAddZonesEntriesBodyParam = {};
+    describe('#addZonesEntries - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.addZonesEntries(null, securetrackAddZonesEntriesBodyParam, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('Securetrack', 'addZonesEntries', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getSdWanBindingsByRevision - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getSdWanBindingsByRevision(555, null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('Securetrack', 'getSdWanBindingsByRevision', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getSdWanBindingsByDevice - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getSdWanBindingsByDevice(555, null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('Securetrack', 'getSdWanBindingsByDevice', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#exportRulesToCsv - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.exportRulesToCsv(null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('Securetrack', 'exportRulesToCsv', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#findServicesObjects - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.findServicesObjects(null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('Securetrack', 'findServicesObjects', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getDeviceMapping - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getDeviceMapping('fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('Securetrack', 'getDeviceMapping', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getResolvedInternetRepresentationForDeviceQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getResolvedInternetRepresentationForDeviceQuery('fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('InternetObjects', 'getResolvedInternetRepresentationForDeviceQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    const internetObjectsUpdateInternetRepresentationForDeviceQueryBodyParam = {};
+    describe('#updateInternetRepresentationForDeviceQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.updateInternetRepresentationForDeviceQuery('fakedata', null, internetObjectsUpdateInternetRepresentationForDeviceQueryBodyParam, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('InternetObjects', 'updateInternetRepresentationForDeviceQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getInternetRepresentationForDeviceQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getInternetRepresentationForDeviceQuery('fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('InternetObjects', 'getInternetRepresentationForDeviceQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#deleteInternetRepresentationForDeviceQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.deleteInternetRepresentationForDeviceQuery('fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('InternetObjects', 'deleteInternetRepresentationForDeviceQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    const networkZoneManagerPatternsCreateAZonePatternEntryInASpecificZoneQueryBodyParam = {};
+    describe('#createAZonePatternEntryInASpecificZoneQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.createAZonePatternEntryInASpecificZoneQuery('fakedata', null, networkZoneManagerPatternsCreateAZonePatternEntryInASpecificZoneQueryBodyParam, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkZoneManagerPatterns', 'createAZonePatternEntryInASpecificZoneQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getAllPatternEntriesForSpecificZonesQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getAllPatternEntriesForSpecificZonesQuery('fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkZoneManagerPatterns', 'getAllPatternEntriesForSpecificZonesQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getASpecificZonePatternEntryForASpecificZoneQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getASpecificZonePatternEntryForASpecificZoneQuery(555, 'fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('NetworkZoneManagerPatterns', 'getASpecificZonePatternEntryForASpecificZoneQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getRevisionsIdRulesRuleIdDocumentationQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getRevisionsIdRulesRuleIdDocumentationQuery(555, 'fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('PolicyBrowserFormerlyRuleDocumentation', 'getRevisionsIdRulesRuleIdDocumentationQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    const policyBrowserFormerlyRuleDocumentationPutRevisionsIdRulesRuleIdDocumentationQueryBodyParam = {};
+    describe('#putRevisionsIdRulesRuleIdDocumentationQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.putRevisionsIdRulesRuleIdDocumentationQuery(555, 'fakedata', null, policyBrowserFormerlyRuleDocumentationPutRevisionsIdRulesRuleIdDocumentationQueryBodyParam, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('PolicyBrowserFormerlyRuleDocumentation', 'putRevisionsIdRulesRuleIdDocumentationQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#deleteRuleDocumentation - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.deleteRuleDocumentation(555, 'fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('PolicyBrowserFormerlyRuleDocumentation', 'deleteRuleDocumentation', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getSpecificRuleDocumentationQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getSpecificRuleDocumentationQuery(555, 'fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('PolicyBrowserFormerlyRuleDocumentation', 'getSpecificRuleDocumentationQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    const policyBrowserFormerlyRuleDocumentationModifySpecificRuleDocumentationQueryBodyParam = {};
+    describe('#modifySpecificRuleDocumentationQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.modifySpecificRuleDocumentationQuery(555, 'fakedata', null, policyBrowserFormerlyRuleDocumentationModifySpecificRuleDocumentationQueryBodyParam, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('PolicyBrowserFormerlyRuleDocumentation', 'modifySpecificRuleDocumentationQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#deleteSpecificRuleDocumentationQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.deleteSpecificRuleDocumentationQuery(555, 'fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('PolicyBrowserFormerlyRuleDocumentation', 'deleteSpecificRuleDocumentationQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getLastHitsForAllRulesByDeviceQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getLastHitsForAllRulesByDeviceQuery('fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('RuleUsage', 'getLastHitsForAllRulesByDeviceQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getlasthitforaspecificruleQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getlasthitforaspecificruleQuery('fakedata', 'fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('RuleUsage', 'getlasthitforaspecificruleQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getTheAmountOfViolatingRulesForTheSpecifiedDeviceQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getTheAmountOfViolatingRulesForTheSpecifiedDeviceQuery('fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('UnifiedSecurityPolicyViolations', 'getTheAmountOfViolatingRulesForTheSpecifiedDeviceQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getTheViolatingRulesForTheSpecifiedDeviceQuery - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getTheViolatingRulesForTheSpecifiedDeviceQuery('fakedata', null, (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-tufin_securetrack-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('UnifiedSecurityPolicyViolations', 'getTheViolatingRulesForTheSpecifiedDeviceQuery', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
   });
 });

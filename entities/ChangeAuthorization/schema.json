@@ -11,7 +11,8 @@
       "default": "determineIfChangesBetweenTwoRevisionsAreAuthorized",
       "enum": [
         "determineIfChangesBetweenTwoRevisionsAreAuthorized",
-        "compareRevisionsOnTwoDifferentDevicesInTermsOfTraffic"
+        "compareRevisionsOnTwoDifferentDevicesInTermsOfTraffic",
+        "determineIfChangesBetweenTwoRevisionsAreAuthorizedQuery"
       ],
       "external_name": "ph_request_type"
     }

@@ -12,7 +12,10 @@
       "enum": [
         "getAdditionalParametersIdentitiesByRevision",
         "getSpecificAdditionalParameterIdentity",
-        "getAURLCategory"
+        "getAURLCategory",
+        "getSpecificAdditionalParameterIdentityQuery",
+        "getAURLCategoryQuery",
+        "getAdditionalParametersIdentitiesByRevisionQuery"
       ],
       "external_name": "ph_request_type"
     },
