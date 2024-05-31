@@ -1,4 +1,12 @@
 
+## 0.7.0 [05-31-2024]
+
+* Minor/2024 auto migration
+
+See merge request itentialopensource/adapters/security/adapter-tufin_securetrack!11
+
+---
+
 ## 0.6.3 [03-27-2024]
 
 * Changes made at 2024.03.27_13:54PM
