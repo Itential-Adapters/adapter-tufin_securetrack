@@ -12,7 +12,10 @@
       "enum": [
         "getASpecificZonePatternEntryForASpecificZone",
         "createAZonePatternEntryInASpecificZone",
-        "getAllPatternEntriesForSpecificZones"
+        "getAllPatternEntriesForSpecificZones",
+        "createAZonePatternEntryInASpecificZoneQuery",
+        "getAllPatternEntriesForSpecificZonesQuery",
+        "getASpecificZonePatternEntryForASpecificZoneQuery"
       ],
       "external_name": "ph_request_type"
     },

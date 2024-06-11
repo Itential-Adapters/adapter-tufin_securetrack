@@ -146,6 +146,132 @@
           "mockFile": ""
         }
       ]
+    },
+    {
+      "name": "getServiceGroupsContainingSpecifiedServiceObjectsQuery",
+      "protocol": "REST",
+      "method": "GET",
+      "entitypath": "{base_path}/{version}/securetrack/api/services/{pathv1}/groups?{query}",
+      "requestSchema": "schema.json",
+      "responseSchema": "schema.json",
+      "timeout": 0,
+      "sendEmpty": false,
+      "sendGetBody": false,
+      "requestDatatype": "JSON",
+      "responseDatatype": "JSON",
+      "headers": {},
+      "responseObjects": [
+        {
+          "type": "default",
+          "key": "",
+          "mockFile": ""
+        }
+      ]
+    },
+    {
+      "name": "getRulesContainingSpecifiedServiceObjectQuery",
+      "protocol": "REST",
+      "method": "GET",
+      "entitypath": "{base_path}/{version}/securetrack/api/services/{pathv1}/rules?{query}",
+      "requestSchema": "schema.json",
+      "responseSchema": "schema.json",
+      "timeout": 0,
+      "sendEmpty": false,
+      "sendGetBody": false,
+      "requestDatatype": "JSON",
+      "responseDatatype": "JSON",
+      "headers": {},
+      "responseObjects": [
+        {
+          "type": "default",
+          "key": "",
+          "mockFile": ""
+        }
+      ]
+    },
+    {
+      "name": "getServicesByRevisionQuery",
+      "protocol": "REST",
+      "method": "GET",
+      "entitypath": "{base_path}/{version}/securetrack/api/revisions/{pathv1}/services?{query}",
+      "requestSchema": "schema.json",
+      "responseSchema": "schema.json",
+      "timeout": 0,
+      "sendEmpty": false,
+      "sendGetBody": false,
+      "requestDatatype": "JSON",
+      "responseDatatype": "JSON",
+      "headers": {},
+      "responseObjects": [
+        {
+          "type": "default",
+          "key": "",
+          "mockFile": ""
+        }
+      ]
+    },
+    {
+      "name": "getSpecificServiceQuery",
+      "protocol": "REST",
+      "method": "GET",
+      "entitypath": "{base_path}/{version}/securetrack/api/revisions/{pathv1}/services/{pathv2}?{query}",
+      "requestSchema": "schema.json",
+      "responseSchema": "schema.json",
+      "timeout": 0,
+      "sendEmpty": false,
+      "sendGetBody": false,
+      "requestDatatype": "JSON",
+      "responseDatatype": "JSON",
+      "headers": {},
+      "responseObjects": [
+        {
+          "type": "default",
+          "key": "",
+          "mockFile": ""
+        }
+      ]
+    },
+    {
+      "name": "getServicesByDeviceQuery",
+      "protocol": "REST",
+      "method": "GET",
+      "entitypath": "{base_path}/{version}/securetrack/api/devices/{pathv1}/services?{query}",
+      "requestSchema": "schema.json",
+      "responseSchema": "schema.json",
+      "timeout": 0,
+      "sendEmpty": false,
+      "sendGetBody": false,
+      "requestDatatype": "JSON",
+      "responseDatatype": "JSON",
+      "headers": {},
+      "responseObjects": [
+        {
+          "type": "default",
+          "key": "",
+          "mockFile": ""
+        }
+      ]
+    },
+    {
+      "name": "getDevicesDeviceIdServicesIdsQuery",
+      "protocol": "REST",
+      "method": "GET",
+      "entitypath": "{base_path}/{version}/securetrack/api/devices/{pathv1}/services/{pathv2}?{query}",
+      "requestSchema": "schema.json",
+      "responseSchema": "schema.json",
+      "timeout": 0,
+      "sendEmpty": false,
+      "sendGetBody": false,
+      "requestDatatype": "JSON",
+      "responseDatatype": "JSON",
+      "headers": {},
+      "responseObjects": [
+        {
+          "type": "default",
+          "key": "",
+          "mockFile": ""
+        }
+      ]
     }
   ]
 }

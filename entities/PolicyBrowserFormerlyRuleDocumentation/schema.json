@@ -15,7 +15,13 @@
         "modifySpecificRuleDocumentation",
         "putRevisionsIdRulesRuleIdDocumentation",
         "deleteRevisionsIdRulesRuleIdDocumentation",
-        "getRevisionsIdRulesRuleIdDocumentation"
+        "getRevisionsIdRulesRuleIdDocumentation",
+        "getRevisionsIdRulesRuleIdDocumentationQuery",
+        "putRevisionsIdRulesRuleIdDocumentationQuery",
+        "deleteRuleDocumentation",
+        "getSpecificRuleDocumentationQuery",
+        "modifySpecificRuleDocumentationQuery",
+        "deleteSpecificRuleDocumentationQuery"
       ],
       "external_name": "ph_request_type"
     },

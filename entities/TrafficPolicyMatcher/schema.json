@@ -10,7 +10,8 @@
       "description": "type of request (internal to adapter)",
       "default": "getPolicyRelevanceMetricsForTraffic",
       "enum": [
-        "getPolicyRelevanceMetricsForTraffic"
+        "getPolicyRelevanceMetricsForTraffic",
+        "getPolicyRelevanceMetricsForTrafficQuery"
       ],
       "external_name": "ph_request_type"
     }

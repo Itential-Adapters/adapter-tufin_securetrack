@@ -16,7 +16,14 @@
         "getRevisionsRevisionIdRulesIds",
         "getRulesByRevision",
         "findRules",
-        "getRulesByDevice"
+        "getRulesByDevice",
+        "getRuleCountPerDeviceQuery",
+        "getRulesByRevisionQuery",
+        "getRevisionsRevisionIdRulesIdsQuery",
+        "getRulesByDeviceQuery",
+        "getSpecificRuleQuery",
+        "findRulesQuery",
+        "getASpecificRuleQuery"
       ],
       "external_name": "ph_request_type"
     },

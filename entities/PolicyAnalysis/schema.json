@@ -10,7 +10,8 @@
       "description": "type of request (internal to adapter)",
       "default": "runPolicyAnalysisQuery",
       "enum": [
-        "runPolicyAnalysisQuery"
+        "runPolicyAnalysisQuery",
+        "runPolicyAnalysisQueryQuery"
       ],
       "external_name": "ph_request_type"
     }

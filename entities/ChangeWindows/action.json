@@ -62,6 +62,69 @@
           "mockFile": ""
         }
       ]
+    },
+    {
+      "name": "getNameAndStatusForAllChangeWindowsQuery",
+      "protocol": "REST",
+      "method": "GET",
+      "entitypath": "{base_path}/{version}/securetrack/api/change_windows?{query}",
+      "requestSchema": "schema.json",
+      "responseSchema": "schema.json",
+      "timeout": 0,
+      "sendEmpty": false,
+      "sendGetBody": false,
+      "requestDatatype": "JSON",
+      "responseDatatype": "JSON",
+      "headers": {},
+      "responseObjects": [
+        {
+          "type": "default",
+          "key": "",
+          "mockFile": ""
+        }
+      ]
+    },
+    {
+      "name": "getSchedulingAndDeviceDetailsForASpecificChangeWindowQuery",
+      "protocol": "REST",
+      "method": "GET",
+      "entitypath": "{base_path}/{version}/securetrack/api/change_windows/{pathv1}/tasks/{pathv2}?{query}",
+      "requestSchema": "schema.json",
+      "responseSchema": "schema.json",
+      "timeout": 0,
+      "sendEmpty": false,
+      "sendGetBody": false,
+      "requestDatatype": "JSON",
+      "responseDatatype": "JSON",
+      "headers": {},
+      "responseObjects": [
+        {
+          "type": "default",
+          "key": "",
+          "mockFile": ""
+        }
+      ]
+    },
+    {
+      "name": "getAListOfCompletedPolicyChangesForASpecificChangeWindowQuery",
+      "protocol": "REST",
+      "method": "GET",
+      "entitypath": "{base_path}/{version}/securetrack/api/change_windows/{pathv1}/tasks?{query}",
+      "requestSchema": "schema.json",
+      "responseSchema": "schema.json",
+      "timeout": 0,
+      "sendEmpty": false,
+      "sendGetBody": false,
+      "requestDatatype": "JSON",
+      "responseDatatype": "JSON",
+      "headers": {},
+      "responseObjects": [
+        {
+          "type": "default",
+          "key": "",
+          "mockFile": ""
+        }
+      ]
     }
   ]
 }

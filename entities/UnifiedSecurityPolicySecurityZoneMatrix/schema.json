@@ -14,7 +14,12 @@
         "getUnifiedSecurityPolicies",
         "getUnifiedSecurityPolicyAsCSV",
         "deleteUnifiedSecurityPolicy",
-        "setManualDeviceMapping"
+        "setManualDeviceMapping",
+        "getGlobalUnifiedSecurityPoliciesQuery",
+        "getUnifiedSecurityPoliciesQuery",
+        "deleteUnifiedSecurityPolicyQuery",
+        "getUnifiedSecurityPolicyAsCSVQuery",
+        "setManualDeviceMappingQuery"
       ],
       "external_name": "ph_request_type"
     }

@@ -8,12 +8,10 @@
     "ph_request_type": {
       "type": "string",
       "description": "type of request (internal to adapter)",
-      "default": "getTheAmountOfViolatingRulesForTheSpecifiedDevice",
+      "default": "getLicense",
       "enum": [
-        "getTheAmountOfViolatingRulesForTheSpecifiedDevice",
-        "getTheViolatingRulesForTheSpecifiedDevice",
-        "getTheAmountOfViolatingRulesForTheSpecifiedDeviceQuery",
-        "getTheViolatingRulesForTheSpecifiedDeviceQuery"
+        "getLicense",
+        "getLicenses"
       ],
       "external_name": "ph_request_type"
     }

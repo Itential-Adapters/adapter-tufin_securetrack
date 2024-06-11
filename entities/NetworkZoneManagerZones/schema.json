@@ -25,7 +25,22 @@
         "getASpecificZone",
         "getAncestorZonesForAZone",
         "getDescendantZonesForAZone",
-        "mapNetworkElementsToSecurityZones"
+        "mapNetworkElementsToSecurityZones",
+        "getASpecificZoneQuery",
+        "modifyAZoneQuery",
+        "getAllZonesQuery",
+        "createAZoneQuery",
+        "deleteAllZonesQuery",
+        "getSharedZonesQuery",
+        "getConfigurationUsagesForAZoneQuery",
+        "getDescendantZonesForAZoneQuery",
+        "getAncestorZonesForAZoneQuery",
+        "addAZoneAsADescendantToAZoneQuery",
+        "removeAZoneAsAnDescendantsToAZoneQuery",
+        "addAZoneAsAnAncestorToAZoneQuery",
+        "removeAZoneAsAnAncestorToAZoneQuery",
+        "deleteAZoneQuery",
+        "importAZoneQuery"
       ],
       "external_name": "ph_request_type"
     },

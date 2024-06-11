@@ -15678,6 +15678,17380 @@ Device name should contain only Lower and upper case letters, digits, space, dot
       return callback(null, errorObj);
     }
   }
+
+  /**
+   * @function getSpecificAdditionalParameterIdentityQuery
+   * @pronghornType method
+   * @name getSpecificAdditionalParameterIdentityQuery
+   * @summary GetspecificadditionalparameteridentityQuery
+   *
+   * @param {string} revisionId - revisionId param
+   * @param {string} ids - ids param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getSpecificAdditionalParameterIdentityQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getSpecificAdditionalParameterIdentityQuery(revisionId, ids, queryObject, callback) {
+    const meth = 'adapter-getSpecificAdditionalParameterIdentityQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (revisionId === undefined || revisionId === null || revisionId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['revisionId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+    if (ids === undefined || ids === null || ids === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['ids'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [revisionId, ids];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('AdditionalPolicyFields', 'getSpecificAdditionalParameterIdentityQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getSpecificAdditionalParameterIdentityQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getAURLCategoryQuery
+   * @pronghornType method
+   * @name getAURLCategoryQuery
+   * @summary GetaURLCategory.Query
+   *
+   * @param {string} revisionId - revisionId param
+   * @param {string} ids - ids param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getAURLCategoryQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getAURLCategoryQuery(revisionId, ids, queryObject, callback) {
+    const meth = 'adapter-getAURLCategoryQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (revisionId === undefined || revisionId === null || revisionId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['revisionId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+    if (ids === undefined || ids === null || ids === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['ids'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [revisionId, ids];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('AdditionalPolicyFields', 'getAURLCategoryQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getAURLCategoryQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getAdditionalParametersIdentitiesByRevisionQuery
+   * @pronghornType method
+   * @name getAdditionalParametersIdentitiesByRevisionQuery
+   * @summary getAdditionalParameters
+   *
+   * @param {string} revisionId - revisionId param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getAdditionalParametersIdentitiesByRevisionQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getAdditionalParametersIdentitiesByRevisionQuery(revisionId, queryObject, callback) {
+    const meth = 'adapter-getAdditionalParametersIdentitiesByRevisionQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (revisionId === undefined || revisionId === null || revisionId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['revisionId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [revisionId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('AdditionalPolicyFields', 'getAdditionalParametersIdentitiesByRevisionQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getAdditionalParametersIdentitiesByRevisionQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getApplicationsIdentitiesByRevisionQuery
+   * @pronghornType method
+   * @name getApplicationsIdentitiesByRevisionQuery
+   * @summary GetapplicationsidentitiesbyrevisionQuery
+   *
+   * @param {number} id - Revision id
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getApplicationsIdentitiesByRevisionQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getApplicationsIdentitiesByRevisionQuery(id, queryObject, callback) {
+    const meth = 'adapter-getApplicationsIdentitiesByRevisionQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('ApplicationIDs', 'getApplicationsIdentitiesByRevisionQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getApplicationsIdentitiesByRevisionQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getRevisionsRevisionIdApplicationsIdsQuery
+   * @pronghornType method
+   * @name getRevisionsRevisionIdApplicationsIdsQuery
+   * @summary Fetches one or more applications
+   *
+   * @param {string} revisionId - revisionId param
+   * @param {string} ids - ids param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getRevisionsRevisionIdApplicationsIdsQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getRevisionsRevisionIdApplicationsIdsQuery(revisionId, ids, queryObject, callback) {
+    const meth = 'adapter-getRevisionsRevisionIdApplicationsIdsQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (revisionId === undefined || revisionId === null || revisionId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['revisionId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+    if (ids === undefined || ids === null || ids === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['ids'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [revisionId, ids];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('ApplicationIDs', 'getRevisionsRevisionIdApplicationsIdsQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getRevisionsRevisionIdApplicationsIdsQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getApplicationIdentitiesByDeviceQuery
+   * @pronghornType method
+   * @name getApplicationIdentitiesByDeviceQuery
+   * @summary GetapplicationidentitiesbydeviceQuery
+   *
+   * @param {number} id - Device ID
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getApplicationIdentitiesByDeviceQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getApplicationIdentitiesByDeviceQuery(id, queryObject, callback) {
+    const meth = 'adapter-getApplicationIdentitiesByDeviceQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('ApplicationIDs', 'getApplicationIdentitiesByDeviceQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getApplicationIdentitiesByDeviceQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getSpecificApplicationIdentityQuery
+   * @pronghornType method
+   * @name getSpecificApplicationIdentityQuery
+   * @summary GetgetSpecificApplication
+   *
+   * @param {number} id - Device ID
+   * @param {string} ids - ids param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getSpecificApplicationIdentityQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getSpecificApplicationIdentityQuery(id, ids, queryObject, callback) {
+    const meth = 'adapter-getSpecificApplicationIdentityQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+    if (ids === undefined || ids === null || ids === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['ids'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id, ids];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('ApplicationIDs', 'getSpecificApplicationIdentityQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getSpecificApplicationIdentityQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function determineIfChangesBetweenTwoRevisionsAreAuthorizedQuery
+   * @pronghornType method
+   * @name determineIfChangesBetweenTwoRevisionsAreAuthorizedQuery
+   * @summary DetermineifchangesbetweentworevisionsareauthorizedQuery
+   *
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /determineIfChangesBetweenTwoRevisionsAreAuthorizedQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  determineIfChangesBetweenTwoRevisionsAreAuthorizedQuery(queryObject, callback) {
+    const meth = 'adapter-determineIfChangesBetweenTwoRevisionsAreAuthorizedQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('ChangeAuthorization', 'determineIfChangesBetweenTwoRevisionsAreAuthorizedQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['determineIfChangesBetweenTwoRevisionsAreAuthorizedQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getNameAndStatusForAllChangeWindowsQuery
+   * @pronghornType method
+   * @name getNameAndStatusForAllChangeWindowsQuery
+   * @summary GetnameandstatusforallchangewindowsQuery
+   *
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getNameAndStatusForAllChangeWindowsQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getNameAndStatusForAllChangeWindowsQuery(queryObject, callback) {
+    const meth = 'adapter-getNameAndStatusForAllChangeWindowsQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('ChangeWindows', 'getNameAndStatusForAllChangeWindowsQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getNameAndStatusForAllChangeWindowsQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getSchedulingAndDeviceDetailsForASpecificChangeWindowQuery
+   * @pronghornType method
+   * @name getSchedulingAndDeviceDetailsForASpecificChangeWindowQuery
+   * @summary GetschedulinganddevicedetailsforaspecificchangewindowQuery
+   *
+   * @param {string} uid - Change window uuid
+   * @param {number} taskId - Task Id
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getSchedulingAndDeviceDetailsForASpecificChangeWindowQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getSchedulingAndDeviceDetailsForASpecificChangeWindowQuery(uid, taskId, queryObject, callback) {
+    const meth = 'adapter-getSchedulingAndDeviceDetailsForASpecificChangeWindowQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (uid === undefined || uid === null || uid === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['uid'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+    if (taskId === undefined || taskId === null || taskId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['taskId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [uid, taskId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('ChangeWindows', 'getSchedulingAndDeviceDetailsForASpecificChangeWindowQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getSchedulingAndDeviceDetailsForASpecificChangeWindowQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getAListOfCompletedPolicyChangesForASpecificChangeWindowQuery
+   * @pronghornType method
+   * @name getAListOfCompletedPolicyChangesForASpecificChangeWindowQuery
+   * @summary GetalistofcompletedpolicychangesforaspecificchangewindowQuery
+   *
+   * @param {string} uid - Change window uuid
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getAListOfCompletedPolicyChangesForASpecificChangeWindowQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getAListOfCompletedPolicyChangesForASpecificChangeWindowQuery(uid, queryObject, callback) {
+    const meth = 'adapter-getAListOfCompletedPolicyChangesForASpecificChangeWindowQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (uid === undefined || uid === null || uid === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['uid'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [uid];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('ChangeWindows', 'getAListOfCompletedPolicyChangesForASpecificChangeWindowQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getAListOfCompletedPolicyChangesForASpecificChangeWindowQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getDeviceZonesByRevisionQuery
+   * @pronghornType method
+   * @name getDeviceZonesByRevisionQuery
+   * @summary GetdevicezonesbyrevisionQuery
+   *
+   * @param {number} id - Revision ID
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getDeviceZonesByRevisionQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getDeviceZonesByRevisionQuery(id, queryObject, callback) {
+    const meth = 'adapter-getDeviceZonesByRevisionQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('DeviceInterfacesAndZones', 'getDeviceZonesByRevisionQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getDeviceZonesByRevisionQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getNetworkInterfacesByRevisionQuery
+   * @pronghornType method
+   * @name getNetworkInterfacesByRevisionQuery
+   * @summary GetnetworkinterfacesbyrevisionQuery
+   *
+   * @param {number} id - Revision ID
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getNetworkInterfacesByRevisionQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getNetworkInterfacesByRevisionQuery(id, queryObject, callback) {
+    const meth = 'adapter-getNetworkInterfacesByRevisionQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('DeviceInterfacesAndZones', 'getNetworkInterfacesByRevisionQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getNetworkInterfacesByRevisionQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getDeviceZonesByDeviceQuery
+   * @pronghornType method
+   * @name getDeviceZonesByDeviceQuery
+   * @summary GetdevicezonesbydeviceQuery
+   *
+   * @param {number} id - Device ID
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getDeviceZonesByDeviceQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getDeviceZonesByDeviceQuery(id, queryObject, callback) {
+    const meth = 'adapter-getDeviceZonesByDeviceQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('DeviceInterfacesAndZones', 'getDeviceZonesByDeviceQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getDeviceZonesByDeviceQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getZonesAndNetworkInterfacesThatParticipateInSubPoliciesQuery
+   * @pronghornType method
+   * @name getZonesAndNetworkInterfacesThatParticipateInSubPoliciesQuery
+   * @summary Getzonesandnetworkinterfacesthatparticipateinsub-policiesQuery
+   *
+   * @param {number} id - Device ID
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getZonesAndNetworkInterfacesThatParticipateInSubPoliciesQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getZonesAndNetworkInterfacesThatParticipateInSubPoliciesQuery(id, queryObject, callback) {
+    const meth = 'adapter-getZonesAndNetworkInterfacesThatParticipateInSubPoliciesQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('DeviceInterfacesAndZones', 'getZonesAndNetworkInterfacesThatParticipateInSubPoliciesQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getZonesAndNetworkInterfacesThatParticipateInSubPoliciesQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getNetworkInterfacesByDeviceQuery
+   * @pronghornType method
+   * @name getNetworkInterfacesByDeviceQuery
+   * @summary GetnetworkinterfacesbydeviceQuery
+   *
+   * @param {number} id - Device ID
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getNetworkInterfacesByDeviceQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getNetworkInterfacesByDeviceQuery(id, queryObject, callback) {
+    const meth = 'adapter-getNetworkInterfacesByDeviceQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('DeviceInterfacesAndZones', 'getNetworkInterfacesByDeviceQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getNetworkInterfacesByDeviceQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getDomainQuery
+   * @pronghornType method
+   * @name getDomainQuery
+   * @summary GetdomainQuery
+   *
+   * @param {number} id - Domain id
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getDomainQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getDomainQuery(id, queryObject, callback) {
+    const meth = 'adapter-getDomainQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('Domains', 'getDomainQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getDomainQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getCiscoCryptographicMapsByRevisionQuery
+   * @pronghornType method
+   * @name getCiscoCryptographicMapsByRevisionQuery
+   * @summary GetCiscocryptographicmapsbyrevisionQuery
+   *
+   * @param {number} id - Revision ID
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getCiscoCryptographicMapsByRevisionQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getCiscoCryptographicMapsByRevisionQuery(id, queryObject, callback) {
+    const meth = 'adapter-getCiscoCryptographicMapsByRevisionQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('IPsecVPN', 'getCiscoCryptographicMapsByRevisionQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getCiscoCryptographicMapsByRevisionQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getCiscoCryptographicMapsByDeviceQuery
+   * @pronghornType method
+   * @name getCiscoCryptographicMapsByDeviceQuery
+   * @summary GetCiscocryptographicmapsbydeviceQuery
+   *
+   * @param {number} id - Device ID
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getCiscoCryptographicMapsByDeviceQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getCiscoCryptographicMapsByDeviceQuery(id, queryObject, callback) {
+    const meth = 'adapter-getCiscoCryptographicMapsByDeviceQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('IPsecVPN', 'getCiscoCryptographicMapsByDeviceQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getCiscoCryptographicMapsByDeviceQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getCiscoIPsecPolicyAndPeersQuery
+   * @pronghornType method
+   * @name getCiscoIPsecPolicyAndPeersQuery
+   * @summary GetIpsecTunnelsForTopologyInterface
+   *
+   * @param {string} deviceId - deviceId param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getCiscoIPsecPolicyAndPeersQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getCiscoIPsecPolicyAndPeersQuery(deviceId, queryObject, callback) {
+    const meth = 'adapter-getCiscoIPsecPolicyAndPeersQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (deviceId === undefined || deviceId === null || deviceId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['deviceId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [deviceId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('IPsecVPN', 'getCiscoIPsecPolicyAndPeersQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getCiscoIPsecPolicyAndPeersQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getCheckPointVPNIPSecCommunitiesAndGatewaysQuery
+   * @pronghornType method
+   * @name getCheckPointVPNIPSecCommunitiesAndGatewaysQuery
+   * @summary GetIpsecCommunitiesForManagementId
+   *
+   * @param {string} deviceId - deviceId param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getCheckPointVPNIPSecCommunitiesAndGatewaysQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getCheckPointVPNIPSecCommunitiesAndGatewaysQuery(deviceId, queryObject, callback) {
+    const meth = 'adapter-getCheckPointVPNIPSecCommunitiesAndGatewaysQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (deviceId === undefined || deviceId === null || deviceId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['deviceId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [deviceId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('IPsecVPN', 'getCheckPointVPNIPSecCommunitiesAndGatewaysQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getCheckPointVPNIPSecCommunitiesAndGatewaysQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getLDAPEntryDetailsByDNQuery
+   * @pronghornType method
+   * @name getLDAPEntryDetailsByDNQuery
+   * @summary GetLDAPentrydetailsbyDNQuery
+   *
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getLDAPEntryDetailsByDNQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getLDAPEntryDetailsByDNQuery(queryObject, callback) {
+    const meth = 'adapter-getLDAPEntryDetailsByDNQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('LDAP', 'getLDAPEntryDetailsByDNQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getLDAPEntryDetailsByDNQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getLicense
+   * @pronghornType method
+   * @name getLicense
+   * @summary getLicense
+   *
+   * @param {string} id - License identifier
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getLicense
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getLicense(id, queryObject, callback) {
+    const meth = 'adapter-getLicense';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('Licenses', 'getLicense', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getLicense'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getLicenses
+   * @pronghornType method
+   * @name getLicenses
+   * @summary getLicenses
+   *
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {GET} /getLicenses
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getLicenses(callback) {
+    const meth = 'adapter-getLicenses';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = {};
+    const pathVars = [];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('Licenses', 'getLicenses', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getLicenses'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getQueueSizeConfig
+   * @pronghornType method
+   * @name getQueueSizeConfig
+   * @summary getQueueSizeConfig
+   *
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {GET} /getQueueSizeConfig
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getQueueSizeConfig(callback) {
+    const meth = 'adapter-getQueueSizeConfig';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = {};
+    const pathVars = [];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('MonitoredDevices', 'getQueueSizeConfig', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getQueueSizeConfig'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function updateQueueMaxSize
+   * @pronghornType method
+   * @name updateQueueMaxSize
+   * @summary updateQueueMaxSize
+   *
+   * @param {object} body - queue_size_config
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /updateQueueMaxSize
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  updateQueueMaxSize(body, callback) {
+    const meth = 'adapter-updateQueueMaxSize';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (body === undefined || body === null || body === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['body'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = {};
+    const pathVars = [];
+    const bodyVars = body;
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('MonitoredDevices', 'updateQueueMaxSize', reqObj, false, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['updateQueueMaxSize'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getTextualConfigurationByRevisionQuery
+   * @pronghornType method
+   * @name getTextualConfigurationByRevisionQuery
+   * @summary GettextualconfigurationbyrevisionQuery
+   *
+   * @param {number} id - Revision id
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getTextualConfigurationByRevisionQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getTextualConfigurationByRevisionQuery(id, queryObject, callback) {
+    const meth = 'adapter-getTextualConfigurationByRevisionQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('MonitoredDevices', 'getTextualConfigurationByRevisionQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getTextualConfigurationByRevisionQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getDevicesQuery
+   * @pronghornType method
+   * @name getDevicesQuery
+   * @summary GetdevicesQuery
+   *
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getDevicesQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getDevicesQuery(queryObject, callback) {
+    const meth = 'adapter-getDevicesQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('MonitoredDevices', 'getDevicesQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getDevicesQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getSpecificDeviceQuery
+   * @pronghornType method
+   * @name getSpecificDeviceQuery
+   * @summary GetspecificdeviceQuery
+   *
+   * @param {number} id - Device ID
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getSpecificDeviceQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getSpecificDeviceQuery(id, queryObject, callback) {
+    const meth = 'adapter-getSpecificDeviceQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('MonitoredDevices', 'getSpecificDeviceQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getSpecificDeviceQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getTextualConfigurationByDeviceQuery
+   * @pronghornType method
+   * @name getTextualConfigurationByDeviceQuery
+   * @summary GettextualconfigurationbydeviceQuery
+   *
+   * @param {number} id - Device ID
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getTextualConfigurationByDeviceQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getTextualConfigurationByDeviceQuery(id, queryObject, callback) {
+    const meth = 'adapter-getTextualConfigurationByDeviceQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('MonitoredDevices', 'getTextualConfigurationByDeviceQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getTextualConfigurationByDeviceQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function abortTask
+   * @pronghornType method
+   * @name abortTask
+   * @summary abort
+   *
+   * @param {object} [body] - Request body
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /abortTask
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  abortTask(body, callback) {
+    const meth = 'adapter-abortTask';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = {};
+    const pathVars = [];
+    const bodyVars = body;
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('MonitoredDevices', 'abortTask', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['abortTask'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function abortAllTasks
+   * @pronghornType method
+   * @name abortAllTasks
+   * @summary abortAllTasks
+   *
+   * @param {object} [body] - Request body
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /abortAllTasks
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  abortAllTasks(body, callback) {
+    const meth = 'adapter-abortAllTasks';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = {};
+    const pathVars = [];
+    const bodyVars = body;
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('MonitoredDevices', 'abortAllTasks', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['abortAllTasks'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getWaitingTasks
+   * @pronghornType method
+   * @name getWaitingTasks
+   * @summary getWaitingTasks
+   *
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {GET} /getWaitingTasks
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getWaitingTasks(callback) {
+    const meth = 'adapter-getWaitingTasks';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = {};
+    const pathVars = [];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('MonitoredDevices', 'getWaitingTasks', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getWaitingTasks'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getWaitingTasksForDevice
+   * @pronghornType method
+   * @name getWaitingTasksForDevice
+   * @summary getWaitingTasksForDevice
+   *
+   * @param {number} deviceId - deviceId param
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getWaitingTasksForDevice
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getWaitingTasksForDevice(deviceId, callback) {
+    const meth = 'adapter-getWaitingTasksForDevice';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (deviceId === undefined || deviceId === null || deviceId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['deviceId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = {};
+    const pathVars = [deviceId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('MonitoredDevices', 'getWaitingTasksForDevice', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getWaitingTasksForDevice'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function updateOfflineDeviceQuery
+   * @pronghornType method
+   * @name updateOfflineDeviceQuery
+   * @summary updateDevice
+   *
+   * @param {string} deviceId - deviceId param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {object} body - Device to be updated
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /updateOfflineDeviceQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  updateOfflineDeviceQuery(deviceId, queryObject, body, callback) {
+    const meth = 'adapter-updateOfflineDeviceQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (deviceId === undefined || deviceId === null || deviceId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['deviceId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+    if (body === undefined || body === null || body === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['body'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [deviceId];
+    const bodyVars = body;
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('MonitoredDevices', 'updateOfflineDeviceQuery', reqObj, false, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['updateOfflineDeviceQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getNATObjectsByRevisionQuery
+   * @pronghornType method
+   * @name getNATObjectsByRevisionQuery
+   * @summary GetNATobjectsbyrevisionQuery
+   *
+   * @param {number} id - Version ID
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getNATObjectsByRevisionQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getNATObjectsByRevisionQuery(id, queryObject, callback) {
+    const meth = 'adapter-getNATObjectsByRevisionQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NATPolicies', 'getNATObjectsByRevisionQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getNATObjectsByRevisionQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getNATObjectsByDeviceQuery
+   * @pronghornType method
+   * @name getNATObjectsByDeviceQuery
+   * @summary GetNATobjectsbydeviceQuery
+   *
+   * @param {number} id - Device ID
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getNATObjectsByDeviceQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getNATObjectsByDeviceQuery(id, queryObject, callback) {
+    const meth = 'adapter-getNATObjectsByDeviceQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NATPolicies', 'getNATObjectsByDeviceQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getNATObjectsByDeviceQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getNATRulesByDeviceQuery
+   * @pronghornType method
+   * @name getNATRulesByDeviceQuery
+   * @summary GetNATrulesbydeviceQuery
+   *
+   * @param {number} id - Device ID
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getNATRulesByDeviceQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getNATRulesByDeviceQuery(id, queryObject, callback) {
+    const meth = 'adapter-getNATRulesByDeviceQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NATPolicies', 'getNATRulesByDeviceQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getNATRulesByDeviceQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getNetworkObjectsByRevisionQuery
+   * @pronghornType method
+   * @name getNetworkObjectsByRevisionQuery
+   * @summary GetnetworkobjectsbyrevisionQuery
+   *
+   * @param {number} id - Revision id
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getNetworkObjectsByRevisionQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getNetworkObjectsByRevisionQuery(id, queryObject, callback) {
+    const meth = 'adapter-getNetworkObjectsByRevisionQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkObjects', 'getNetworkObjectsByRevisionQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getNetworkObjectsByRevisionQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getSpecificNetworkObjectsByRevisionQuery
+   * @pronghornType method
+   * @name getSpecificNetworkObjectsByRevisionQuery
+   * @summary GetspecificnetworkobjectsbyrevisionQuery
+   *
+   * @param {string} revisionId - revisionId param
+   * @param {string} ids - ids param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getSpecificNetworkObjectsByRevisionQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getSpecificNetworkObjectsByRevisionQuery(revisionId, ids, queryObject, callback) {
+    const meth = 'adapter-getSpecificNetworkObjectsByRevisionQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (revisionId === undefined || revisionId === null || revisionId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['revisionId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+    if (ids === undefined || ids === null || ids === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['ids'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [revisionId, ids];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkObjects', 'getSpecificNetworkObjectsByRevisionQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getSpecificNetworkObjectsByRevisionQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getNetworkObjectsByDeviceQuery
+   * @pronghornType method
+   * @name getNetworkObjectsByDeviceQuery
+   * @summary GetnetworkobjectsbydeviceQuery
+   *
+   * @param {number} id - Device ID
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getNetworkObjectsByDeviceQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getNetworkObjectsByDeviceQuery(id, queryObject, callback) {
+    const meth = 'adapter-getNetworkObjectsByDeviceQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkObjects', 'getNetworkObjectsByDeviceQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getNetworkObjectsByDeviceQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getSpecificNetworkObjectQuery
+   * @pronghornType method
+   * @name getSpecificNetworkObjectQuery
+   * @summary GetspecificnetworkobjectQuery
+   *
+   * @param {string} deviceId - deviceId param
+   * @param {string} ids - ids param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getSpecificNetworkObjectQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getSpecificNetworkObjectQuery(deviceId, ids, queryObject, callback) {
+    const meth = 'adapter-getSpecificNetworkObjectQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (deviceId === undefined || deviceId === null || deviceId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['deviceId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+    if (ids === undefined || ids === null || ids === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['ids'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [deviceId, ids];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkObjects', 'getSpecificNetworkObjectQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getSpecificNetworkObjectQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getNetworkObjectsMatchingSpecifiedCriteriaQuery
+   * @pronghornType method
+   * @name getNetworkObjectsMatchingSpecifiedCriteriaQuery
+   * @summary GetnetworkobjectsmatchingspecifiedcriteriaQuery
+   *
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getNetworkObjectsMatchingSpecifiedCriteriaQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getNetworkObjectsMatchingSpecifiedCriteriaQuery(queryObject, callback) {
+    const meth = 'adapter-getNetworkObjectsMatchingSpecifiedCriteriaQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkObjects', 'getNetworkObjectsMatchingSpecifiedCriteriaQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getNetworkObjectsMatchingSpecifiedCriteriaQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getNetworkGroupsContainingSpecifiedNetworkObjectQuery
+   * @pronghornType method
+   * @name getNetworkGroupsContainingSpecifiedNetworkObjectQuery
+   * @summary GetnetworkgroupscontainingspecifiednetworkobjectQuery
+   *
+   * @param {number} id - The SecureTrack object ID of the network object.
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getNetworkGroupsContainingSpecifiedNetworkObjectQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getNetworkGroupsContainingSpecifiedNetworkObjectQuery(id, queryObject, callback) {
+    const meth = 'adapter-getNetworkGroupsContainingSpecifiedNetworkObjectQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkObjects', 'getNetworkGroupsContainingSpecifiedNetworkObjectQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getNetworkGroupsContainingSpecifiedNetworkObjectQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getRulesContainingSpecifiedNetworkObjectQuery
+   * @pronghornType method
+   * @name getRulesContainingSpecifiedNetworkObjectQuery
+   * @summary GetrulescontainingspecifiednetworkobjectQuery
+   *
+   * @param {number} id - The SecureTrack object ID of the network object.
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getRulesContainingSpecifiedNetworkObjectQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getRulesContainingSpecifiedNetworkObjectQuery(id, queryObject, callback) {
+    const meth = 'adapter-getRulesContainingSpecifiedNetworkObjectQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkObjects', 'getRulesContainingSpecifiedNetworkObjectQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getRulesContainingSpecifiedNetworkObjectQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getTopologyGenericVPNConnectionsQuery
+   * @pronghornType method
+   * @name getTopologyGenericVPNConnectionsQuery
+   * @summary GettopologygenericVPNconnectionsQuery
+   *
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getTopologyGenericVPNConnectionsQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getTopologyGenericVPNConnectionsQuery(queryObject, callback) {
+    const meth = 'adapter-getTopologyGenericVPNConnectionsQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkTopology', 'getTopologyGenericVPNConnectionsQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getTopologyGenericVPNConnectionsQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function updateACloudQuery
+   * @pronghornType method
+   * @name updateACloudQuery
+   * @summary UpdateacloudQuery
+   *
+   * @param {number} id - cloud id
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {object} body - Cloud data
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /updateACloudQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  updateACloudQuery(id, queryObject, body, callback) {
+    const meth = 'adapter-updateACloudQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+    if (body === undefined || body === null || body === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['body'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id];
+    const bodyVars = body;
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkTopology', 'updateACloudQuery', reqObj, false, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['updateACloudQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function synchronizeTheTopologyModelQuery
+   * @pronghornType method
+   * @name synchronizeTheTopologyModelQuery
+   * @summary SynchronizetheTopologymodelQuery
+   *
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /synchronizeTheTopologyModelQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  synchronizeTheTopologyModelQuery(queryObject, callback) {
+    const meth = 'adapter-synchronizeTheTopologyModelQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkTopology', 'synchronizeTheTopologyModelQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['synchronizeTheTopologyModelQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getSynchronizerCronTabDetails
+   * @pronghornType method
+   * @name getSynchronizerCronTabDetails
+   * @summary getSynchronizerCronTabDetails
+   *
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {GET} /getSynchronizerCronTabDetails
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getSynchronizerCronTabDetails(callback) {
+    const meth = 'adapter-getSynchronizerCronTabDetails';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = {};
+    const pathVars = [];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkTopology', 'getSynchronizerCronTabDetails', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getSynchronizerCronTabDetails'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getPathPdf
+   * @pronghornType method
+   * @name getPathPdf
+   * @summary getPathPdf
+   *
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getPathPdf
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getPathPdf(queryObject, callback) {
+    const meth = 'adapter-getPathPdf';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkTopology', 'getPathPdf', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getPathPdf'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getPathDomains
+   * @pronghornType method
+   * @name getPathDomains
+   * @summary getPathDomains
+   *
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getPathDomains
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getPathDomains(queryObject, callback) {
+    const meth = 'adapter-getPathDomains';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkTopology', 'getPathDomains', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getPathDomains'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getPathObjectTraffic
+   * @pronghornType method
+   * @name getPathObjectTraffic
+   * @summary getPathObjectTraffic
+   *
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getPathObjectTraffic
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getPathObjectTraffic(queryObject, callback) {
+    const meth = 'adapter-getPathObjectTraffic';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkTopology', 'getPathObjectTraffic', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getPathObjectTraffic'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getPathImageForSpecifiedTrafficQuery
+   * @pronghornType method
+   * @name getPathImageForSpecifiedTrafficQuery
+   * @summary GetpathimageforspecifiedtrafficQuery
+   *
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getPathImageForSpecifiedTrafficQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getPathImageForSpecifiedTrafficQuery(queryObject, callback) {
+    const meth = 'adapter-getPathImageForSpecifiedTrafficQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkTopology', 'getPathImageForSpecifiedTrafficQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getPathImageForSpecifiedTrafficQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getPathForSpecifiedTrafficQuery
+   * @pronghornType method
+   * @name getPathForSpecifiedTrafficQuery
+   * @summary GetpathforspecifiedtrafficQuery
+   *
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getPathForSpecifiedTrafficQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getPathForSpecifiedTrafficQuery(queryObject, callback) {
+    const meth = 'adapter-getPathForSpecifiedTrafficQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkTopology', 'getPathForSpecifiedTrafficQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getPathForSpecifiedTrafficQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getTopologyCloudsQuery
+   * @pronghornType method
+   * @name getTopologyCloudsQuery
+   * @summary GettopologycloudsQuery
+   *
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getTopologyCloudsQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getTopologyCloudsQuery(queryObject, callback) {
+    const meth = 'adapter-getTopologyCloudsQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkTopology', 'getTopologyCloudsQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getTopologyCloudsQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function createAJoinedTopologyCloudQuery
+   * @pronghornType method
+   * @name createAJoinedTopologyCloudQuery
+   * @summary CreateajoinedtopologycloudQuery
+   *
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {object} body - Cloud data
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /createAJoinedTopologyCloudQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  createAJoinedTopologyCloudQuery(queryObject, body, callback) {
+    const meth = 'adapter-createAJoinedTopologyCloudQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (body === undefined || body === null || body === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['body'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [];
+    const bodyVars = body;
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkTopology', 'createAJoinedTopologyCloudQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['createAJoinedTopologyCloudQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getTopologySubnetsQuery
+   * @pronghornType method
+   * @name getTopologySubnetsQuery
+   * @summary GettopologysubnetsQuery
+   *
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getTopologySubnetsQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getTopologySubnetsQuery(queryObject, callback) {
+    const meth = 'adapter-getTopologySubnetsQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkTopology', 'getTopologySubnetsQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getTopologySubnetsQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getget
+   * @pronghornType method
+   * @name getget
+   * @summary Getget
+   *
+   * @param {number} cloudId - cloudId param
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getget
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getget(cloudId, callback) {
+    const meth = 'adapter-getget';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (cloudId === undefined || cloudId === null || cloudId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['cloudId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = {};
+    const pathVars = [cloudId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkTopology', 'getget', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getget'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function deletedelete
+   * @pronghornType method
+   * @name deletedelete
+   * @summary Deletedelete
+   *
+   * @param {number} cloudId - cloudId param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /deletedelete
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  deletedelete(cloudId, queryObject, callback) {
+    const meth = 'adapter-deletedelete';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (cloudId === undefined || cloudId === null || cloudId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['cloudId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [cloudId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkTopology', 'deletedelete', reqObj, false, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['deletedelete'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function createJoinCloud
+   * @pronghornType method
+   * @name createJoinCloud
+   * @summary Create Join Cloud
+   *
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {object} [body] - request body
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /createJoinCloud
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  createJoinCloud(queryObject, body, callback) {
+    const meth = 'adapter-createJoinCloud';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [];
+    const bodyVars = body;
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkTopology', 'createJoinCloud', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['createJoinCloud'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function updateJoinClouds
+   * @pronghornType method
+   * @name updateJoinClouds
+   * @summary update join clouds
+   *
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {object} [body] - Request Body
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /updateJoinClouds
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  updateJoinClouds(queryObject, body, callback) {
+    const meth = 'adapter-updateJoinClouds';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [];
+    const bodyVars = body;
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkTopology', 'updateJoinClouds', reqObj, false, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['updateJoinClouds'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getVpn
+   * @pronghornType method
+   * @name getVpn
+   * @summary getVpn
+   *
+   * @param {number} vpnId - vpnId param
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getVpn
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getVpn(vpnId, callback) {
+    const meth = 'adapter-getVpn';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (vpnId === undefined || vpnId === null || vpnId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['vpnId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = {};
+    const pathVars = [vpnId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkTopology', 'getVpn', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getVpn'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function deleteVpn
+   * @pronghornType method
+   * @name deleteVpn
+   * @summary deleteVpn
+   *
+   * @param {number} vpnId - vpnId param
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /deleteVpn
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  deleteVpn(vpnId, callback) {
+    const meth = 'adapter-deleteVpn';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (vpnId === undefined || vpnId === null || vpnId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['vpnId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = {};
+    const pathVars = [vpnId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkTopology', 'deleteVpn', reqObj, false, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['deleteVpn'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getInterface
+   * @pronghornType method
+   * @name getInterface
+   * @summary getInterface
+   *
+   * @param {number} inId - inId param
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getInterface
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getInterface(inId, callback) {
+    const meth = 'adapter-getInterface';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (inId === undefined || inId === null || inId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['inId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = {};
+    const pathVars = [inId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkTopology', 'getInterface', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getInterface'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function deleteInterface
+   * @pronghornType method
+   * @name deleteInterface
+   * @summary deleteInterface
+   *
+   * @param {number} inId - inId param
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /deleteInterface
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  deleteInterface(inId, callback) {
+    const meth = 'adapter-deleteInterface';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (inId === undefined || inId === null || inId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['inId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = {};
+    const pathVars = [inId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkTopology', 'deleteInterface', reqObj, false, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['deleteInterface'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getRoute
+   * @pronghornType method
+   * @name getRoute
+   * @summary getRoute
+   *
+   * @param {number} routeId - routeId param
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getRoute
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getRoute(routeId, callback) {
+    const meth = 'adapter-getRoute';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (routeId === undefined || routeId === null || routeId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['routeId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = {};
+    const pathVars = [routeId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkTopology', 'getRoute', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getRoute'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function deleteRoute
+   * @pronghornType method
+   * @name deleteRoute
+   * @summary deleteRoute
+   *
+   * @param {number} routeId - routeId param
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /deleteRoute
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  deleteRoute(routeId, callback) {
+    const meth = 'adapter-deleteRoute';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (routeId === undefined || routeId === null || routeId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['routeId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = {};
+    const pathVars = [routeId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkTopology', 'deleteRoute', reqObj, false, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['deleteRoute'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function createRoutes
+   * @pronghornType method
+   * @name createRoutes
+   * @summary createRoutes
+   *
+   * @param {object} [body] - Requset Body
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /createRoutes
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  createRoutes(body, callback) {
+    const meth = 'adapter-createRoutes';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = {};
+    const pathVars = [];
+    const bodyVars = body;
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkTopology', 'createRoutes', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['createRoutes'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function updateRoutes
+   * @pronghornType method
+   * @name updateRoutes
+   * @summary updateRoutes
+   *
+   * @param {object} [body] - body param
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /updateRoutes
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  updateRoutes(body, callback) {
+    const meth = 'adapter-updateRoutes';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = {};
+    const pathVars = [];
+    const bodyVars = body;
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkTopology', 'updateRoutes', reqObj, false, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['updateRoutes'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getRoutes
+   * @pronghornType method
+   * @name getRoutes
+   * @summary getRoutes
+   *
+   * @param {number} mgmtId - mgmtId param
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getRoutes
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getRoutes(mgmtId, callback) {
+    const meth = 'adapter-getRoutes';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (mgmtId === undefined || mgmtId === null || mgmtId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['mgmtId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = {};
+    const pathVars = [mgmtId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkTopology', 'getRoutes', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getRoutes'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function deleteRoutes
+   * @pronghornType method
+   * @name deleteRoutes
+   * @summary deleteRoutes
+   *
+   * @param {number} mgmtId - mgmtId param
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /deleteRoutes
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  deleteRoutes(mgmtId, callback) {
+    const meth = 'adapter-deleteRoutes';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (mgmtId === undefined || mgmtId === null || mgmtId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['mgmtId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = {};
+    const pathVars = [mgmtId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkTopology', 'deleteRoutes', reqObj, false, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['deleteRoutes'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getInterfaceCustomer
+   * @pronghornType method
+   * @name getInterfaceCustomer
+   * @summary getInterfaceCustomer
+   *
+   * @param {number} interfaceCustomerId - interfaceCustomerId param
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getInterfaceCustomer
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getInterfaceCustomer(interfaceCustomerId, callback) {
+    const meth = 'adapter-getInterfaceCustomer';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (interfaceCustomerId === undefined || interfaceCustomerId === null || interfaceCustomerId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['interfaceCustomerId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = {};
+    const pathVars = [interfaceCustomerId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkTopology', 'getInterfaceCustomer', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getInterfaceCustomer'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function deleteInterfaceCustomer
+   * @pronghornType method
+   * @name deleteInterfaceCustomer
+   * @summary deleteInterfaceCustomer
+   *
+   * @param {number} interfaceCustomerId - interfaceCustomerId param
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /deleteInterfaceCustomer
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  deleteInterfaceCustomer(interfaceCustomerId, callback) {
+    const meth = 'adapter-deleteInterfaceCustomer';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (interfaceCustomerId === undefined || interfaceCustomerId === null || interfaceCustomerId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['interfaceCustomerId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = {};
+    const pathVars = [interfaceCustomerId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkTopology', 'deleteInterfaceCustomer', reqObj, false, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['deleteInterfaceCustomer'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getInterfaceCustomers
+   * @pronghornType method
+   * @name getInterfaceCustomers
+   * @summary getInterfaceCustomers
+   *
+   * @param {number} deviceId - deviceId param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getInterfaceCustomers
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getInterfaceCustomers(deviceId, queryObject, callback) {
+    const meth = 'adapter-getInterfaceCustomers';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (deviceId === undefined || deviceId === null || deviceId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['deviceId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [deviceId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkTopology', 'getInterfaceCustomers', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getInterfaceCustomers'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function deleteInterfaceCustomers
+   * @pronghornType method
+   * @name deleteInterfaceCustomers
+   * @summary deleteInterfaceCustomers
+   *
+   * @param {number} deviceId - deviceId param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /deleteInterfaceCustomers
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  deleteInterfaceCustomers(deviceId, queryObject, callback) {
+    const meth = 'adapter-deleteInterfaceCustomers';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (deviceId === undefined || deviceId === null || deviceId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['deviceId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [deviceId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkTopology', 'deleteInterfaceCustomers', reqObj, false, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['deleteInterfaceCustomers'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function createInterfaceCustomers
+   * @pronghornType method
+   * @name createInterfaceCustomers
+   * @summary createInterfaceCustomers
+   *
+   * @param {object} [body] - body param
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /createInterfaceCustomers
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  createInterfaceCustomers(body, callback) {
+    const meth = 'adapter-createInterfaceCustomers';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = {};
+    const pathVars = [];
+    const bodyVars = body;
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkTopology', 'createInterfaceCustomers', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['createInterfaceCustomers'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function updateInterfaceCustomers
+   * @pronghornType method
+   * @name updateInterfaceCustomers
+   * @summary updateInterfaceCustomers
+   *
+   * @param {object} [body] - body param
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /updateInterfaceCustomers
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  updateInterfaceCustomers(body, callback) {
+    const meth = 'adapter-updateInterfaceCustomers';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = {};
+    const pathVars = [];
+    const bodyVars = body;
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkTopology', 'updateInterfaceCustomers', reqObj, false, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['updateInterfaceCustomers'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getgetInterfaces
+   * @pronghornType method
+   * @name getgetInterfaces
+   * @summary GetgetInterfaces
+   *
+   * @param {number} mgmtId - mgmtId param
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getgetInterfaces
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getgetInterfaces(mgmtId, callback) {
+    const meth = 'adapter-getgetInterfaces';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (mgmtId === undefined || mgmtId === null || mgmtId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['mgmtId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = {};
+    const pathVars = [mgmtId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkTopology', 'getgetInterfaces', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getgetInterfaces'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function deleteInterfaces
+   * @pronghornType method
+   * @name deleteInterfaces
+   * @summary deleteInterfaces
+   *
+   * @param {number} mgmtId - mgmtId param
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /deleteInterfaces
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  deleteInterfaces(mgmtId, callback) {
+    const meth = 'adapter-deleteInterfaces';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (mgmtId === undefined || mgmtId === null || mgmtId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['mgmtId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = {};
+    const pathVars = [mgmtId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkTopology', 'deleteInterfaces', reqObj, false, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['deleteInterfaces'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function createInterfaces
+   * @pronghornType method
+   * @name createInterfaces
+   * @summary createInterfaces
+   *
+   * @param {object} [body] - body param
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /createInterfaces
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  createInterfaces(body, callback) {
+    const meth = 'adapter-createInterfaces';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = {};
+    const pathVars = [];
+    const bodyVars = body;
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkTopology', 'createInterfaces', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['createInterfaces'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function updateInterfaces
+   * @pronghornType method
+   * @name updateInterfaces
+   * @summary updateInterfaces
+   *
+   * @param {object} [body] - body param
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /updateInterfaces
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  updateInterfaces(body, callback) {
+    const meth = 'adapter-updateInterfaces';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = {};
+    const pathVars = [];
+    const bodyVars = body;
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkTopology', 'updateInterfaces', reqObj, false, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['updateInterfaces'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getVpns
+   * @pronghornType method
+   * @name getVpns
+   * @summary getVpns
+   *
+   * @param {number} deviceId - deviceId param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getVpns
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getVpns(deviceId, queryObject, callback) {
+    const meth = 'adapter-getVpns';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (deviceId === undefined || deviceId === null || deviceId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['deviceId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [deviceId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkTopology', 'getVpns', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getVpns'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function deleteVpns
+   * @pronghornType method
+   * @name deleteVpns
+   * @summary deleteVpns
+   *
+   * @param {number} deviceId - deviceId param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /deleteVpns
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  deleteVpns(deviceId, queryObject, callback) {
+    const meth = 'adapter-deleteVpns';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (deviceId === undefined || deviceId === null || deviceId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['deviceId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [deviceId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkTopology', 'deleteVpns', reqObj, false, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['deleteVpns'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function createVpns
+   * @pronghornType method
+   * @name createVpns
+   * @summary createVpns
+   *
+   * @param {object} [body] - body param
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /createVpns
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  createVpns(body, callback) {
+    const meth = 'adapter-createVpns';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = {};
+    const pathVars = [];
+    const bodyVars = body;
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkTopology', 'createVpns', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['createVpns'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function updateVpns
+   * @pronghornType method
+   * @name updateVpns
+   * @summary updateVpns
+   *
+   * @param {object} [body] - body param
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /updateVpns
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  updateVpns(body, callback) {
+    const meth = 'adapter-updateVpns';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = {};
+    const pathVars = [];
+    const bodyVars = body;
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkTopology', 'updateVpns', reqObj, false, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['updateVpns'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getTransparentFirewalls
+   * @pronghornType method
+   * @name getTransparentFirewalls
+   * @summary getTransparentFirewalls
+   *
+   * @param {number} deviceId - deviceId param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getTransparentFirewalls
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getTransparentFirewalls(deviceId, queryObject, callback) {
+    const meth = 'adapter-getTransparentFirewalls';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (deviceId === undefined || deviceId === null || deviceId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['deviceId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [deviceId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkTopology', 'getTransparentFirewalls', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getTransparentFirewalls'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function deleteTransparentFirewalls
+   * @pronghornType method
+   * @name deleteTransparentFirewalls
+   * @summary deleteTransparentFirewalls
+   *
+   * @param {number} deviceId - deviceId param
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /deleteTransparentFirewalls
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  deleteTransparentFirewalls(deviceId, callback) {
+    const meth = 'adapter-deleteTransparentFirewalls';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (deviceId === undefined || deviceId === null || deviceId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['deviceId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = {};
+    const pathVars = [deviceId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkTopology', 'deleteTransparentFirewalls', reqObj, false, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['deleteTransparentFirewalls'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function deleteTransparentFirewall
+   * @pronghornType method
+   * @name deleteTransparentFirewall
+   * @summary deleteTransparentFirewall
+   *
+   * @param {number} layer2DataId - layer2DataId param
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /deleteTransparentFirewall
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  deleteTransparentFirewall(layer2DataId, callback) {
+    const meth = 'adapter-deleteTransparentFirewall';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (layer2DataId === undefined || layer2DataId === null || layer2DataId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['layer2DataId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = {};
+    const pathVars = [layer2DataId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkTopology', 'deleteTransparentFirewall', reqObj, false, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['deleteTransparentFirewall'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function createTransparentFirewalls
+   * @pronghornType method
+   * @name createTransparentFirewalls
+   * @summary createTransparentFirewalls
+   *
+   * @param {object} [body] - body param
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /createTransparentFirewalls
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  createTransparentFirewalls(body, callback) {
+    const meth = 'adapter-createTransparentFirewalls';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = {};
+    const pathVars = [];
+    const bodyVars = body;
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkTopology', 'createTransparentFirewalls', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['createTransparentFirewalls'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function updateTransparentFirewalls
+   * @pronghornType method
+   * @name updateTransparentFirewalls
+   * @summary updateTransparentFirewalls
+   *
+   * @param {object} [body] - body param
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /updateTransparentFirewalls
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  updateTransparentFirewalls(body, callback) {
+    const meth = 'adapter-updateTransparentFirewalls';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = {};
+    const pathVars = [];
+    const bodyVars = body;
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkTopology', 'updateTransparentFirewalls', reqObj, false, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['updateTransparentFirewalls'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getIgnoredInterfaces
+   * @pronghornType method
+   * @name getIgnoredInterfaces
+   * @summary getIgnoredInterfaces
+   *
+   * @param {number} mgmtId - mgmtId param
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getIgnoredInterfaces
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getIgnoredInterfaces(mgmtId, callback) {
+    const meth = 'adapter-getIgnoredInterfaces';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (mgmtId === undefined || mgmtId === null || mgmtId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['mgmtId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = {};
+    const pathVars = [mgmtId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkTopology', 'getIgnoredInterfaces', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getIgnoredInterfaces'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function deleteIgnoredInterfaces
+   * @pronghornType method
+   * @name deleteIgnoredInterfaces
+   * @summary deleteIgnoredInterfaces
+   *
+   * @param {number} mgmtId - mgmtId param
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /deleteIgnoredInterfaces
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  deleteIgnoredInterfaces(mgmtId, callback) {
+    const meth = 'adapter-deleteIgnoredInterfaces';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (mgmtId === undefined || mgmtId === null || mgmtId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['mgmtId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = {};
+    const pathVars = [mgmtId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkTopology', 'deleteIgnoredInterfaces', reqObj, false, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['deleteIgnoredInterfaces'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function createIgnoredInterfaces
+   * @pronghornType method
+   * @name createIgnoredInterfaces
+   * @summary createIgnoredInterfaces
+   *
+   * @param {object} [body] - body param
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /createIgnoredInterfaces
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  createIgnoredInterfaces(body, callback) {
+    const meth = 'adapter-createIgnoredInterfaces';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = {};
+    const pathVars = [];
+    const bodyVars = body;
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkTopology', 'createIgnoredInterfaces', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['createIgnoredInterfaces'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function deleteGenericDeviceFromTopologyModelQuery
+   * @pronghornType method
+   * @name deleteGenericDeviceFromTopologyModelQuery
+   * @summary DeletegenericdevicefromTopologymodelQuery
+   *
+   * @param {number} id - Generic device id
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /deleteGenericDeviceFromTopologyModelQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  deleteGenericDeviceFromTopologyModelQuery(id, queryObject, callback) {
+    const meth = 'adapter-deleteGenericDeviceFromTopologyModelQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkTopology', 'deleteGenericDeviceFromTopologyModelQuery', reqObj, false, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['deleteGenericDeviceFromTopologyModelQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getGenericDevicesThatAreConfiguredInSTQuery
+   * @pronghornType method
+   * @name getGenericDevicesThatAreConfiguredInSTQuery
+   * @summary GetgenericdevicesthatareconfiguredinSTQuery
+   *
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getGenericDevicesThatAreConfiguredInSTQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getGenericDevicesThatAreConfiguredInSTQuery(queryObject, callback) {
+    const meth = 'adapter-getGenericDevicesThatAreConfiguredInSTQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkTopology', 'getGenericDevicesThatAreConfiguredInSTQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getGenericDevicesThatAreConfiguredInSTQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getTopologyRoutingTablesForAGivenDeviceQuery
+   * @pronghornType method
+   * @name getTopologyRoutingTablesForAGivenDeviceQuery
+   * @summary GettopologyroutingtablesforagivendeviceQuery
+   *
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getTopologyRoutingTablesForAGivenDeviceQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getTopologyRoutingTablesForAGivenDeviceQuery(queryObject, callback) {
+    const meth = 'adapter-getTopologyRoutingTablesForAGivenDeviceQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkTopology', 'getTopologyRoutingTablesForAGivenDeviceQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getTopologyRoutingTablesForAGivenDeviceQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getTopologyNetworkInterfacesByDeviceQuery
+   * @pronghornType method
+   * @name getTopologyNetworkInterfacesByDeviceQuery
+   * @summary GettopologynetworkinterfacesbydeviceQuery
+   *
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getTopologyNetworkInterfacesByDeviceQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getTopologyNetworkInterfacesByDeviceQuery(queryObject, callback) {
+    const meth = 'adapter-getTopologyNetworkInterfacesByDeviceQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkTopology', 'getTopologyNetworkInterfacesByDeviceQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getTopologyNetworkInterfacesByDeviceQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getMostSpecificNetworkInterfacesFromWhichAHostIPIsAccessibleQuery
+   * @pronghornType method
+   * @name getMostSpecificNetworkInterfacesFromWhichAHostIPIsAccessibleQuery
+   * @summary GetmostspecificnetworkinterfacesfromwhichahostIPisaccessibleQuery
+   *
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getMostSpecificNetworkInterfacesFromWhichAHostIPIsAccessibleQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getMostSpecificNetworkInterfacesFromWhichAHostIPIsAccessibleQuery(queryObject, callback) {
+    const meth = 'adapter-getMostSpecificNetworkInterfacesFromWhichAHostIPIsAccessibleQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkTopology', 'getMostSpecificNetworkInterfacesFromWhichAHostIPIsAccessibleQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getMostSpecificNetworkInterfacesFromWhichAHostIPIsAccessibleQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function joinOrSplitSubnet
+   * @pronghornType method
+   * @name joinOrSplitSubnet
+   * @summary Join\/Split Subnet.
+   *
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {object} [body] - body param
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /joinOrSplitSubnet
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  joinOrSplitSubnet(queryObject, body, callback) {
+    const meth = 'adapter-joinOrSplitSubnet';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [];
+    const bodyVars = body;
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkTopology', 'joinOrSplitSubnet', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['joinOrSplitSubnet'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function modifyAZoneEntryQuery
+   * @pronghornType method
+   * @name modifyAZoneEntryQuery
+   * @summary PutModifyazoneentryQuery
+   *
+   * @param {string} zoneId - The ID of the zone containing the zone entry.
+   * @param {number} id - The ID of the zone entry.
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {object} body - The modified zone entry.
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /modifyAZoneEntryQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  modifyAZoneEntryQuery(zoneId, id, queryObject, body, callback) {
+    const meth = 'adapter-modifyAZoneEntryQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (zoneId === undefined || zoneId === null || zoneId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['zoneId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+    if (body === undefined || body === null || body === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['body'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [zoneId, id];
+    const bodyVars = body;
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkZoneManagerSubnets', 'modifyAZoneEntryQuery', reqObj, false, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['modifyAZoneEntryQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getASpecificZoneEntryQuery
+   * @pronghornType method
+   * @name getASpecificZoneEntryQuery
+   * @summary getZoneEntry
+   *
+   * @param {number} id - The ID of the zone entry.
+   * @param {string} zoneId - zoneId param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getASpecificZoneEntryQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getASpecificZoneEntryQuery(id, zoneId, queryObject, callback) {
+    const meth = 'adapter-getASpecificZoneEntryQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+    if (zoneId === undefined || zoneId === null || zoneId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['zoneId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id, zoneId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkZoneManagerSubnets', 'getASpecificZoneEntryQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getASpecificZoneEntryQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function deleteZoneEntriesQuery
+   * @pronghornType method
+   * @name deleteZoneEntriesQuery
+   * @summary deleteZoneEntry
+   *
+   * @param {number} id - The ID of the zone entry to delete.
+   * @param {string} zoneId - zoneId param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /deleteZoneEntriesQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  deleteZoneEntriesQuery(id, zoneId, queryObject, callback) {
+    const meth = 'adapter-deleteZoneEntriesQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+    if (zoneId === undefined || zoneId === null || zoneId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['zoneId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id, zoneId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkZoneManagerSubnets', 'deleteZoneEntriesQuery', reqObj, false, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['deleteZoneEntriesQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function createAZoneEntryQuery
+   * @pronghornType method
+   * @name createAZoneEntryQuery
+   * @summary addZoneEntry
+   *
+   * @param {string} zoneId - zoneId param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {object} body - The zone entry to create.
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /createAZoneEntryQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  createAZoneEntryQuery(zoneId, queryObject, body, callback) {
+    const meth = 'adapter-createAZoneEntryQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (zoneId === undefined || zoneId === null || zoneId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['zoneId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+    if (body === undefined || body === null || body === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['body'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [zoneId];
+    const bodyVars = body;
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkZoneManagerSubnets', 'createAZoneEntryQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['createAZoneEntryQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function deleteZonesZoneIdsEntriesIdsQuery
+   * @pronghornType method
+   * @name deleteZonesZoneIdsEntriesIdsQuery
+   * @summary deleteZoneEntries
+   *
+   * @param {string} zoneIds - The ID(s) of the zones containing the zone entry.
+   * @param {string} ids - ids param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /deleteZonesZoneIdsEntriesIdsQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  deleteZonesZoneIdsEntriesIdsQuery(zoneIds, ids, queryObject, callback) {
+    const meth = 'adapter-deleteZonesZoneIdsEntriesIdsQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (zoneIds === undefined || zoneIds === null || zoneIds === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['zoneIds'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+    if (ids === undefined || ids === null || ids === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['ids'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [zoneIds, ids];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkZoneManagerSubnets', 'deleteZonesZoneIdsEntriesIdsQuery', reqObj, false, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['deleteZonesZoneIdsEntriesIdsQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function modifyMultipleExistingZoneEntriesQuery
+   * @pronghornType method
+   * @name modifyMultipleExistingZoneEntriesQuery
+   * @summary editZoneEntries
+   *
+   * @param {string} zoneIds - The ID(s) of the zones containing the zone entries.
+   * @param {string} ids - ids param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {object} [body] - body param
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /modifyMultipleExistingZoneEntriesQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  modifyMultipleExistingZoneEntriesQuery(zoneIds, ids, queryObject, body, callback) {
+    const meth = 'adapter-modifyMultipleExistingZoneEntriesQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (zoneIds === undefined || zoneIds === null || zoneIds === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['zoneIds'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+    if (ids === undefined || ids === null || ids === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['ids'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [zoneIds, ids];
+    const bodyVars = body;
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkZoneManagerSubnets', 'modifyMultipleExistingZoneEntriesQuery', reqObj, false, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['modifyMultipleExistingZoneEntriesQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getEntriesForAZoneQuery
+   * @pronghornType method
+   * @name getEntriesForAZoneQuery
+   * @summary getZoneEntries
+   *
+   * @param {string} ids - ids param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getEntriesForAZoneQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getEntriesForAZoneQuery(ids, queryObject, callback) {
+    const meth = 'adapter-getEntriesForAZoneQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (ids === undefined || ids === null || ids === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['ids'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [ids];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkZoneManagerSubnets', 'getEntriesForAZoneQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getEntriesForAZoneQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getASpecificZoneQuery
+   * @pronghornType method
+   * @name getASpecificZoneQuery
+   * @summary GetaspecificzoneQuery
+   *
+   * @param {number} id - The ID of the zone to get.
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getASpecificZoneQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getASpecificZoneQuery(id, queryObject, callback) {
+    const meth = 'adapter-getASpecificZoneQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkZoneManagerZones', 'getASpecificZoneQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getASpecificZoneQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function modifyAZoneQuery
+   * @pronghornType method
+   * @name modifyAZoneQuery
+   * @summary ModifyazoneQuery
+   *
+   * @param {number} id - The ID of the zone to modify.
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {object} [body] - body param
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /modifyAZoneQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  modifyAZoneQuery(id, queryObject, body, callback) {
+    const meth = 'adapter-modifyAZoneQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id];
+    const bodyVars = body;
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkZoneManagerZones', 'modifyAZoneQuery', reqObj, false, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['modifyAZoneQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getAllZonesQuery
+   * @pronghornType method
+   * @name getAllZonesQuery
+   * @summary GetallzonesQuery
+   *
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getAllZonesQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getAllZonesQuery(queryObject, callback) {
+    const meth = 'adapter-getAllZonesQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkZoneManagerZones', 'getAllZonesQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getAllZonesQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function createAZoneQuery
+   * @pronghornType method
+   * @name createAZoneQuery
+   * @summary CreateazoneQuery
+   *
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {object} body - The zone to add.
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /createAZoneQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  createAZoneQuery(queryObject, body, callback) {
+    const meth = 'adapter-createAZoneQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (body === undefined || body === null || body === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['body'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [];
+    const bodyVars = body;
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkZoneManagerZones', 'createAZoneQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['createAZoneQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function deleteAllZonesQuery
+   * @pronghornType method
+   * @name deleteAllZonesQuery
+   * @summary DeleteallzonesQuery
+   *
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /deleteAllZonesQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  deleteAllZonesQuery(queryObject, callback) {
+    const meth = 'adapter-deleteAllZonesQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkZoneManagerZones', 'deleteAllZonesQuery', reqObj, false, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['deleteAllZonesQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getSharedZonesQuery
+   * @pronghornType method
+   * @name getSharedZonesQuery
+   * @summary GetsharedzonesQuery
+   *
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getSharedZonesQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getSharedZonesQuery(queryObject, callback) {
+    const meth = 'adapter-getSharedZonesQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkZoneManagerZones', 'getSharedZonesQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getSharedZonesQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getConfigurationUsagesForAZoneQuery
+   * @pronghornType method
+   * @name getConfigurationUsagesForAZoneQuery
+   * @summary getZoneDependencies
+   *
+   * @param {string} ids - ids param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getConfigurationUsagesForAZoneQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getConfigurationUsagesForAZoneQuery(ids, queryObject, callback) {
+    const meth = 'adapter-getConfigurationUsagesForAZoneQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (ids === undefined || ids === null || ids === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['ids'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [ids];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkZoneManagerZones', 'getConfigurationUsagesForAZoneQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getConfigurationUsagesForAZoneQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getDescendantZonesForAZoneQuery
+   * @pronghornType method
+   * @name getDescendantZonesForAZoneQuery
+   * @summary getChildrenHierarchy
+   *
+   * @param {string} ids - ids param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getDescendantZonesForAZoneQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getDescendantZonesForAZoneQuery(ids, queryObject, callback) {
+    const meth = 'adapter-getDescendantZonesForAZoneQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (ids === undefined || ids === null || ids === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['ids'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [ids];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkZoneManagerZones', 'getDescendantZonesForAZoneQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getDescendantZonesForAZoneQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getAncestorZonesForAZoneQuery
+   * @pronghornType method
+   * @name getAncestorZonesForAZoneQuery
+   * @summary getParentsHierarchy
+   *
+   * @param {string} ids - ids param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getAncestorZonesForAZoneQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getAncestorZonesForAZoneQuery(ids, queryObject, callback) {
+    const meth = 'adapter-getAncestorZonesForAZoneQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (ids === undefined || ids === null || ids === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['ids'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [ids];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkZoneManagerZones', 'getAncestorZonesForAZoneQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getAncestorZonesForAZoneQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function addAZoneAsADescendantToAZoneQuery
+   * @pronghornType method
+   * @name addAZoneAsADescendantToAZoneQuery
+   * @summary addContainedZone
+   *
+   * @param {number} parentId - The ID of the zone for which to add descendant zone(s).
+   * @param {string} childIds - childIds param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /addAZoneAsADescendantToAZoneQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  addAZoneAsADescendantToAZoneQuery(parentId, childIds, queryObject, callback) {
+    const meth = 'adapter-addAZoneAsADescendantToAZoneQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (parentId === undefined || parentId === null || parentId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['parentId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+    if (childIds === undefined || childIds === null || childIds === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['childIds'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [parentId, childIds];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkZoneManagerZones', 'addAZoneAsADescendantToAZoneQuery', reqObj, false, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['addAZoneAsADescendantToAZoneQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function removeAZoneAsAnDescendantsToAZoneQuery
+   * @pronghornType method
+   * @name removeAZoneAsAnDescendantsToAZoneQuery
+   * @summary deleteContainedZone
+   *
+   * @param {number} parentId - The ID of the zone for which to remove descendant zone(s).
+   * @param {string} childIds - childIds param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /removeAZoneAsAnDescendantsToAZoneQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  removeAZoneAsAnDescendantsToAZoneQuery(parentId, childIds, queryObject, callback) {
+    const meth = 'adapter-removeAZoneAsAnDescendantsToAZoneQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (parentId === undefined || parentId === null || parentId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['parentId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+    if (childIds === undefined || childIds === null || childIds === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['childIds'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [parentId, childIds];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkZoneManagerZones', 'removeAZoneAsAnDescendantsToAZoneQuery', reqObj, false, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['removeAZoneAsAnDescendantsToAZoneQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function addAZoneAsAnAncestorToAZoneQuery
+   * @pronghornType method
+   * @name addAZoneAsAnAncestorToAZoneQuery
+   * @summary addToZone
+   *
+   * @param {number} childId - The ID of the zone for which to add ancestors zone(s).
+   * @param {string} parentIds - parentIds param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /addAZoneAsAnAncestorToAZoneQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  addAZoneAsAnAncestorToAZoneQuery(childId, parentIds, queryObject, callback) {
+    const meth = 'adapter-addAZoneAsAnAncestorToAZoneQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (childId === undefined || childId === null || childId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['childId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+    if (parentIds === undefined || parentIds === null || parentIds === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['parentIds'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [childId, parentIds];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkZoneManagerZones', 'addAZoneAsAnAncestorToAZoneQuery', reqObj, false, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['addAZoneAsAnAncestorToAZoneQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function removeAZoneAsAnAncestorToAZoneQuery
+   * @pronghornType method
+   * @name removeAZoneAsAnAncestorToAZoneQuery
+   * @summary deleteFromZone
+   *
+   * @param {number} childId - The ID of the zone for which to remove ancestors zone(s).
+   * @param {string} parentIds - parentIds param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /removeAZoneAsAnAncestorToAZoneQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  removeAZoneAsAnAncestorToAZoneQuery(childId, parentIds, queryObject, callback) {
+    const meth = 'adapter-removeAZoneAsAnAncestorToAZoneQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (childId === undefined || childId === null || childId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['childId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+    if (parentIds === undefined || parentIds === null || parentIds === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['parentIds'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [childId, parentIds];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkZoneManagerZones', 'removeAZoneAsAnAncestorToAZoneQuery', reqObj, false, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['removeAZoneAsAnAncestorToAZoneQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function deleteAZoneQuery
+   * @pronghornType method
+   * @name deleteAZoneQuery
+   * @summary deleteZones
+   *
+   * @param {string} ids - ids param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /deleteAZoneQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  deleteAZoneQuery(ids, queryObject, callback) {
+    const meth = 'adapter-deleteAZoneQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (ids === undefined || ids === null || ids === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['ids'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [ids];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkZoneManagerZones', 'deleteAZoneQuery', reqObj, false, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['deleteAZoneQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function importAZoneQuery
+   * @pronghornType method
+   * @name importAZoneQuery
+   * @summary importZones
+   *
+   * @param {string} ids - ids param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /importAZoneQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  importAZoneQuery(ids, queryObject, callback) {
+    const meth = 'adapter-importAZoneQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (ids === undefined || ids === null || ids === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['ids'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [ids];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkZoneManagerZones', 'importAZoneQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['importAZoneQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getPoliciesByRevisionQuery
+   * @pronghornType method
+   * @name getPoliciesByRevisionQuery
+   * @summary GetpoliciesbyrevisionQuery
+   *
+   * @param {number} id - Revision ID
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getPoliciesByRevisionQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getPoliciesByRevisionQuery(id, queryObject, callback) {
+    const meth = 'adapter-getPoliciesByRevisionQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('PoliciesAndSubPolicies', 'getPoliciesByRevisionQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getPoliciesByRevisionQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getSubPoliciesBindingsByRevisionQuery
+   * @pronghornType method
+   * @name getSubPoliciesBindingsByRevisionQuery
+   * @summary Getsub-policies(bindings)byrevisionQuery
+   *
+   * @param {number} id - Revision ID
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getSubPoliciesBindingsByRevisionQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getSubPoliciesBindingsByRevisionQuery(id, queryObject, callback) {
+    const meth = 'adapter-getSubPoliciesBindingsByRevisionQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('PoliciesAndSubPolicies', 'getSubPoliciesBindingsByRevisionQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getSubPoliciesBindingsByRevisionQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getPoliciesByDeviceQuery
+   * @pronghornType method
+   * @name getPoliciesByDeviceQuery
+   * @summary GetpoliciesbydeviceQuery
+   *
+   * @param {number} id - Device ID
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getPoliciesByDeviceQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getPoliciesByDeviceQuery(id, queryObject, callback) {
+    const meth = 'adapter-getPoliciesByDeviceQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('PoliciesAndSubPolicies', 'getPoliciesByDeviceQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getPoliciesByDeviceQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getSubPoliciesBindingsByDeviceQuery
+   * @pronghornType method
+   * @name getSubPoliciesBindingsByDeviceQuery
+   * @summary Getsub-policies(bindings)bydeviceQuery
+   *
+   * @param {number} id - Device ID
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getSubPoliciesBindingsByDeviceQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getSubPoliciesBindingsByDeviceQuery(id, queryObject, callback) {
+    const meth = 'adapter-getSubPoliciesBindingsByDeviceQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('PoliciesAndSubPolicies', 'getSubPoliciesBindingsByDeviceQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getSubPoliciesBindingsByDeviceQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getRulesByInputAndOutputInterfacesQuery
+   * @pronghornType method
+   * @name getRulesByInputAndOutputInterfacesQuery
+   * @summary getBindingsForTopologyInterfaces
+   *
+   * @param {string} deviceId - deviceId param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getRulesByInputAndOutputInterfacesQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getRulesByInputAndOutputInterfacesQuery(deviceId, queryObject, callback) {
+    const meth = 'adapter-getRulesByInputAndOutputInterfacesQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (deviceId === undefined || deviceId === null || deviceId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['deviceId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [deviceId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('PoliciesAndSubPolicies', 'getRulesByInputAndOutputInterfacesQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getRulesByInputAndOutputInterfacesQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getListOfSubPoliciesBindingsWithInputAndOrOutputInterfacesQuery
+   * @pronghornType method
+   * @name getListOfSubPoliciesBindingsWithInputAndOrOutputInterfacesQuery
+   * @summary getLastInstalledVersionBindingsByVersionId
+   *
+   * @param {string} deviceId - deviceId param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getListOfSubPoliciesBindingsWithInputAndOrOutputInterfacesQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getListOfSubPoliciesBindingsWithInputAndOrOutputInterfacesQuery(deviceId, queryObject, callback) {
+    const meth = 'adapter-getListOfSubPoliciesBindingsWithInputAndOrOutputInterfacesQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (deviceId === undefined || deviceId === null || deviceId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['deviceId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [deviceId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('PoliciesAndSubPolicies', 'getListOfSubPoliciesBindingsWithInputAndOrOutputInterfacesQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getListOfSubPoliciesBindingsWithInputAndOrOutputInterfacesQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function runPolicyAnalysisQueryQuery
+   * @pronghornType method
+   * @name runPolicyAnalysisQueryQuery
+   * @summary RunPolicyAnalysisqueryQuery
+   *
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /runPolicyAnalysisQueryQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  runPolicyAnalysisQueryQuery(queryObject, callback) {
+    const meth = 'adapter-runPolicyAnalysisQueryQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('PolicyAnalysis', 'runPolicyAnalysisQueryQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['runPolicyAnalysisQueryQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getRisksResultsQuery
+   * @pronghornType method
+   * @name getRisksResultsQuery
+   * @summary GetrisksresultsQuery
+   *
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getRisksResultsQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getRisksResultsQuery(queryObject, callback) {
+    const meth = 'adapter-getRisksResultsQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('PolicyOptimization', 'getRisksResultsQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getRisksResultsQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getCleanupsResultsQuery
+   * @pronghornType method
+   * @name getCleanupsResultsQuery
+   * @summary GetcleanupsresultsQuery
+   *
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getCleanupsResultsQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getCleanupsResultsQuery(queryObject, callback) {
+    const meth = 'adapter-getCleanupsResultsQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('PolicyOptimization', 'getCleanupsResultsQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getCleanupsResultsQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getTheSpecificObjectsOrRulesIdentifiedForTheRiskResultsQuery
+   * @pronghornType method
+   * @name getTheSpecificObjectsOrRulesIdentifiedForTheRiskResultsQuery
+   * @summary getRiskInstances
+   *
+   * @param {string} riskId - riskId param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getTheSpecificObjectsOrRulesIdentifiedForTheRiskResultsQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getTheSpecificObjectsOrRulesIdentifiedForTheRiskResultsQuery(riskId, queryObject, callback) {
+    const meth = 'adapter-getTheSpecificObjectsOrRulesIdentifiedForTheRiskResultsQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (riskId === undefined || riskId === null || riskId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['riskId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [riskId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('PolicyOptimization', 'getTheSpecificObjectsOrRulesIdentifiedForTheRiskResultsQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getTheSpecificObjectsOrRulesIdentifiedForTheRiskResultsQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getDevicesInRiskResultsQuery
+   * @pronghornType method
+   * @name getDevicesInRiskResultsQuery
+   * @summary getRiskDevices
+   *
+   * @param {string} riskId - riskId param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getDevicesInRiskResultsQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getDevicesInRiskResultsQuery(riskId, queryObject, callback) {
+    const meth = 'adapter-getDevicesInRiskResultsQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (riskId === undefined || riskId === null || riskId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['riskId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [riskId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('PolicyOptimization', 'getDevicesInRiskResultsQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getDevicesInRiskResultsQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getTheSpecificObjectsOrRulesIdentifiedForTheCleanupResultsQuery
+   * @pronghornType method
+   * @name getTheSpecificObjectsOrRulesIdentifiedForTheCleanupResultsQuery
+   * @summary getCleanupInstances
+   *
+   * @param {string} cleanupId - cleanupId param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getTheSpecificObjectsOrRulesIdentifiedForTheCleanupResultsQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getTheSpecificObjectsOrRulesIdentifiedForTheCleanupResultsQuery(cleanupId, queryObject, callback) {
+    const meth = 'adapter-getTheSpecificObjectsOrRulesIdentifiedForTheCleanupResultsQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (cleanupId === undefined || cleanupId === null || cleanupId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['cleanupId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [cleanupId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('PolicyOptimization', 'getTheSpecificObjectsOrRulesIdentifiedForTheCleanupResultsQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getTheSpecificObjectsOrRulesIdentifiedForTheCleanupResultsQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getDevicesInCleanupResultsQuery
+   * @pronghornType method
+   * @name getDevicesInCleanupResultsQuery
+   * @summary getCleanupDevices
+   *
+   * @param {string} cleanupId - cleanupId param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getDevicesInCleanupResultsQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getDevicesInCleanupResultsQuery(cleanupId, queryObject, callback) {
+    const meth = 'adapter-getDevicesInCleanupResultsQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (cleanupId === undefined || cleanupId === null || cleanupId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['cleanupId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [cleanupId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('PolicyOptimization', 'getDevicesInCleanupResultsQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getDevicesInCleanupResultsQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getCleanupsByDeviceQuery
+   * @pronghornType method
+   * @name getCleanupsByDeviceQuery
+   * @summary getCleanupInstanceResultAndInfo
+   *
+   * @param {string} deviceId - deviceId param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getCleanupsByDeviceQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getCleanupsByDeviceQuery(deviceId, queryObject, callback) {
+    const meth = 'adapter-getCleanupsByDeviceQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (deviceId === undefined || deviceId === null || deviceId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['deviceId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [deviceId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('PolicyOptimization', 'getCleanupsByDeviceQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getCleanupsByDeviceQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getShadowingRulesByDeviceQuery
+   * @pronghornType method
+   * @name getShadowingRulesByDeviceQuery
+   * @summary getShadowingResultAndInfo
+   *
+   * @param {string} deviceId - deviceId param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getShadowingRulesByDeviceQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getShadowingRulesByDeviceQuery(deviceId, queryObject, callback) {
+    const meth = 'adapter-getShadowingRulesByDeviceQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (deviceId === undefined || deviceId === null || deviceId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['deviceId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [deviceId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('PolicyOptimization', 'getShadowingRulesByDeviceQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getShadowingRulesByDeviceQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getRevisionsByDeviceQuery
+   * @pronghornType method
+   * @name getRevisionsByDeviceQuery
+   * @summary GetrevisionsbydeviceQuery
+   *
+   * @param {number} id - Device ID
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getRevisionsByDeviceQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getRevisionsByDeviceQuery(id, queryObject, callback) {
+    const meth = 'adapter-getRevisionsByDeviceQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('Revisions', 'getRevisionsByDeviceQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getRevisionsByDeviceQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getLatestRevisionByDeviceQuery
+   * @pronghornType method
+   * @name getLatestRevisionByDeviceQuery
+   * @summary GetlatestrevisionbydeviceQuery
+   *
+   * @param {number} id - Device ID
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getLatestRevisionByDeviceQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getLatestRevisionByDeviceQuery(id, queryObject, callback) {
+    const meth = 'adapter-getLatestRevisionByDeviceQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('Revisions', 'getLatestRevisionByDeviceQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getLatestRevisionByDeviceQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getSpecificRevisionQuery
+   * @pronghornType method
+   * @name getSpecificRevisionQuery
+   * @summary getRevision
+   *
+   * @param {string} revId - revId param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getSpecificRevisionQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getSpecificRevisionQuery(revId, queryObject, callback) {
+    const meth = 'adapter-getSpecificRevisionQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (revId === undefined || revId === null || revId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['revId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [revId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('Revisions', 'getSpecificRevisionQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getSpecificRevisionQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getRuleCountPerDeviceQuery
+   * @pronghornType method
+   * @name getRuleCountPerDeviceQuery
+   * @summary GetrulecountperdeviceQuery
+   *
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getRuleCountPerDeviceQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getRuleCountPerDeviceQuery(queryObject, callback) {
+    const meth = 'adapter-getRuleCountPerDeviceQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('SecurityRules', 'getRuleCountPerDeviceQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getRuleCountPerDeviceQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getRulesByRevisionQuery
+   * @pronghornType method
+   * @name getRulesByRevisionQuery
+   * @summary GetrulesbyrevisionQuery
+   *
+   * @param {number} id - Revision id
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getRulesByRevisionQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getRulesByRevisionQuery(id, queryObject, callback) {
+    const meth = 'adapter-getRulesByRevisionQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('SecurityRules', 'getRulesByRevisionQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getRulesByRevisionQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getRevisionsRevisionIdRulesIdsQuery
+   * @pronghornType method
+   * @name getRevisionsRevisionIdRulesIdsQuery
+   * @summary Returns a list of rules
+   *
+   * @param {string} revisionId - revisionId param
+   * @param {string} ids - ids param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getRevisionsRevisionIdRulesIdsQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getRevisionsRevisionIdRulesIdsQuery(revisionId, ids, queryObject, callback) {
+    const meth = 'adapter-getRevisionsRevisionIdRulesIdsQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (revisionId === undefined || revisionId === null || revisionId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['revisionId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+    if (ids === undefined || ids === null || ids === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['ids'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [revisionId, ids];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('SecurityRules', 'getRevisionsRevisionIdRulesIdsQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getRevisionsRevisionIdRulesIdsQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getRulesByDeviceQuery
+   * @pronghornType method
+   * @name getRulesByDeviceQuery
+   * @summary GetrulesbydeviceQuery
+   *
+   * @param {number} id - Device ID
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getRulesByDeviceQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getRulesByDeviceQuery(id, queryObject, callback) {
+    const meth = 'adapter-getRulesByDeviceQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('SecurityRules', 'getRulesByDeviceQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getRulesByDeviceQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getSpecificRuleQuery
+   * @pronghornType method
+   * @name getSpecificRuleQuery
+   * @summary GetspecificruleQuery
+   *
+   * @param {string} deviceId - deviceId param
+   * @param {string} ids - ids param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getSpecificRuleQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getSpecificRuleQuery(deviceId, ids, queryObject, callback) {
+    const meth = 'adapter-getSpecificRuleQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (deviceId === undefined || deviceId === null || deviceId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['deviceId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+    if (ids === undefined || ids === null || ids === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['ids'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [deviceId, ids];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('SecurityRules', 'getSpecificRuleQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getSpecificRuleQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function findRulesQuery
+   * @pronghornType method
+   * @name findRulesQuery
+   * @summary findRules
+   *
+   * @param {string} deviceId - deviceId param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /findRulesQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  findRulesQuery(deviceId, queryObject, callback) {
+    const meth = 'adapter-findRulesQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (deviceId === undefined || deviceId === null || deviceId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['deviceId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [deviceId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('SecurityRules', 'findRulesQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['findRulesQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getASpecificRuleQuery
+   * @pronghornType method
+   * @name getASpecificRuleQuery
+   * @summary getRule
+   *
+   * @param {string} ruleId - ruleId param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getASpecificRuleQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getASpecificRuleQuery(ruleId, queryObject, callback) {
+    const meth = 'adapter-getASpecificRuleQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (ruleId === undefined || ruleId === null || ruleId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['ruleId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [ruleId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('SecurityRules', 'getASpecificRuleQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getASpecificRuleQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getServiceGroupsContainingSpecifiedServiceObjectsQuery
+   * @pronghornType method
+   * @name getServiceGroupsContainingSpecifiedServiceObjectsQuery
+   * @summary GetservicegroupscontainingspecifiedserviceobjectsQuery
+   *
+   * @param {number} id - The SecureTrack object ID of the service object.
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getServiceGroupsContainingSpecifiedServiceObjectsQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getServiceGroupsContainingSpecifiedServiceObjectsQuery(id, queryObject, callback) {
+    const meth = 'adapter-getServiceGroupsContainingSpecifiedServiceObjectsQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('ServicesAndPorts', 'getServiceGroupsContainingSpecifiedServiceObjectsQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getServiceGroupsContainingSpecifiedServiceObjectsQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getRulesContainingSpecifiedServiceObjectQuery
+   * @pronghornType method
+   * @name getRulesContainingSpecifiedServiceObjectQuery
+   * @summary GetrulescontainingspecifiedserviceobjectQuery
+   *
+   * @param {number} id - The SecureTrack object ID of the service object.
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getRulesContainingSpecifiedServiceObjectQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getRulesContainingSpecifiedServiceObjectQuery(id, queryObject, callback) {
+    const meth = 'adapter-getRulesContainingSpecifiedServiceObjectQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('ServicesAndPorts', 'getRulesContainingSpecifiedServiceObjectQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getRulesContainingSpecifiedServiceObjectQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getServicesByRevisionQuery
+   * @pronghornType method
+   * @name getServicesByRevisionQuery
+   * @summary GetservicesbyrevisionQuery
+   *
+   * @param {number} id - Revision id
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getServicesByRevisionQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getServicesByRevisionQuery(id, queryObject, callback) {
+    const meth = 'adapter-getServicesByRevisionQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('ServicesAndPorts', 'getServicesByRevisionQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getServicesByRevisionQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getSpecificServiceQuery
+   * @pronghornType method
+   * @name getSpecificServiceQuery
+   * @summary GetspecificserviceQuery
+   *
+   * @param {string} revisionId - revisionId param
+   * @param {string} ids - ids param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getSpecificServiceQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getSpecificServiceQuery(revisionId, ids, queryObject, callback) {
+    const meth = 'adapter-getSpecificServiceQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (revisionId === undefined || revisionId === null || revisionId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['revisionId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+    if (ids === undefined || ids === null || ids === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['ids'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [revisionId, ids];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('ServicesAndPorts', 'getSpecificServiceQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getSpecificServiceQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getServicesByDeviceQuery
+   * @pronghornType method
+   * @name getServicesByDeviceQuery
+   * @summary GetservicesbydeviceQuery
+   *
+   * @param {number} id - Device ID
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getServicesByDeviceQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getServicesByDeviceQuery(id, queryObject, callback) {
+    const meth = 'adapter-getServicesByDeviceQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('ServicesAndPorts', 'getServicesByDeviceQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getServicesByDeviceQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getDevicesDeviceIdServicesIdsQuery
+   * @pronghornType method
+   * @name getDevicesDeviceIdServicesIdsQuery
+   * @summary Fetches list of specific service objects
+   *
+   * @param {string} deviceId - deviceId param
+   * @param {string} ids - ids param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getDevicesDeviceIdServicesIdsQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getDevicesDeviceIdServicesIdsQuery(deviceId, ids, queryObject, callback) {
+    const meth = 'adapter-getDevicesDeviceIdServicesIdsQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (deviceId === undefined || deviceId === null || deviceId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['deviceId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+    if (ids === undefined || ids === null || ids === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['ids'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [deviceId, ids];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('ServicesAndPorts', 'getDevicesDeviceIdServicesIdsQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getDevicesDeviceIdServicesIdsQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getTimeObjectsByRevisionQuery
+   * @pronghornType method
+   * @name getTimeObjectsByRevisionQuery
+   * @summary GettimeobjectsbyrevisionQuery
+   *
+   * @param {number} id - Revision ID
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getTimeObjectsByRevisionQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getTimeObjectsByRevisionQuery(id, queryObject, callback) {
+    const meth = 'adapter-getTimeObjectsByRevisionQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('TimeObjects', 'getTimeObjectsByRevisionQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getTimeObjectsByRevisionQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getSpecificTimeObjectQuery
+   * @pronghornType method
+   * @name getSpecificTimeObjectQuery
+   * @summary GetspecifictimeobjectQuery
+   *
+   * @param {string} revisionId - revisionId param
+   * @param {string} ids - ids param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getSpecificTimeObjectQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getSpecificTimeObjectQuery(revisionId, ids, queryObject, callback) {
+    const meth = 'adapter-getSpecificTimeObjectQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (revisionId === undefined || revisionId === null || revisionId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['revisionId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+    if (ids === undefined || ids === null || ids === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['ids'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [revisionId, ids];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('TimeObjects', 'getSpecificTimeObjectQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getSpecificTimeObjectQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getTimeObjectsByDeviceQuery
+   * @pronghornType method
+   * @name getTimeObjectsByDeviceQuery
+   * @summary GettimeobjectsbydeviceQuery
+   *
+   * @param {number} id - Device ID
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getTimeObjectsByDeviceQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getTimeObjectsByDeviceQuery(id, queryObject, callback) {
+    const meth = 'adapter-getTimeObjectsByDeviceQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('TimeObjects', 'getTimeObjectsByDeviceQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getTimeObjectsByDeviceQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getPolicyRelevanceMetricsForTrafficQuery
+   * @pronghornType method
+   * @name getPolicyRelevanceMetricsForTrafficQuery
+   * @summary GetpolicyrelevancemetricsfortrafficQuery
+   *
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {object} body - Relevance metrics request
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getPolicyRelevanceMetricsForTrafficQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getPolicyRelevanceMetricsForTrafficQuery(queryObject, body, callback) {
+    const meth = 'adapter-getPolicyRelevanceMetricsForTrafficQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (body === undefined || body === null || body === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['body'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [];
+    const bodyVars = body;
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('TrafficPolicyMatcher', 'getPolicyRelevanceMetricsForTrafficQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getPolicyRelevanceMetricsForTrafficQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getViolationsForAnAccessRequestQuery
+   * @pronghornType method
+   * @name getViolationsForAnAccessRequestQuery
+   * @summary GetviolationsforanaccessrequestQuery
+   *
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {object} body - AccessRequestListDTO
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getViolationsForAnAccessRequestQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getViolationsForAnAccessRequestQuery(queryObject, body, callback) {
+    const meth = 'adapter-getViolationsForAnAccessRequestQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (body === undefined || body === null || body === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['body'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [];
+    const bodyVars = body;
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('UnifiedSecurityPolicyAccessRequestViolations', 'getViolationsForAnAccessRequestQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getViolationsForAnAccessRequestQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function startATaskToCalculateViolationsForAnAccessRequestQuery
+   * @pronghornType method
+   * @name startATaskToCalculateViolationsForAnAccessRequestQuery
+   * @summary StartatasktocalculateviolationsforanaccessrequestQuery
+   *
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {object} [body] - body param
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /startATaskToCalculateViolationsForAnAccessRequestQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  startATaskToCalculateViolationsForAnAccessRequestQuery(queryObject, body, callback) {
+    const meth = 'adapter-startATaskToCalculateViolationsForAnAccessRequestQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [];
+    const bodyVars = body;
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('UnifiedSecurityPolicyAccessRequestViolations', 'startATaskToCalculateViolationsForAnAccessRequestQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['startATaskToCalculateViolationsForAnAccessRequestQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getAlertsQuery
+   * @pronghornType method
+   * @name getAlertsQuery
+   * @summary GetalertsQuery
+   *
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getAlertsQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getAlertsQuery(queryObject, callback) {
+    const meth = 'adapter-getAlertsQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('UnifiedSecurityPolicyAlerts', 'getAlertsQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getAlertsQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function createAnAlertQuery
+   * @pronghornType method
+   * @name createAnAlertQuery
+   * @summary CreateanalertQuery
+   *
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {object} [body] - body param
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /createAnAlertQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  createAnAlertQuery(queryObject, body, callback) {
+    const meth = 'adapter-createAnAlertQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [];
+    const bodyVars = body;
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('UnifiedSecurityPolicyAlerts', 'createAnAlertQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['createAnAlertQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getASpecificAlertQuery
+   * @pronghornType method
+   * @name getASpecificAlertQuery
+   * @summary GetaspecificalertQuery
+   *
+   * @param {number} id - The alert Id
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getASpecificAlertQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getASpecificAlertQuery(id, queryObject, callback) {
+    const meth = 'adapter-getASpecificAlertQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('UnifiedSecurityPolicyAlerts', 'getASpecificAlertQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getASpecificAlertQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function updateAnAlertQuery
+   * @pronghornType method
+   * @name updateAnAlertQuery
+   * @summary UpdateanalertQuery
+   *
+   * @param {number} id - The alert ID for updating
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {object} [body] - body param
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /updateAnAlertQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  updateAnAlertQuery(id, queryObject, body, callback) {
+    const meth = 'adapter-updateAnAlertQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id];
+    const bodyVars = body;
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('UnifiedSecurityPolicyAlerts', 'updateAnAlertQuery', reqObj, false, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['updateAnAlertQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function deleteAlertsByIdsQuery
+   * @pronghornType method
+   * @name deleteAlertsByIdsQuery
+   * @summary deleteUSPAlert
+   *
+   * @param {string} ids - ids param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /deleteAlertsByIdsQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  deleteAlertsByIdsQuery(ids, queryObject, callback) {
+    const meth = 'adapter-deleteAlertsByIdsQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (ids === undefined || ids === null || ids === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['ids'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [ids];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('UnifiedSecurityPolicyAlerts', 'deleteAlertsByIdsQuery', reqObj, false, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['deleteAlertsByIdsQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function createACloudTagPolicyQuery
+   * @pronghornType method
+   * @name createACloudTagPolicyQuery
+   * @summary CreateacloudtagpolicyQuery
+   *
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {object} [body] - cloud tag policy DTO
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /createACloudTagPolicyQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  createACloudTagPolicyQuery(queryObject, body, callback) {
+    const meth = 'adapter-createACloudTagPolicyQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [];
+    const bodyVars = body;
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('UnifiedSecurityPolicyCloudTagPolicy', 'createACloudTagPolicyQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['createACloudTagPolicyQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getAllCloudTagPoliciesQuery
+   * @pronghornType method
+   * @name getAllCloudTagPoliciesQuery
+   * @summary GetallcloudtagpoliciesQuery
+   *
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getAllCloudTagPoliciesQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getAllCloudTagPoliciesQuery(queryObject, callback) {
+    const meth = 'adapter-getAllCloudTagPoliciesQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('UnifiedSecurityPolicyCloudTagPolicy', 'getAllCloudTagPoliciesQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getAllCloudTagPoliciesQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getCloudTagPolicyQuery
+   * @pronghornType method
+   * @name getCloudTagPolicyQuery
+   * @summary GetcloudtagpolicyQuery
+   *
+   * @param {string} policyId - cloud tag policy id
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getCloudTagPolicyQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getCloudTagPolicyQuery(policyId, queryObject, callback) {
+    const meth = 'adapter-getCloudTagPolicyQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (policyId === undefined || policyId === null || policyId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['policyId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [policyId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('UnifiedSecurityPolicyCloudTagPolicy', 'getCloudTagPolicyQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getCloudTagPolicyQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function replaceACloudTagPolicyQuery
+   * @pronghornType method
+   * @name replaceACloudTagPolicyQuery
+   * @summary ReplaceacloudtagpolicyQuery
+   *
+   * @param {string} policyId - cloud tag policy id
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {object} [body] - cloud tag policy dTO
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /replaceACloudTagPolicyQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  replaceACloudTagPolicyQuery(policyId, queryObject, body, callback) {
+    const meth = 'adapter-replaceACloudTagPolicyQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (policyId === undefined || policyId === null || policyId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['policyId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [policyId];
+    const bodyVars = body;
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('UnifiedSecurityPolicyCloudTagPolicy', 'replaceACloudTagPolicyQuery', reqObj, false, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['replaceACloudTagPolicyQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function modifyACloudTagPolicyQuery
+   * @pronghornType method
+   * @name modifyACloudTagPolicyQuery
+   * @summary ModifyacloudtagpolicyQuery
+   *
+   * @param {string} policyId - cloud tag policy id
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {object} [body] - cloud tag policy dTO
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /modifyACloudTagPolicyQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  modifyACloudTagPolicyQuery(policyId, queryObject, body, callback) {
+    const meth = 'adapter-modifyACloudTagPolicyQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (policyId === undefined || policyId === null || policyId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['policyId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [policyId];
+    const bodyVars = body;
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('UnifiedSecurityPolicyCloudTagPolicy', 'modifyACloudTagPolicyQuery', reqObj, false, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['modifyACloudTagPolicyQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function deleteCloudTagPolicyQuery
+   * @pronghornType method
+   * @name deleteCloudTagPolicyQuery
+   * @summary DeletecloudtagpolicyQuery
+   *
+   * @param {string} policyId - cloud tag policy id
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /deleteCloudTagPolicyQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  deleteCloudTagPolicyQuery(policyId, queryObject, callback) {
+    const meth = 'adapter-deleteCloudTagPolicyQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (policyId === undefined || policyId === null || policyId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['policyId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [policyId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('UnifiedSecurityPolicyCloudTagPolicy', 'deleteCloudTagPolicyQuery', reqObj, false, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['deleteCloudTagPolicyQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function checkIfTagsAreCompliantWithCloudTagPoliciesQuery
+   * @pronghornType method
+   * @name checkIfTagsAreCompliantWithCloudTagPoliciesQuery
+   * @summary CheckiftagsarecompliantwithcloudtagpoliciesQuery
+   *
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {object} body - Tag policy violation check request
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /checkIfTagsAreCompliantWithCloudTagPoliciesQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  checkIfTagsAreCompliantWithCloudTagPoliciesQuery(queryObject, body, callback) {
+    const meth = 'adapter-checkIfTagsAreCompliantWithCloudTagPoliciesQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (body === undefined || body === null || body === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['body'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [];
+    const bodyVars = body;
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('UnifiedSecurityPolicyCloudTagPolicy', 'checkIfTagsAreCompliantWithCloudTagPoliciesQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['checkIfTagsAreCompliantWithCloudTagPoliciesQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getAllCloudTagPolicyViolationsForAVPCQuery
+   * @pronghornType method
+   * @name getAllCloudTagPolicyViolationsForAVPCQuery
+   * @summary GetallcloudtagpolicyviolationsforaVPCQuery
+   *
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getAllCloudTagPolicyViolationsForAVPCQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getAllCloudTagPolicyViolationsForAVPCQuery(queryObject, callback) {
+    const meth = 'adapter-getAllCloudTagPolicyViolationsForAVPCQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('UnifiedSecurityPolicyCloudTagPolicy', 'getAllCloudTagPolicyViolationsForAVPCQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getAllCloudTagPolicyViolationsForAVPCQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function createAnExceptionQuery
+   * @pronghornType method
+   * @name createAnExceptionQuery
+   * @summary CreateanexceptionQuery
+   *
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {object} [body] - body param
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /createAnExceptionQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  createAnExceptionQuery(queryObject, body, callback) {
+    const meth = 'adapter-createAnExceptionQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [];
+    const bodyVars = body;
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('UnifiedSecurityPolicyExceptions', 'createAnExceptionQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['createAnExceptionQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getAllExceptionsQuery
+   * @pronghornType method
+   * @name getAllExceptionsQuery
+   * @summary GetallexceptionsQuery
+   *
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getAllExceptionsQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getAllExceptionsQuery(queryObject, callback) {
+    const meth = 'adapter-getAllExceptionsQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('UnifiedSecurityPolicyExceptions', 'getAllExceptionsQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getAllExceptionsQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getASpecificExceptionQuery
+   * @pronghornType method
+   * @name getASpecificExceptionQuery
+   * @summary Getget2
+   *
+   * @param {string} exceptionId - exceptionId param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getASpecificExceptionQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getASpecificExceptionQuery(exceptionId, queryObject, callback) {
+    const meth = 'adapter-getASpecificExceptionQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (exceptionId === undefined || exceptionId === null || exceptionId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['exceptionId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [exceptionId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('UnifiedSecurityPolicyExceptions', 'getASpecificExceptionQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getASpecificExceptionQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function deleteAnExceptionQuery
+   * @pronghornType method
+   * @name deleteAnExceptionQuery
+   * @summary Deletedelete2
+   *
+   * @param {string} exceptionId - exceptionId param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /deleteAnExceptionQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  deleteAnExceptionQuery(exceptionId, queryObject, callback) {
+    const meth = 'adapter-deleteAnExceptionQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (exceptionId === undefined || exceptionId === null || exceptionId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['exceptionId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [exceptionId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('UnifiedSecurityPolicyExceptions', 'deleteAnExceptionQuery', reqObj, false, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['deleteAnExceptionQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function startATaskToCalculateMatchingRulesForAnExceptionQuery
+   * @pronghornType method
+   * @name startATaskToCalculateMatchingRulesForAnExceptionQuery
+   * @summary Postcreate4
+   *
+   * @param {string} exceptionId - exceptionId param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /startATaskToCalculateMatchingRulesForAnExceptionQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  startATaskToCalculateMatchingRulesForAnExceptionQuery(exceptionId, queryObject, callback) {
+    const meth = 'adapter-startATaskToCalculateMatchingRulesForAnExceptionQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (exceptionId === undefined || exceptionId === null || exceptionId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['exceptionId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [exceptionId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('UnifiedSecurityPolicyExceptions', 'startATaskToCalculateMatchingRulesForAnExceptionQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['startATaskToCalculateMatchingRulesForAnExceptionQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getGlobalUnifiedSecurityPoliciesQuery
+   * @pronghornType method
+   * @name getGlobalUnifiedSecurityPoliciesQuery
+   * @summary GetglobalunifiedsecuritypoliciesQuery
+   *
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getGlobalUnifiedSecurityPoliciesQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getGlobalUnifiedSecurityPoliciesQuery(queryObject, callback) {
+    const meth = 'adapter-getGlobalUnifiedSecurityPoliciesQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('UnifiedSecurityPolicySecurityZoneMatrix', 'getGlobalUnifiedSecurityPoliciesQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getGlobalUnifiedSecurityPoliciesQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getUnifiedSecurityPoliciesQuery
+   * @pronghornType method
+   * @name getUnifiedSecurityPoliciesQuery
+   * @summary GetunifiedsecuritypoliciesQuery
+   *
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getUnifiedSecurityPoliciesQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getUnifiedSecurityPoliciesQuery(queryObject, callback) {
+    const meth = 'adapter-getUnifiedSecurityPoliciesQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('UnifiedSecurityPolicySecurityZoneMatrix', 'getUnifiedSecurityPoliciesQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getUnifiedSecurityPoliciesQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function deleteUnifiedSecurityPolicyQuery
+   * @pronghornType method
+   * @name deleteUnifiedSecurityPolicyQuery
+   * @summary DeleteunifiedsecuritypolicyQuery
+   *
+   * @param {number} id - The unique identifier of the security policy matrix to delete
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /deleteUnifiedSecurityPolicyQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  deleteUnifiedSecurityPolicyQuery(id, queryObject, callback) {
+    const meth = 'adapter-deleteUnifiedSecurityPolicyQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('UnifiedSecurityPolicySecurityZoneMatrix', 'deleteUnifiedSecurityPolicyQuery', reqObj, false, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['deleteUnifiedSecurityPolicyQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getUnifiedSecurityPolicyAsCSVQuery
+   * @pronghornType method
+   * @name getUnifiedSecurityPolicyAsCSVQuery
+   * @summary GetunifiedsecuritypolicyasCSVQuery
+   *
+   * @param {number} id - ID of the security policy.
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getUnifiedSecurityPolicyAsCSVQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getUnifiedSecurityPolicyAsCSVQuery(id, queryObject, callback) {
+    const meth = 'adapter-getUnifiedSecurityPolicyAsCSVQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('UnifiedSecurityPolicySecurityZoneMatrix', 'getUnifiedSecurityPolicyAsCSVQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getUnifiedSecurityPolicyAsCSVQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function setManualDeviceMappingQuery
+   * @pronghornType method
+   * @name setManualDeviceMappingQuery
+   * @summary setManualDeviceMapping
+   *
+   * @param {string} deviceId - deviceId param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {object} body - InterfacesManualMappingsDTO
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /setManualDeviceMappingQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  setManualDeviceMappingQuery(deviceId, queryObject, body, callback) {
+    const meth = 'adapter-setManualDeviceMappingQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (deviceId === undefined || deviceId === null || deviceId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['deviceId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+    if (body === undefined || body === null || body === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['body'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [deviceId];
+    const bodyVars = body;
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('UnifiedSecurityPolicySecurityZoneMatrix', 'setManualDeviceMappingQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['setManualDeviceMappingQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getUrlCategories
+   * @pronghornType method
+   * @name getUrlCategories
+   * @summary getUrlCategories
+   *
+   * @param {string} revisionId - revisionId param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getUrlCategories
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getUrlCategories(revisionId, queryObject, callback) {
+    const meth = 'adapter-getUrlCategories';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (revisionId === undefined || revisionId === null || revisionId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['revisionId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [revisionId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('Securetrack', 'getUrlCategories', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getUrlCategories'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getProperties
+   * @pronghornType method
+   * @name getProperties
+   * @summary getProperties
+   *
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {GET} /getProperties
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getProperties(callback) {
+    const meth = 'adapter-getProperties';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = {};
+    const pathVars = [];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('Securetrack', 'getProperties', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getProperties'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function setProperties
+   * @pronghornType method
+   * @name setProperties
+   * @summary setProperties
+   *
+   * @param {object} body - Properties
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /setProperties
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  setProperties(body, callback) {
+    const meth = 'adapter-setProperties';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (body === undefined || body === null || body === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['body'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = {};
+    const pathVars = [];
+    const bodyVars = body;
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('Securetrack', 'setProperties', reqObj, false, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['setProperties'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getPBRRules
+   * @pronghornType method
+   * @name getPBRRules
+   * @summary getPBRRules
+   *
+   * @param {string} deviceId - deviceId param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getPBRRules
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getPBRRules(deviceId, queryObject, callback) {
+    const meth = 'adapter-getPBRRules';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (deviceId === undefined || deviceId === null || deviceId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['deviceId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [deviceId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('Securetrack', 'getPBRRules', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getPBRRules'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function cloudSuggestions
+   * @pronghornType method
+   * @name cloudSuggestions
+   * @summary cloudSuggestions
+   *
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /cloudSuggestions
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  cloudSuggestions(queryObject, callback) {
+    const meth = 'adapter-cloudSuggestions';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('Securetrack', 'cloudSuggestions', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['cloudSuggestions'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function cloudSuggestion
+   * @pronghornType method
+   * @name cloudSuggestion
+   * @summary cloudSuggestion
+   *
+   * @param {number} cloudId - cloud id
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /cloudSuggestion
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  cloudSuggestion(cloudId, queryObject, callback) {
+    const meth = 'adapter-cloudSuggestion';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (cloudId === undefined || cloudId === null || cloudId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['cloudId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [cloudId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('Securetrack', 'cloudSuggestion', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['cloudSuggestion'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getRouteMaps
+   * @pronghornType method
+   * @name getRouteMaps
+   * @summary getRouteMaps
+   *
+   * @param {string} deviceId - deviceId param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getRouteMaps
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getRouteMaps(deviceId, queryObject, callback) {
+    const meth = 'adapter-getRouteMaps';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (deviceId === undefined || deviceId === null || deviceId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['deviceId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [deviceId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('Securetrack', 'getRouteMaps', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getRouteMaps'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function addZonesEntries
+   * @pronghornType method
+   * @name addZonesEntries
+   * @summary addZonesEntries
+   *
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {object} body - The zone entry to create.
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /addZonesEntries
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  addZonesEntries(queryObject, body, callback) {
+    const meth = 'adapter-addZonesEntries';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (body === undefined || body === null || body === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['body'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [];
+    const bodyVars = body;
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('Securetrack', 'addZonesEntries', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['addZonesEntries'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getSdWanBindingsByRevision
+   * @pronghornType method
+   * @name getSdWanBindingsByRevision
+   * @summary Returns a list of all of the subpolicies (bindings) for a given revision.
+   *
+   * @param {number} id - Revision ID
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getSdWanBindingsByRevision
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getSdWanBindingsByRevision(id, queryObject, callback) {
+    const meth = 'adapter-getSdWanBindingsByRevision';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('Securetrack', 'getSdWanBindingsByRevision', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getSdWanBindingsByRevision'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getSdWanBindingsByDevice
+   * @pronghornType method
+   * @name getSdWanBindingsByDevice
+   * @summary Returns a list of all of the subpolicies (bindings) for a given device
+   *
+   * @param {number} id - Device ID
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getSdWanBindingsByDevice
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getSdWanBindingsByDevice(id, queryObject, callback) {
+    const meth = 'adapter-getSdWanBindingsByDevice';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('Securetrack', 'getSdWanBindingsByDevice', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getSdWanBindingsByDevice'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function exportRulesToCsv
+   * @pronghornType method
+   * @name exportRulesToCsv
+   * @summary exportRulesToCsv
+   *
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /exportRulesToCsv
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  exportRulesToCsv(queryObject, callback) {
+    const meth = 'adapter-exportRulesToCsv';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('Securetrack', 'exportRulesToCsv', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['exportRulesToCsv'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function findServicesObjects
+   * @pronghornType method
+   * @name findServicesObjects
+   * @summary findServicesObjects
+   *
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /findServicesObjects
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  findServicesObjects(queryObject, callback) {
+    const meth = 'adapter-findServicesObjects';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('Securetrack', 'findServicesObjects', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['findServicesObjects'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getDeviceMapping
+   * @pronghornType method
+   * @name getDeviceMapping
+   * @summary getDeviceMapping
+   *
+   * @param {string} deviceId - deviceId param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getDeviceMapping
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getDeviceMapping(deviceId, queryObject, callback) {
+    const meth = 'adapter-getDeviceMapping';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (deviceId === undefined || deviceId === null || deviceId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['deviceId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [deviceId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('Securetrack', 'getDeviceMapping', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getDeviceMapping'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getResolvedInternetRepresentationForDeviceQuery
+   * @pronghornType method
+   * @name getResolvedInternetRepresentationForDeviceQuery
+   * @summary getInternetObject
+   *
+   * @param {string} deviceId - deviceId param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getResolvedInternetRepresentationForDeviceQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getResolvedInternetRepresentationForDeviceQuery(deviceId, queryObject, callback) {
+    const meth = 'adapter-getResolvedInternetRepresentationForDeviceQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (deviceId === undefined || deviceId === null || deviceId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['deviceId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [deviceId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('InternetObjects', 'getResolvedInternetRepresentationForDeviceQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getResolvedInternetRepresentationForDeviceQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function updateInternetRepresentationForDeviceQuery
+   * @pronghornType method
+   * @name updateInternetRepresentationForDeviceQuery
+   * @summary update
+   *
+   * @param {string} deviceId - deviceId param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {object} body - Internet referral configuration
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /updateInternetRepresentationForDeviceQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  updateInternetRepresentationForDeviceQuery(deviceId, queryObject, body, callback) {
+    const meth = 'adapter-updateInternetRepresentationForDeviceQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (deviceId === undefined || deviceId === null || deviceId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['deviceId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+    if (body === undefined || body === null || body === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['body'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [deviceId];
+    const bodyVars = body;
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('InternetObjects', 'updateInternetRepresentationForDeviceQuery', reqObj, false, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['updateInternetRepresentationForDeviceQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getInternetRepresentationForDeviceQuery
+   * @pronghornType method
+   * @name getInternetRepresentationForDeviceQuery
+   * @summary get
+   *
+   * @param {string} deviceId - deviceId param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getInternetRepresentationForDeviceQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getInternetRepresentationForDeviceQuery(deviceId, queryObject, callback) {
+    const meth = 'adapter-getInternetRepresentationForDeviceQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (deviceId === undefined || deviceId === null || deviceId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['deviceId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [deviceId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('InternetObjects', 'getInternetRepresentationForDeviceQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getInternetRepresentationForDeviceQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function deleteInternetRepresentationForDeviceQuery
+   * @pronghornType method
+   * @name deleteInternetRepresentationForDeviceQuery
+   * @summary delete
+   *
+   * @param {string} deviceId - deviceId param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /deleteInternetRepresentationForDeviceQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  deleteInternetRepresentationForDeviceQuery(deviceId, queryObject, callback) {
+    const meth = 'adapter-deleteInternetRepresentationForDeviceQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (deviceId === undefined || deviceId === null || deviceId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['deviceId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [deviceId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('InternetObjects', 'deleteInternetRepresentationForDeviceQuery', reqObj, false, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['deleteInternetRepresentationForDeviceQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function createAZonePatternEntryInASpecificZoneQuery
+   * @pronghornType method
+   * @name createAZonePatternEntryInASpecificZoneQuery
+   * @summary addPatternMatchEntry
+   *
+   * @param {string} zoneId - zoneId param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {object} body - The zone pattern entry to create.
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /createAZonePatternEntryInASpecificZoneQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  createAZonePatternEntryInASpecificZoneQuery(zoneId, queryObject, body, callback) {
+    const meth = 'adapter-createAZonePatternEntryInASpecificZoneQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (zoneId === undefined || zoneId === null || zoneId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['zoneId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+    if (body === undefined || body === null || body === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['body'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [zoneId];
+    const bodyVars = body;
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkZoneManagerPatterns', 'createAZonePatternEntryInASpecificZoneQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['createAZonePatternEntryInASpecificZoneQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getAllPatternEntriesForSpecificZonesQuery
+   * @pronghornType method
+   * @name getAllPatternEntriesForSpecificZonesQuery
+   * @summary getPatternMatchEntries
+   *
+   * @param {string} ids - ids param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getAllPatternEntriesForSpecificZonesQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getAllPatternEntriesForSpecificZonesQuery(ids, queryObject, callback) {
+    const meth = 'adapter-getAllPatternEntriesForSpecificZonesQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (ids === undefined || ids === null || ids === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['ids'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [ids];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkZoneManagerPatterns', 'getAllPatternEntriesForSpecificZonesQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getAllPatternEntriesForSpecificZonesQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getASpecificZonePatternEntryForASpecificZoneQuery
+   * @pronghornType method
+   * @name getASpecificZonePatternEntryForASpecificZoneQuery
+   * @summary getPatternMatchEntry
+   *
+   * @param {number} id - Identifier of the zone pattern entry.
+   * @param {string} zoneId - zoneId param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getASpecificZonePatternEntryForASpecificZoneQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getASpecificZonePatternEntryForASpecificZoneQuery(id, zoneId, queryObject, callback) {
+    const meth = 'adapter-getASpecificZonePatternEntryForASpecificZoneQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+    if (zoneId === undefined || zoneId === null || zoneId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['zoneId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id, zoneId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('NetworkZoneManagerPatterns', 'getASpecificZonePatternEntryForASpecificZoneQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getASpecificZonePatternEntryForASpecificZoneQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getRevisionsIdRulesRuleIdDocumentationQuery
+   * @pronghornType method
+   * @name getRevisionsIdRulesRuleIdDocumentationQuery
+   * @summary Fetches rule documentation
+   *
+   * @param {number} id - Revision id
+   * @param {string} ruleId - ruleId param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getRevisionsIdRulesRuleIdDocumentationQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getRevisionsIdRulesRuleIdDocumentationQuery(id, ruleId, queryObject, callback) {
+    const meth = 'adapter-getRevisionsIdRulesRuleIdDocumentationQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+    if (ruleId === undefined || ruleId === null || ruleId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['ruleId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id, ruleId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('PolicyBrowserFormerlyRuleDocumentation', 'getRevisionsIdRulesRuleIdDocumentationQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getRevisionsIdRulesRuleIdDocumentationQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function putRevisionsIdRulesRuleIdDocumentationQuery
+   * @pronghornType method
+   * @name putRevisionsIdRulesRuleIdDocumentationQuery
+   * @summary modifyRuleDocumentation
+   *
+   * @param {number} id - Revision id
+   * @param {string} ruleId - ruleId param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {object} body - RuleDocumentationDTO
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /putRevisionsIdRulesRuleIdDocumentationQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  putRevisionsIdRulesRuleIdDocumentationQuery(id, ruleId, queryObject, body, callback) {
+    const meth = 'adapter-putRevisionsIdRulesRuleIdDocumentationQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+    if (ruleId === undefined || ruleId === null || ruleId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['ruleId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+    if (body === undefined || body === null || body === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['body'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id, ruleId];
+    const bodyVars = body;
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('PolicyBrowserFormerlyRuleDocumentation', 'putRevisionsIdRulesRuleIdDocumentationQuery', reqObj, false, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['putRevisionsIdRulesRuleIdDocumentationQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function deleteRuleDocumentation
+   * @pronghornType method
+   * @name deleteRuleDocumentation
+   * @summary deleteRuleDocumentation
+   *
+   * @param {number} id - Revision id
+   * @param {string} ruleId - ruleId param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /deleteRuleDocumentation
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  deleteRuleDocumentation(id, ruleId, queryObject, callback) {
+    const meth = 'adapter-deleteRuleDocumentation';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+    if (ruleId === undefined || ruleId === null || ruleId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['ruleId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id, ruleId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('PolicyBrowserFormerlyRuleDocumentation', 'deleteRuleDocumentation', reqObj, false, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['deleteRuleDocumentation'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getSpecificRuleDocumentationQuery
+   * @pronghornType method
+   * @name getSpecificRuleDocumentationQuery
+   * @summary Fetches rule documentation for a single rule given by device ID and rule ID
+   *
+   * @param {number} id - Device ID
+   * @param {string} ruleId - ruleId param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getSpecificRuleDocumentationQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getSpecificRuleDocumentationQuery(id, ruleId, queryObject, callback) {
+    const meth = 'adapter-getSpecificRuleDocumentationQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+    if (ruleId === undefined || ruleId === null || ruleId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['ruleId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id, ruleId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('PolicyBrowserFormerlyRuleDocumentation', 'getSpecificRuleDocumentationQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getSpecificRuleDocumentationQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function modifySpecificRuleDocumentationQuery
+   * @pronghornType method
+   * @name modifySpecificRuleDocumentationQuery
+   * @summary Modify rule documentation for a single rule given by device ID and rule ID
+   *
+   * @param {number} id - Device ID
+   * @param {string} ruleId - ruleId param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {object} body - RuleDocumentationDTO
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /modifySpecificRuleDocumentationQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  modifySpecificRuleDocumentationQuery(id, ruleId, queryObject, body, callback) {
+    const meth = 'adapter-modifySpecificRuleDocumentationQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+    if (ruleId === undefined || ruleId === null || ruleId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['ruleId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+    if (body === undefined || body === null || body === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['body'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id, ruleId];
+    const bodyVars = body;
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('PolicyBrowserFormerlyRuleDocumentation', 'modifySpecificRuleDocumentationQuery', reqObj, false, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['modifySpecificRuleDocumentationQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function deleteSpecificRuleDocumentationQuery
+   * @pronghornType method
+   * @name deleteSpecificRuleDocumentationQuery
+   * @summary Delete rule documentation for a single rule
+   *
+   * @param {number} id - Device ID
+   * @param {string} ruleId - ruleId param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /deleteSpecificRuleDocumentationQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  deleteSpecificRuleDocumentationQuery(id, ruleId, queryObject, callback) {
+    const meth = 'adapter-deleteSpecificRuleDocumentationQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (id === undefined || id === null || id === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['id'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+    if (ruleId === undefined || ruleId === null || ruleId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['ruleId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [id, ruleId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('PolicyBrowserFormerlyRuleDocumentation', 'deleteSpecificRuleDocumentationQuery', reqObj, false, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['deleteSpecificRuleDocumentationQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getLastHitsForAllRulesByDeviceQuery
+   * @pronghornType method
+   * @name getLastHitsForAllRulesByDeviceQuery
+   * @summary findAllWithObjects
+   *
+   * @param {string} deviceId - deviceId param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getLastHitsForAllRulesByDeviceQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getLastHitsForAllRulesByDeviceQuery(deviceId, queryObject, callback) {
+    const meth = 'adapter-getLastHitsForAllRulesByDeviceQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (deviceId === undefined || deviceId === null || deviceId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['deviceId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [deviceId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('RuleUsage', 'getLastHitsForAllRulesByDeviceQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getLastHitsForAllRulesByDeviceQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getlasthitforaspecificruleQuery
+   * @pronghornType method
+   * @name getlasthitforaspecificruleQuery
+   * @summary findWithObjects
+   *
+   * @param {string} ruleUid - rule_uid
+   * @param {string} deviceId - deviceId param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getlasthitforaspecificruleQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getlasthitforaspecificruleQuery(ruleUid, deviceId, queryObject, callback) {
+    const meth = 'adapter-getlasthitforaspecificruleQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (ruleUid === undefined || ruleUid === null || ruleUid === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['ruleUid'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+    if (deviceId === undefined || deviceId === null || deviceId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['deviceId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [ruleUid, deviceId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('RuleUsage', 'getlasthitforaspecificruleQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getlasthitforaspecificruleQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getTheAmountOfViolatingRulesForTheSpecifiedDeviceQuery
+   * @pronghornType method
+   * @name getTheAmountOfViolatingRulesForTheSpecifiedDeviceQuery
+   * @summary getRulesCount
+   *
+   * @param {string} deviceId - deviceId param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getTheAmountOfViolatingRulesForTheSpecifiedDeviceQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getTheAmountOfViolatingRulesForTheSpecifiedDeviceQuery(deviceId, queryObject, callback) {
+    const meth = 'adapter-getTheAmountOfViolatingRulesForTheSpecifiedDeviceQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (deviceId === undefined || deviceId === null || deviceId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['deviceId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [deviceId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('UnifiedSecurityPolicyViolations', 'getTheAmountOfViolatingRulesForTheSpecifiedDeviceQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getTheAmountOfViolatingRulesForTheSpecifiedDeviceQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
+
+  /**
+   * @function getTheViolatingRulesForTheSpecifiedDeviceQuery
+   * @pronghornType method
+   * @name getTheViolatingRulesForTheSpecifiedDeviceQuery
+   * @summary GetgetDeviceViolations
+   *
+   * @param {string} deviceId - deviceId param
+   * @param {object} [queryObject] - Object containing query parameters
+   * @param {getCallback} callback - a callback function to return the result
+   * @return {object} results - An object containing the response of the action
+   *
+   * @route {POST} /getTheViolatingRulesForTheSpecifiedDeviceQuery
+   * @roles admin
+   * @task true
+   */
+  /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
+  getTheViolatingRulesForTheSpecifiedDeviceQuery(deviceId, queryObject, callback) {
+    const meth = 'adapter-getTheViolatingRulesForTheSpecifiedDeviceQuery';
+    const origin = `${this.id}-${meth}`;
+    log.trace(origin);
+
+    if (this.suspended && this.suspendMode === 'error') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'AD.600', [], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU VALIDATE DATA */
+    if (deviceId === undefined || deviceId === null || deviceId === '') {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['deviceId'], null, null, null);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+
+    /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
+    const queryParamsAvailable = {};
+    const queryParams = queryObject;
+    const pathVars = [deviceId];
+    const bodyVars = {};
+
+    // loop in template. long callback arg name to avoid identifier conflicts
+    Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
+        queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
+      }
+    });
+
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders, authData, callProperties, filter, priority, event
+    // see adapter code documentation for more information on the request object's fields
+    const reqObj = {
+      payload: bodyVars,
+      uriPathVars: pathVars,
+      uriQuery: queryParams
+    };
+
+    try {
+      // Make the call -
+      // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
+      return this.requestHandlerInst.identifyRequest('UnifiedSecurityPolicyViolations', 'getTheViolatingRulesForTheSpecifiedDeviceQuery', reqObj, true, (irReturnData, irReturnError) => {
+        // if we received an error or their is no response on the results
+        // return an error
+        if (irReturnError) {
+          /* HERE IS WHERE YOU CAN ALTER THE ERROR MESSAGE */
+          return callback(null, irReturnError);
+        }
+        if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getTheViolatingRulesForTheSpecifiedDeviceQuery'], null, null, null);
+          log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+          return callback(null, errorObj);
+        }
+
+        /* HERE IS WHERE YOU CAN ALTER THE RETURN DATA */
+        // return the response
+        return callback(irReturnData, null);
+      });
+    } catch (ex) {
+      const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Caught Exception', null, null, null, ex);
+      log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
+      return callback(null, errorObj);
+    }
+  }
 }
 
 module.exports = TufinSecuretrack;

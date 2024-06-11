@@ -15,7 +15,13 @@
         "getSubPoliciesBindingsByDevice",
         "getRulesByInputAndOutputInterfaces",
         "getSubPoliciesBindingsByRevision",
-        "getPoliciesByDevice"
+        "getPoliciesByDevice",
+        "getPoliciesByRevisionQuery",
+        "getSubPoliciesBindingsByRevisionQuery",
+        "getPoliciesByDeviceQuery",
+        "getSubPoliciesBindingsByDeviceQuery",
+        "getRulesByInputAndOutputInterfacesQuery",
+        "getListOfSubPoliciesBindingsWithInputAndOrOutputInterfacesQuery"
       ],
       "external_name": "ph_request_type"
     },

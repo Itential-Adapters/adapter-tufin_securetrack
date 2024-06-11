@@ -13,7 +13,11 @@
         "getApplicationIdentitiesByDevice",
         "getSpecificApplicationIdentity",
         "getApplicationsIdentitiesByRevision",
-        "getRevisionsRevisionIdApplicationsIds"
+        "getRevisionsRevisionIdApplicationsIds",
+        "getApplicationsIdentitiesByRevisionQuery",
+        "getRevisionsRevisionIdApplicationsIdsQuery",
+        "getApplicationIdentitiesByDeviceQuery",
+        "getSpecificApplicationIdentityQuery"
       ],
       "external_name": "ph_request_type"
     },

@@ -1,10 +1,10 @@
 {
   "actions": [
     {
-      "name": "runPolicyAnalysisQuery",
+      "name": "getLicense",
       "protocol": "REST",
       "method": "GET",
-      "entitypath": "{base_path}/{version}/securetrack/api/policy_analysis/query/matching_rules?{query}",
+      "entitypath": "{base_path}/{version}/securetrack/api/licenses/{pathv1}?{query}",
       "requestSchema": "schema.json",
       "responseSchema": "schema.json",
       "timeout": 0,
@@ -22,10 +22,10 @@
       ]
     },
     {
-      "name": "runPolicyAnalysisQueryQuery",
+      "name": "getLicenses",
       "protocol": "REST",
       "method": "GET",
-      "entitypath": "{base_path}/{version}/securetrack/api/policy_analysis/query/matching_rules?{query}",
+      "entitypath": "{base_path}/{version}/securetrack/api/licenses?{query}",
       "requestSchema": "schema.json",
       "responseSchema": "schema.json",
       "timeout": 0,

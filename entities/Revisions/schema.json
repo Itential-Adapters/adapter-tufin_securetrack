@@ -12,7 +12,10 @@
       "enum": [
         "getRevisionsByDevice",
         "getSpecificRevision",
-        "getLatestRevisionByDevice"
+        "getLatestRevisionByDevice",
+        "getRevisionsByDeviceQuery",
+        "getLatestRevisionByDeviceQuery",
+        "getSpecificRevisionQuery"
       ],
       "external_name": "ph_request_type"
     }

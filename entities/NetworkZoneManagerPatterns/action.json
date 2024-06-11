@@ -62,6 +62,68 @@
           "mockFile": ""
         }
       ]
+    },
+    {
+      "name": "createAZonePatternEntryInASpecificZoneQuery",
+      "protocol": "REST",
+      "method": "POST",
+      "entitypath": "{base_path}/{version}/securetrack/api/zones/{pathv1}/pattern-entries?{query}",
+      "requestSchema": "schema.json",
+      "responseSchema": "schema.json",
+      "timeout": 0,
+      "sendEmpty": false,
+      "requestDatatype": "JSON",
+      "responseDatatype": "JSON",
+      "headers": {},
+      "responseObjects": [
+        {
+          "type": "default",
+          "key": "",
+          "mockFile": ""
+        }
+      ]
+    },
+    {
+      "name": "getAllPatternEntriesForSpecificZonesQuery",
+      "protocol": "REST",
+      "method": "GET",
+      "entitypath": "{base_path}/{version}/securetrack/api/zones/{pathv1}/pattern-entries?{query}",
+      "requestSchema": "schema.json",
+      "responseSchema": "schema.json",
+      "timeout": 0,
+      "sendEmpty": false,
+      "sendGetBody": false,
+      "requestDatatype": "JSON",
+      "responseDatatype": "JSON",
+      "headers": {},
+      "responseObjects": [
+        {
+          "type": "default",
+          "key": "",
+          "mockFile": ""
+        }
+      ]
+    },
+    {
+      "name": "getASpecificZonePatternEntryForASpecificZoneQuery",
+      "protocol": "REST",
+      "method": "GET",
+      "entitypath": "{base_path}/{version}/securetrack/api/zones/{pathv1}/pattern-entries/{pathv2}?{query}",
+      "requestSchema": "schema.json",
+      "responseSchema": "schema.json",
+      "timeout": 0,
+      "sendEmpty": false,
+      "sendGetBody": false,
+      "requestDatatype": "JSON",
+      "responseDatatype": "JSON",
+      "headers": {},
+      "responseObjects": [
+        {
+          "type": "default",
+          "key": "",
+          "mockFile": ""
+        }
+      ]
     }
   ]
 }
