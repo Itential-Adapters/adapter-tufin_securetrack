@@ -1,4 +1,12 @@
 
+## 0.8.0 [06-11-2024]
+
+* Updated api and added query params
+
+See merge request itentialopensource/adapters/adapter-tufin_securetrack!12
+
+---
+
 ## 0.7.0 [05-31-2024]
 
 * Minor/2024 auto migration
