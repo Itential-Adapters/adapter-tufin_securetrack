@@ -1,4 +1,12 @@
 
+## 0.8.2 [08-14-2024]
+
+* Changes made at 2024.08.14_19:46PM
+
+See merge request itentialopensource/adapters/adapter-tufin_securetrack!14
+
+---
+
 ## 0.8.1 [08-07-2024]
 
 * Changes made at 2024.08.06_21:50PM
