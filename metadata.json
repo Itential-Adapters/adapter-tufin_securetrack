@@ -66,7 +66,9 @@
         "link": "https://forum.tufin.com/support/kc/latest/Content/Suite/RESTAPI/4420.htm",
         "public": true
       }
-    ]
+    ],
+    "workshopLinks": [],
+    "workshopHomePage": "https://www.itential.com/get-started/"
   },
   "assets": [],
   "relatedItems": {
@@ -77,5 +79,6 @@
     "transformationProjects": [],
     "exampleProjects": []
   },
-  "supportLevel": "community"
+  "supportLevel": "community",
+  "techAlliance": false
 }
