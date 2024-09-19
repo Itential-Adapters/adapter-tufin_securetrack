@@ -68,7 +68,7 @@ Sample Properties can be used to help you configure the adapter in the Itential 
       "auth_method": "basic user_password",
       "username": "username",
       "password": "password",
-      "token": "",
+      "token": "token",
       "token_timeout": 1800000,
       "token_cache": "local",
       "invalid_token_error": 401,
