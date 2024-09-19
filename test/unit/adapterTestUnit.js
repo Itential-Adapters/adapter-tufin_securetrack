@@ -36,13 +36,17 @@ const samProps = require(`${adaptdir}/sampleProperties.json`).properties;
 // these variables can be changed to run in integrated mode so easier to set them here
 // always check these in with bogus data!!!
 samProps.stub = true;
-samProps.host = 'replace.hostorip.here';
-samProps.authentication.username = 'username';
-samProps.authentication.password = 'password';
-samProps.protocol = 'http';
-samProps.port = 80;
-samProps.ssl.enabled = false;
-samProps.ssl.accept_invalid_cert = false;
+
+// uncomment if connecting
+// samProps.host = 'replace.hostorip.here';
+// samProps.authentication.username = 'username';
+// samProps.authentication.password = 'password';
+// samProps.authentication.token = 'password';
+// samProps.protocol = 'http';
+// samProps.port = 80;
+// samProps.ssl.enabled = false;
+// samProps.ssl.accept_invalid_cert = false;
+
 samProps.request.attempt_timeout = 1200000;
 const attemptTimeout = samProps.request.attempt_timeout;
 const { stub } = samProps;
@@ -323,7 +327,7 @@ describe('[unit] Tufin_securetrack Adapter Test', () => {
           assert.equal('^0.4.4', packageDotJson.dependencies.ping);
           assert.equal('^1.4.10', packageDotJson.dependencies['readline-sync']);
           assert.equal('^7.6.3', packageDotJson.dependencies.semver);
-          assert.equal('^3.13.1', packageDotJson.dependencies.winston);
+          assert.equal('^3.14.2', packageDotJson.dependencies.winston);
           done();
         } catch (error) {
           log.error(`Test Failure: ${error}`);
