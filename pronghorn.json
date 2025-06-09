@@ -226,16 +226,6 @@
             "title": "props",
             "type": "object"
           }
-        },
-        {
-          "name": "persistFlag",
-          "type": "boolean",
-          "info": "Whether the input properties should be saved",
-          "required": true,
-          "schema": {
-            "title": "persistFlag",
-            "type": "boolean"
-          }
         }
       ],
       "output": {
@@ -306,7 +296,19 @@
       "name": "iapRunAdapterBasicGet",
       "summary": "Runs basicGet script for adapter",
       "description": "Runs basicGet script for adapter",
-      "input": [],
+      "input": [
+        {
+          "name": "maxCalls",
+          "required": false,
+          "type": "number",
+          "info": "How many GET endpoints to test (defaults to 5)",
+          "schema": {
+            "title": "maxCalls",
+            "type": "number",
+            "default": 5
+          }
+        }
+      ],
       "output": {
         "name": "result",
         "type": "object",
@@ -327,8 +329,8 @@
     },
     {
       "name": "iapMoveAdapterEntitiesToDB",
-      "summary": "Moves entities from an adapter into the IAP database",
-      "description": "Moves entities from an adapter into the IAP database",
+      "summary": "Moves entities from an adapter into the Itential Platform database",
+      "description": "Moves entities from an adapter into the Itential Platform database",
       "input": [],
       "output": {
         "name": "res",

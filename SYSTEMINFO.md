@@ -12,7 +12,7 @@ We classify Tufin SecureTrack into the Security (SASE) domain as Tufin SecureTra
 "Tufin SecureTrack gives you the visibility and control you need over your hybrid-cloud networks, helping to simplify policy management and reduce risks"
 
 ## Why Integrate
-The Tufin SecureTrack adapter from Itential is used to integrate the Itential Automation Platform (IAP) with Tufin SecureTrack to provides functionality related to network security policy management, compliance, and auditing. With this adapter you have the ability to perform operations such as:
+The Tufin SecureTrack adapter from Itential is used to integrate the Itential Platform with Tufin SecureTrack to provides functionality related to network security policy management, compliance, and auditing. With this adapter you have the ability to perform operations such as:
 
 - Network
 - Domain

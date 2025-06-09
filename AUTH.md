@@ -1,6 +1,6 @@
 ## Authenticating Tufin SecureTrack Adapter 
 
-This document will go through the steps for authenticating the Tufin SecureTrack adapter with Basic Authentication. Properly configuring the properties for an adapter in IAP is critical for getting the adapter online. You can read more about adapter authentication <a href="https://docs.itential.com/opensource/docs/authentication" target="_blank">HERE</a>. 
+This document will go through the steps for authenticating the Tufin SecureTrack adapter with Basic Authentication. Properly configuring the properties for an adapter in Itential Platform is critical for getting the adapter online. You can read more about adapter authentication <a href="https://docs.itential.com/opensource/docs/authentication" target="_blank">HERE</a>. 
 
 Companies periodically change authentication methods to provide better security. As this happens this section should be updated and contributed/merge back into the adapter repository.
 
@@ -9,7 +9,7 @@ The Tufin SecureTrack adapter requires Basic Authentication. If you change authe
 
 STEPS  
 1. Ensure you have access to a Tufin SecureTrack server and that it is running
-2. Follow the steps in the README.md to import the adapter into IAP if you have not already done so
+2. Follow the steps in the README.md to import the adapter into Itential Platform if you have not already done so
 3. Use the properties below for the ```properties.authentication``` field
 ```json
 "authentication": {
@@ -27,8 +27,8 @@ you can leave all of the other properties in the authentication section, they wi
 
 ### Troubleshooting
 - Make sure you copied over the correct username and password.
-- Turn on debug level logs for the adapter in IAP Admin Essentials.
-- Turn on auth_logging for the adapter in IAP Admin Essentials (adapter properties).
+- Turn on debug level logs for the adapter in Itential Platform Admin Essentials.
+- Turn on auth_logging for the adapter in Itential Platform Admin Essentials (adapter properties).
 - Investigate the logs - in particular:
   - The FULL REQUEST log to make sure the proper headers are being sent with the request.
   - The FULL BODY log to make sure the payload is accurate.
