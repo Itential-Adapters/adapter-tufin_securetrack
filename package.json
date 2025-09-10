@@ -4,7 +4,7 @@
   "description": "This adapter integrates with system: sample.",
   "main": "adapter.js",
   "wizardVersion": "2.44.7",
-  "engineVersion": "1.69.14",
+  "engineVersion": "1.71.2",
   "adapterType": "http",
   "scripts": {
     "preinstall": "node utils/setup.js",
