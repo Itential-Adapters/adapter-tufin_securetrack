@@ -4,7 +4,7 @@
   "description": "This adapter integrates with system: sample.",
   "main": "adapter.js",
   "wizardVersion": "3.8.0",
-  "engineVersion": "1.79.2",
+  "engineVersion": "1.80.0",
   "adapterType": "http",
   "scripts": {
     "preinstall": "node utils/setup.js",
@@ -47,7 +47,7 @@
   "author": "Itential",
   "homepage": "https://gitlab.com/itentialopensource/adapters/adapter-tufin_securetrack#readme",
   "dependencies": {
-    "@itentialopensource/adapter-utils": "6.0.3",
+    "@itentialopensource/adapter-utils": "6.1.7",
     "acorn": "8.14.1",
     "ajv": "8.17.1",
     "axios": "1.12.2",
