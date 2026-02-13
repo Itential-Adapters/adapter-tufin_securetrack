@@ -1,4 +1,12 @@
 
+## 0.13.0 [02-13-2026]
+
+* minor/auto-migrate/20260213-114517
+
+See merge request itentialopensource/adapters/adapter-tufin_securetrack!34
+
+---
+
 ## 0.8.4 [10-15-2024]
 
 * Changes made at 2024.10.14_21:27PM
